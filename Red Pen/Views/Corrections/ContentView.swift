@@ -1,0 +1,135 @@
+//
+//  ContentView.swift
+//  Red Pen
+//
+//  Created by Daniel Aguila on 10/28/26.
+//
+
+import SwiftUI
+import SwiftData
+
+struct ContentView: View {
+    @Environment(\.modelContext) private var modelContext
+
+    @State private var showingAdd = false
+    @State private var searchText = ""
+    @State private var showingChart = false
+
+    @Query(sort: \Correction.createdAt, order: .reverse)
+    private var corrections: [Correction]
+
+    private var filtered: [Correction] {
+        if searchText.isEmpty {
+            return corrections
+        }
+        return corrections.filter {
+            $0.original.localizedStandardContains(searchText) ||
+            $0.corrected.localizedStandardContains(searchText) ||
+            $0.note.localizedStandardContains(searchText)
+        }
+    }
+
+    private var dueCount: Int {
+        corrections.filter { $0.dueDate <= .now }.count
+    }
+
+    var body: some View {
+        NavigationStack {
+            List {
+                if searchText.isEmpty {
+                    PageTitle(marked: "오답", rest: "노트", subtitle: "Your wrong-answer notebook")   // CHANGED
+                        .onPaper()
+                        .listRowInsets(EdgeInsets(top: 0, leading: 36, bottom: 4, trailing: 20))
+                }
+
+                if searchText.isEmpty && !corrections.isEmpty {
+                    HomeCardView(dueCount: dueCount)
+                        .onPaper()
+                        .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
+                }
+
+                ForEach(filtered) { c in
+                    NavigationLink(value: c) {
+                        HStack(spacing: 12) {
+                            Image(systemName: c.type.symbol)
+                                .font(.subheadline.weight(.semibold))
+                                .foregroundStyle(.white)
+                                .frame(width: 34, height: 34)
+                                .background(c.type.color, in: .rect(cornerRadius: 9))
+
+                            VStack(alignment: .leading, spacing: 2) {
+                                Text(c.corrected)
+                                    .font(.headline)
+                                    .lineLimit(1)
+                                Text(c.original)
+                                    .font(.subheadline)
+                                    .strikethrough(color: .accentColor)
+                                    .foregroundStyle(.secondary)
+                                    .lineLimit(1)
+                            }
+                        }
+                    }
+                    .listRowSeparator(.hidden)
+                    .listRowInsets(EdgeInsets(top: 10, leading: 28, bottom: 10, trailing: 28))
+                    .listRowBackground(
+                        RoundedRectangle(cornerRadius: 16)
+                            .fill(Color(.secondarySystemGroupedBackground))
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 16)
+                                    .fill(c.type.color.opacity(0.14))
+                            )
+                            .padding(.vertical, 4)
+                            .padding(.horizontal, 16)
+                    )
+                }
+                .onDelete { offsets in
+                    for i in offsets { modelContext.delete(filtered[i]) }
+                }
+            }
+            .navigationTitle("오답노트")
+            .navigationBarTitleDisplayMode(.inline)
+            .paperBackground()
+            .listStyle(.plain)
+            .searchable(text: $searchText, prompt: "Search your 오답노트")
+            .overlay {
+                if corrections.isEmpty {
+                    ContentUnavailableView("Your notebook is empty",
+                                           systemImage: "book.closed",
+                                           description: Text("Tap + to save your first correction."))
+                } else if filtered.isEmpty {
+                    ContentUnavailableView.search(text: searchText)
+                }
+            }
+            .navigationDestination(for: Correction.self) { c in
+                CorrectionDetailView(correction: c)
+            }
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button("Hangul chart", systemImage: "character.book.closed") {
+                        showingChart = true
+                    }
+                }
+                ToolbarItem(placement: .principal) {
+                    Text("")
+                }
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("Add", systemImage: "plus") {
+                        showingAdd = true
+                    }
+                }
+            }
+            .sheet(isPresented: $showingAdd) {
+                AddCorrectionView()
+            }
+            .sheet(isPresented: $showingChart) {
+                HangulChartView()
+                    .presentationDetents([.medium, .large])
+            }
+        }
+    }
+}
+
+#Preview {
+    ContentView()
+        .modelContainer(for: Correction.self, inMemory: true)
+}
