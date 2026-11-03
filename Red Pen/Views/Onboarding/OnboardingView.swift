@@ -75,8 +75,7 @@ struct OnboardingView: View {
                 .foregroundStyle(Color.accentColor)
             Text("Try it first?")
                 .font(.largeTitle.weight(.heavy))
-            Text("Start with 3 example corrections to see how it works. You can delete them anytime.")
-                .multilineTextAlignment(.center)
+            Text("Start with \(SampleData.pairs.count) example corrections to see how it works. You can delete them anytime.")                .multilineTextAlignment(.center)
                 .foregroundStyle(.secondary)
                 .padding(.horizontal, 32)
             VStack(spacing: 12) {

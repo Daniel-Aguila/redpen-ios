@@ -107,7 +107,8 @@ struct ContentView: View {
                         } label: {
                             Label("Delete", systemImage: "trash")
                         }
-                    }                }
+                    }
+                }
             }
             .environment(\.editMode, $editMode)
             .navigationTitle("오답노트")
@@ -211,6 +212,11 @@ struct ContentView: View {
             .sheet(isPresented: $showingChart) {
                 HangulChartView()
                     .presentationDetents([.medium, .large])
+            }
+            .task {
+                for c in corrections where c.type == .other && !c.isTypeManual {
+                    c.type = MistakeDetector.detect(original: c.original, corrected: c.corrected)
+                }
             }
         }
     }

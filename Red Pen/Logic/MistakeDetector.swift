@@ -19,6 +19,18 @@ enum SpeechLevel {
     }
 }
 
+enum Tense {
+    case past, present, future
+    
+    var label: String {
+        switch self {
+        case .past: String(localized: "Past (과거)")
+        case .present: String(localized: "Present (현재)")
+        case .future: String(localized: "Future (미래)")
+        }
+    }
+}
+
 enum MistakeDetector {
     static let particles = ["에서", "에게", "한테", "으로",
                             "은", "는", "이", "가", "을", "를",
@@ -43,7 +55,40 @@ enum MistakeDetector {
            levelA != levelB {
             return .speechLevel
         }
+        if let tenseA = tense(of: a),
+           let tenseB = tense(of: b),
+           tenseA != tenseB {
+            return .tense
+        }
         return .other
+    }
+    
+    static func tense(of sentence: String) -> Tense? {
+        let words = sentence.trimmed.withoutTrailingPunctuation
+            .split(separator: " ").map(String.init)
+        guard let last = words.last, last.last?.isHangulSyllable == true else {return nil}
+        let chars = Array(last)
+        
+        // Future: ~ㄹ 거예요 / 겁니다 / 거야
+        if words.count >= 2,
+           last.hasPrefix("거") || last.hasPrefix("겁"),
+           words[words.count - 2].last?.jongseong == 8 {
+            return .future
+        }
+        
+        // Future: ~겠어요
+        if last.contains("겠") {return .future}
+        
+        // Future: ~ㄹ게요
+        for i in 1..<chars.count where chars[i] == "게" && chars[i - 1].jongseong == 8 {
+            return .future
+        }
+        
+        // Past: ㅆ 받침 (갔, 했, 먹었), except 있 / 밌 ------ 20 is ㅆ
+        if chars.contains(where: { $0.jongseong == 20 && $0 != "있" && $0 != "밌" }) {
+            return .past
+        }
+        return .present
     }
     
     static func particleChanges(original: String, corrected: String) -> [(stem: String, from: String, to: String)]{

@@ -10,7 +10,7 @@ import SwiftData
 import SwiftUI
 
 enum MistakeType: String, Codable, CaseIterable {
-    case particle, speechLevel, spelling, spacing, wordChoice, other
+    case particle, speechLevel, tense, spelling, spacing, wordChoice, other
 
     var label: String {
         switch self {
@@ -20,6 +20,7 @@ enum MistakeType: String, Codable, CaseIterable {
         case .spacing: String(localized: "Spacing")
         case .wordChoice: String(localized: "Word choice")
         case .other: String(localized: "Other")
+        case .tense: String(localized: "Tense")
         }
     }
 
@@ -31,6 +32,7 @@ enum MistakeType: String, Codable, CaseIterable {
         case .spacing: "space"
         case .wordChoice: "character.book.closed"
         case .other: "questionmark.circle"
+        case .tense: "clock.arrow.circlepath"
         }
     }
     
@@ -42,6 +44,7 @@ enum MistakeType: String, Codable, CaseIterable {
         case .spelling: Color(hex: 0xE5677D)     // 분홍 pink
         case .wordChoice: Color(hex: 0x4CAF7A)   // 연두 green
         case .other: Color(hex: 0x8E8A84)        // warm stone
+        case .tense: Color(hex: 0x2BB3A3)        // in color, 청록 teal
         }
     }
 }

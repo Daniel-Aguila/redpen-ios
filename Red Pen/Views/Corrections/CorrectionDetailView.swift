@@ -86,6 +86,20 @@ struct CorrectionDetailView: View {
                         }
                         .font(.headline)
                     }
+                } else if correction.type == .tense {
+                    if let from = MistakeDetector.tense(of: correction.original),
+                       let to = MistakeDetector.tense(of: correction.corrected) {
+                        HStack(spacing: 8) {
+                            Text(from.label)
+                                .strikethrough(color: .accentColor)
+                                .foregroundStyle(.secondary)
+                            Image(systemName: "arrow.right")
+                                .foregroundStyle(.secondary)
+                            Text(to.label)
+                                .foregroundStyle(correction.type.color)
+                        }
+                        .font(.headline)
+                    }
                 }
             }
             .onPaper()

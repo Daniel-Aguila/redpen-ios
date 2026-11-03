@@ -13,6 +13,7 @@ enum SampleData {
         ("저는 학생가 아니에요", "저는 학생이 아니에요", ""),
         ("밥 먹었어", "밥 먹었어요", String(localized: "We just met, so 해요체")),
         ("할수있어요", "할 수 있어요", String(localized: "수 is always spaced")),
+        ("어제 친구를 만나요", "어제 친구를 만났어요", String(localized: "어제 means yesterday, so use past tense")),
     ]
 
     static func insert(into context: ModelContext) {

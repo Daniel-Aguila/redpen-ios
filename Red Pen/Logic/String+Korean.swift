@@ -35,4 +35,9 @@ extension Character {
         guard isHangulSyllable, let v = unicodeScalars.first?.value else {return false}
         return (v - 0xAC00) % 28 != 0
     }
+    
+    var jongseong: Int? {
+        guard let v = unicodeScalars.first?.value, (0xAC00...0xD7A3).contains(v) else {return nil}
+        return Int((v-0xAC00) % 28)
+    }
 }
