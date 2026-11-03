@@ -101,7 +101,7 @@ struct PracticeView: View {
                         Text("\(due.count)")
                             .font(.system(size: 64, weight: .bold))
                             .foregroundStyle(Color.accentColor)
-                        Text(due.count == 1 ? "mistake ready" : "mistakes ready")
+                        (due.count == 1 ? Text("mistake ready") : Text("mistakes ready"))
                             .foregroundStyle(.secondary)
 
                         HStack(spacing: 8) {

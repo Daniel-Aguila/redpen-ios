@@ -17,8 +17,8 @@ struct ExerciseCardView: View {
 
     private var instruction: String {
         switch exercise.kind {
-        case .fillGap: "Fill in the blank"
-        case .flashcard: "How would you fix this?"
+        case .fillGap: String(localized: "Fill in the blank")
+        case .flashcard: String(localized: "How would you fix this?")
         }
     }
 
@@ -72,9 +72,8 @@ struct ExerciseCardView: View {
             }
 
             if let picked {
-                // NEW: feedback + the rule
                 VStack(spacing: 6) {
-                    Text(picked == exercise.answer ? "맞아요! Correct" : "아쉬워요! Not quite")
+                    (picked == exercise.answer ? Text("맞아요! Correct") : Text("아쉬워요! Not quite"))
                         .font(.headline)
                         .foregroundStyle(picked == exercise.answer ? .green : Color.accentColor)
                     if let explanation {
@@ -124,7 +123,6 @@ struct ExerciseCardView: View {
                 .frame(maxWidth: .infinity)
                 .card()
 
-                // CHANGED: full-width, color-coded rating buttons
                 HStack(spacing: 10) {
                     ratingButton("Again", rating: .again, color: Color.accentColor)
                     ratingButton("Good", rating: .good, color: .taegeukBlue)
@@ -143,7 +141,7 @@ struct ExerciseCardView: View {
         }
     }
 
-    private func ratingButton(_ title: String, rating: Rating, color: Color) -> some View {
+    private func ratingButton(_ title: LocalizedStringKey, rating: Rating, color: Color) -> some View {  // CHANGED
         Button {
             onFinish(rating)
         } label: {

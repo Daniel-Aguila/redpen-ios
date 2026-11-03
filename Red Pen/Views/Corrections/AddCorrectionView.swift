@@ -56,7 +56,8 @@ struct AddCorrectionView: View {
                     TextField("Optional", text: $note, axis:.vertical)
                 }
             }
-            .navigationTitle(correction == nil ? "New Correction": "Edit Correction")
+            .navigationTitle(correction == nil ? String(localized: "New Correction")
+                                               : String(localized: "Edit Correction"))
             .navigationBarTitleDisplayMode(.inline)
             .paperBackground()
             .onAppear {

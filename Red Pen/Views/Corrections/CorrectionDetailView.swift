@@ -9,7 +9,10 @@ import SwiftUI
 import SwiftData
 
 struct CorrectionDetailView: View {
+    @Environment(\.modelContext) private var modelContext
+    @Environment(\.dismiss) private var dismiss
     @State private var showingEdit = false
+    @State private var showingDeleteConfirm = false
     let correction: Correction
 
     var body: some View {
@@ -100,6 +103,14 @@ struct CorrectionDetailView: View {
                 }
             }
             .onPaper()
+
+            Section {
+                Button("Delete correction", role: .destructive) {
+                    showingDeleteConfirm = true
+                }
+                .frame(maxWidth: .infinity)
+            }
+            .onPaper()
         }
         .navigationTitle("Correction")
         .navigationBarTitleDisplayMode(.inline)
@@ -111,6 +122,14 @@ struct CorrectionDetailView: View {
         }
         .sheet(isPresented: $showingEdit) {
             AddCorrectionView(correction: correction)
+        }
+        .confirmationDialog("Delete this correction?",
+                            isPresented: $showingDeleteConfirm,
+                            titleVisibility: .visible) {
+            Button("Delete", role: .destructive) {
+                dismiss()
+                modelContext.delete(correction)
+            }
         }
     }
 }

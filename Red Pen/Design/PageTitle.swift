@@ -10,7 +10,7 @@ import SwiftUI
 struct PageTitle: View {
     let marked: String
     var rest: String = ""
-    let subtitle: String
+    let subtitle: LocalizedStringKey
 
     var body: some View {
         VStack(alignment: .leading, spacing: 2) {

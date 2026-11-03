@@ -26,7 +26,7 @@ struct HangulChartView: View {
         }
     }
     
-    private func section(_ title: String, items: [Jamo]) -> some View {
+    private func section(_ title: LocalizedStringKey, items: [Jamo]) -> some View {
         VStack(alignment: .leading, spacing: 12) {
             Text(title)
                 .font(.headline)

@@ -97,7 +97,7 @@ struct StatsView: View {
         }
     }
 
-    private func statTile(value: Int, label: String, symbol: String, color: Color) -> some View {
+    private func statTile(value: Int, label: LocalizedStringKey, symbol: String, color: Color) -> some View {
         VStack(alignment: .leading, spacing: 6) {
             Image(systemName: symbol)
                 .font(.title3)

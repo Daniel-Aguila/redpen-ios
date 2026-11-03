@@ -54,15 +54,14 @@ struct HomeCardView: View {
                 KoreanFlag()
                     .frame(width: 36)
             }
-            // REMOVED: duplicate .font(.title2.weight(.bold)) that was here
 
             HStack(spacing: 16) {
                 goalRing
                 VStack(alignment: .leading, spacing: 6) {
-                    Label(currentStreak == 0 ? "Start a streak" : "\(currentStreak) day streak",
+                    Label(currentStreak == 0 ? String(localized: "Start a streak"): String(localized: "\(currentStreak) day streak"),
                           systemImage: currentStreak == 0 ? "flame" : "flame.fill")
-                        .font(.headline)
-                        .foregroundStyle(currentStreak == 0 ? Color.secondary : Color.accentColor) // CHANGED
+                    .font(.headline)
+                    .foregroundStyle(currentStreak == 0 ? Color.secondary : Color.accentColor)
                     Text("\(dueCount) ready to practice")
                         .font(.subheadline)
                         .foregroundStyle(.secondary)

@@ -14,12 +14,12 @@ enum MistakeType: String, Codable, CaseIterable {
 
     var label: String {
         switch self {
-        case .particle: "Particle"
-        case .speechLevel: "Speech level"
-        case .spelling: "Spelling"
-        case .spacing: "Spacing"
-        case .wordChoice: "Word choice"
-        case .other: "Other"
+        case .particle: String(localized: "Particle")
+        case .speechLevel: String(localized: "Speech level")
+        case .spelling: String(localized: "Spelling")
+        case .spacing: String(localized: "Spacing")
+        case .wordChoice: String(localized: "Word choice")
+        case .other: String(localized: "Other")
         }
     }
 

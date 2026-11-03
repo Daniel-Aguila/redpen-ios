@@ -18,8 +18,8 @@ enum Reminder {
     
     static func schedule(minutesAfterMidnight: Int) {
         let content = UNMutableNotificationContent()
-        content.title = "Time to practice"
-        content.body = "Your mistakes are waiting. 오늘도 화이팅!"
+        content.title = String(localized: "Time to practice")
+        content.body = String(localized: "Your mistakes are waiting. 오늘도 화이팅!")
         content.sound = .default
         
         var time = DateComponents()

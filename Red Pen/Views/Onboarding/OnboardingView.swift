@@ -31,7 +31,6 @@ struct OnboardingView: View {
         }
     }
 
-    // Page 1: what it is
     private var welcomePage: some View {
         VStack(spacing: 20) {
             PageTitle(marked: "오답", rest: "노트", subtitle: "Your Korean mistake notebook")
@@ -44,7 +43,6 @@ struct OnboardingView: View {
         .padding(.bottom, 60)
     }
 
-    // Page 2: the 3 steps, showing the real + button
     private var howItWorksPage: some View {
         VStack(alignment: .leading, spacing: 28) {
             Text("How it works")
@@ -70,7 +68,6 @@ struct OnboardingView: View {
         .padding(.bottom, 60)
     }
 
-    // Page 3: choose how to start
     private var startPage: some View {
         VStack(spacing: 20) {
             Image(systemName: "sparkles")
@@ -109,7 +106,7 @@ struct OnboardingView: View {
         dismiss()
     }
 
-    private func step<Icon: View>(_ n: Int, title: String, text: String,
+    private func step<Icon: View>(_ n: Int, title: LocalizedStringKey, text: LocalizedStringKey,
                                   @ViewBuilder icon: () -> Icon) -> some View {
         HStack(alignment: .top, spacing: 16) {
             icon()
@@ -117,7 +114,7 @@ struct OnboardingView: View {
                 .foregroundStyle(Color.accentColor)
                 .frame(width: 44, height: 44)
             VStack(alignment: .leading, spacing: 4) {
-                Text("\(n). \(title)").font(.headline)
+                Text("\(n). \(Text(title))").font(.headline)
                 Text(text).foregroundStyle(.secondary)
             }
         }

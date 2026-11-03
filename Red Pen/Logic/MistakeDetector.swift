@@ -12,9 +12,9 @@ enum SpeechLevel {
 
     var label: String {
         switch self {
-        case .formal: "Formal (합쇼체)"
-        case .polite: "Polite (해요체)"
-        case .casual: "Casual (반말)"
+        case .formal: String(localized: "Formal (합쇼체)")
+        case .polite: String(localized: "Polite (해요체)")
+        case .casual: String(localized: "Casual (반말)")
         }
     }
 }
@@ -76,9 +76,9 @@ enum MistakeDetector {
         guard let last = stem.last else{return nil}
         for pair in batchimPairs where pair.batchim == particle || pair.noBatchim == particle {
             if last.hasBatchim {
-                return "\(last) ends in a consonant (받침), so use \(pair.batchim)"
+                return String(localized: "\(String(last)) ends in a consonant (받침), so use \(pair.batchim)")   // CHANGED
             } else {
-                return "\(last) ends in a vowel, so use \(pair.noBatchim)"
+                return String(localized: "\(String(last)) ends in a vowel, so use \(pair.noBatchim)")   // CHANGED
             }
         }
         return nil
