@@ -90,15 +90,37 @@ struct ContentView: View {
             .navigationBarTitleDisplayMode(.inline)
             .paperBackground()
             .listStyle(.plain)
+            .contentMargins(.bottom, 88, for: .scrollContent)
             .searchable(text: $searchText, prompt: "Search your 오답노트")
             .overlay {
                 if corrections.isEmpty {
-                    ContentUnavailableView("Your notebook is empty",
-                                           systemImage: "book.closed",
-                                           description: Text("Tap + to save your first correction."))
+                    ContentUnavailableView{
+                        Label("Your notebook is empty", systemImage: "book.closed")
+                    }  description: {
+                        Text("When someone corrects your Korean, save it here. Add one, or try a few examples first.")
+                    } actions: {
+                        Button("Add a correction") { showingAdd = true}
+                            .buttonStyle(.borderedProminent)
+                        Button("Try with examples") {SampleData.insert(into: modelContext)}
+                    }
                 } else if filtered.isEmpty {
                     ContentUnavailableView.search(text: searchText)
                 }
+            }
+            .overlay(alignment: .bottomTrailing) {
+                Button {
+                    showingAdd = true
+                } label: {
+                    Image(systemName: "plus")
+                        .font(.title2.weight(.bold))
+                        .foregroundStyle(.white)
+                        .frame(width: 60, height: 60)
+                        .background(Color.accentColor, in: Circle())
+                        .shadow(color: .black.opacity(0.2), radius: 8, y: 4)
+                }
+                .accessibilityLabel("Add correction")
+                .padding(.trailing, 20)
+                .padding(.bottom, 16)
             }
             .navigationDestination(for: Correction.self) { c in
                 CorrectionDetailView(correction: c)
@@ -111,11 +133,6 @@ struct ContentView: View {
                 }
                 ToolbarItem(placement: .principal) {
                     Text("")
-                }
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button("Add", systemImage: "plus") {
-                        showingAdd = true
-                    }
                 }
             }
             .sheet(isPresented: $showingAdd) {
