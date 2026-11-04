@@ -8,7 +8,7 @@
 import Foundation
 
 enum ExerciseKind {
-    case fillGap, flashcard
+    case fillGap, flashcard, typeFix
 }
 
 struct Exercise: Identifiable {

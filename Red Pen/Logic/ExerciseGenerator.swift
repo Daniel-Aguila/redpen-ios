@@ -9,10 +9,10 @@ import Foundation
 
 enum ExerciseGenerator {
     static func make(from correction: Correction) -> Exercise {
-        if correction.type == .particle, let gap = particleGap(correction) {
+        if correction.type == .particle, Bool.random(), let gap = particleGap(correction) {
             return gap
         }
-        return Exercise(correction: correction, kind: .flashcard, prompt: correction.original, choices: [], answer: correction.corrected)
+        return Exercise(correction: correction, kind: .typeFix, prompt: correction.original, choices: [], answer: correction.corrected)
     }
     
     private static func particleGap(_ correction: Correction) -> Exercise? {

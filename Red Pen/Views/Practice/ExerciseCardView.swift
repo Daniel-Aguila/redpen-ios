@@ -13,12 +13,16 @@ struct ExerciseCardView: View {
     let onFinish: (Rating) -> Void
 
     @State private var picked: String? = nil
-    @State private var revealed = false
+    @State private var revealed: Bool = false
+    @State private var typed: String = ""
+    @State private var result: AnswerResult? = nil
+    @FocusState private var fieldFocused: Bool
 
     private var instruction: String {
         switch exercise.kind {
         case .fillGap: String(localized: "Fill in the blank")
         case .flashcard: String(localized: "How would you fix this?")
+        case .typeFix: String(localized: "Type the corrected sentence")
         }
     }
 
@@ -45,6 +49,7 @@ struct ExerciseCardView: View {
             switch exercise.kind {
             case .fillGap: choicesView
             case .flashcard: flashcardView
+            case .typeFix: typeFixView
             }
         }
         .padding()
@@ -53,6 +58,142 @@ struct ExerciseCardView: View {
             return newValue == exercise.answer ? .success : .error
         }
         .sensoryFeedback(.impact(weight: .light), trigger: revealed)
+    }
+    
+    private var typeFixView: some View {
+        VStack(spacing: 16) {
+            if revealed {
+                flashcardView
+            } else if let result {
+                typeFixResult(result)
+            } else {
+                TextField("Type the correction", text: $typed)
+                    .font(.title3)
+                    .padding()
+                    .background(Color(.secondarySystemBackground), in: .rect(cornerRadius: 12))
+                    .autocorrectionDisabled()
+                    .textInputAutocapitalization(.never)
+                    .focused($fieldFocused)
+                    .submitLabel(.done)
+                    .onSubmit(check)
+                
+                Button {
+                    check()
+                } label: {
+                    Text("Check")
+                        .frame(maxWidth: .infinity)
+                }
+                .buttonStyle(.borderedProminent)
+                .controlSize(.large)
+                .disabled(typed.trimmed.isEmpty)
+                
+                Button("Show answer") {
+                    revealed = true
+                }
+                .font(.subheadline)
+            }
+        }
+        .onAppear {
+            typed = exercise.prompt
+            fieldFocused = true
+        }
+    }
+    
+    @ViewBuilder
+    private func typeFixResult(_ result: AnswerResult) -> some View {
+        switch result {
+        case .correct:
+            Text("맞아요! Correct").font(.headline).foregroundStyle(.green)
+        case .almost:
+            Text("거의 다 왔어요! Almost: check the spacing").font(.headline).foregroundStyle(.orange)
+        case .wrong:
+            Text("아쉬워요! Not quite").font(.headline).foregroundStyle(Color.accentColor)
+        }
+
+        if result != .correct {
+            VStack(alignment: .leading, spacing: 8) {
+                Text("Your answer")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(.secondary)
+                Text(Self.marked(typed, against: exercise.answer, color: .red, strike: true))
+                Text("Correct")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(.secondary)
+                    .padding(.top, 4)
+                Text(Self.marked(exercise.answer, against: typed, color: .green, strike: false))
+            }
+            .font(.title3)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .card()
+        }
+
+        if let explanation {
+            Text(explanation)
+                .font(.subheadline)
+                .foregroundStyle(.secondary)
+                .multilineTextAlignment(.center)
+        }
+
+        HStack {
+            speakButton
+            if result == .almost {
+                Button {
+                    onFinish(.good)
+                } label: {
+                    Text("Count it").frame(maxWidth: .infinity)
+                }
+                .buttonStyle(.bordered)
+                .controlSize(.large)
+                Button {
+                    onFinish(.again)
+                } label: {
+                    Text("Practice again").frame(maxWidth: .infinity)
+                }
+                .buttonStyle(.borderedProminent)
+                .controlSize(.large)
+            } else {
+                Button {
+                    onFinish(result == .correct ? .good : .again)
+                } label: {
+                    Text("Next").frame(maxWidth: .infinity)
+                }
+                .buttonStyle(.borderedProminent)
+                .controlSize(.large)
+            }
+        }
+    }
+
+    private static func marked(_ text: String, against other: String,
+                               color: Color, strike: Bool) -> AttributedString {
+        let t = Array(text.trimmed)
+        let o = Array(other.trimmed)
+
+        var differs = Set<Int>()
+        for change in o.difference(from: t) {
+            if case let .remove(offset, _, _) = change { differs.insert(offset) }
+        }
+
+        var out = AttributedString()
+        for (i, ch) in t.enumerated() {
+            var piece = AttributedString(String(ch))
+            if differs.contains(i) {
+                piece.foregroundColor = color
+                piece.backgroundColor = color.opacity(0.18)
+                if strike { piece.strikethroughStyle = .single }
+            }
+            out += piece
+        }
+        return out
+    }
+
+    private var speakButton: some View {
+        Button {
+            Speaker.shared.speak(exercise.correction.corrected)
+        } label: {
+            Image(systemName: "speaker.wave.2.fill")
+        }
+        .buttonStyle(.bordered)
+        .controlSize(.large)
     }
 
     private var choicesView: some View {
@@ -159,14 +300,24 @@ struct ExerciseCardView: View {
         if choice == picked { return .red.opacity(0.3) }
         return Color(.secondarySystemGroupedBackground)
     }
+    
+    private func check() {
+        guard !typed.trimmed.isEmpty else {return}
+        fieldFocused = false
+        withAnimation {
+            result = AnswerChecker.check(typed,
+                                         against: exercise.answer,
+                                         spacingMatters: exercise.correction.type == .spacing)
+        }
+    }
 }
 
 #Preview {
     let c = Correction(original: "저는 학생가 아니에요", corrected: "저는 학생이 아니에요")
-    let ex = Exercise(correction: c, kind: .fillGap,
-                      prompt: "저는 학생___ 아니에요",
-                      choices: ["이", "가", "을", "도"],
-                      answer: "이")
+    let ex = Exercise(correction: c, kind: .typeFix,
+                      prompt: c.original,
+                      choices: [],
+                      answer: c.corrected)
     return ExerciseCardView(exercise: ex) { rating in
         print(rating)
     }
