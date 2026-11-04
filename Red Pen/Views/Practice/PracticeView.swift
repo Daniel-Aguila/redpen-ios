@@ -147,6 +147,17 @@ struct PracticeView: View {
                 .padding(.horizontal, 16)
                 .padding(.vertical, 8)
                 .background(Color.taegeukBlue, in: Capsule())
+            
+            if correctCount < session.count {
+                NavigationLink {
+                    ProRoadmapView()
+                } label: {
+                    Label("Explanations for the ones you missed · Pro, coming soon",
+                          systemImage: "sparkles")
+                        .font(.footnote)
+                        .multilineTextAlignment(.center)
+                }
+            }
 
             Button {
                 session = []

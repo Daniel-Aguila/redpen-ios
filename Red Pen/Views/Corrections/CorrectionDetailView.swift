@@ -103,6 +103,25 @@ struct CorrectionDetailView: View {
                 }
             }
             .onPaper()
+            
+            Section {
+                NavigationLink {
+                    ProRoadmapView()
+                } label: {
+                    HStack(spacing: 10) {
+                        Image(systemName: "sparkles")
+                            .foregroundStyle(Color.accentColor)
+                        VStack(alignment: .leading, spacing: 2){
+                            Text("Explain this mistake")
+                                .font(.subheadline.weight(.semibold))
+                            Text("Pro · Coming soon")
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+                }
+            }
+            .onPaper()
 
             if !correction.note.isEmpty {
                 Section("Note") {

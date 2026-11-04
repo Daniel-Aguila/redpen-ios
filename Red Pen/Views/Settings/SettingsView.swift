@@ -30,6 +30,15 @@ struct SettingsView: View {
         NavigationStack {
             Form {
                 Section {
+                    NavigationLink {
+                        ProRoadmapView()
+                    } label: {
+                        Label("Red Pen Pro", systemImage: "sparkles")
+                    }
+                } footer: {
+                    Text("Coming soon. See what's planned")
+                }
+                Section {
                     Picker("Questions per day", selection: $dailyGoal) {
                         Text("5").tag(5)
                         Text("10").tag(10)
