@@ -100,9 +100,36 @@ struct CorrectionDetailView: View {
                         }
                         .font(.headline)
                     }
+                } else if correction.type == .honorific {
+                    let before = MistakeDetector.honorifics(in: correction.original)
+                    let after = MistakeDetector.honorifics(in: correction.corrected)
+                    let added = after.subtracting(before).sorted()
+                    let removed = before.subtracting(after).sorted()
+                    
+                    if !added.isEmpty {
+                        LabeledContent("Added") {
+                            Text(added.joined(separator: ", "))
+                                .foregroundStyle(correction.type.color)
+                        }
+                        .font(.headline)
+                    }
+                    if !removed.isEmpty {
+                        LabeledContent("Removed") {
+                            Text(removed.joined(separator: ", "))
+                                .strikethrough(color: .accentColor)
+                                .foregroundStyle(.secondary)
+                        }
+                        .font(.headline)
+                    }
                 }
             }
             .onPaper()
+            if let note = correction.type.note {
+                Section("How it works") {
+                    GrammarNoteView(note: note, tint: correction.type.color)
+                }
+                .onPaper()
+            }
             
             Section {
                 NavigationLink {

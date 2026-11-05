@@ -14,6 +14,11 @@ struct AddCorrectionView: View {
     
     @AppStorage("xp") private var xp: Int = 0
     
+    @Query(sort: \Folder.createdAt) private var folders: [Folder]
+    
+    @State private var folder: Folder? = nil
+    @State private var showingNewFolder = false
+    @State private var newFolderName = ""
     @State private var original = ""
     @State private var corrected = ""
     @State private var note = ""
@@ -55,6 +60,18 @@ struct AddCorrectionView: View {
                 Section("Note") {
                     TextField("Optional", text: $note, axis:.vertical)
                 }
+                
+                Section("Folder") {
+                    Picker("Folder", selection: $folder) {
+                        Text("None").tag(Folder?.none)
+                        ForEach(folders) { f in
+                            Text(verbatim: "\(f.emoji) \(f.name)").tag(Optional(f))
+                        }
+                    }
+                    Button("New folder…") {
+                        showingNewFolder = true
+                    }
+                }
             }
             .navigationTitle(correction == nil ? String(localized: "New Correction")
                                                : String(localized: "Edit Correction"))
@@ -65,6 +82,7 @@ struct AddCorrectionView: View {
                     original = correction.original
                     corrected = correction.corrected
                     note = correction.note
+                    folder = correction.folder
                 }
             }
             .toolbar {
@@ -82,6 +100,19 @@ struct AddCorrectionView: View {
                               original.trimmed == corrected.trimmed)
                 }
             }
+            .alert("New folder", isPresented: $showingNewFolder) {
+                TextField("Name", text: $newFolderName)
+                Button("Create") {
+                    let f = Folder(name: newFolderName.trimmed)
+                    modelContext.insert(f)
+                    folder = f
+                    newFolderName = ""
+                }
+                .disabled(newFolderName.trimmed.isEmpty)
+                Button("Cancel", role: .cancel) {
+                    newFolderName = ""
+                }
+            }
         }
     }
     
@@ -97,8 +128,10 @@ struct AddCorrectionView: View {
             correction.original = o
             correction.corrected = c
             correction.note = n
+            correction.folder = folder
         } else {
             let cr = Correction(original: o, corrected: c, note: n)
+            cr.folder = folder
             cr.type = MistakeDetector.detect(original: o, corrected: c)
             modelContext.insert(cr)
             xp += 5
@@ -110,5 +143,5 @@ struct AddCorrectionView: View {
 
 #Preview {
     AddCorrectionView()
-        .modelContainer(for: Correction.self, inMemory: true)
+        .modelContainer(for: [Correction.self, Folder.self], inMemory: true)
 }

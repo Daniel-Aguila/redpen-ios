@@ -50,6 +50,9 @@ enum MistakeDetector {
         if !particleChanges(original: a, corrected: b).isEmpty {
             return .particle
         }
+        if honorifics(in: a) != honorifics(in: b) {
+            return .honorific
+        }
         if let levelA = speechLevel(of: a),
            let levelB = speechLevel(of: b),
            levelA != levelB {
@@ -89,6 +92,13 @@ enum MistakeDetector {
             return .past
         }
         return .present
+    }
+    
+    static func honorifics(in sentence: String) -> Set<String> {
+        Set(honorificMarkers
+            .filter { sentence.contains($0.pattern) }
+            .map(\.label)
+        )
     }
     
     static func particleChanges(original: String, corrected: String) -> [(stem: String, from: String, to: String)]{

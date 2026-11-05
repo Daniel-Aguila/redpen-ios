@@ -16,6 +16,7 @@ struct Red_PenApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Correction.self,
+            Folder.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 

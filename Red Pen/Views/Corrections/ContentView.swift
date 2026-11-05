@@ -10,7 +10,9 @@ import SwiftData
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
-
+    
+    @Query(sort: \Folder.createdAt) private var folders: [Folder]
+    @State private var selectedFolder: Folder? = nil
     @State private var showingAdd = false
     @State private var searchText = ""
     @State private var showingChart = false
@@ -22,14 +24,18 @@ struct ContentView: View {
     private var corrections: [Correction]
 
     private var filtered: [Correction] {
-        if searchText.isEmpty {
-            return corrections
+        var list = corrections
+        if let selectedFolder {
+            list = list.filter { $0.folder == selectedFolder }
         }
-        return corrections.filter {
-            $0.original.localizedStandardContains(searchText) ||
-            $0.corrected.localizedStandardContains(searchText) ||
-            $0.note.localizedStandardContains(searchText)
+        if !searchText.isEmpty {
+            list = list.filter {
+                $0.original.localizedStandardContains(searchText) ||
+                $0.corrected.localizedStandardContains(searchText) ||
+                $0.note.localizedStandardContains(searchText)
+            }
         }
+        return list
     }
 
     private var dueCount: Int {
@@ -51,6 +57,33 @@ struct ContentView: View {
                     HomeCardView(dueCount: dueCount)
                         .onPaper()
                         .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
+                }
+                
+                if !folders.isEmpty && !isSelecting {
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 8) {
+                            folderChip(String(localized: "All"), isOn: selectedFolder == nil) {
+                                selectedFolder = nil
+                            }
+                            ForEach(folders) { f in
+                                folderChip("\(f.emoji) \(f.name)", isOn: selectedFolder == f) {
+                                    selectedFolder = f
+                                }
+                                .contextMenu {
+                                    Button(role: .destructive) {
+                                        if selectedFolder == f { selectedFolder = nil }
+                                        modelContext.delete(f)
+                                    } label: {
+                                        Label("Delete folder", systemImage: "trash")
+                                    }
+                                }
+                            }
+                        }
+                        .padding(.horizontal, 20)
+                        .padding(.vertical, 4)
+                    }
+                    .onPaper()
+                    .listRowInsets(EdgeInsets())
                 }
 
                 ForEach(filtered) { c in
@@ -102,6 +135,19 @@ struct ContentView: View {
                         } label: {
                             Label("Select", systemImage: "checkmark.circle")
                         }
+                        Menu {
+                            Button("No folder") { c.folder = nil }
+                            ForEach(folders) { f in
+                                Button {
+                                    c.folder = f
+                                } label: {
+                                    Text(verbatim: "\(f.emoji) \(f.name)")
+                                }
+                            }
+                        } label: {
+                            Label("Move to folder", systemImage: "folder")
+                        }
+                        .disabled(folders.isEmpty)
                         Button(role: .destructive) {
                             modelContext.delete(c)
                         } label: {
@@ -129,9 +175,14 @@ struct ContentView: View {
                         Button("Try with examples") { SampleData.insert(into: modelContext) }
                     }
                 } else if filtered.isEmpty {
-                    ContentUnavailableView.search(text: searchText)
-                }
-            }
+                    if searchText.isEmpty {
+                        ContentUnavailableView("Nothing in this folder yet",
+                                               systemImage: "folder",
+                                               description: Text("Pick this folder when adding or editing a correction."))
+                    } else {
+                        ContentUnavailableView.search(text: searchText)
+                    }
+                }            }
             .overlay(alignment: .bottomTrailing) {
                 if !isSelecting {
                     Button {
@@ -159,6 +210,20 @@ struct ContentView: View {
                                 selection = Set(filtered.map(\.id))
                             }
                         }
+                        Spacer()
+                        Menu {
+                            Button("No folder") { moveSelected(to: nil) }
+                            ForEach(folders) { f in
+                                Button {
+                                    moveSelected(to: f)
+                                } label: {
+                                    Text(verbatim: "\(f.emoji) \(f.name)")
+                                }
+                            }
+                        } label: {
+                            Text("Move").fontWeight(.semibold)
+                        }
+                        .disabled(selection.isEmpty || folders.isEmpty)
                         Spacer()
                         Button(role: .destructive) {
                             showingDeleteConfirm = true
@@ -220,7 +285,27 @@ struct ContentView: View {
             }
         }
     }
+    
+    private func moveSelected(to folder: Folder?) {
+        for c in corrections where selection.contains(c.id) {
+            c.folder = folder
+        }
+        selection.removeAll()
+        withAnimation { editMode = .inactive }
+    }
 
+    private func folderChip(_ title: String, isOn: Bool, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            Text(verbatim: title)
+                .font(.subheadline.weight(.semibold))
+                .padding(.horizontal, 14)
+                .padding(.vertical, 8)
+                .background(isOn ? Color.accentColor : Color(.secondarySystemGroupedBackground), in: Capsule())
+                .foregroundStyle(isOn ? .white : .primary)
+        }
+        .buttonStyle(.plain)
+    }
+    
     private func deleteSelected() {
         for c in corrections where selection.contains(c.id) {
             modelContext.delete(c)
@@ -232,5 +317,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .modelContainer(for: Correction.self, inMemory: true)
+        .modelContainer(for: [Correction.self, Folder.self], inMemory: true)
 }

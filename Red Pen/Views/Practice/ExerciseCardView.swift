@@ -1,10 +1,3 @@
-//
-//  ExerciseCardView.swift
-//  Red Pen
-//
-//  Created by Daniel Aguila on 10/29/26.
-//
-
 import SwiftUI
 import SwiftData
 
@@ -57,9 +50,17 @@ struct ExerciseCardView: View {
             guard let newValue else { return nil }
             return newValue == exercise.answer ? .success : .error
         }
+        .sensoryFeedback(trigger: result) { _, newValue in
+            switch newValue {
+            case .correct: .success
+            case .almost: .warning
+            case .wrong: .error
+            case nil: nil
+            }
+        }
         .sensoryFeedback(.impact(weight: .light), trigger: revealed)
     }
-    
+
     private var typeFixView: some View {
         VStack(spacing: 16) {
             if revealed {
@@ -76,7 +77,7 @@ struct ExerciseCardView: View {
                     .focused($fieldFocused)
                     .submitLabel(.done)
                     .onSubmit(check)
-                
+
                 Button {
                     check()
                 } label: {
@@ -86,7 +87,7 @@ struct ExerciseCardView: View {
                 .buttonStyle(.borderedProminent)
                 .controlSize(.large)
                 .disabled(typed.trimmed.isEmpty)
-                
+
                 Button("Show answer") {
                     revealed = true
                 }
@@ -98,7 +99,7 @@ struct ExerciseCardView: View {
             fieldFocused = true
         }
     }
-    
+
     @ViewBuilder
     private func typeFixResult(_ result: AnswerResult) -> some View {
         switch result {
@@ -132,6 +133,14 @@ struct ExerciseCardView: View {
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
                 .multilineTextAlignment(.center)
+        }
+
+        if result != .correct, let note = exercise.correction.type.note {
+            DisclosureGroup("How it works") {
+                GrammarNoteView(note: note, tint: exercise.correction.type.color)
+                    .padding(.top, 8)
+            }
+            .card()
         }
 
         HStack {
@@ -186,16 +195,6 @@ struct ExerciseCardView: View {
         return out
     }
 
-    private var speakButton: some View {
-        Button {
-            Speaker.shared.speak(exercise.correction.corrected)
-        } label: {
-            Image(systemName: "speaker.wave.2.fill")
-        }
-        .buttonStyle(.bordered)
-        .controlSize(.large)
-    }
-
     private var choicesView: some View {
         VStack(spacing: 12) {
             ForEach(exercise.choices, id: \.self) { choice in
@@ -226,15 +225,16 @@ struct ExerciseCardView: View {
                 }
                 .padding(.top, 4)
 
-                HStack {
-                    Button {
-                        Speaker.shared.speak(exercise.correction.corrected)
-                    } label: {
-                        Image(systemName: "speaker.wave.2.fill")
+                if picked != exercise.answer, let note = exercise.correction.type.note {
+                    DisclosureGroup("How it works") {
+                        GrammarNoteView(note: note, tint: exercise.correction.type.color)
+                            .padding(.top, 8)
                     }
-                    .buttonStyle(.bordered)
-                    .controlSize(.large)
+                    .card()
+                }
 
+                HStack {
+                    speakButton
                     Button {
                         onFinish(picked == exercise.answer ? .good : .again)
                     } label: {
@@ -282,7 +282,17 @@ struct ExerciseCardView: View {
         }
     }
 
-    private func ratingButton(_ title: LocalizedStringKey, rating: Rating, color: Color) -> some View {  // CHANGED
+    private var speakButton: some View {
+        Button {
+            Speaker.shared.speak(exercise.correction.corrected)
+        } label: {
+            Image(systemName: "speaker.wave.2.fill")
+        }
+        .buttonStyle(.bordered)
+        .controlSize(.large)
+    }
+
+    private func ratingButton(_ title: LocalizedStringKey, rating: Rating, color: Color) -> some View {
         Button {
             onFinish(rating)
         } label: {
@@ -300,9 +310,9 @@ struct ExerciseCardView: View {
         if choice == picked { return .red.opacity(0.3) }
         return Color(.secondarySystemGroupedBackground)
     }
-    
+
     private func check() {
-        guard !typed.trimmed.isEmpty else {return}
+        guard !typed.trimmed.isEmpty else { return }
         fieldFocused = false
         withAnimation {
             result = AnswerChecker.check(typed,
@@ -314,6 +324,7 @@ struct ExerciseCardView: View {
 
 #Preview {
     let c = Correction(original: "저는 학생가 아니에요", corrected: "저는 학생이 아니에요")
+    c.type = .particle
     let ex = Exercise(correction: c, kind: .typeFix,
                       prompt: c.original,
                       choices: [],

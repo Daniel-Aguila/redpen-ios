@@ -10,6 +10,7 @@ import SwiftData
 
 struct PracticeView: View {
     @Query private var corrections: [Correction]
+    @Query(sort: \Folder.createdAt) private var folders: [Folder]
 
     @AppStorage("streak") private var streak = 0
     @AppStorage("lastPracticeDay") private var lastPracticeDay: Double = 0
@@ -17,14 +18,25 @@ struct PracticeView: View {
     @AppStorage("todayCountDay") private var todayCountDay: Double = 0
     @AppStorage("xp") private var xp = 0
 
+    @State private var scope: PracticeScope = .all
     @State private var session: [Exercise] = []
     @State private var index = 0
     @State private var correctCount = 0
     @State private var sessionXP = 0
     @State private var showingChart = false
 
+    private var pool: [Correction] {
+        corrections.filter { c in
+            switch scope {
+            case .all: true
+            case .folder(let f): c.folder == f
+            case .type(let t): c.type == t
+            }
+        }
+    }
+    
     private var due: [Correction] {
-        corrections.filter { $0.dueDate <= .now }
+        pool.filter { $0.dueDate <= .now }
     }
 
     private var dueByType: [(type: MistakeType, count: Int)] {
@@ -79,6 +91,11 @@ struct PracticeView: View {
                 HangulChartView()
                     .presentationDetents([.medium, .large])
             }
+            .onChange(of: folders) {
+                if case .folder(let f) = scope, !folders.contains(f) {
+                    scope = .all
+                }
+            }
         }
     }
 
@@ -89,14 +106,44 @@ struct PracticeView: View {
                     .padding(.leading, 20)
 
                 VStack(spacing: 16) {
+                    if !folders.isEmpty {
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack(spacing: 6) {
+                                folderChip(String(localized: "All"), isOn: scope == .all) {
+                                    scope = .all
+                                }
+                                ForEach(folders) { f in
+                                    folderChip("\(f.emoji) \(f.name)", isOn: scope == .folder(f)) {
+                                        scope = .folder(f)
+                                    }
+                                }
+                            }
+                        }
+                    }
+
                     if due.isEmpty {
-                        Text("🎉")
-                            .font(.system(size: 56))
-                        Text("다 했어요!")
-                            .font(.title2.weight(.bold))
-                        Text("You're all caught up. New mistakes will show up here when they're due.")
-                            .multilineTextAlignment(.center)
-                            .foregroundStyle(.secondary)
+                        if pool.isEmpty {
+                            Text("📭")
+                                .font(.system(size: 56))
+                            Text("Nothing here yet")
+                                .font(.title2.weight(.bold))
+                        } else {
+                            Text("🎉")
+                                .font(.system(size: 56))
+                            Text("다 했어요!")
+                                .font(.title2.weight(.bold))
+                            Text("You're all caught up. New mistakes will show up here when they're due.")
+                                .multilineTextAlignment(.center)
+                                .foregroundStyle(.secondary)
+                            Button {
+                                start(pool)
+                            } label: {
+                                Label("Review all \(pool.count)", systemImage: "arrow.clockwise")
+                                    .frame(maxWidth: .infinity)
+                            }
+                            .buttonStyle(.borderedProminent)
+                            .controlSize(.large)
+                        }
                     } else {
                         Text("\(due.count)")
                             .font(.system(size: 64, weight: .bold))
@@ -116,13 +163,24 @@ struct PracticeView: View {
                         }
 
                         Button {
-                            start()
+                            start(due)
                         } label: {
                             Label("Start", systemImage: "play.fill")
                                 .frame(maxWidth: .infinity)
                         }
                         .buttonStyle(.borderedProminent)
                         .controlSize(.large)
+
+                        if pool.count > due.count {
+                            Button {
+                                start(pool)
+                            } label: {
+                                Label("Review all \(pool.count)", systemImage: "arrow.clockwise")
+                                    .frame(maxWidth: .infinity)
+                            }
+                            .buttonStyle(.bordered)
+                            .controlSize(.large)
+                        }
                     }
                 }
                 .frame(maxWidth: .infinity)
@@ -130,6 +188,18 @@ struct PracticeView: View {
             }
             .padding()
         }
+    }
+
+    private func folderChip(_ title: String, isOn: Bool, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            Text(verbatim: title)
+                .font(.footnote.weight(.semibold))
+                .padding(.horizontal, 12)
+                .padding(.vertical, 6)
+                .background(isOn ? Color.accentColor : Color(.systemGray6), in: Capsule())
+                .foregroundStyle(isOn ? .white : .primary)
+        }
+        .buttonStyle(.plain)
     }
 
     private var doneView: some View {
@@ -147,7 +217,7 @@ struct PracticeView: View {
                 .padding(.horizontal, 16)
                 .padding(.vertical, 8)
                 .background(Color.taegeukBlue, in: Capsule())
-            
+
             if correctCount < session.count {
                 NavigationLink {
                     ProRoadmapView()
@@ -174,8 +244,8 @@ struct PracticeView: View {
         .padding()
     }
 
-    private func start() {
-        session = due.shuffled().prefix(10).map { ExerciseGenerator.make(from: $0) }
+    private func start(_ items: [Correction]) {
+        session = items.shuffled().prefix(10).map { ExerciseGenerator.make(from: $0) }
         index = 0
         correctCount = 0
         sessionXP = 0
@@ -226,6 +296,29 @@ struct PracticeView: View {
 }
 
 #Preview {
-    PracticeView()
-        .modelContainer(for: Correction.self, inMemory: true)
+    let container = try! ModelContainer(
+        for: Correction.self, Folder.self,
+        configurations: ModelConfiguration(isStoredInMemoryOnly: true)
+    )
+
+    let work = Folder(name: "Work", emoji: "💼")
+    container.mainContext.insert(work)
+
+    let samples = [
+        ("저는 학생가 아니에요", "저는 학생이 아니에요"),
+        ("밥 먹었어", "밥 먹었어요"),
+        ("선생님이 가요", "선생님께서 가세요"),
+        ("어제 학교에 가요", "어제 학교에 갔어요"),
+        ("할수있어요", "할 수 있어요"),
+    ]
+    for (i, (original, corrected)) in samples.enumerated() {
+        let c = Correction(original: original, corrected: corrected)
+        c.type = MistakeDetector.detect(original: original, corrected: corrected)
+        if i < 2 { c.folder = work }
+        if i == 4 { c.dueDate = .now.addingTimeInterval(86_400) }
+        container.mainContext.insert(c)
+    }
+
+    return PracticeView()
+        .modelContainer(container)
 }

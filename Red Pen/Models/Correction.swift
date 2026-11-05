@@ -10,7 +10,7 @@ import SwiftData
 import SwiftUI
 
 enum MistakeType: String, Codable, CaseIterable {
-    case particle, speechLevel, tense, spelling, spacing, wordChoice, other
+    case particle, speechLevel, honorific, tense, spelling, spacing, wordChoice, other
 
     var label: String {
         switch self {
@@ -21,6 +21,7 @@ enum MistakeType: String, Codable, CaseIterable {
         case .wordChoice: String(localized: "Word choice")
         case .other: String(localized: "Other")
         case .tense: String(localized: "Tense")
+        case .honorific: String(localized: "Honorific")
         }
     }
 
@@ -33,6 +34,7 @@ enum MistakeType: String, Codable, CaseIterable {
         case .wordChoice: "character.book.closed"
         case .other: "questionmark.circle"
         case .tense: "clock.arrow.circlepath"
+        case .honorific: "hands.sparkles"
         }
     }
     
@@ -45,6 +47,7 @@ enum MistakeType: String, Codable, CaseIterable {
         case .wordChoice: Color(hex: 0x4CAF7A)   // 연두 green
         case .other: Color(hex: 0x8E8A84)        // warm stone
         case .tense: Color(hex: 0x2BB3A3)        // in color, 청록 teal
+        case .honorific: Color(hex: 0xC2185B)    //(진분홍, deep rose)
         }
     }
 }
@@ -58,6 +61,7 @@ final class Correction {
     var typeRaw: String = MistakeType.other.rawValue
     var isTypeManual: Bool = false
     var createdAt: Date = Date.now
+    var folder: Folder?
     
     //scheduling
     var dueDate: Date = Date.now
