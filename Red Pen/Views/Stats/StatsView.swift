@@ -11,6 +11,7 @@ struct StatsView: View {
     @Query private var corrections: [Correction]
     @Environment(ProgressStore.self) private var progress
     @State private var gochiTaps = 0
+    @AppStorage("hideGochi") private var hideGochi = false
 
     private var countsByType: [(type: MistakeType, count: Int)] {
         MistakeType.allCases
@@ -96,31 +97,36 @@ struct StatsView: View {
 
     private var gochiCard: some View {
         HStack(spacing: 14) {
-            Button {
-                gochiTaps += 1
-            } label: {
-                GochiView(xp: progress.xp, celebrate: gochiTaps)
-                    .frame(width: 64, height: 64)
-                    .contentShape(Rectangle())
+            if !hideGochi {
+                Button {
+                    gochiTaps += 1
+                } label: {
+                    GochiView(xp: progress.xp, celebrate: gochiTaps)
+                        .frame(width: 64, height: 64)
+                        .contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
             }
-            .buttonStyle(.plain)
 
             VStack(alignment: .leading, spacing: 4) {
-                Text(verbatim: "고치 · \(progress.form.title)")
+                Text(verbatim: hideGochi ? "XP" : "고치 · \(progress.form.title)")
                     .font(.headline)
                 Text("\(progress.xp) XP total")
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
                 if let next = progress.form.next {
-                    Text("\(next.minXP - progress.xp) XP to \(next.title)")
+                    Text(hideGochi ? String(localized: "\(next.minXP - progress.xp) XP to next level")
+                                   : String(localized: "\(next.minXP - progress.xp) XP to \(next.title)"))
                         .font(.caption)
                         .foregroundStyle(.secondary)
                 }
-                NavigationLink {
-                    GochiJourneyView()
-                } label: {
-                    Label("Journey", systemImage: "map")
-                        .font(.caption.weight(.semibold))
+                if !hideGochi {
+                    NavigationLink {
+                        GochiJourneyView()
+                    } label: {
+                        Label("Journey", systemImage: "map")
+                            .font(.caption.weight(.semibold))
+                    }
                 }
             }
 

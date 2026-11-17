@@ -13,6 +13,8 @@ struct ExerciseCardView: View {
     @FocusState private var fieldFocused: Bool
     @State private var hops = 0
     @State private var wobbles = 0
+    
+    @AppStorage("hideGochi") private var hideGochi = false
 
     private var instruction: String {
         switch exercise.kind {
@@ -31,8 +33,10 @@ struct ExerciseCardView: View {
 
     var body: some View {
         VStack(spacing: 24) {
-            GochiView(xp: xp, hop: hops, wobble: wobbles)
-                .frame(height: 72)
+            if !hideGochi {
+                GochiView(xp: xp, hop: hops, wobble: wobbles)
+                    .frame(height: 72)
+            }
             VStack(spacing: 12) {
                 Text(instruction)
                     .font(.subheadline.weight(.semibold))
@@ -43,7 +47,8 @@ struct ExerciseCardView: View {
                     .frame(maxWidth: .infinity)
                 if let speechHint {
                     Label(speechHint, systemImage: exercise.correction.audience == .unknown
-                          ? "person.2.fill" : exercise.correction.audience.symbol)                        .font(.footnote.weight(.semibold))
+                          ? "person.2.fill" : exercise.correction.audience.symbol)
+                        .font(.footnote.weight(.semibold))
                         .foregroundStyle(exercise.correction.type.color)
                 }
             }

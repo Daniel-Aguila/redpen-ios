@@ -11,6 +11,7 @@ struct SettingsView: View {
     @AppStorage("dailyGoal") private var dailyGoal = 10
     @AppStorage("reminderOn") private var reminderOn = false
     @AppStorage("reminderMinutes") private var reminderMinutes = 20 * 60
+    @AppStorage("hideGochi") private var hideGochi = false
     @Environment(ProgressStore.self) private var progress
     
     private var reminderTime: Binding<Date> {
@@ -68,6 +69,12 @@ struct SettingsView: View {
                     Text("Reminder")
                 } footer: {
                     Text("A gentle nudge to keep your streak going.")
+                }
+                
+                Section {
+                    Toggle("Hide Gochi", isOn: $hideGochi)
+                } footer: {
+                    Text("Hides the pet and the evolution screen. Your XP and streak still count.")
                 }
 
                 #if DEBUG

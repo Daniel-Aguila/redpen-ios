@@ -14,6 +14,7 @@ struct Red_PenApp: App {
     @AppStorage("whatsNewSeen") private var whatsNewSeen = ""
     @AppStorage("selectedTab") private var selectedTab = "practice"
     @AppStorage("reminderOn") private var reminderOn = false
+    @AppStorage("hideGochi") private var hideGochi = false
     @AppStorage("reminderMinutes") private var reminderMinutes = 20 * 60
     @Environment(\.scenePhase) private var scenePhase
     @State private var progress = ProgressStore()
@@ -60,8 +61,14 @@ struct Red_PenApp: App {
             )) {
                 WhatsNewView()
             }
-            .fullScreenCover(item: $progress.pendingEvolution) { form in
+            .fullScreenCover(item: Binding(
+                get: { hideGochi ? nil : progress.pendingEvolution },
+                set: { progress.pendingEvolution = $0 }
+            )) { form in
                 EvolutionView(form: form)
+            }
+            .onChange(of: progress.pendingEvolution) { _, form in
+                if hideGochi, form != nil { progress.pendingEvolution = nil }
             }
             .onChange(of: scenePhase) { _, phase in
                 if phase == .active { refreshReminder() }

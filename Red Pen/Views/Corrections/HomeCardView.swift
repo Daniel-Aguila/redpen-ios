@@ -13,7 +13,8 @@ struct HomeCardView: View {
     @Environment(ProgressStore.self) private var progress
     @AppStorage("dailyGoal") private var dailyGoal = 10
     @AppStorage("selectedTab") private var selectedTab = "practice"
-
+    @AppStorage("hideGochi") private var hideGochi = false
+    
     private var xp: Int { progress.xp }
     private var streak: Int { progress.streak }
     private var lastPracticeDay: Double { progress.lastPracticeDay }
@@ -72,8 +73,13 @@ struct HomeCardView: View {
                 } label: {
                     ZStack {
                         goalRing
-                        GochiView(xp: xp, celebrate: gochiTaps, mood: gochiMood)
-                            .padding(12)
+                        if hideGochi {
+                            Text("\(answeredToday)")
+                                .font(.title3.weight(.bold))
+                        } else {
+                            GochiView(xp: xp, celebrate: gochiTaps, mood: gochiMood)
+                                .padding(12)
+                        }
                     }
                     .frame(width: 84, height: 84)
                     .contentShape(Rectangle())
@@ -90,7 +96,7 @@ struct HomeCardView: View {
                         .font(.caption)
                         .foregroundStyle(.secondary)
                     HStack {
-                        Text(verbatim: "고치 · \(gochi.title)")
+                        Text(verbatim: hideGochi ? "XP" : "고치 · \(gochi.title)")
                             .font(.caption.weight(.semibold))
                         Spacer()
                         if let next = gochi.next {
