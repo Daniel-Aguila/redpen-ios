@@ -41,6 +41,11 @@ struct ExerciseCardView: View {
                     .font(.title2.weight(.semibold))
                     .multilineTextAlignment(.center)
                     .frame(maxWidth: .infinity)
+                if let speechHint {
+                    Label(speechHint, systemImage: "person.2.fill")
+                        .font(.footnote.weight(.semibold))
+                        .foregroundStyle(exercise.correction.type.color)
+                }
             }
             .card()
 
@@ -93,12 +98,6 @@ struct ExerciseCardView: View {
                     .focused($fieldFocused)
                     .submitLabel(.done)
                     .onSubmit(check)
-                
-                if let speechHint {
-                    Label(speechHint, systemImage: "person.2.fill")
-                        .font(.footnote.weight(.semibold))
-                        .foregroundStyle(exercise.correction.type.color)
-                }
 
                 Button {
                     check()
@@ -357,8 +356,8 @@ struct ExerciseCardView: View {
 }
 
 #Preview {
-    let c = Correction(original: "저는 학생가 아니에요", corrected: "저는 학생이 아니에요")
-    c.type = .particle
+    let c = Correction(original: "밥 먹었어", corrected: "밥 먹었어요")
+    c.type = .speechLevel
     let ex = Exercise(correction: c, kind: .typeFix,
                       prompt: c.original,
                       choices: [],
