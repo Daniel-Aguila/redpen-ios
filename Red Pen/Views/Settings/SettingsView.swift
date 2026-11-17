@@ -75,6 +75,9 @@ struct SettingsView: View {
                     Button("Show intro again") {
                         UserDefaults.standard.set(false, forKey: "hasSeenOnboarding")
                     }
+                    Button("Show What's New again") {
+                        UserDefaults.standard.set("", forKey: "whatsNewSeen")
+                    }
                 }
                 #endif
             }

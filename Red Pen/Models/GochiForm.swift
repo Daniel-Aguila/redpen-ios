@@ -22,16 +22,16 @@ enum GochiForm: Int, CaseIterable, Identifiable {
         switch self {
         case .bean: 0
         case .sprout: 50
-        case .baby: 150
-        case .kinder: 400
-        case .young: 800
-        case .student: 1500
-        case .adult: 2500
-        case .teacher: 4000
-        case .scholar: 6000
-        case .sage: 9000
-        case .king: 13000
-        case .dragon: 18000
+        case .baby: 200
+        case .kinder: 500
+        case .young: 1000
+        case .student: 2000
+        case .adult: 4000
+        case .teacher: 6500
+        case .scholar: 10000
+        case .sage: 14000
+        case .king: 20000
+        case .dragon: 30000
         }
     }
     

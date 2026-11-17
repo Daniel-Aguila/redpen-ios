@@ -116,6 +116,12 @@ struct StatsView: View {
                         .font(.caption)
                         .foregroundStyle(.secondary)
                 }
+                NavigationLink {
+                    GochiJourneyView()
+                } label: {
+                    Label("Journey", systemImage: "map")
+                        .font(.caption.weight(.semibold))
+                }
             }
 
             Spacer()

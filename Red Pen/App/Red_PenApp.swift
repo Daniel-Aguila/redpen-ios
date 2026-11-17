@@ -11,6 +11,7 @@ import SwiftData
 @main
 struct Red_PenApp: App {
     @AppStorage("hasSeenOnboarding") private var hasSeenOnboarding = false
+    @AppStorage("whatsNewSeen") private var whatsNewSeen = ""
     @AppStorage("selectedTab") private var selectedTab = "practice"
     @AppStorage("reminderOn") private var reminderOn = false
     @AppStorage("reminderMinutes") private var reminderMinutes = 20 * 60
@@ -52,6 +53,12 @@ struct Red_PenApp: App {
                 set: { if !$0 { hasSeenOnboarding = true } }
             )) {
                 OnboardingView()
+            }
+            .sheet(isPresented: Binding(
+                get: { hasSeenOnboarding && whatsNewSeen != WhatsNewView.version },
+                set: { if !$0 { whatsNewSeen = WhatsNewView.version } }
+            )) {
+                WhatsNewView()
             }
             .fullScreenCover(item: $progress.pendingEvolution) { form in
                 EvolutionView(form: form)
