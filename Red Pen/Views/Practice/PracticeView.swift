@@ -64,7 +64,7 @@ struct PracticeView: View {
                     ProgressView(value: Double(index), total: Double(session.count))
                         .padding()
                     Spacer()
-                    ExerciseCardView(exercise: session[index]) { rating in
+                    ExerciseCardView(exercise: session[index], xp: xp) { rating in
                         finish(rating)
                     }
                     .id(session[index].id)

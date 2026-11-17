@@ -4,12 +4,13 @@
 //
 //  Created by Daniel Aguila on 11/16/26.
 //
-
 import SwiftUI
 
 struct GochiView: View {
     let xp: Int
     var celebrate: Int = 0
+    var hop: Int = 0
+    var wobble: Int = 0
 
     private var form: GochiForm { .forXP(xp) }
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
@@ -43,8 +44,45 @@ struct GochiView: View {
                         CubicKeyframe(1.2, duration: 0.12)
                         CubicKeyframe(0.85, duration: 0.15)
                         CubicKeyframe(1.0, duration: 0.3)
-                        CubicKeyframe(1.8, duration: 0.1)
+                        CubicKeyframe(1.3, duration: 0.1)
                         SpringKeyframe(1.0, duration: 0.3)
+                    }
+                }
+                .keyframeAnimator(initialValue: Flip(), trigger: reduceMotion ? 0 : hop) { view, h in
+                    view
+                        .scaleEffect(x: h.squash, y: 1 / h.squash, anchor: .bottom)
+                        .offset(y: h.jump * k)
+                } keyframes: { _ in
+                    KeyframeTrack(\.jump) {
+                        CubicKeyframe(0, duration: 0.08)
+                        CubicKeyframe(-25, duration: 0.15)
+                        CubicKeyframe(0, duration: 0.15)
+                        CubicKeyframe(-10, duration: 0.1)
+                        CubicKeyframe(0, duration: 0.1)
+                    }
+                    KeyframeTrack(\.squash) {
+                        CubicKeyframe(1.12, duration: 0.08)
+                        CubicKeyframe(0.92, duration: 0.15)
+                        CubicKeyframe(1.12, duration: 0.15)
+                        SpringKeyframe(1.0, duration: 0.2)
+                    }
+                }
+                .keyframeAnimator(initialValue: Flip(), trigger: reduceMotion ? 0 : wobble) { view, w in
+                    view
+                        .rotationEffect(.degrees(w.spin), anchor: .bottom)
+                        .scaleEffect(w.squash, anchor: .bottom)
+                } keyframes: { _ in
+                    KeyframeTrack(\.spin) {
+                        CubicKeyframe(-8, duration: 0.1)
+                        CubicKeyframe(8, duration: 0.12)
+                        CubicKeyframe(-5, duration: 0.12)
+                        CubicKeyframe(3, duration: 0.1)
+                        CubicKeyframe(0, duration: 0.1)
+                    }
+                    KeyframeTrack(\.squash) {
+                        CubicKeyframe(0.94, duration: 0.15)
+                        CubicKeyframe(0.94, duration: 0.25)
+                        SpringKeyframe(1.0, duration: 0.2)
                     }
                 }
         }
@@ -58,10 +96,17 @@ private struct Flip {
 }
 
 #Preview {
-    @Previewable @State var taps = 0
+    @Previewable @State var flips = 0
+    @Previewable @State var hops = 0
+    @Previewable @State var wobbles = 0
     VStack(spacing: 20) {
-        GochiView(xp: 900, celebrate: taps)
+        GochiView(xp: 900, celebrate: flips, hop: hops, wobble: wobbles)
             .frame(height: 160)
-        Button("Go") { taps += 1 }
+        HStack {
+            Button("Flip") { flips += 1 }
+            Button("Hop") { hops += 1 }
+            Button("Wobble") { wobbles += 1 }
+        }
+        .buttonStyle(.bordered)
     }
 }

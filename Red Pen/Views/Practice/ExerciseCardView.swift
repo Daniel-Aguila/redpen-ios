@@ -3,6 +3,7 @@ import SwiftData
 
 struct ExerciseCardView: View {
     let exercise: Exercise
+    let xp: Int
     let onFinish: (Rating) -> Void
 
     @State private var picked: String? = nil
@@ -10,6 +11,8 @@ struct ExerciseCardView: View {
     @State private var typed: String = ""
     @State private var result: AnswerResult? = nil
     @FocusState private var fieldFocused: Bool
+    @State private var hops = 0
+    @State private var wobbles = 0
 
     private var instruction: String {
         switch exercise.kind {
@@ -28,6 +31,8 @@ struct ExerciseCardView: View {
 
     var body: some View {
         VStack(spacing: 24) {
+            GochiView(xp: xp, hop: hops, wobble: wobbles)
+                .frame(height: 72)
             VStack(spacing: 12) {
                 Text(instruction)
                     .font(.subheadline.weight(.semibold))
@@ -59,6 +64,17 @@ struct ExerciseCardView: View {
             }
         }
         .sensoryFeedback(.impact(weight: .light), trigger: revealed)
+        .onChange(of: picked) { _, newValue in
+            guard let newValue else { return }
+            if newValue == exercise.answer { hops += 1} else { wobbles += 1}
+        }
+        .onChange(of: result) {_, newValue in
+            switch newValue {
+            case .correct: hops += 1
+            case .wrong: wobbles += 1
+            default: break
+            }
+        }
     }
 
     private var typeFixView: some View {
@@ -329,7 +345,7 @@ struct ExerciseCardView: View {
                       prompt: c.original,
                       choices: [],
                       answer: c.corrected)
-    return ExerciseCardView(exercise: ex) { rating in
+    return ExerciseCardView(exercise: ex, xp: 900) { rating in
         print(rating)
     }
     .modelContainer(for: Correction.self, inMemory: true)
