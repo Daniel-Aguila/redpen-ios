@@ -117,7 +117,7 @@ struct ExerciseCardView: View {
                     .font(.caption.weight(.semibold))
                     .foregroundStyle(.secondary)
                 Text(Self.marked(typed, against: exercise.answer, color: .red, strike: true))
-                Text("Correct")
+                Text("Should be")
                     .font(.caption.weight(.semibold))
                     .foregroundStyle(.secondary)
                     .padding(.top, 4)
