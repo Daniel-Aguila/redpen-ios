@@ -23,6 +23,10 @@ extension String {
         }
         return s
     }
+    
+    var subjectParticle: String {
+        (last?.hasBatchim ?? true) ? "이" : "가"
+    }
 }
 
 extension Character {

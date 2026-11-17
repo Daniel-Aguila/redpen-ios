@@ -8,9 +8,11 @@
 import Foundation
 import SwiftUI
 
-enum GochiForm: Int, CaseIterable {
+enum GochiForm: Int, CaseIterable, Identifiable {
     case bean = 1, sprout, baby, kinder, young, student,
          adult, teacher, scholar, sage, king, dragon
+    
+    var id: Int { rawValue }
     
     var minXP: Int {
         switch self {

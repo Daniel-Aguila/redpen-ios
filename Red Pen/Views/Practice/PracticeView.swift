@@ -24,6 +24,7 @@ struct PracticeView: View {
     @State private var correctCount = 0
     @State private var sessionXP = 0
     @State private var showingChart = false
+    @State private var evolvedTo: GochiForm? = nil
 
     private var pool: [Correction] {
         corrections.filter { c in
@@ -90,6 +91,9 @@ struct PracticeView: View {
             .sheet(isPresented: $showingChart) {
                 HangulChartView()
                     .presentationDetents([.medium, .large])
+            }
+            .fullScreenCover(item: $evolvedTo) { form in
+                EvolutionView(form: form)
             }
             .onChange(of: folders) {
                 if case .folder(let f) = scope, !folders.contains(f) {
@@ -259,7 +263,10 @@ struct PracticeView: View {
         countAnswer()
 
         let gained = rating == .again ? 2 : 10
+        let before = GochiForm.forXP(xp)
         xp += gained
+        let after = GochiForm.forXP(xp)
+        if after != before { evolvedTo = after }
         sessionXP += gained
 
         if rating != .again { correctCount += 1 }
