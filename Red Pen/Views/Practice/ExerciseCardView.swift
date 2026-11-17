@@ -93,6 +93,12 @@ struct ExerciseCardView: View {
                     .focused($fieldFocused)
                     .submitLabel(.done)
                     .onSubmit(check)
+                
+                if let speechHint {
+                    Label(speechHint, systemImage: "person.2.fill")
+                        .font(.footnote.weight(.semibold))
+                        .foregroundStyle(exercise.correction.type.color)
+                }
 
                 Button {
                     check()
@@ -296,6 +302,18 @@ struct ExerciseCardView: View {
                 .controlSize(.large)
             }
         }
+    }
+    
+    private var speechHint: String? {
+        guard exercise.correction.type == .speechLevel else { return nil }
+        let c = exercise.correction.corrected.trimmed.withoutTrailingPunctuation
+        if c.hasSuffix("니다") || c.hasSuffix("니까") {
+            return String(localized: "Use formal speech (합니다체)")
+        }
+        if c.hasSuffix("요") {
+            return String(localized: "Use polite speech (해요체)")
+        }
+        return String(localized: "Use casual speech (반말)")
     }
 
     private var speakButton: some View {
