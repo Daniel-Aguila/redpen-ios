@@ -124,7 +124,21 @@ struct HomeCardView: View {
     }
 }
 
-#Preview {
-    HomeCardView(dueCount: 3)
+private let gochiForms: [String] = [
+    "1-bean", "2-sprout", "3-baby", "4-kinder", "5-young", "6-student",
+    "7-adult", "8-teacher", "9-scholar", "10-sage", "11-king", "12-dragon"
+]
+
+#Preview("Gochi forms") {
+    ScrollView {
+        LazyVGrid(columns: [GridItem(.adaptive(minimum: 90))]) {
+            ForEach(gochiForms, id: \.self) { name in
+                Image("Gochi/" + name)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 90)
+            }
+        }
         .padding()
+    }
 }
