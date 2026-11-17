@@ -52,6 +52,44 @@ enum MistakeType: String, Codable, CaseIterable {
     }
 }
 
+enum CorrectionSource: String, Codable, CaseIterable {
+    case manual, share, lesson, story, diary, ai
+}
+
+enum Audience: String, Codable, CaseIterable {
+    case unknown, friend, younger, family, partner, coworker, boss, teacher, elder, stranger
+
+    var label: String {
+        switch self {
+        case .unknown: String(localized: "Not sure")
+        case .friend: String(localized: "Friend")
+        case .younger: String(localized: "Someone younger")
+        case .family: String(localized: "Family")
+        case .partner: String(localized: "Partner")
+        case .coworker: String(localized: "Coworker")
+        case .boss: String(localized: "Boss")
+        case .teacher: String(localized: "Teacher")
+        case .elder: String(localized: "Elder")
+        case .stranger: String(localized: "Stranger")
+        }
+    }
+
+    var symbol: String {
+        switch self {
+        case .unknown: "questionmark"
+        case .friend: "person.2"
+        case .younger: "figure.and.child.holdinghands"
+        case .family: "house"
+        case .partner: "heart"
+        case .coworker: "person.3"
+        case .boss: "briefcase"
+        case .teacher: "graduationcap"
+        case .elder: "figure.walk"
+        case .stranger: "person.fill.questionmark"
+        }
+    }
+}
+
 @Model
 final class Correction {
     var original: String = ""
@@ -62,6 +100,8 @@ final class Correction {
     var isTypeManual: Bool = false
     var createdAt: Date = Date.now
     var folder: Folder?
+    var sourceRaw: String = CorrectionSource.manual.rawValue
+    var audienceRaw: String = Audience.unknown.rawValue
     
     //scheduling
     var dueDate: Date = Date.now
@@ -70,6 +110,16 @@ final class Correction {
     var type: MistakeType {
         get { MistakeType(rawValue: typeRaw) ?? .other}
         set { typeRaw = newValue.rawValue}
+    }
+    
+    var source: CorrectionSource {
+        get { CorrectionSource(rawValue: sourceRaw) ?? .manual }
+        set { sourceRaw = newValue.rawValue }
+    }
+
+    var audience: Audience {
+        get { Audience(rawValue: audienceRaw) ?? .unknown }
+        set { audienceRaw = newValue.rawValue }
     }
     
     //init
