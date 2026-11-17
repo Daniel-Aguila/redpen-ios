@@ -10,13 +10,15 @@ import SwiftUI
 struct HomeCardView: View {
     let dueCount: Int
 
-    @AppStorage("xp") private var xp = 0
-    @AppStorage("streak") private var streak = 0
-    @AppStorage("lastPracticeDay") private var lastPracticeDay: Double = 0
+    @Environment(ProgressStore.self) private var progress
     @AppStorage("dailyGoal") private var dailyGoal = 10
-    @AppStorage("todayCount") private var todayCount = 0
-    @AppStorage("todayCountDay") private var todayCountDay: Double = 0
     @AppStorage("selectedTab") private var selectedTab = "practice"
+
+    private var xp: Int { progress.xp }
+    private var streak: Int { progress.streak }
+    private var lastPracticeDay: Double { progress.lastPracticeDay }
+    private var todayCount: Int { progress.todayCount }
+    private var todayCountDay: Double { progress.todayCountDay }
 
     @State private var gochiTaps = 0
     
@@ -147,4 +149,5 @@ struct HomeCardView: View {
     HomeCardView(dueCount: 3)
         .padding()
         .background(Color(.systemGroupedBackground))
+        .environment(ProgressStore())
 }

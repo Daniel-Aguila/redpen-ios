@@ -12,7 +12,8 @@ import SwiftData
 struct Red_PenApp: App {
     @AppStorage("hasSeenOnboarding") private var hasSeenOnboarding = false
     @AppStorage("selectedTab") private var selectedTab = "practice"
-    
+    @State private var progress = ProgressStore()
+
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Correction.self,
@@ -49,6 +50,10 @@ struct Red_PenApp: App {
             )) {
                 OnboardingView()
             }
+            .fullScreenCover(item: $progress.pendingEvolution) { form in
+                EvolutionView(form: form)
+            }
+            .environment(progress)
         }
         .modelContainer(sharedModelContainer)
     }

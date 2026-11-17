@@ -11,12 +11,7 @@ import SwiftData
 struct PracticeView: View {
     @Query private var corrections: [Correction]
     @Query(sort: \Folder.createdAt) private var folders: [Folder]
-
-    @AppStorage("streak") private var streak = 0
-    @AppStorage("lastPracticeDay") private var lastPracticeDay: Double = 0
-    @AppStorage("todayCount") private var todayCount = 0
-    @AppStorage("todayCountDay") private var todayCountDay: Double = 0
-    @AppStorage("xp") private var xp = 0
+    @Environment(ProgressStore.self) private var progress
 
     @State private var scope: PracticeScope = .all
     @State private var session: [Exercise] = []
@@ -24,7 +19,6 @@ struct PracticeView: View {
     @State private var correctCount = 0
     @State private var sessionXP = 0
     @State private var showingChart = false
-    @State private var evolvedTo: GochiForm? = nil
 
     private var pool: [Correction] {
         corrections.filter { c in
@@ -65,7 +59,7 @@ struct PracticeView: View {
                     ProgressView(value: Double(index), total: Double(session.count))
                         .padding()
                     Spacer()
-                    ExerciseCardView(exercise: session[index], xp: xp) { rating in
+                    ExerciseCardView(exercise: session[index], xp: progress.xp) { rating in
                         finish(rating)
                     }
                     .id(session[index].id)
@@ -91,9 +85,6 @@ struct PracticeView: View {
             .sheet(isPresented: $showingChart) {
                 HangulChartView()
                     .presentationDetents([.medium, .large])
-            }
-            .fullScreenCover(item: $evolvedTo) { form in
-                EvolutionView(form: form)
             }
             .onChange(of: folders) {
                 if case .folder(let f) = scope, !folders.contains(f) {
@@ -260,45 +251,18 @@ struct PracticeView: View {
         if correction.modelContext != nil {
             Scheduler.apply(rating, to: correction)
         }
-        countAnswer()
+        progress.countAnswer()
 
         let gained = rating == .again ? 2 : 10
-        let before = GochiForm.forXP(xp)
-        xp += gained
-        let after = GochiForm.forXP(xp)
-        if after != before { evolvedTo = after }
+        progress.earn(gained)
         sessionXP += gained
 
         if rating != .again { correctCount += 1 }
         index += 1
 
         if index == session.count {
-            recordPracticeDay()
+            progress.recordPracticeDay()
         }
-    }
-
-    private func recordPracticeDay() {
-        let calendar = Calendar.current
-        let today = calendar.startOfDay(for: .now)
-        let last = Date(timeIntervalSince1970: lastPracticeDay)
-
-        if calendar.isDate(last, inSameDayAs: today) { return }
-        if let yesterday = calendar.date(byAdding: .day, value: -1, to: today),
-           calendar.isDate(last, inSameDayAs: yesterday) {
-            streak += 1
-        } else {
-            streak = 1
-        }
-        lastPracticeDay = today.timeIntervalSince1970
-    }
-
-    private func countAnswer() {
-        let today = Calendar.current.startOfDay(for: .now).timeIntervalSince1970
-        if todayCountDay != today {
-            todayCount = 0
-            todayCountDay = today
-        }
-        todayCount += 1
     }
 }
 
@@ -328,4 +292,5 @@ struct PracticeView: View {
 
     return PracticeView()
         .modelContainer(container)
+        .environment(ProgressStore())
 }
