@@ -1,0 +1,927 @@
+[
+ {
+  "group": "01-growth-forms",
+  "name": "1-Bean",
+  "file": "svg/01-growth-forms/1-bean.svg"
+ },
+ {
+  "group": "01-growth-forms",
+  "name": "2-Sprout",
+  "file": "svg/01-growth-forms/2-sprout.svg"
+ },
+ {
+  "group": "01-growth-forms",
+  "name": "3-Baby",
+  "file": "svg/01-growth-forms/3-baby.svg"
+ },
+ {
+  "group": "01-growth-forms",
+  "name": "4-Kinder",
+  "file": "svg/01-growth-forms/4-kinder.svg"
+ },
+ {
+  "group": "01-growth-forms",
+  "name": "5-Young",
+  "file": "svg/01-growth-forms/5-young.svg"
+ },
+ {
+  "group": "01-growth-forms",
+  "name": "6-Student",
+  "file": "svg/01-growth-forms/6-student.svg"
+ },
+ {
+  "group": "01-growth-forms",
+  "name": "7-Adult",
+  "file": "svg/01-growth-forms/7-adult.svg"
+ },
+ {
+  "group": "01-growth-forms",
+  "name": "8-Teacher",
+  "file": "svg/01-growth-forms/8-teacher.svg"
+ },
+ {
+  "group": "01-growth-forms",
+  "name": "9-Scholar",
+  "file": "svg/01-growth-forms/9-scholar.svg"
+ },
+ {
+  "group": "01-growth-forms",
+  "name": "10-Sage",
+  "file": "svg/01-growth-forms/10-sage.svg"
+ },
+ {
+  "group": "01-growth-forms",
+  "name": "11-King",
+  "file": "svg/01-growth-forms/11-king.svg"
+ },
+ {
+  "group": "01-growth-forms",
+  "name": "12-Dragon",
+  "file": "svg/01-growth-forms/12-dragon.svg"
+ },
+ {
+  "group": "02-special-states",
+  "name": "Hot spring",
+  "file": "svg/02-special-states/hot-spring.svg"
+ },
+ {
+  "group": "02-special-states",
+  "name": "Sleepy",
+  "file": "svg/02-special-states/sleepy.svg"
+ },
+ {
+  "group": "02-special-states",
+  "name": "Streak fruit",
+  "file": "svg/02-special-states/streak-fruit.svg"
+ },
+ {
+  "group": "03-wardrobe",
+  "name": "Hanbok (baji)",
+  "file": "svg/03-wardrobe/hanbok-baji.svg"
+ },
+ {
+  "group": "03-wardrobe",
+  "name": "Hanbok (chima)",
+  "file": "svg/03-wardrobe/hanbok-chima.svg"
+ },
+ {
+  "group": "03-wardrobe",
+  "name": "Wedding: groom",
+  "file": "svg/03-wardrobe/wedding-groom.svg"
+ },
+ {
+  "group": "03-wardrobe",
+  "name": "Wedding: bride",
+  "file": "svg/03-wardrobe/wedding-bride.svg"
+ },
+ {
+  "group": "03-wardrobe",
+  "name": "Queen",
+  "file": "svg/03-wardrobe/queen.svg"
+ },
+ {
+  "group": "03-wardrobe",
+  "name": "General",
+  "file": "svg/03-wardrobe/general.svg"
+ },
+ {
+  "group": "03-wardrobe",
+  "name": "Pungmul",
+  "file": "svg/03-wardrobe/pungmul.svg"
+ },
+ {
+  "group": "03-wardrobe",
+  "name": "Haenyeo",
+  "file": "svg/03-wardrobe/haenyeo.svg"
+ },
+ {
+  "group": "03-wardrobe",
+  "name": "School A",
+  "file": "svg/03-wardrobe/school-a.svg"
+ },
+ {
+  "group": "03-wardrobe",
+  "name": "School B",
+  "file": "svg/03-wardrobe/school-b.svg"
+ },
+ {
+  "group": "03-wardrobe",
+  "name": "Idol A",
+  "file": "svg/03-wardrobe/idol-a.svg"
+ },
+ {
+  "group": "03-wardrobe",
+  "name": "Idol B",
+  "file": "svg/03-wardrobe/idol-b.svg"
+ },
+ {
+  "group": "03-wardrobe",
+  "name": "Office",
+  "file": "svg/03-wardrobe/office.svg"
+ },
+ {
+  "group": "03-wardrobe",
+  "name": "Hiker",
+  "file": "svg/03-wardrobe/hiker.svg"
+ },
+ {
+  "group": "03-wardrobe",
+  "name": "Jjimjilbang",
+  "file": "svg/03-wardrobe/jjimjilbang.svg"
+ },
+ {
+  "group": "03-wardrobe",
+  "name": "Ramyeon night",
+  "file": "svg/03-wardrobe/ramyeon-night.svg"
+ },
+ {
+  "group": "03-wardrobe",
+  "name": "Winter",
+  "file": "svg/03-wardrobe/winter.svg"
+ },
+ {
+  "group": "03-wardrobe",
+  "name": "Rainy day",
+  "file": "svg/03-wardrobe/rainy-day.svg"
+ },
+ {
+  "group": "03-wardrobe",
+  "name": "Taekwondo",
+  "file": "svg/03-wardrobe/taekwondo.svg"
+ },
+ {
+  "group": "03-wardrobe",
+  "name": "Graduation",
+  "file": "svg/03-wardrobe/graduation.svg"
+ },
+ {
+  "group": "03-wardrobe",
+  "name": "Tiger",
+  "file": "svg/03-wardrobe/tiger.svg"
+ },
+ {
+  "group": "03-wardrobe",
+  "name": "Dokkaebi",
+  "file": "svg/03-wardrobe/dokkaebi.svg"
+ },
+ {
+  "group": "03-wardrobe",
+  "name": "Gumiho",
+  "file": "svg/03-wardrobe/gumiho.svg"
+ },
+ {
+  "group": "03-wardrobe",
+  "name": "Gold Gochi",
+  "file": "svg/03-wardrobe/gold-gochi.svg"
+ },
+ {
+  "group": "04-hanbok",
+  "name": "First birthday A",
+  "file": "svg/04-hanbok/first-birthday-a.svg"
+ },
+ {
+  "group": "04-hanbok",
+  "name": "First birthday B",
+  "file": "svg/04-hanbok/first-birthday-b.svg"
+ },
+ {
+  "group": "04-hanbok",
+  "name": "Saekdong A",
+  "file": "svg/04-hanbok/saekdong-a.svg"
+ },
+ {
+  "group": "04-hanbok",
+  "name": "Saekdong B",
+  "file": "svg/04-hanbok/saekdong-b.svg"
+ },
+ {
+  "group": "04-hanbok",
+  "name": "Prince",
+  "file": "svg/04-hanbok/prince.svg"
+ },
+ {
+  "group": "04-hanbok",
+  "name": "Princess",
+  "file": "svg/04-hanbok/princess.svg"
+ },
+ {
+  "group": "04-hanbok",
+  "name": "Court lady",
+  "file": "svg/04-hanbok/court-lady.svg"
+ },
+ {
+  "group": "04-hanbok",
+  "name": "Dopo",
+  "file": "svg/04-hanbok/dopo.svg"
+ },
+ {
+  "group": "04-hanbok",
+  "name": "Durumagi",
+  "file": "svg/04-hanbok/durumagi.svg"
+ },
+ {
+  "group": "04-hanbok",
+  "name": "Baeja",
+  "file": "svg/04-hanbok/baeja.svg"
+ },
+ {
+  "group": "04-hanbok",
+  "name": "Jangot",
+  "file": "svg/04-hanbok/jangot.svg"
+ },
+ {
+  "group": "04-hanbok",
+  "name": "Seollal",
+  "file": "svg/04-hanbok/seollal.svg"
+ },
+ {
+  "group": "04-hanbok",
+  "name": "Modern A",
+  "file": "svg/04-hanbok/modern-a.svg"
+ },
+ {
+  "group": "04-hanbok",
+  "name": "Modern B",
+  "file": "svg/04-hanbok/modern-b.svg"
+ },
+ {
+  "group": "04-hanbok",
+  "name": "Spring",
+  "file": "svg/04-hanbok/spring.svg"
+ },
+ {
+  "group": "04-hanbok",
+  "name": "Night",
+  "file": "svg/04-hanbok/night.svg"
+ },
+ {
+  "group": "05-themes",
+  "name": "Chef",
+  "file": "svg/05-themes/chef.svg"
+ },
+ {
+  "group": "05-themes",
+  "name": "Barista",
+  "file": "svg/05-themes/barista.svg"
+ },
+ {
+  "group": "05-themes",
+  "name": "Delivery rider",
+  "file": "svg/05-themes/delivery-rider.svg"
+ },
+ {
+  "group": "05-themes",
+  "name": "Doctor",
+  "file": "svg/05-themes/doctor.svg"
+ },
+ {
+  "group": "05-themes",
+  "name": "Tteokbokki stall",
+  "file": "svg/05-themes/tteokbokki-stall.svg"
+ },
+ {
+  "group": "05-themes",
+  "name": "Kimbap",
+  "file": "svg/05-themes/kimbap.svg"
+ },
+ {
+  "group": "05-themes",
+  "name": "Fried chicken",
+  "file": "svg/05-themes/fried-chicken.svg"
+ },
+ {
+  "group": "05-themes",
+  "name": "Bibimbap",
+  "file": "svg/05-themes/bibimbap.svg"
+ },
+ {
+  "group": "05-themes",
+  "name": "Baseball fan",
+  "file": "svg/05-themes/baseball-fan.svg"
+ },
+ {
+  "group": "05-themes",
+  "name": "Archer",
+  "file": "svg/05-themes/archer.svg"
+ },
+ {
+  "group": "05-themes",
+  "name": "Football fan",
+  "file": "svg/05-themes/football-fan.svg"
+ },
+ {
+  "group": "05-themes",
+  "name": "Esports",
+  "file": "svg/05-themes/esports.svg"
+ },
+ {
+  "group": "05-themes",
+  "name": "Chuseok",
+  "file": "svg/05-themes/chuseok.svg"
+ },
+ {
+  "group": "05-themes",
+  "name": "Christmas",
+  "file": "svg/05-themes/christmas.svg"
+ },
+ {
+  "group": "05-themes",
+  "name": "Birthday",
+  "file": "svg/05-themes/birthday.svg"
+ },
+ {
+  "group": "05-themes",
+  "name": "Hangul Day",
+  "file": "svg/05-themes/hangul-day.svg"
+ },
+ {
+  "group": "05-themes",
+  "name": "Magpie",
+  "file": "svg/05-themes/magpie.svg"
+ },
+ {
+  "group": "05-themes",
+  "name": "Haetae",
+  "file": "svg/05-themes/haetae.svg"
+ },
+ {
+  "group": "05-themes",
+  "name": "Bear",
+  "file": "svg/05-themes/bear.svg"
+ },
+ {
+  "group": "05-themes",
+  "name": "Moon rabbit",
+  "file": "svg/05-themes/moon-rabbit.svg"
+ },
+ {
+  "group": "06-world",
+  "name": "Mariachi",
+  "file": "svg/06-world/mariachi.svg"
+ },
+ {
+  "group": "06-world",
+  "name": "Folklorico",
+  "file": "svg/06-world/folklorico.svg"
+ },
+ {
+  "group": "06-world",
+  "name": "Catrina",
+  "file": "svg/06-world/catrina.svg"
+ },
+ {
+  "group": "06-world",
+  "name": "Catrin",
+  "file": "svg/06-world/catrin.svg"
+ },
+ {
+  "group": "06-world",
+  "name": "Luchador",
+  "file": "svg/06-world/luchador.svg"
+ },
+ {
+  "group": "06-world",
+  "name": "Tehuana",
+  "file": "svg/06-world/tehuana.svg"
+ },
+ {
+  "group": "06-world",
+  "name": "Japan",
+  "file": "svg/06-world/japan.svg"
+ },
+ {
+  "group": "06-world",
+  "name": "China",
+  "file": "svg/06-world/china.svg"
+ },
+ {
+  "group": "06-world",
+  "name": "Vietnam",
+  "file": "svg/06-world/vietnam.svg"
+ },
+ {
+  "group": "06-world",
+  "name": "Thailand",
+  "file": "svg/06-world/thailand.svg"
+ },
+ {
+  "group": "06-world",
+  "name": "India",
+  "file": "svg/06-world/india.svg"
+ },
+ {
+  "group": "06-world",
+  "name": "Philippines",
+  "file": "svg/06-world/philippines.svg"
+ },
+ {
+  "group": "06-world",
+  "name": "Indonesia",
+  "file": "svg/06-world/indonesia.svg"
+ },
+ {
+  "group": "06-world",
+  "name": "Mongolia",
+  "file": "svg/06-world/mongolia.svg"
+ },
+ {
+  "group": "06-world",
+  "name": "Scotland",
+  "file": "svg/06-world/scotland.svg"
+ },
+ {
+  "group": "06-world",
+  "name": "United Kingdom",
+  "file": "svg/06-world/united-kingdom.svg"
+ },
+ {
+  "group": "06-world",
+  "name": "Netherlands",
+  "file": "svg/06-world/netherlands.svg"
+ },
+ {
+  "group": "06-world",
+  "name": "Germany",
+  "file": "svg/06-world/germany.svg"
+ },
+ {
+  "group": "06-world",
+  "name": "France",
+  "file": "svg/06-world/france.svg"
+ },
+ {
+  "group": "06-world",
+  "name": "Spain",
+  "file": "svg/06-world/spain.svg"
+ },
+ {
+  "group": "06-world",
+  "name": "Italy",
+  "file": "svg/06-world/italy.svg"
+ },
+ {
+  "group": "06-world",
+  "name": "Greece",
+  "file": "svg/06-world/greece.svg"
+ },
+ {
+  "group": "06-world",
+  "name": "Russia",
+  "file": "svg/06-world/russia.svg"
+ },
+ {
+  "group": "06-world",
+  "name": "Ukraine",
+  "file": "svg/06-world/ukraine.svg"
+ },
+ {
+  "group": "06-world",
+  "name": "Sweden",
+  "file": "svg/06-world/sweden.svg"
+ },
+ {
+  "group": "06-world",
+  "name": "Egypt",
+  "file": "svg/06-world/egypt.svg"
+ },
+ {
+  "group": "06-world",
+  "name": "Morocco",
+  "file": "svg/06-world/morocco.svg"
+ },
+ {
+  "group": "06-world",
+  "name": "Nigeria",
+  "file": "svg/06-world/nigeria.svg"
+ },
+ {
+  "group": "06-world",
+  "name": "Ghana",
+  "file": "svg/06-world/ghana.svg"
+ },
+ {
+  "group": "06-world",
+  "name": "Kenya",
+  "file": "svg/06-world/kenya.svg"
+ },
+ {
+  "group": "06-world",
+  "name": "United States",
+  "file": "svg/06-world/united-states.svg"
+ },
+ {
+  "group": "06-world",
+  "name": "Canada",
+  "file": "svg/06-world/canada.svg"
+ },
+ {
+  "group": "06-world",
+  "name": "Brazil",
+  "file": "svg/06-world/brazil.svg"
+ },
+ {
+  "group": "06-world",
+  "name": "Argentina",
+  "file": "svg/06-world/argentina.svg"
+ },
+ {
+  "group": "06-world",
+  "name": "Peru",
+  "file": "svg/06-world/peru.svg"
+ },
+ {
+  "group": "06-world",
+  "name": "Colombia",
+  "file": "svg/06-world/colombia.svg"
+ },
+ {
+  "group": "07-zodiac",
+  "name": "Rat",
+  "file": "svg/07-zodiac/rat.svg"
+ },
+ {
+  "group": "07-zodiac",
+  "name": "Ox",
+  "file": "svg/07-zodiac/ox.svg"
+ },
+ {
+  "group": "07-zodiac",
+  "name": "Tiger",
+  "file": "svg/07-zodiac/tiger.svg"
+ },
+ {
+  "group": "07-zodiac",
+  "name": "Rabbit",
+  "file": "svg/07-zodiac/rabbit.svg"
+ },
+ {
+  "group": "07-zodiac",
+  "name": "Dragon",
+  "file": "svg/07-zodiac/dragon.svg"
+ },
+ {
+  "group": "07-zodiac",
+  "name": "Snake",
+  "file": "svg/07-zodiac/snake.svg"
+ },
+ {
+  "group": "07-zodiac",
+  "name": "Horse",
+  "file": "svg/07-zodiac/horse.svg"
+ },
+ {
+  "group": "07-zodiac",
+  "name": "Goat",
+  "file": "svg/07-zodiac/goat.svg"
+ },
+ {
+  "group": "07-zodiac",
+  "name": "Monkey",
+  "file": "svg/07-zodiac/monkey.svg"
+ },
+ {
+  "group": "07-zodiac",
+  "name": "Rooster",
+  "file": "svg/07-zodiac/rooster.svg"
+ },
+ {
+  "group": "07-zodiac",
+  "name": "Dog",
+  "file": "svg/07-zodiac/dog.svg"
+ },
+ {
+  "group": "07-zodiac",
+  "name": "Pig",
+  "file": "svg/07-zodiac/pig.svg"
+ },
+ {
+  "group": "08-animals",
+  "name": "Panda",
+  "file": "svg/08-animals/panda.svg"
+ },
+ {
+  "group": "08-animals",
+  "name": "Cat",
+  "file": "svg/08-animals/cat.svg"
+ },
+ {
+  "group": "08-animals",
+  "name": "Frog",
+  "file": "svg/08-animals/frog.svg"
+ },
+ {
+  "group": "08-animals",
+  "name": "Penguin",
+  "file": "svg/08-animals/penguin.svg"
+ },
+ {
+  "group": "08-animals",
+  "name": "Chick",
+  "file": "svg/08-animals/chick.svg"
+ },
+ {
+  "group": "08-animals",
+  "name": "Bee",
+  "file": "svg/08-animals/bee.svg"
+ },
+ {
+  "group": "08-animals",
+  "name": "Dinosaur",
+  "file": "svg/08-animals/dinosaur.svg"
+ },
+ {
+  "group": "08-animals",
+  "name": "Shark",
+  "file": "svg/08-animals/shark.svg"
+ },
+ {
+  "group": "08-animals",
+  "name": "Unicorn",
+  "file": "svg/08-animals/unicorn.svg"
+ },
+ {
+  "group": "08-animals",
+  "name": "Fox",
+  "file": "svg/08-animals/fox.svg"
+ },
+ {
+  "group": "08-animals",
+  "name": "Koala",
+  "file": "svg/08-animals/koala.svg"
+ },
+ {
+  "group": "08-animals",
+  "name": "Axolotl",
+  "file": "svg/08-animals/axolotl.svg"
+ },
+ {
+  "group": "09-holidays-seasons",
+  "name": "New Year's Eve",
+  "file": "svg/09-holidays-seasons/new-year-s-eve.svg"
+ },
+ {
+  "group": "09-holidays-seasons",
+  "name": "Valentine's Day",
+  "file": "svg/09-holidays-seasons/valentine-s-day.svg"
+ },
+ {
+  "group": "09-holidays-seasons",
+  "name": "Children's Day",
+  "file": "svg/09-holidays-seasons/children-s-day.svg"
+ },
+ {
+  "group": "09-holidays-seasons",
+  "name": "Parents' Day",
+  "file": "svg/09-holidays-seasons/parents-day.svg"
+ },
+ {
+  "group": "09-holidays-seasons",
+  "name": "Pumpkin",
+  "file": "svg/09-holidays-seasons/pumpkin.svg"
+ },
+ {
+  "group": "09-holidays-seasons",
+  "name": "Ghost",
+  "file": "svg/09-holidays-seasons/ghost.svg"
+ },
+ {
+  "group": "09-holidays-seasons",
+  "name": "Witch",
+  "file": "svg/09-holidays-seasons/witch.svg"
+ },
+ {
+  "group": "09-holidays-seasons",
+  "name": "Vampire",
+  "file": "svg/09-holidays-seasons/vampire.svg"
+ },
+ {
+  "group": "09-holidays-seasons",
+  "name": "Summer",
+  "file": "svg/09-holidays-seasons/summer.svg"
+ },
+ {
+  "group": "09-holidays-seasons",
+  "name": "Autumn",
+  "file": "svg/09-holidays-seasons/autumn.svg"
+ },
+ {
+  "group": "09-holidays-seasons",
+  "name": "Snowman",
+  "file": "svg/09-holidays-seasons/snowman.svg"
+ },
+ {
+  "group": "09-holidays-seasons",
+  "name": "Black Day",
+  "file": "svg/09-holidays-seasons/black-day.svg"
+ },
+ {
+  "group": "10-cute-costumes",
+  "name": "Pajamas",
+  "file": "svg/10-cute-costumes/pajamas.svg"
+ },
+ {
+  "group": "10-cute-costumes",
+  "name": "Astronaut",
+  "file": "svg/10-cute-costumes/astronaut.svg"
+ },
+ {
+  "group": "10-cute-costumes",
+  "name": "Mermaid",
+  "file": "svg/10-cute-costumes/mermaid.svg"
+ },
+ {
+  "group": "10-cute-costumes",
+  "name": "Superhero",
+  "file": "svg/10-cute-costumes/superhero.svg"
+ },
+ {
+  "group": "10-cute-costumes",
+  "name": "Strawberry",
+  "file": "svg/10-cute-costumes/strawberry.svg"
+ },
+ {
+  "group": "10-cute-costumes",
+  "name": "Bubble tea",
+  "file": "svg/10-cute-costumes/bubble-tea.svg"
+ },
+ {
+  "group": "10-cute-costumes",
+  "name": "Sunflower",
+  "file": "svg/10-cute-costumes/sunflower.svg"
+ },
+ {
+  "group": "10-cute-costumes",
+  "name": "Mushroom",
+  "file": "svg/10-cute-costumes/mushroom.svg"
+ },
+ {
+  "group": "11-size-samples",
+  "name": "mariachi-tiny",
+  "file": "svg/11-size-samples/mariachi-tiny.svg"
+ },
+ {
+  "group": "11-size-samples",
+  "name": "mariachi-baby",
+  "file": "svg/11-size-samples/mariachi-baby.svg"
+ },
+ {
+  "group": "11-size-samples",
+  "name": "mariachi-kid",
+  "file": "svg/11-size-samples/mariachi-kid.svg"
+ },
+ {
+  "group": "11-size-samples",
+  "name": "mariachi-young",
+  "file": "svg/11-size-samples/mariachi-young.svg"
+ },
+ {
+  "group": "11-size-samples",
+  "name": "mariachi-teen",
+  "file": "svg/11-size-samples/mariachi-teen.svg"
+ },
+ {
+  "group": "11-size-samples",
+  "name": "mariachi-adult",
+  "file": "svg/11-size-samples/mariachi-adult.svg"
+ },
+ {
+  "group": "11-size-samples",
+  "name": "folklorico-tiny",
+  "file": "svg/11-size-samples/folklorico-tiny.svg"
+ },
+ {
+  "group": "11-size-samples",
+  "name": "folklorico-baby",
+  "file": "svg/11-size-samples/folklorico-baby.svg"
+ },
+ {
+  "group": "11-size-samples",
+  "name": "folklorico-kid",
+  "file": "svg/11-size-samples/folklorico-kid.svg"
+ },
+ {
+  "group": "11-size-samples",
+  "name": "folklorico-young",
+  "file": "svg/11-size-samples/folklorico-young.svg"
+ },
+ {
+  "group": "11-size-samples",
+  "name": "folklorico-teen",
+  "file": "svg/11-size-samples/folklorico-teen.svg"
+ },
+ {
+  "group": "11-size-samples",
+  "name": "folklorico-adult",
+  "file": "svg/11-size-samples/folklorico-adult.svg"
+ },
+ {
+  "group": "11-size-samples",
+  "name": "panda-tiny",
+  "file": "svg/11-size-samples/panda-tiny.svg"
+ },
+ {
+  "group": "11-size-samples",
+  "name": "panda-baby",
+  "file": "svg/11-size-samples/panda-baby.svg"
+ },
+ {
+  "group": "11-size-samples",
+  "name": "panda-kid",
+  "file": "svg/11-size-samples/panda-kid.svg"
+ },
+ {
+  "group": "11-size-samples",
+  "name": "panda-young",
+  "file": "svg/11-size-samples/panda-young.svg"
+ },
+ {
+  "group": "11-size-samples",
+  "name": "panda-teen",
+  "file": "svg/11-size-samples/panda-teen.svg"
+ },
+ {
+  "group": "11-size-samples",
+  "name": "panda-adult",
+  "file": "svg/11-size-samples/panda-adult.svg"
+ },
+ {
+  "group": "11-size-samples",
+  "name": "chick-tiny",
+  "file": "svg/11-size-samples/chick-tiny.svg"
+ },
+ {
+  "group": "11-size-samples",
+  "name": "chick-baby",
+  "file": "svg/11-size-samples/chick-baby.svg"
+ },
+ {
+  "group": "11-size-samples",
+  "name": "chick-kid",
+  "file": "svg/11-size-samples/chick-kid.svg"
+ },
+ {
+  "group": "11-size-samples",
+  "name": "chick-young",
+  "file": "svg/11-size-samples/chick-young.svg"
+ },
+ {
+  "group": "11-size-samples",
+  "name": "chick-teen",
+  "file": "svg/11-size-samples/chick-teen.svg"
+ },
+ {
+  "group": "11-size-samples",
+  "name": "chick-adult",
+  "file": "svg/11-size-samples/chick-adult.svg"
+ },
+ {
+  "group": "11-size-samples",
+  "name": "pumpkin-tiny",
+  "file": "svg/11-size-samples/pumpkin-tiny.svg"
+ },
+ {
+  "group": "11-size-samples",
+  "name": "pumpkin-baby",
+  "file": "svg/11-size-samples/pumpkin-baby.svg"
+ },
+ {
+  "group": "11-size-samples",
+  "name": "pumpkin-kid",
+  "file": "svg/11-size-samples/pumpkin-kid.svg"
+ },
+ {
+  "group": "11-size-samples",
+  "name": "pumpkin-young",
+  "file": "svg/11-size-samples/pumpkin-young.svg"
+ },
+ {
+  "group": "11-size-samples",
+  "name": "pumpkin-teen",
+  "file": "svg/11-size-samples/pumpkin-teen.svg"
+ },
+ {
+  "group": "11-size-samples",
+  "name": "pumpkin-adult",
+  "file": "svg/11-size-samples/pumpkin-adult.svg"
+ }
+]
