@@ -18,11 +18,13 @@ struct HomeCardView: View {
     @AppStorage("todayCountDay") private var todayCountDay: Double = 0
     @AppStorage("selectedTab") private var selectedTab = "practice"
 
-    private var level: Level { Level.forXP(xp) }
+    @State private var gochiTaps = 0
+    
+    private var gochi: GochiForm {.forXP(xp)}
 
-    private var levelProgress: Double {
-        guard let next = level.next else { return 1 }
-        return Double(xp - level.minXP) / Double(next.minXP - level.minXP)
+    private var gochiProgress: Double {
+        guard let next = gochi.next else { return 1 }
+        return Double(xp - gochi.minXP) / Double(next.minXP - gochi.minXP)
     }
 
     private var currentStreak: Int {
@@ -68,23 +70,33 @@ struct HomeCardView: View {
                 }
             }
 
-            VStack(alignment: .leading, spacing: 6) {
-                HStack {
-                    Text("\(level.emoji) Lv \(level.rawValue) · \(level.title)")
-                        .font(.subheadline.weight(.semibold))
-                    Spacer()
-                    if let next = level.next {
-                        Text("\(xp) / \(next.minXP) XP")
-                            .font(.caption)
-                            .foregroundStyle(.secondary)
-                    } else {
-                        Text("Max level")
-                            .font(.caption)
-                            .foregroundStyle(.secondary)
-                    }
+            HStack(spacing: 14) {
+                Button {
+                    gochiTaps += 1
+                } label: {
+                    GochiView(xp: xp, celebrate: gochiTaps)
+                        .frame(width: 72, height: 72)
+                        .contentShape(Rectangle())
                 }
-                ProgressView(value: levelProgress)
-                    .tint(.taegeukBlue)
+                .buttonStyle(.plain)
+                VStack(alignment: .leading, spacing: 6) {
+                    HStack {
+                        Text(verbatim: "고치 · \(gochi.title)")
+                            .font(.subheadline.weight(.semibold))
+                        Spacer()
+                        if let next = gochi.next {
+                            Text("\(xp) / \(next.minXP) XP")
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                        } else {
+                            Text("Max level")
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+                    ProgressView(value: gochiProgress)
+                        .tint(.taegeukBlue)
+                }
             }
 
             Button {
@@ -124,21 +136,8 @@ struct HomeCardView: View {
     }
 }
 
-private let gochiForms: [String] = [
-    "1-bean", "2-sprout", "3-baby", "4-kinder", "5-young", "6-student",
-    "7-adult", "8-teacher", "9-scholar", "10-sage", "11-king", "12-dragon"
-]
-
-#Preview("Gochi forms") {
-    ScrollView {
-        LazyVGrid(columns: [GridItem(.adaptive(minimum: 90))]) {
-            ForEach(gochiForms, id: \.self) { name in
-                Image("Gochi/" + name)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(height: 90)
-            }
-        }
+#Preview {
+    HomeCardView(dueCount: 3)
         .padding()
-    }
+        .background(Color(.systemGroupedBackground))
 }

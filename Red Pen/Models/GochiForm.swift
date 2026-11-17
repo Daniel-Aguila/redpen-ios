@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 enum GochiForm: Int, CaseIterable {
     case bean = 1, sprout, baby, kinder, young, student,
@@ -25,6 +26,35 @@ enum GochiForm: Int, CaseIterable {
         case .sage: 9000
         case .king: 13000
         case .dragon: 18000
+        }
+    }
+    
+    var center: UnitPoint {
+        switch self {
+        case .bean: UnitPoint(x: 0.5, y: 0.78)
+        case .sprout: UnitPoint(x: 0.5, y: 0.66)
+        case .baby: UnitPoint(x: 0.5, y: 0.60)
+        case .kinder: UnitPoint(x: 0.5, y: 0.59)
+        case .young: UnitPoint(x: 0.5, y: 0.57)
+        case .student: UnitPoint(x: 0.5, y: 0.56)
+        default: UnitPoint(x: 0.5, y: 0.55)
+        }
+    }
+    
+    var title: String {
+        switch self {
+        case .bean: "콩알"
+        case .sprout: "새싹"
+        case .baby: "아기"
+        case .kinder: "유치원생"
+        case .young: "어린이"
+        case .student: "학생"
+        case .adult: "어른"
+        case .teacher: "선생님"
+        case .scholar: "선비"
+        case .sage: "도사"
+        case .king: "왕"
+        case .dragon: "용"
         }
     }
     
