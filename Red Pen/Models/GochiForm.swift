@@ -14,17 +14,17 @@ enum GochiForm: Int, CaseIterable {
     var minXP: Int {
         switch self {
         case .bean: 0
-        case .sprout: 5
-        case .baby: 15
-        case .kinder: 40
-        case .young: 80
-        case .student: 150
-        case .adult: 250
-        case .teacher: 400
-        case .scholar: 600
-        case .sage: 900
-        case .king: 1300
-        case .dragon: 1800
+        case .sprout: 50
+        case .baby: 150
+        case .kinder: 400
+        case .young: 800
+        case .student: 1500
+        case .adult: 2500
+        case .teacher: 4000
+        case .scholar: 6000
+        case .sage: 9000
+        case .king: 13000
+        case .dragon: 18000
         }
     }
     
