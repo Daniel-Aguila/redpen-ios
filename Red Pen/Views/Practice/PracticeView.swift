@@ -248,13 +248,19 @@ struct PracticeView: View {
 
     private func finish(_ rating: Rating) {
         let correction = session[index].correction
+        let wasDue = correction.dueDate <= .now
         if correction.modelContext != nil {
             Scheduler.apply(rating, to: correction)
         }
         progress.countAnswer()
 
-        let gained = rating == .again ? 2 : 10
-        progress.earn(gained)
+        let gained: Int
+        if wasDue {
+            gained = rating == .again ? 2 : 10
+        } else {
+            gained = rating == .again ? 0 : 1
+        }
+        if gained > 0 { progress.earn(gained) }
         sessionXP += gained
 
         if rating != .again { correctCount += 1 }
