@@ -42,8 +42,8 @@ struct ExerciseCardView: View {
                     .multilineTextAlignment(.center)
                     .frame(maxWidth: .infinity)
                 if let speechHint {
-                    Label(speechHint, systemImage: "person.2.fill")
-                        .font(.footnote.weight(.semibold))
+                    Label(speechHint, systemImage: exercise.correction.audience == .unknown
+                          ? "person.2.fill" : exercise.correction.audience.symbol)                        .font(.footnote.weight(.semibold))
                         .foregroundStyle(exercise.correction.type.color)
                 }
             }
@@ -305,6 +305,10 @@ struct ExerciseCardView: View {
     
     private var speechHint: String? {
         guard exercise.correction.type == .speechLevel else { return nil }
+        let who = exercise.correction.audience
+        if who != .unknown {
+            return String(localized: "You're talking to: \(who.label)")
+        }
         let c = exercise.correction.corrected.trimmed.withoutTrailingPunctuation
         if c.hasSuffix("니다") || c.hasSuffix("니까") {
             return String(localized: "Use formal speech (합니다체)")
@@ -358,6 +362,7 @@ struct ExerciseCardView: View {
 #Preview {
     let c = Correction(original: "밥 먹었어", corrected: "밥 먹었어요")
     c.type = .speechLevel
+    c.audience = .boss
     let ex = Exercise(correction: c, kind: .typeFix,
                       prompt: c.original,
                       choices: [],
