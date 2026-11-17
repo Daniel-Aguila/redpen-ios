@@ -22,6 +22,7 @@ struct AddCorrectionView: View {
     @State private var original = ""
     @State private var corrected = ""
     @State private var note = ""
+    @State private var audience: Audience = .unknown
     
     var correction: Correction? = nil
     
@@ -40,6 +41,13 @@ struct AddCorrectionView: View {
                 }
                 Section("Corrected") {
                     TextField("Partner's correction", text: $corrected, axis: .vertical)
+                }
+                Section("Talking to") {
+                    Picker("Talking to", selection: $audience) {
+                        ForEach(Audience.allCases, id: \.self) { a in
+                            Label(a.label, systemImage: a.symbol).tag(a)
+                        }
+                    }
                 }
 
                 if !original.trimmed.isEmpty && original.trimmed == corrected.trimmed {
@@ -83,6 +91,7 @@ struct AddCorrectionView: View {
                     corrected = correction.corrected
                     note = correction.note
                     folder = correction.folder
+                    audience = correction.audience
                 }
             }
             .toolbar {
@@ -129,9 +138,11 @@ struct AddCorrectionView: View {
             correction.corrected = c
             correction.note = n
             correction.folder = folder
+            correction.audience = audience
         } else {
             let cr = Correction(original: o, corrected: c, note: n)
             cr.folder = folder
+            cr.audience = audience
             cr.type = MistakeDetector.detect(original: o, corrected: c)
             modelContext.insert(cr)
             xp += 5

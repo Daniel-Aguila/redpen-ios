@@ -34,7 +34,7 @@ struct OnboardingView: View {
     private var welcomePage: some View {
         VStack(spacing: 20) {
             PageTitle(marked: "오답", rest: "노트", subtitle: "Your Korean mistake notebook")
-            Text("When a Korean speaker corrects your sentence, save it here. Red Pen explains the mistake and turns it into practice.")
+            Text("When a Korean speaker corrects your sentence, save it here. Gochim explains the mistake and turns it into practice.")
                 .multilineTextAlignment(.center)
                 .foregroundStyle(.secondary)
                 .padding(.horizontal, 32)

@@ -1,6 +1,6 @@
 //
 //  ProRoadmapView.swift
-//  Red Pen
+//  Gochim
 //
 //  Created by Daniel Aguila on 11/4/26.
 //
@@ -15,7 +15,7 @@ struct ProRoadmapView: View {
                     Image(systemName: "sparkles")
                         .font(.system(size: 44))
                         .foregroundStyle(Color.accentColor)
-                    Text("Red Pen Pro")
+                    Text("Gochim Pro")
                         .font(.title.weight(.heavy))
                     Text("Coming soon")
                         .font(.caption.weight(.semibold))
@@ -23,7 +23,7 @@ struct ProRoadmapView: View {
                         .padding(.horizontal, 10)
                         .padding(.vertical, 4)
                         .background(Color.accentColor.opacity(0.15), in: Capsule())
-                    Text("Everything in Red Pen today stays free. Pro will add deeper help on top. These features are planned and not available yet.")
+                    Text("Everything in Gochim today stays free. Pro will add deeper help on top. These features are planned and not available yet.")
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                         .multilineTextAlignment(.center)

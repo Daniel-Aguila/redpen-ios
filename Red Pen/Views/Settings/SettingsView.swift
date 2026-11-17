@@ -33,7 +33,7 @@ struct SettingsView: View {
                     NavigationLink {
                         ProRoadmapView()
                     } label: {
-                        Label("Red Pen Pro", systemImage: "sparkles")
+                        Label("Gochim Pro", systemImage: "sparkles")
                     }
                 } footer: {
                     Text("Coming soon. See what's planned")
