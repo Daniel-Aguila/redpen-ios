@@ -11,6 +11,7 @@ struct GochiView: View {
     var celebrate: Int = 0
     var hop: Int = 0
     var wobble: Int = 0
+    var mood: GochiMood = .awake
 
     private var form: GochiForm { .forXP(xp) }
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
@@ -85,6 +86,32 @@ struct GochiView: View {
                         SpringKeyframe(1.0, duration: 0.2)
                     }
                 }
+                .phaseAnimator([false, true]) { view, inhale in
+                    view.scaleEffect(reduceMotion ? 1 : (inhale ? 1.025 : 1), anchor: .bottom)
+                } animation: { _ in
+                    .easeInOut(duration: mood == .sleepy ? 2.4 : 1.6)
+                }
+                .saturation(mood == .sleepy ? 0.6 : 1)
+                .overlay {
+                    let artH = min(geo.size.height, geo.size.width * 212 / 220)
+                    let artW = artH * 220 / 212
+                    let x0 = (geo.size.width - artW) / 2
+                    let y0 = (geo.size.height - artH) / 2
+
+                    switch mood {
+                    case .happy:
+                        Text("🍊")
+                            .font(.system(size: 34 * k))
+                            .position(x: x0 + artW * 0.88, y: y0 + artH * 0.86)
+                    case .sleepy:
+                        Text("z")
+                            .font(.system(size: 30 * k, weight: .heavy))
+                            .foregroundStyle(.secondary)
+                            .position(x: x0 + artW * 0.80, y: y0 + artH * (form.center.y - 0.32))
+                    case .awake:
+                        EmptyView()
+                    }
+                }
         }
     }
 }
@@ -99,8 +126,9 @@ private struct Flip {
     @Previewable @State var flips = 0
     @Previewable @State var hops = 0
     @Previewable @State var wobbles = 0
+    @Previewable @State var mood: GochiMood = .awake
     VStack(spacing: 20) {
-        GochiView(xp: 900, celebrate: flips, hop: hops, wobble: wobbles)
+        GochiView(xp: 900, celebrate: flips, hop: hops, wobble: wobbles, mood: mood)
             .frame(height: 160)
         HStack {
             Button("Flip") { flips += 1 }
@@ -108,5 +136,12 @@ private struct Flip {
             Button("Wobble") { wobbles += 1 }
         }
         .buttonStyle(.bordered)
+        Picker("Mood", selection: $mood) {
+            Text("Happy").tag(GochiMood.happy)
+            Text("Awake").tag(GochiMood.awake)
+            Text("Sleepy").tag(GochiMood.sleepy)
+        }
+        .pickerStyle(.segmented)
+        .padding(.horizontal)
     }
 }

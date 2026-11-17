@@ -8,6 +8,10 @@
 import Foundation
 import SwiftUI
 
+enum GochiMood {
+    case happy, awake, sleepy
+}
+
 enum GochiForm: Int, CaseIterable, Identifiable {
     case bean = 1, sprout, baby, kinder, young, student,
          adult, teacher, scholar, sage, king, dragon

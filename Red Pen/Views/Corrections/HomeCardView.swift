@@ -26,6 +26,13 @@ struct HomeCardView: View {
         guard let next = gochi.next else { return 1 }
         return Double(xp - gochi.minXP) / Double(next.minXP - gochi.minXP)
     }
+    
+    private var gochiMood: GochiMood {
+        if lastPracticeDay == 0 { return .awake }
+        let today = Calendar.current.startOfDay(for: .now).timeIntervalSince1970
+        if lastPracticeDay == today { return .happy }
+        return currentStreak > 0 ? .awake : .sleepy
+    }
 
     private var currentStreak: Int {
         DailyProgress.currentStreak(streak: streak, lastPracticeDay: lastPracticeDay)
@@ -74,7 +81,7 @@ struct HomeCardView: View {
                 Button {
                     gochiTaps += 1
                 } label: {
-                    GochiView(xp: xp, celebrate: gochiTaps)
+                    GochiView(xp: xp, celebrate: gochiTaps, mood: gochiMood)
                         .frame(width: 72, height: 72)
                         .contentShape(Rectangle())
                 }
