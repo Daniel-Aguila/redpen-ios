@@ -11,7 +11,8 @@ struct SettingsView: View {
     @AppStorage("dailyGoal") private var dailyGoal = 10
     @AppStorage("reminderOn") private var reminderOn = false
     @AppStorage("reminderMinutes") private var reminderMinutes = 20 * 60
-
+    @Environment(ProgressStore.self) private var progress
+    
     private var reminderTime: Binding<Date> {
         Binding(
             get: {
@@ -25,6 +26,11 @@ struct SettingsView: View {
             }
         )
     }
+    
+    private func refreshReminder() {
+        Reminder.refresh(enabled: reminderOn, minutesAfterMidnight: reminderMinutes,
+                         practicedToday: progress.practicedToday)
+    }
 
     var body: some View {
         NavigationStack {
@@ -33,7 +39,7 @@ struct SettingsView: View {
                     NavigationLink {
                         ProRoadmapView()
                     } label: {
-                        Label("Gochim Pro", systemImage: "sparkles")
+                        Label("Gochim Plus & Pro", systemImage: "sparkles")
                     }
                 } footer: {
                     Text("Coming soon. See what's planned")
@@ -75,21 +81,15 @@ struct SettingsView: View {
             .navigationTitle("Settings")
             .onChange(of: reminderOn) { _, isOn in
                 Task {
-                    if isOn {
-                        if await Reminder.requestPermission() {
-                            Reminder.schedule(minutesAfterMidnight: reminderMinutes)
-                        } else {
-                            reminderOn = false
-                        }
-                    } else {
-                        Reminder.cancel()
+                    if isOn, !(await Reminder.requestPermission()) {
+                        reminderOn = false
+                        return
                     }
+                    refreshReminder()
                 }
             }
-            .onChange(of: reminderMinutes) { _, minutes in
-                if reminderOn {
-                    Reminder.schedule(minutesAfterMidnight: minutes)
-                }
+            .onChange(of: reminderMinutes) {
+                refreshReminder()
             }
         }
     }
@@ -97,4 +97,5 @@ struct SettingsView: View {
 
 #Preview {
     SettingsView()
+        .environment(ProgressStore())
 }

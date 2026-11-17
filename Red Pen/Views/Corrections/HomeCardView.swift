@@ -21,14 +21,14 @@ struct HomeCardView: View {
     private var todayCountDay: Double { progress.todayCountDay }
 
     @State private var gochiTaps = 0
-    
-    private var gochi: GochiForm {.forXP(xp)}
+
+    private var gochi: GochiForm { .forXP(xp) }
 
     private var gochiProgress: Double {
         guard let next = gochi.next else { return 1 }
         return Double(xp - gochi.minXP) / Double(next.minXP - gochi.minXP)
     }
-    
+
     private var gochiMood: GochiMood {
         if lastPracticeDay == 0 { return .awake }
         let today = Calendar.current.startOfDay(for: .now).timeIntervalSince1970
@@ -57,68 +57,67 @@ struct HomeCardView: View {
     }
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 16) {
+        VStack(alignment: .leading, spacing: 14) {
             HStack {
                 Text(greeting)
-                    .font(.title2.weight(.bold))
+                    .font(.headline)
                 Spacer()
                 KoreanFlag()
-                    .frame(width: 36)
-            }
-
-            HStack(spacing: 16) {
-                goalRing
-                VStack(alignment: .leading, spacing: 6) {
-                    Label(currentStreak == 0 ? String(localized: "Start a streak"): String(localized: "\(currentStreak) day streak"),
-                          systemImage: currentStreak == 0 ? "flame" : "flame.fill")
-                    .font(.headline)
-                    .foregroundStyle(currentStreak == 0 ? Color.secondary : Color.accentColor)
-                    Text("\(dueCount) ready to practice")
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                }
+                    .frame(width: 28)
             }
 
             HStack(spacing: 14) {
                 Button {
                     gochiTaps += 1
                 } label: {
-                    GochiView(xp: xp, celebrate: gochiTaps, mood: gochiMood)
-                        .frame(width: 72, height: 72)
-                        .contentShape(Rectangle())
+                    ZStack {
+                        goalRing
+                        GochiView(xp: xp, celebrate: gochiTaps, mood: gochiMood)
+                            .padding(12)
+                    }
+                    .frame(width: 84, height: 84)
+                    .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
-                VStack(alignment: .leading, spacing: 6) {
+
+                VStack(alignment: .leading, spacing: 5) {
+                    Label(currentStreak == 0 ? String(localized: "Start a streak")
+                                             : String(localized: "\(currentStreak) day streak"),
+                          systemImage: currentStreak == 0 ? "flame" : "flame.fill")
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(currentStreak == 0 ? Color.secondary : Color.accentColor)
+                    Text("\(answeredToday) / \(dailyGoal) today · \(dueCount) ready")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
                     HStack {
                         Text(verbatim: "고치 · \(gochi.title)")
-                            .font(.subheadline.weight(.semibold))
+                            .font(.caption.weight(.semibold))
                         Spacer()
                         if let next = gochi.next {
                             Text("\(xp) / \(next.minXP) XP")
-                                .font(.caption)
-                                .foregroundStyle(.secondary)
                         } else {
                             Text("Max level")
-                                .font(.caption)
-                                .foregroundStyle(.secondary)
                         }
                     }
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
                     ProgressView(value: gochiProgress)
                         .tint(.taegeukBlue)
                 }
             }
 
-            Button {
-                selectedTab = "practice"
-            } label: {
-                Label("Practice now", systemImage: "play.fill")
-                    .frame(maxWidth: .infinity)
+            if dueCount > 0 {
+                Button {
+                    selectedTab = "practice"
+                } label: {
+                    Label("Practice now", systemImage: "play.fill")
+                        .frame(maxWidth: .infinity)
+                }
+                .buttonStyle(.borderedProminent)
+                .controlSize(.large)
             }
-            .buttonStyle(.borderedProminent)
-            .controlSize(.large)
-            .disabled(dueCount == 0)
         }
-        .padding(20)
+        .padding(16)
         .background(Color(.secondarySystemGroupedBackground))
         .clipShape(.rect(cornerRadius: 20))
         .shadow(color: .black.opacity(0.08), radius: 8, y: 4)
@@ -127,21 +126,13 @@ struct HomeCardView: View {
     private var goalRing: some View {
         ZStack {
             Circle()
-                .stroke(Color.secondary.opacity(0.2), lineWidth: 6)
+                .stroke(Color.secondary.opacity(0.2), lineWidth: 5)
             Circle()
                 .trim(from: 0, to: goalProgress)
                 .stroke(goalProgress >= 1 ? Color.green : Color.accentColor,
-                        style: StrokeStyle(lineWidth: 6, lineCap: .round))
+                        style: StrokeStyle(lineWidth: 5, lineCap: .round))
                 .rotationEffect(.degrees(-90))
-            VStack(spacing: 0) {
-                Text("\(answeredToday)")
-                    .font(.headline)
-                Text("/ \(dailyGoal)")
-                    .font(.caption2)
-                    .foregroundStyle(.secondary)
-            }
         }
-        .frame(width: 60, height: 60)
     }
 }
 

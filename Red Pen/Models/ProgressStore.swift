@@ -30,7 +30,9 @@ final class ProgressStore {
     }
 
     var form: GochiForm { .forXP(xp) }
-
+    var practicedToday: Bool {
+        lastPracticeDay == Calendar.current.startOfDay(for: .now).timeIntervalSince1970
+    }
     func earn(_ amount: Int) {
         let before = form
         xp += amount

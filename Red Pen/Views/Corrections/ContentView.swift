@@ -10,7 +10,7 @@ import SwiftData
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
-    
+
     @Query(sort: \Folder.createdAt) private var folders: [Folder]
     @State private var selectedFolder: Folder? = nil
     @State private var showingAdd = false
@@ -19,6 +19,7 @@ struct ContentView: View {
     @State private var editMode: EditMode = .inactive
     @State private var selection = Set<Correction.ID>()
     @State private var showingDeleteConfirm = false
+    @State private var showLearned = false
 
     @Query(sort: \Correction.createdAt, order: .reverse)
     private var corrections: [Correction]
@@ -36,6 +37,17 @@ struct ContentView: View {
             }
         }
         return list
+    }
+
+    private var grouped: Bool { searchText.isEmpty }
+    private var weekAgo: Date { Calendar.current.date(byAdding: .day, value: -7, to: .now) ?? .now }
+    private var thisWeek: [Correction] { filtered.filter { !$0.isLearned && $0.createdAt >= weekAgo } }
+    private var earlier: [Correction] { filtered.filter { !$0.isLearned && $0.createdAt < weekAgo } }
+    private var learned: [Correction] { filtered.filter(\.isLearned) }
+
+    /// What's actually on screen. Select All must never pick hidden rows.
+    private var visible: [Correction] {
+        grouped && !showLearned ? filtered.filter { !$0.isLearned } : filtered
     }
 
     private var dueCount: Int {
@@ -58,7 +70,7 @@ struct ContentView: View {
                         .onPaper()
                         .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
                 }
-                
+
                 if !folders.isEmpty && !isSelecting {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 8) {
@@ -86,80 +98,48 @@ struct ContentView: View {
                     .listRowInsets(EdgeInsets())
                 }
 
-                ForEach(filtered) { c in
-                    NavigationLink(value: c) {
-                        HStack(spacing: 12) {
-                            Image(systemName: c.type.symbol)
-                                .font(.subheadline.weight(.semibold))
-                                .foregroundStyle(.white)
-                                .frame(width: 34, height: 34)
-                                .background(c.type.color, in: .rect(cornerRadius: 9))
-
-                            VStack(alignment: .leading, spacing: 2) {
-                                Text(c.corrected)
-                                    .font(.headline)
-                                    .lineLimit(1)
-                                Text(c.original)
-                                    .font(.subheadline)
-                                    .strikethrough(color: .accentColor)
-                                    .foregroundStyle(.secondary)
-                                    .lineLimit(1)
-                            }
-                        }
+                if grouped {
+                    if !thisWeek.isEmpty {
+                        groupHeader("This week")
+                        ForEach(thisWeek) { c in row(c) }
                     }
-                    .listRowSeparator(.hidden)
-                    .listRowInsets(EdgeInsets(top: 10, leading: 28, bottom: 10, trailing: 28))
-                    .listRowBackground(
-                        RoundedRectangle(cornerRadius: 16)
-                            .fill(Color(.secondarySystemGroupedBackground))
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 16)
-                                    .fill(c.type.color.opacity(0.14))
-                            )
-                            .padding(.vertical, 4)
-                            .padding(.horizontal, 16)
-                    )
-                    .swipeActions {
-                        Button(role: .destructive) {
-                            modelContext.delete(c)
-                        } label: {
-                            Label("Delete", systemImage: "trash")
-                        }
+                    if !earlier.isEmpty {
+                        groupHeader("Earlier")
+                        ForEach(earlier) { c in row(c) }
                     }
-                    .contextMenu {
+                    if !learned.isEmpty {
                         Button {
-                            withAnimation {
-                                editMode = .active
-                                selection = [c.id]
+                            withAnimation { showLearned.toggle() }
+                        } label: {
+                            HStack {
+                                Text("Learned · \(learned.count)")
+                                    .font(.footnote.weight(.semibold))
+                                    .textCase(.uppercase)
+                                Spacer()
+                                Image(systemName: "chevron.right")
+                                    .font(.footnote.weight(.semibold))
+                                    .rotationEffect(.degrees(showLearned ? 90 : 0))
                             }
-                        } label: {
-                            Label("Select", systemImage: "checkmark.circle")
+                            .foregroundStyle(.secondary)
+                            .contentShape(Rectangle())
                         }
-                        Menu {
-                            Button("No folder") { c.folder = nil }
-                            ForEach(folders) { f in
-                                Button {
-                                    c.folder = f
-                                } label: {
-                                    Text(verbatim: "\(f.emoji) \(f.name)")
-                                }
-                            }
-                        } label: {
-                            Label("Move to folder", systemImage: "folder")
-                        }
-                        .disabled(folders.isEmpty)
-                        Button(role: .destructive) {
-                            modelContext.delete(c)
-                        } label: {
-                            Label("Delete", systemImage: "trash")
+                        .buttonStyle(.plain)
+                        .onPaper()
+                        .listRowInsets(EdgeInsets(top: 16, leading: 28, bottom: 4, trailing: 28))
+
+                        if showLearned {
+                            ForEach(learned) { c in row(c) }
                         }
                     }
+                } else {
+                    ForEach(filtered) { c in row(c) }
                 }
             }
             .environment(\.editMode, $editMode)
             .navigationTitle("오답노트")
             .navigationBarTitleDisplayMode(.inline)
             .paperBackground()
+            .hardTopEdge()
             .listStyle(.plain)
             .contentMargins(.bottom, 88, for: .scrollContent)
             .searchable(text: $searchText, prompt: "Search your 오답노트")
@@ -182,7 +162,8 @@ struct ContentView: View {
                     } else {
                         ContentUnavailableView.search(text: searchText)
                     }
-                }            }
+                }
+            }
             .overlay(alignment: .bottomTrailing) {
                 if !isSelecting {
                     Button {
@@ -203,11 +184,11 @@ struct ContentView: View {
             .overlay(alignment: .bottom) {
                 if isSelecting {
                     HStack {
-                        Button(selection.count == filtered.count ? String(localized: "Deselect All") : String(localized: "Select All")) {
-                            if selection.count == filtered.count {
+                        Button(selection.count == visible.count ? String(localized: "Deselect All") : String(localized: "Select All")) {
+                            if selection.count == visible.count {
                                 selection.removeAll()
                             } else {
-                                selection = Set(filtered.map(\.id))
+                                selection = Set(visible.map(\.id))
                             }
                         }
                         Spacer()
@@ -285,7 +266,86 @@ struct ContentView: View {
             }
         }
     }
-    
+
+    private func row(_ c: Correction) -> some View {
+        NavigationLink(value: c) {
+            HStack(spacing: 12) {
+                Image(systemName: c.type.symbol)
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(.white)
+                    .frame(width: 34, height: 34)
+                    .background(c.type.color, in: .rect(cornerRadius: 9))
+
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(c.corrected)
+                        .font(.headline)
+                        .lineLimit(1)
+                    Text(c.original)
+                        .font(.subheadline)
+                        .strikethrough(color: .accentColor)
+                        .foregroundStyle(.secondary)
+                        .lineLimit(1)
+                }
+            }
+        }
+        .listRowSeparator(.hidden)
+        .listRowInsets(EdgeInsets(top: 10, leading: 28, bottom: 10, trailing: 28))
+        .listRowBackground(
+            RoundedRectangle(cornerRadius: 16)
+                .fill(Color(.secondarySystemGroupedBackground))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 16)
+                        .fill(c.type.color.opacity(0.14))
+                )
+                .padding(.vertical, 4)
+                .padding(.horizontal, 16)
+        )
+        .swipeActions {
+            Button(role: .destructive) {
+                modelContext.delete(c)
+            } label: {
+                Label("Delete", systemImage: "trash")
+            }
+        }
+        .contextMenu {
+            Button {
+                withAnimation {
+                    editMode = .active
+                    selection = [c.id]
+                }
+            } label: {
+                Label("Select", systemImage: "checkmark.circle")
+            }
+            Menu {
+                Button("No folder") { c.folder = nil }
+                ForEach(folders) { f in
+                    Button {
+                        c.folder = f
+                    } label: {
+                        Text(verbatim: "\(f.emoji) \(f.name)")
+                    }
+                }
+            } label: {
+                Label("Move to folder", systemImage: "folder")
+            }
+            .disabled(folders.isEmpty)
+            Button(role: .destructive) {
+                modelContext.delete(c)
+            } label: {
+                Label("Delete", systemImage: "trash")
+            }
+        }
+    }
+
+    private func groupHeader(_ title: LocalizedStringKey) -> some View {
+        Text(title)
+            .font(.footnote.weight(.semibold))
+            .textCase(.uppercase)
+            .foregroundStyle(.secondary)
+            .onPaper()
+            .listRowInsets(EdgeInsets(top: 16, leading: 28, bottom: 4, trailing: 28))
+    }
+
     private func moveSelected(to folder: Folder?) {
         for c in corrections where selection.contains(c.id) {
             c.folder = folder
@@ -305,7 +365,7 @@ struct ContentView: View {
         }
         .buttonStyle(.plain)
     }
-    
+
     private func deleteSelected() {
         for c in corrections where selection.contains(c.id) {
             modelContext.delete(c)
@@ -315,7 +375,19 @@ struct ContentView: View {
     }
 }
 
+extension View {
+    @ViewBuilder
+    func hardTopEdge() -> some View {
+        if #available(iOS 26.0, *) {
+            self.scrollEdgeEffectStyle(.hard, for: .top)
+        } else {
+            self
+        }
+    }
+}
+
 #Preview {
     ContentView()
         .modelContainer(for: [Correction.self, Folder.self], inMemory: true)
+        .environment(ProgressStore())
 }

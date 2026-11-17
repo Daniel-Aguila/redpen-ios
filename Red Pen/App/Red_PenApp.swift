@@ -12,6 +12,9 @@ import SwiftData
 struct Red_PenApp: App {
     @AppStorage("hasSeenOnboarding") private var hasSeenOnboarding = false
     @AppStorage("selectedTab") private var selectedTab = "practice"
+    @AppStorage("reminderOn") private var reminderOn = false
+    @AppStorage("reminderMinutes") private var reminderMinutes = 20 * 60
+    @Environment(\.scenePhase) private var scenePhase
     @State private var progress = ProgressStore()
 
     var sharedModelContainer: ModelContainer = {
@@ -53,8 +56,19 @@ struct Red_PenApp: App {
             .fullScreenCover(item: $progress.pendingEvolution) { form in
                 EvolutionView(form: form)
             }
+            .onChange(of: scenePhase) { _, phase in
+                if phase == .active { refreshReminder() }
+            }
+            .onChange(of: progress.lastPracticeDay) {
+                refreshReminder()
+            }
             .environment(progress)
         }
         .modelContainer(sharedModelContainer)
+    }
+
+    private func refreshReminder() {
+        Reminder.refresh(enabled: reminderOn, minutesAfterMidnight: reminderMinutes,
+                         practicedToday: progress.practicedToday)
     }
 }

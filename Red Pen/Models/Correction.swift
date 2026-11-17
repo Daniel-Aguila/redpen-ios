@@ -129,3 +129,7 @@ final class Correction {
         self.note = note
     }
 }
+
+extension Correction {
+    var isLearned: Bool { intervalDays >= 7 }
+}
