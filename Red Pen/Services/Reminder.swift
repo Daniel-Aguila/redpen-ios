@@ -39,7 +39,7 @@ enum Reminder {
                   fire > .now else { continue }
 
             let content = UNMutableNotificationContent()
-            content.title = "Gochim"
+            content.title = "Gochimi"
             content.body = messages[offset % messages.count]
             content.sound = .default
 

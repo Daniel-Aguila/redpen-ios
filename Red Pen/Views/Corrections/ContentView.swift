@@ -97,6 +97,13 @@ struct ContentView: View {
                     .onPaper()
                     .listRowInsets(EdgeInsets())
                 }
+                if searchText.isEmpty && !corrections.isEmpty && filtered.isEmpty {
+                    ContentUnavailableView("Nothing in this folder yet",
+                                           systemImage: "folder",
+                                           description: Text("Pick this folder when adding or editing a correction."))
+                        .onPaper()
+                        .listRowInsets(EdgeInsets(top: 24, leading: 16, bottom: 0, trailing: 16))
+                }
 
                 if grouped {
                     if !thisWeek.isEmpty {
@@ -154,14 +161,8 @@ struct ContentView: View {
                             .buttonStyle(.borderedProminent)
                         Button("Try with examples") { SampleData.insert(into: modelContext) }
                     }
-                } else if filtered.isEmpty {
-                    if searchText.isEmpty {
-                        ContentUnavailableView("Nothing in this folder yet",
-                                               systemImage: "folder",
-                                               description: Text("Pick this folder when adding or editing a correction."))
-                    } else {
-                        ContentUnavailableView.search(text: searchText)
-                    }
+                } else if !searchText.isEmpty && filtered.isEmpty {
+                    ContentUnavailableView.search(text: searchText)
                 }
             }
             .overlay(alignment: .bottomTrailing) {

@@ -18,7 +18,7 @@ struct WhatsNewView: View {
         VStack(spacing: 20) {
             Spacer()
 
-            Text("New in Gochim")
+            Text("New in Gochimi")
                 .font(.caption.weight(.semibold))
                 .foregroundStyle(Color.accentColor)
                 .padding(.horizontal, 10)

@@ -15,7 +15,7 @@ struct ProRoadmapView: View {
                     Image(systemName: "sparkles")
                         .font(.system(size: 44))
                         .foregroundStyle(Color.accentColor)
-                    Text("Gochim Plus & Pro")
+                    Text("Gochimi Plus & Pro")
                         .font(.title.weight(.heavy))
                         .multilineTextAlignment(.center)
                     Text("Coming soon")
@@ -24,7 +24,7 @@ struct ProRoadmapView: View {
                         .padding(.horizontal, 10)
                         .padding(.vertical, 4)
                         .background(Color.accentColor.opacity(0.15), in: Capsule())
-                    Text("Everything in Gochim today stays free. Plus and Pro will add more on top. These features are planned and not available yet.")
+                    Text("Everything in Gochimi today stays free. Plus and Pro will add more on top. These features are planned and not available yet.")
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                         .multilineTextAlignment(.center)
@@ -42,7 +42,7 @@ struct ProRoadmapView: View {
                         text: "Your week with Gochi, ready to share.")
             }
 
-            Section("Gochim Plus") {
+            Section("Gochimi Plus") {
                 feature("character.book.closed",
                         title: "Full Korean course",
                         text: "Short lessons built around common learner mistakes.")
@@ -74,7 +74,7 @@ struct ProRoadmapView: View {
                         title: "Fresh practice sentences",
                         text: "New sentences built from your own mistakes.")
             } header: {
-                Text("Gochim Pro")
+                Text("Gochimi Pro")
             } footer: {
                 Text("Everything in Plus, and more.")
             }
