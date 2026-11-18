@@ -15,13 +15,15 @@ struct PracticeView: View {
     @Environment(ProgressStore.self) private var progress
     @Environment(\.requestReview) private var requestReview
     @AppStorage("reviewAskedVersion") private var reviewAskedVersion = ""
-    
+    @AppStorage("hideGochi") private var hideGochi = false
+
     @State private var scope: PracticeScope = .all
     @State private var session: [Exercise] = []
     @State private var index = 0
     @State private var correctCount = 0
     @State private var sessionXP = 0
     @State private var showingChart = false
+    @State private var doneFlips = 0
 
     private var pool: [Correction] {
         corrections.filter { c in
@@ -196,8 +198,17 @@ struct PracticeView: View {
 
     private var doneView: some View {
         VStack(spacing: 16) {
-            Text(cheer.emoji)
-                .font(.system(size: 72))
+            if hideGochi {
+                Text(cheer.emoji)
+                    .font(.system(size: 72))
+            } else {
+                GochiView(xp: progress.xp, celebrate: doneFlips, mood: .happy)
+                    .frame(height: 110)
+                    .task {
+                        try? await Task.sleep(for: .milliseconds(300))
+                        doneFlips += 1
+                    }
+            }
             Text(cheer.text)
                 .font(.largeTitle.weight(.heavy))
             Text("\(correctCount) / \(session.count) correct")
