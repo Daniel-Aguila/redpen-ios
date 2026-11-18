@@ -71,38 +71,34 @@ struct ContentView: View {
                         .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
                 }
 
-                if !folders.isEmpty && !isSelecting {
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: 8) {
-                            folderChip(String(localized: "All"), isOn: selectedFolder == nil) {
-                                selectedFolder = nil
-                            }
-                            ForEach(folders) { f in
-                                folderChip("\(f.emoji) \(f.name)", isOn: selectedFolder == f) {
-                                    selectedFolder = f
-                                }
-                                .contextMenu {
-                                    Button(role: .destructive) {
-                                        if selectedFolder == f { selectedFolder = nil }
-                                        modelContext.delete(f)
-                                    } label: {
-                                        Label("Delete folder", systemImage: "trash")
-                                    }
-                                }
-                            }
-                        }
-                        .padding(.horizontal, 20)
-                        .padding(.vertical, 4)
-                    }
+                if !corrections.isEmpty && !isSelecting {
+                    FolderChipsBar(
+                        folders: folders,
+                        selected: selectedFolder,
+                        count: { f in
+                            f == nil ? corrections.count : corrections.filter { $0.folder == f }.count
+                        },
+                        onSelect: { selectedFolder = $0 }
+                    )
                     .onPaper()
                     .listRowInsets(EdgeInsets())
                 }
                 if searchText.isEmpty && !corrections.isEmpty && filtered.isEmpty {
-                    ContentUnavailableView("Nothing in this folder yet",
-                                           systemImage: "folder",
-                                           description: Text("Pick this folder when adding or editing a correction."))
-                        .onPaper()
-                        .listRowInsets(EdgeInsets(top: 24, leading: 16, bottom: 0, trailing: 16))
+                    VStack(spacing: 8) {
+                        Image(systemName: "folder")
+                            .font(.system(size: 40))
+                            .foregroundStyle(.secondary)
+                        Text("Nothing in this folder yet")
+                            .font(.headline)
+                        Text("Pick this folder when adding or editing a correction.")
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                            .multilineTextAlignment(.center)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 32)
+                    .onPaper()
+                    .listRowInsets(EdgeInsets(top: 8, leading: 32, bottom: 0, trailing: 32))
                 }
 
                 if grouped {
@@ -199,7 +195,7 @@ struct ContentView: View {
                                 Button {
                                     moveSelected(to: f)
                                 } label: {
-                                    Text(verbatim: "\(f.emoji) \(f.name)")
+                                    Text(verbatim: f.name)
                                 }
                             }
                         } label: {
@@ -323,7 +319,7 @@ struct ContentView: View {
                     Button {
                         c.folder = f
                     } label: {
-                        Text(verbatim: "\(f.emoji) \(f.name)")
+                        Text(verbatim: f.name)
                     }
                 }
             } label: {
@@ -353,18 +349,6 @@ struct ContentView: View {
         }
         selection.removeAll()
         withAnimation { editMode = .inactive }
-    }
-
-    private func folderChip(_ title: String, isOn: Bool, action: @escaping () -> Void) -> some View {
-        Button(action: action) {
-            Text(verbatim: title)
-                .font(.subheadline.weight(.semibold))
-                .padding(.horizontal, 14)
-                .padding(.vertical, 8)
-                .background(isOn ? Color.accentColor : Color(.secondarySystemGroupedBackground), in: Capsule())
-                .foregroundStyle(isOn ? .white : .primary)
-        }
-        .buttonStyle(.plain)
     }
 
     private func deleteSelected() {

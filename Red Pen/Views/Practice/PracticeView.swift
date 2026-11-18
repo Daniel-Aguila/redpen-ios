@@ -33,6 +33,12 @@ struct PracticeView: View {
     private var due: [Correction] {
         pool.filter { $0.dueDate <= .now }
     }
+    
+    
+    private var scopeFolder: Folder? {
+        if case .folder(let f) = scope { return f }
+        return nil
+    }
 
     private var dueByType: [(type: MistakeType, count: Int)] {
         MistakeType.allCases
@@ -102,18 +108,18 @@ struct PracticeView: View {
 
                 VStack(spacing: 16) {
                     if !folders.isEmpty {
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack(spacing: 6) {
-                                folderChip(String(localized: "All"), isOn: scope == .all) {
-                                    scope = .all
-                                }
-                                ForEach(folders) { f in
-                                    folderChip("\(f.emoji) \(f.name)", isOn: scope == .folder(f)) {
-                                        scope = .folder(f)
-                                    }
-                                }
-                            }
-                        }
+                        FolderChipsBar(
+                            folders: folders,
+                            selected: scopeFolder,
+                            count: { f in
+                                corrections.filter { $0.dueDate <= .now && (f == nil || $0.folder == f) }.count
+                            },
+                            onSelect: { f in
+                                scope = f.map { PracticeScope.folder($0) } ?? .all
+                            },
+                            showsAdd: false,
+                            inset: 0
+                        )
                     }
 
                     if due.isEmpty {
@@ -183,18 +189,6 @@ struct PracticeView: View {
             }
             .padding()
         }
-    }
-
-    private func folderChip(_ title: String, isOn: Bool, action: @escaping () -> Void) -> some View {
-        Button(action: action) {
-            Text(verbatim: title)
-                .font(.footnote.weight(.semibold))
-                .padding(.horizontal, 12)
-                .padding(.vertical, 6)
-                .background(isOn ? Color.accentColor : Color(.systemGray6), in: Capsule())
-                .foregroundStyle(isOn ? .white : .primary)
-        }
-        .buttonStyle(.plain)
     }
 
     private var doneView: some View {

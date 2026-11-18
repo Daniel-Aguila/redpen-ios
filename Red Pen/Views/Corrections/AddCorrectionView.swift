@@ -17,7 +17,6 @@ struct AddCorrectionView: View {
     
     @State private var folder: Folder? = nil
     @State private var showingNewFolder = false
-    @State private var newFolderName = ""
     @State private var original = ""
     @State private var corrected = ""
     @State private var note = ""
@@ -72,7 +71,7 @@ struct AddCorrectionView: View {
                     Picker("Folder", selection: $folder) {
                         Text("None").tag(Folder?.none)
                         ForEach(folders) { f in
-                            Text(verbatim: "\(f.emoji) \(f.name)").tag(Optional(f))
+                            Text(verbatim: f.name).tag(Optional(f))
                         }
                     }
                     Button("New folder…") {
@@ -108,18 +107,8 @@ struct AddCorrectionView: View {
                               original.trimmed == corrected.trimmed)
                 }
             }
-            .alert("New folder", isPresented: $showingNewFolder) {
-                TextField("Name", text: $newFolderName)
-                Button("Create") {
-                    let f = Folder(name: newFolderName.trimmed)
-                    modelContext.insert(f)
-                    folder = f
-                    newFolderName = ""
-                }
-                .disabled(newFolderName.trimmed.isEmpty)
-                Button("Cancel", role: .cancel) {
-                    newFolderName = ""
-                }
+            .sheet(isPresented: $showingNewFolder) {
+                FolderEditorView { folder = $0 }
             }
         }
     }
