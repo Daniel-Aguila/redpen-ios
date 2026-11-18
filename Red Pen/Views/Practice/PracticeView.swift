@@ -24,6 +24,10 @@ struct PracticeView: View {
     @State private var sessionXP = 0
     @State private var showingChart = false
     @State private var doneFlips = 0
+    
+    @AppStorage("dailyGoal") private var dailyGoal = 10
+    @State private var showGoalBanner = false
+    @State private var goalFlips = 0
 
     private var pool: [Correction] {
         corrections.filter { c in
@@ -81,6 +85,32 @@ struct PracticeView: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(NotebookPaper())
+            .overlay(alignment: .top) {
+                if showGoalBanner {
+                    HStack(spacing: 12) {
+                        if hideGochi {
+                            Text("🎯").font(.title)
+                        } else {
+                            GochiView(xp: progress.xp, celebrate: goalFlips)
+                                .frame(width: 44, height: 44)
+                        }
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text("오늘 목표 달성!")
+                                .font(.headline)
+                            Text("Daily goal complete")
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+                    .padding(.horizontal, 18)
+                    .padding(.vertical, 10)
+                    .background(.regularMaterial, in: Capsule())
+                    .shadow(color: .black.opacity(0.12), radius: 10, y: 4)
+                    .padding(.top, 8)
+                    .transition(.move(edge: .top).combined(with: .opacity))
+                }
+            }
+            .sensoryFeedback(.success, trigger: goalFlips)
             .navigationTitle("Practice")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -261,6 +291,7 @@ struct PracticeView: View {
             Scheduler.apply(rating, to: correction)
         }
         progress.countAnswer()
+        if progress.todayCount == dailyGoal { celebrateGoal() }
 
         let gained: Int
         if wasDue {
@@ -277,6 +308,17 @@ struct PracticeView: View {
         if index == session.count {
             progress.recordPracticeDay()
             askForReviewIfHappy()
+        }
+    }
+    
+    
+    private func celebrateGoal() {
+        withAnimation(.spring(duration: 0.4)) { showGoalBanner = true }
+        Task {
+            try? await Task.sleep(for: .milliseconds(300))
+            goalFlips += 1
+            try? await Task.sleep(for: .seconds(2.2))
+            withAnimation(.easeOut) { showGoalBanner = false }
         }
     }
     

@@ -85,6 +85,7 @@ struct HomeCardView: View {
                     .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
+                .sensoryFeedback(.impact(weight: .light), trigger: gochiTaps)
 
                 VStack(alignment: .leading, spacing: 5) {
                     Label(currentStreak == 0 ? String(localized: "Start a streak")
