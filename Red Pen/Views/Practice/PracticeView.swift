@@ -7,12 +7,15 @@
 
 import SwiftUI
 import SwiftData
+import StoreKit
 
 struct PracticeView: View {
     @Query private var corrections: [Correction]
     @Query(sort: \Folder.createdAt) private var folders: [Folder]
     @Environment(ProgressStore.self) private var progress
-
+    @Environment(\.requestReview) private var requestReview
+    @AppStorage("reviewAskedVersion") private var reviewAskedVersion = ""
+    
     @State private var scope: PracticeScope = .all
     @State private var session: [Exercise] = []
     @State private var index = 0
@@ -262,6 +265,19 @@ struct PracticeView: View {
 
         if index == session.count {
             progress.recordPracticeDay()
+            askForReviewIfHappy()
+        }
+    }
+    
+    private func askForReviewIfHappy() {
+        let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
+        let goodSession = correctCount * 10 >= session.count * 7
+        guard reviewAskedVersion != version, progress.streak >= 3, goodSession else { return }
+
+        reviewAskedVersion = version
+        Task {
+            try? await Task.sleep(for: .seconds(1.5))
+            requestReview()
         }
     }
 }
