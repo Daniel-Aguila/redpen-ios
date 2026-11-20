@@ -18,6 +18,7 @@ struct Red_PenApp: App {
     @AppStorage("reminderMinutes") private var reminderMinutes = 20 * 60
     @Environment(\.scenePhase) private var scenePhase
     @State private var progress = ProgressStore()
+    @State private var store = ProStore()
 
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
@@ -77,6 +78,8 @@ struct Red_PenApp: App {
                 refreshReminder()
             }
             .environment(progress)
+            .environment(store)
+            .task { await store.start { progress.addTangerines($0) }}
         }
         .modelContainer(sharedModelContainer)
     }

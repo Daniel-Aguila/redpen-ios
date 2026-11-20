@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import StoreKit
 
 struct SettingsView: View {
     @AppStorage("dailyGoal") private var dailyGoal = 10
@@ -13,6 +14,7 @@ struct SettingsView: View {
     @AppStorage("reminderMinutes") private var reminderMinutes = 20 * 60
     @AppStorage("hideGochi") private var hideGochi = false
     @Environment(ProgressStore.self) private var progress
+    @Environment(ProStore.self) private var store
     
     private var reminderTime: Binding<Date> {
         Binding(
@@ -86,6 +88,30 @@ struct SettingsView: View {
                         UserDefaults.standard.set("", forKey: "whatsNewSeen")
                     }
                 }
+
+                Section("Store (debug)") {
+                    LabeledContent("Tier", value: "\(store.tier)")
+                    LabeledContent("Tangerines", value: "\(progress.tangerines)")
+
+                    if !store.isLoaded {
+                        ProgressView()
+                    }
+
+                    ForEach(store.products, id: \.id) { product in
+                        Button {
+                            Task { try? await store.purchase(product) }
+                        } label: {
+                            LabeledContent(
+                                product.displayName.isEmpty ? product.id : product.displayName,
+                                value: product.displayPrice
+                            )
+                        }
+                    }
+
+                    Button("Restore purchases") {
+                        Task { await store.restore() }
+                    }
+                }
                 #endif
             }
             .navigationTitle("Settings")
@@ -108,4 +134,5 @@ struct SettingsView: View {
 #Preview {
     SettingsView()
         .environment(ProgressStore())
+        .environment(ProStore())
 }
