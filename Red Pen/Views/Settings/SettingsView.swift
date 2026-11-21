@@ -15,7 +15,9 @@ struct SettingsView: View {
     @AppStorage("hideGochi") private var hideGochi = false
     @Environment(ProgressStore.self) private var progress
     @Environment(ProStore.self) private var store
-    
+
+    @State private var showPaywall = false
+
     private var reminderTime: Binding<Date> {
         Binding(
             get: {
@@ -29,7 +31,7 @@ struct SettingsView: View {
             }
         )
     }
-    
+
     private func refreshReminder() {
         Reminder.refresh(enabled: reminderOn, minutesAfterMidnight: reminderMinutes,
                          practicedToday: progress.practicedToday)
@@ -72,7 +74,7 @@ struct SettingsView: View {
                 } footer: {
                     Text("A gentle nudge to keep your streak going.")
                 }
-                
+
                 Section {
                     Toggle("Hide Gochi", isOn: $hideGochi)
                 } footer: {
@@ -90,6 +92,7 @@ struct SettingsView: View {
                 }
 
                 Section("Store (debug)") {
+                    Button("Show paywall") { showPaywall = true }
                     LabeledContent("Tier", value: "\(store.tier)")
                     LabeledContent("Tangerines", value: "\(progress.tangerines)")
 
@@ -115,6 +118,9 @@ struct SettingsView: View {
                 #endif
             }
             .navigationTitle("Settings")
+            .sheet(isPresented: $showPaywall) {
+                PaywallView()
+            }
             .onChange(of: reminderOn) { _, isOn in
                 Task {
                     if isOn, !(await Reminder.requestPermission()) {
