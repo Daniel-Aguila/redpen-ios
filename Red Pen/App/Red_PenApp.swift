@@ -12,7 +12,7 @@ import SwiftData
 struct Red_PenApp: App {
     @AppStorage("hasSeenOnboarding") private var hasSeenOnboarding = false
     @AppStorage("whatsNewSeen") private var whatsNewSeen = ""
-    @AppStorage("selectedTab") private var selectedTab = "practice"
+    @AppStorage("selectedTab") private var selectedTab = "home"
     @AppStorage("reminderOn") private var reminderOn = false
     @AppStorage("hideGochi") private var hideGochi = false
     @AppStorage("reminderMinutes") private var reminderMinutes = 20 * 60
@@ -43,6 +43,9 @@ struct Red_PenApp: App {
                 }
                 Tab("Notebook", systemImage: "book.closed", value: "notebook") {
                     ContentView()
+                }
+                Tab("Home", systemImage: "house.fill", value: "home") {
+                    HabitatView()
                 }
                 Tab("Stats", systemImage: "chart.bar", value: "stats") {
                     StatsView()

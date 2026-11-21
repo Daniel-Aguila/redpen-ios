@@ -19,7 +19,8 @@ struct SettingsView: View {
 
     @State private var showPaywall = false
     @State private var showManage = false
-
+    @State private var showShop = false
+    
     private var reminderTime: Binding<Date> {
         Binding(
             get: {
@@ -103,6 +104,7 @@ struct SettingsView: View {
 
                 Section("Store (debug)") {
                     Button("Show paywall") { showPaywall = true }
+                    Button("Show shop") { showShop = true }
                     LabeledContent("Tier", value: "\(store.tier)")
                     LabeledContent("Tangerines", value: "\(wallet.balance)")
                     LabeledContent("Earned today", value: "\(wallet.earnedToday) / \(Wallet.dailyCap)")
@@ -132,6 +134,9 @@ struct SettingsView: View {
             .navigationTitle("Settings")
             .sheet(isPresented: $showPaywall) {
                 PaywallView()
+            }
+            .sheet(isPresented: $showShop) {
+                ShopView()
             }
             .manageSubscriptionsSheet(isPresented: $showManage)
             .onChange(of: reminderOn) { _, isOn in
