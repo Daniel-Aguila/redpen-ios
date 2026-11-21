@@ -14,6 +14,7 @@ struct PracticeView: View {
     @Query(sort: \Folder.createdAt) private var folders: [Folder]
     @Environment(ProgressStore.self) private var progress
     @Environment(\.requestReview) private var requestReview
+    @Environment(ProStore.self) private var store
     @AppStorage("reviewAskedVersion") private var reviewAskedVersion = ""
     @AppStorage("hideGochi") private var hideGochi = false
 
@@ -24,6 +25,8 @@ struct PracticeView: View {
     @State private var sessionXP = 0
     @State private var showingChart = false
     @State private var doneFlips = 0
+    @State private var paywallReady = false
+    @State private var showPaywall = false
     
     @AppStorage("dailyGoal") private var dailyGoal = 10
     @State private var showGoalBanner = false
@@ -126,6 +129,11 @@ struct PracticeView: View {
             .sheet(isPresented: $showingChart) {
                 HangulChartView()
                     .presentationDetents([.medium, .large])
+            }
+            .sheet(isPresented: $showPaywall, onDismiss: {
+                PaywallPolicy.recordClosed(tier: store.tier)
+            }) {
+                PaywallView()
             }
             .onChange(of: folders) {
                 if case .folder(let f) = scope, !folders.contains(f) {
@@ -264,6 +272,11 @@ struct PracticeView: View {
 
             Button {
                 session = []
+                if paywallReady {
+                    paywallReady = false
+                    PaywallPolicy.recordShown()
+                    showPaywall = true
+                }
             } label: {
                 Text("Done")
                     .frame(maxWidth: .infinity)
@@ -307,7 +320,9 @@ struct PracticeView: View {
 
         if index == session.count {
             progress.recordPracticeDay()
-            askForReviewIfHappy()
+            let askedForReview = askForReviewIfHappy()
+            let goodSession = correctCount * 10 >= session.count * 7
+            paywallReady = !askedForReview && goodSession && PaywallPolicy.canAutoShow(tier: store.tier)
         }
     }
     
@@ -322,16 +337,18 @@ struct PracticeView: View {
         }
     }
     
-    private func askForReviewIfHappy() {
+    @discardableResult
+    private func askForReviewIfHappy() -> Bool {
         let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
         let goodSession = correctCount * 10 >= session.count * 7
-        guard reviewAskedVersion != version, progress.streak >= 3, goodSession else { return }
+        guard reviewAskedVersion != version, progress.streak >= 3, goodSession else { return false }
 
         reviewAskedVersion = version
         Task {
             try? await Task.sleep(for: .seconds(1.5))
             requestReview()
         }
+        return true
     }
 }
 
@@ -362,4 +379,5 @@ struct PracticeView: View {
     return PracticeView()
         .modelContainer(container)
         .environment(ProgressStore())
+        .environment(ProStore())
 }

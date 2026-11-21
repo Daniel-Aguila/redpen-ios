@@ -114,6 +114,7 @@ struct SettingsView: View {
                     Button("Restore purchases") {
                         Task { await store.restore() }
                     }
+                    Button("Reset paywall rules") { PaywallPolicy.reset() }
                 }
                 #endif
             }
