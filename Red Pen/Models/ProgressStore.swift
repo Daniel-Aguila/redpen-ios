@@ -17,7 +17,6 @@ final class ProgressStore {
     private(set) var lastPracticeDay: Double { didSet { defaults.set(lastPracticeDay, forKey: "lastPracticeDay") } }
     private(set) var todayCount: Int { didSet { defaults.set(todayCount, forKey: "todayCount") } }
     private(set) var todayCountDay: Double { didSet { defaults.set(todayCountDay, forKey: "todayCountDay") } }
-    private(set) var tangerines: Int { didSet { defaults.set(tangerines, forKey: "tangerines") } }
 
     var pendingEvolution: GochiForm? = nil
 
@@ -28,7 +27,6 @@ final class ProgressStore {
         lastPracticeDay = defaults.double(forKey: "lastPracticeDay")
         todayCount = defaults.integer(forKey: "todayCount")
         todayCountDay = defaults.double(forKey: "todayCountDay")
-        tangerines = defaults.integer(forKey: "tangerines")
     }
 
     var form: GochiForm { .forXP(xp) }
@@ -39,10 +37,6 @@ final class ProgressStore {
         let before = form
         xp += amount
         if form != before { pendingEvolution = form }
-    }
-    
-    func addTangerines(_ amount: Int){
-        tangerines += amount
     }
 
     func countAnswer() {

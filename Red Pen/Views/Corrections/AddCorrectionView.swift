@@ -11,7 +11,6 @@ import SwiftData
 struct AddCorrectionView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
-    @Environment(ProgressStore.self) private var progress
     
     @Query(sort: \Folder.createdAt) private var folders: [Folder]
     
@@ -133,7 +132,6 @@ struct AddCorrectionView: View {
             cr.audience = audience
             cr.type = MistakeDetector.detect(original: o, corrected: c)
             modelContext.insert(cr)
-            progress.earn(5)
         }
         dismiss()
     }
@@ -143,5 +141,4 @@ struct AddCorrectionView: View {
 #Preview {
     AddCorrectionView()
         .modelContainer(for: [Correction.self, Folder.self], inMemory: true)
-        .environment(ProgressStore())
 }

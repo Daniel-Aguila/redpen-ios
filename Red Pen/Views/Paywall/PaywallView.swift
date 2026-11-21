@@ -23,6 +23,11 @@ struct PaywallView: View {
     @State private var isBuying = false
     @State private var errorMessage: String?
     
+    
+    init(startOn: Plan = .plus) {
+        _plan = State(initialValue: startOn)
+    }
+    
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 18) {

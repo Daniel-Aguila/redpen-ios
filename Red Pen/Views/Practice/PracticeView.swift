@@ -15,6 +15,7 @@ struct PracticeView: View {
     @Environment(ProgressStore.self) private var progress
     @Environment(\.requestReview) private var requestReview
     @Environment(ProStore.self) private var store
+    @Environment(Wallet.self) private var wallet
     @AppStorage("reviewAskedVersion") private var reviewAskedVersion = ""
     @AppStorage("hideGochi") private var hideGochi = false
 
@@ -23,11 +24,13 @@ struct PracticeView: View {
     @State private var index = 0
     @State private var correctCount = 0
     @State private var sessionXP = 0
+    @State private var sessionTangerines = 0
     @State private var showingChart = false
     @State private var doneFlips = 0
     @State private var paywallReady = false
     @State private var showPaywall = false
-    
+    @State private var showProPaywall = false
+
     @AppStorage("dailyGoal") private var dailyGoal = 10
     @State private var showGoalBanner = false
     @State private var goalFlips = 0
@@ -41,12 +44,11 @@ struct PracticeView: View {
             }
         }
     }
-    
+
     private var due: [Correction] {
         pool.filter { $0.dueDate <= .now }
     }
-    
-    
+
     private var scopeFolder: Folder? {
         if case .folder(let f) = scope { return f }
         return nil
@@ -134,6 +136,9 @@ struct PracticeView: View {
                 PaywallPolicy.recordClosed(tier: store.tier)
             }) {
                 PaywallView()
+            }
+            .sheet(isPresented: $showProPaywall) {
+                PaywallView(startOn: .pro)
             }
             .onChange(of: folders) {
                 if case .folder(let f) = scope, !folders.contains(f) {
@@ -252,19 +257,29 @@ struct PracticeView: View {
             Text("\(correctCount) / \(session.count) correct")
                 .font(.title3)
                 .foregroundStyle(.secondary)
-            Text("+\(sessionXP) XP")
-                .font(.headline)
-                .foregroundStyle(.white)
-                .padding(.horizontal, 16)
-                .padding(.vertical, 8)
-                .background(Color.taegeukBlue, in: Capsule())
 
-            if correctCount < session.count {
-                NavigationLink {
-                    ProRoadmapView()
+            HStack(spacing: 8) {
+                Text("+\(sessionXP) XP")
+                    .font(.headline)
+                    .foregroundStyle(.white)
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 8)
+                    .background(Color.taegeukBlue, in: Capsule())
+                if sessionTangerines > 0 {
+                    Text("+\(sessionTangerines) 🍊")
+                        .font(.headline)
+                        .foregroundStyle(.white)
+                        .padding(.horizontal, 16)
+                        .padding(.vertical, 8)
+                        .background(Color.orange, in: Capsule())
+                }
+            }
+
+            if correctCount < session.count && store.tier != .pro {
+                Button {
+                    showProPaywall = true
                 } label: {
-                    Label("Explanations for the ones you missed · Pro, coming soon",
-                          systemImage: "sparkles")
+                    Label("Get personal help on the ones you missed", systemImage: "sparkles")
                         .font(.footnote)
                         .multilineTextAlignment(.center)
                 }
@@ -295,6 +310,7 @@ struct PracticeView: View {
         index = 0
         correctCount = 0
         sessionXP = 0
+        sessionTangerines = 0
     }
 
     private func finish(_ rating: Rating) {
@@ -304,7 +320,13 @@ struct PracticeView: View {
             Scheduler.apply(rating, to: correction)
         }
         progress.countAnswer()
-        if progress.todayCount == dailyGoal { celebrateGoal() }
+        if wasDue {
+            sessionTangerines += wallet.earn(rating == .again ? Reward.wrongDue : Reward.correctDue)
+        }
+        if progress.todayCount == dailyGoal {
+            celebrateGoal()
+            sessionTangerines += wallet.earn(Reward.dailyGoal)
+        }
 
         let gained: Int
         if wasDue {
@@ -319,14 +341,17 @@ struct PracticeView: View {
         index += 1
 
         if index == session.count {
+            let firstToday = !progress.practicedToday
             progress.recordPracticeDay()
+            if firstToday {
+                sessionTangerines += wallet.earn(Reward.streakBonus(progress.streak))
+            }
             let askedForReview = askForReviewIfHappy()
             let goodSession = correctCount * 10 >= session.count * 7
             paywallReady = !askedForReview && goodSession && PaywallPolicy.canAutoShow(tier: store.tier)
         }
     }
-    
-    
+
     private func celebrateGoal() {
         withAnimation(.spring(duration: 0.4)) { showGoalBanner = true }
         Task {
@@ -336,7 +361,7 @@ struct PracticeView: View {
             withAnimation(.easeOut) { showGoalBanner = false }
         }
     }
-    
+
     @discardableResult
     private func askForReviewIfHappy() -> Bool {
         let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
@@ -380,4 +405,5 @@ struct PracticeView: View {
         .modelContainer(container)
         .environment(ProgressStore())
         .environment(ProStore())
+        .environment(Wallet())
 }

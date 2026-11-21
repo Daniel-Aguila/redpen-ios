@@ -15,8 +15,10 @@ struct SettingsView: View {
     @AppStorage("hideGochi") private var hideGochi = false
     @Environment(ProgressStore.self) private var progress
     @Environment(ProStore.self) private var store
+    @Environment(Wallet.self) private var wallet
 
     @State private var showPaywall = false
+    @State private var showManage = false
 
     private var reminderTime: Binding<Date> {
         Binding(
@@ -41,14 +43,22 @@ struct SettingsView: View {
         NavigationStack {
             Form {
                 Section {
-                    NavigationLink {
-                        ProRoadmapView()
-                    } label: {
-                        Label("Gochimi Plus & Pro", systemImage: "sparkles")
+                    if store.tier == .free {
+                        Button {
+                            showPaywall = true
+                        } label: {
+                            Label("Get Gochimi Plus or Pro", systemImage: "sparkles")
+                        }
+                    } else {
+                        LabeledContent("Your plan", value: store.tier == .pro ? "Gochimi Pro" : "Gochimi Plus")
+                        Button("Manage subscription") { showManage = true }
                     }
                 } footer: {
-                    Text("Coming soon. See what's planned")
+                    Text(store.tier == .free
+                         ? "Every lesson, every story, and more."
+                         : "Change or cancel anytime in your Apple account.")
                 }
+
                 Section {
                     Picker("Questions per day", selection: $dailyGoal) {
                         Text("5").tag(5)
@@ -94,7 +104,8 @@ struct SettingsView: View {
                 Section("Store (debug)") {
                     Button("Show paywall") { showPaywall = true }
                     LabeledContent("Tier", value: "\(store.tier)")
-                    LabeledContent("Tangerines", value: "\(progress.tangerines)")
+                    LabeledContent("Tangerines", value: "\(wallet.balance)")
+                    LabeledContent("Earned today", value: "\(wallet.earnedToday) / \(Wallet.dailyCap)")
 
                     if !store.isLoaded {
                         ProgressView()
@@ -122,6 +133,7 @@ struct SettingsView: View {
             .sheet(isPresented: $showPaywall) {
                 PaywallView()
             }
+            .manageSubscriptionsSheet(isPresented: $showManage)
             .onChange(of: reminderOn) { _, isOn in
                 Task {
                     if isOn, !(await Reminder.requestPermission()) {
@@ -142,4 +154,5 @@ struct SettingsView: View {
     SettingsView()
         .environment(ProgressStore())
         .environment(ProStore())
+        .environment(Wallet())
 }

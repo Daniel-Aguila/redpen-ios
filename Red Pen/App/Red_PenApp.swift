@@ -19,6 +19,7 @@ struct Red_PenApp: App {
     @Environment(\.scenePhase) private var scenePhase
     @State private var progress = ProgressStore()
     @State private var store = ProStore()
+    @State private var wallet = Wallet()
 
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
@@ -79,7 +80,8 @@ struct Red_PenApp: App {
             }
             .environment(progress)
             .environment(store)
-            .task { await store.start { progress.addTangerines($0) }}
+            .environment(wallet)
+            .task { await store.start { wallet.addPurchased($0) } }
         }
         .modelContainer(sharedModelContainer)
     }
