@@ -15,25 +15,29 @@ struct Red_PenApp: App {
     @AppStorage("selectedTab") private var selectedTab = "home"
     @AppStorage("reminderOn") private var reminderOn = false
     @AppStorage("hideGochi") private var hideGochi = false
+    @AppStorage("iCloudSync") private var iCloudSync = false
     @AppStorage("reminderMinutes") private var reminderMinutes = 20 * 60
     @Environment(\.scenePhase) private var scenePhase
     @State private var progress = ProgressStore()
     @State private var store = ProStore()
     @State private var wallet = Wallet()
+    @State private var container = Red_PenApp.makeContainer(
+        sync: UserDefaults.standard.bool(forKey: "iCloudSync")
+    )
 
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Correction.self,
-            Folder.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
+    static func makeContainer(sync: Bool) -> ModelContainer {
+        let schema = Schema([Correction.self, Folder.self])
+        let config = ModelConfiguration(
+            schema: schema,
+            isStoredInMemoryOnly: false,
+            cloudKitDatabase: sync ? .automatic : .none
+        )
         do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
+            return try ModelContainer(for: schema, configurations: [config])
         } catch {
             fatalError("Could not create ModelContainer: \(error)")
         }
-    }()
+    }
 
     var body: some Scene {
         WindowGroup {
@@ -81,12 +85,15 @@ struct Red_PenApp: App {
             .onChange(of: progress.lastPracticeDay) {
                 refreshReminder()
             }
+            .onChange(of: store.tier) { _, tier in
+                if tier < .plus { iCloudSync = false }
+            }
             .environment(progress)
             .environment(store)
             .environment(wallet)
             .task { await store.start { wallet.addPurchased($0) } }
         }
-        .modelContainer(sharedModelContainer)
+        .modelContainer(container)
     }
 
     private func refreshReminder() {

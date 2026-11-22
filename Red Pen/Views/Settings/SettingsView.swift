@@ -13,6 +13,7 @@ struct SettingsView: View {
     @AppStorage("reminderOn") private var reminderOn = false
     @AppStorage("reminderMinutes") private var reminderMinutes = 20 * 60
     @AppStorage("hideGochi") private var hideGochi = false
+    @AppStorage("iCloudSync") private var iCloudSync = false
     @Environment(ProgressStore.self) private var progress
     @Environment(ProStore.self) private var store
     @Environment(Wallet.self) private var wallet
@@ -58,6 +59,14 @@ struct SettingsView: View {
                     Text(store.tier == .free
                          ? "Every lesson, every story, and more."
                          : "Change or cancel anytime in your Apple account.")
+                }
+                
+                if store.tier >= .plus {
+                    Section {
+                        Toggle("Sync with iCloud", isOn: $iCloudSync)
+                    } footer: {
+                        Text("Keeps your notebook on all your Apple devices. Changes take effect the next time you open Gochimi.")
+                    }
                 }
 
                 Section {

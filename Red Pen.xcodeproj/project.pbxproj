@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
+		873FA83D30B2AACF00963CEB /* Red-Pen-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Red-Pen-Info.plist"; sourceTree = "<group>"; };
 		8797E3C7309270EF006DA87F /* Red Pen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Red Pen.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -30,6 +31,7 @@
 		8797E3BE309270EF006DA87F = {
 			isa = PBXGroup;
 			children = (
+				873FA83D30B2AACF00963CEB /* Red-Pen-Info.plist */,
 				8797E3C9309270EF006DA87F /* Red Pen */,
 				8797E3C8309270EF006DA87F /* Products */,
 			);
@@ -254,6 +256,7 @@
 				DEVELOPMENT_TEAM = DVGVU68A8K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Red-Pen-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Gochimi;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -293,6 +296,7 @@
 				DEVELOPMENT_TEAM = DVGVU68A8K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Red-Pen-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Gochimi;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
