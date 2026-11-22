@@ -83,6 +83,12 @@ struct SettingsView: View {
                         Label("Export notebook", systemImage: "lock.fill")
                     }
                 }
+                
+                NavigationLink {
+                    AppIconPicker()
+                } label: {
+                    Label("App icon", systemImage: "app.badge")
+                }
 
                 Section {
                     Picker("Questions per day", selection: $dailyGoal) {

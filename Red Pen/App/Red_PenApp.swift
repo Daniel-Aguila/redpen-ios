@@ -87,6 +87,9 @@ struct Red_PenApp: App {
             }
             .onChange(of: store.tier) { _, tier in
                 if tier < .plus { iCloudSync = false }
+                if AppIcon.current.requiredTier > tier {
+                    Task { try? await UIApplication.shared.setAlternateIconName(nil) }
+                }
             }
             .environment(progress)
             .environment(store)

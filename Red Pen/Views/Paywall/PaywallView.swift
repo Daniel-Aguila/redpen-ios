@@ -9,7 +9,7 @@ import SwiftUI
 import StoreKit
 
 struct PaywallView: View {
-    enum Plan { case plus, pro }
+    enum Plan: Identifiable { case plus, pro; var id: Self { self } }
     enum Billing { case monthly, yearly, lifetime }
 
     @Environment(\.dismiss) private var dismiss
