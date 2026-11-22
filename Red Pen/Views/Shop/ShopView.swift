@@ -11,7 +11,7 @@ import StoreKit
 struct ShopView: View {
     enum Section: String, CaseIterable {
         case decor = "Decor"
-        case outfits = "Outfits"
+        case outfits = "Hats"
         case tangerines = "Get 🍊"
     }
 
@@ -344,7 +344,7 @@ struct ShopView: View {
                     .buttonStyle(PressableStyle())
                 }
             }
-            Text("🍊 are only for decorations and outfits. Streak, Plus and Pro items can't be bought with them.")
+            Text("🍊 are only for decorations and hats. Streak, Plus and Pro items can't be bought with them.")
                 .font(.caption)
                 .foregroundStyle(.secondary)
                 .multilineTextAlignment(.center)
