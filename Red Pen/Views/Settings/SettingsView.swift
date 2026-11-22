@@ -7,6 +7,7 @@
 
 import SwiftUI
 import StoreKit
+import SwiftData
 
 struct SettingsView: View {
     @AppStorage("dailyGoal") private var dailyGoal = 10
@@ -21,6 +22,8 @@ struct SettingsView: View {
     @State private var showPaywall = false
     @State private var showManage = false
     @State private var showShop = false
+    
+    @Query private var corrections: [Correction]
     
     private var reminderTime: Binding<Date> {
         Binding(
@@ -66,6 +69,18 @@ struct SettingsView: View {
                         Toggle("Sync with iCloud", isOn: $iCloudSync)
                     } footer: {
                         Text("Keeps your notebook on all your Apple devices. Changes take effect the next time you open Gochimi.")
+                    }
+                }
+                
+                if store.tier >= .plus {
+                    ShareLink(item: NotebookExport.csvFile(corrections)) {
+                        Label("Export notebook", systemImage: "square.and.arrow.up")
+                    }
+                } else {
+                    Button {
+                        showPaywall = true
+                    } label: {
+                        Label("Export notebook", systemImage: "lock.fill")
                     }
                 }
 
@@ -169,4 +184,5 @@ struct SettingsView: View {
         .environment(ProgressStore())
         .environment(ProStore())
         .environment(Wallet())
+        .modelContainer(for: [Correction.self, Folder.self], inMemory: true)
 }
