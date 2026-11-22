@@ -95,10 +95,10 @@ struct HabitatView: View {
 
     private var mood: HabitatMood {
         if progress.practicedToday { return .soaking }
-        let today = Calendar.current.startOfDay(for: .now)
-        let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: today)!
-        let last = Date(timeIntervalSince1970: progress.lastPracticeDay)
-        if progress.lastPracticeDay > 0 && last < yesterday { return .sleeping }
+        let allowance = store.tier >= .plus ? ProgressStore.plusFreezesPerMonth : 0
+        if progress.lastPracticeDay > 0 && !progress.streakIsAlive(freezeAllowance: allowance) {
+            return .sleeping
+        }
         return .waiting
     }
 
@@ -157,9 +157,7 @@ struct HabitatView: View {
             ShopView()
         }
     }
-
-    // MARK: Scene
-
+    
     private func place(_ r: CGRect, sx: CGFloat, sy: CGFloat) -> (CGSize, CGPoint) {
         let size = CGSize(width: r.width * sx, height: r.height * sx)
         let center = CGPoint(x: r.midX * sx, y: r.minY * sy + size.height / 2)
@@ -201,6 +199,15 @@ struct HabitatView: View {
 
             gochi(sx: sx, sy: sy)
 
+            if mood == .soaking {
+                let f = gochiFrame(sx: sx, sy: sy)
+                Ellipse()
+                    .stroke(.white.opacity(0.6), lineWidth: 2)
+                    .frame(width: f.width * 0.7, height: 12 * sx)
+                    .position(x: f.midX, y: f.minY + f.height * 0.68)
+                    .allowsHitTesting(false)
+            }
+
             if let item = shownItem(in: .float) {
                 let (size, center) = place(Slot.float.sceneFrame, sx: sx, sy: sy)
                 ItemArt(item: item)
@@ -213,7 +220,7 @@ struct HabitatView: View {
             if mood == .soaking {
                 Steam()
                     .frame(width: 160 * sx, height: 60 * sx)
-                    .position(x: 200 * sx, y: 470 * sy)
+                    .position(x: 200 * sx, y: 500 * sy)
                     .allowsHitTesting(false)
             }
         }
@@ -223,7 +230,7 @@ struct HabitatView: View {
 
     private func gochiFrame(sx: CGFloat, sy: CGFloat) -> CGRect {
         let r: CGRect = switch mood {
-        case .soaking: CGRect(x: 118, y: 388, width: 154, height: 154)
+        case .soaking: CGRect(x: 118, y: 424, width: 154, height: 154)
         case .waiting: CGRect(x: 214, y: 404, width: 136, height: 136)
         case .sleeping: CGRect(x: 226, y: 376, width: 140, height: 140)
         }
@@ -255,8 +262,6 @@ struct HabitatView: View {
         .accessibilityLabel("Gochi")
         .accessibilityAddTraits(.isButton)
     }
-
-    // MARK: Edit mode
 
     @ViewBuilder
     private func slotOutlines(sx: CGFloat, sy: CGFloat) -> some View {
@@ -292,8 +297,6 @@ struct HabitatView: View {
             .accessibilityLabel("\(slot.english) spot")
         }
     }
-
-    // MARK: Overlays
 
     private func topBar(time: SkyTime) -> some View {
         HStack(spacing: 8) {

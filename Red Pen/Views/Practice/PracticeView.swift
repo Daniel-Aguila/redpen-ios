@@ -306,7 +306,9 @@ struct PracticeView: View {
     }
 
     private func start(_ items: [Correction]) {
-        session = items.shuffled().prefix(10).map { ExerciseGenerator.make(from: $0) }
+        let smart = store.tier >= .plus
+        let ordered = smart ? Scheduler.order(items, all: corrections, smart: true) : items.shuffled()
+        session = ordered.prefix(10).shuffled().map { ExerciseGenerator.make(from: $0) }
         index = 0
         correctCount = 0
         sessionXP = 0
@@ -342,7 +344,7 @@ struct PracticeView: View {
 
         if index == session.count {
             let firstToday = !progress.practicedToday
-            progress.recordPracticeDay()
+            progress.recordPracticeDay(freezeAllowance: store.tier >= .plus ? ProgressStore.plusFreezesPerMonth : 0)
             if firstToday {
                 sessionTangerines += wallet.earn(Reward.streakBonus(progress.streak))
             }
