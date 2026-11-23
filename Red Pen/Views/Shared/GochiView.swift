@@ -12,22 +12,28 @@ struct GochiView: View {
     var hop: Int = 0
     var wobble: Int = 0
     var mood: GochiMood = .awake
+    var styled: Bool = true
 
     private var form: GochiForm { .forXP(xp) }
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @AppStorage("gochi.style") private var styleID = ""
+
+    private var style: GochiStyle? { styled ? StyleCatalog.style(styleID) : nil }
+    private var assetName: String { style?.imageName ?? form.assetName }
+    private var center: UnitPoint { style == nil ? form.center : GochiForm.adult.center }
 
     var body: some View {
         GeometryReader { geo in
             let k = geo.size.height / 160
 
-            Image(form.assetName)
+            Image(assetName)
                 .resizable()
                 .scaledToFit()
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .keyframeAnimator(initialValue: Flip(), trigger: reduceMotion ? 0 : celebrate) { view, f in
                     view
                         .scaleEffect(x: f.squash, y: 1 / f.squash, anchor: .bottom)
-                        .rotationEffect(.degrees(f.spin), anchor: form.center)
+                        .rotationEffect(.degrees(f.spin), anchor: center)
                         .offset(y: f.jump * k)
                 } keyframes: { _ in
                     KeyframeTrack(\.jump) {
@@ -107,7 +113,7 @@ struct GochiView: View {
                         Text("z")
                             .font(.system(size: 30 * k, weight: .heavy))
                             .foregroundStyle(.secondary)
-                            .position(x: x0 + artW * 0.80, y: y0 + artH * (form.center.y - 0.32))
+                            .position(x: x0 + artW * 0.80, y: y0 + artH * (center.y - 0.32))
                     case .awake:
                         EmptyView()
                     }

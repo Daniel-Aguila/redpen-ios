@@ -457,16 +457,18 @@ struct DressedGochi: View {
     var align: Align = .center
 
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @AppStorage("gochi.style") private var styleID = ""
 
     var body: some View {
         GeometryReader { geo in
             let form = GochiForm.forXP(xp)
+            let style = StyleCatalog.style(styleID)
             let artH = min(geo.size.height, geo.size.width * 212 / 220)
             let artW = artH * 220 / 212
             let x0 = (geo.size.width - artW) / 2
             let y0 = (geo.size.height - artH) / 2
 
-            let b = GochiFit.bounds(form.assetName)
+            let b = GochiFit.bounds(style?.imageName ?? form.assetName)
             let bx = x0 + artW * b.minX
             let by = y0 + artH * b.minY
             let bw = artW * b.width
@@ -481,7 +483,7 @@ struct DressedGochi: View {
             ZStack {
                 GochiView(xp: xp, mood: mood)
 
-                if let hat {
+                if let hat, style == nil {
                     ItemArt(item: hat)
                         .frame(width: bw * 0.62, height: bh * 0.32)
                         .position(x: bx + bw / 2, y: by + bh * 0.04)

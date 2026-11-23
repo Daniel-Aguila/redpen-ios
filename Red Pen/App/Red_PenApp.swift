@@ -93,6 +93,7 @@ struct Red_PenApp: App {
                 if AppIcon.current.requiredTier > tier {
                     Task { try? await UIApplication.shared.setAlternateIconName(nil) }
                 }
+                wallet.checkStyle(hasPlus: tier >= .plus, hasPro: tier >= .pro)
             }
             .environment(progress)
             .environment(store)

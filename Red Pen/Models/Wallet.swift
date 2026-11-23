@@ -100,6 +100,26 @@ final class Wallet {
         placed[slot.rawValue] = itemID ?? ""
         save()
     }
+    
+    static let styleKey = "style"
+
+    var styleID: String? {
+        let id = placed[Self.styleKey] ?? ""
+        return id.isEmpty ? nil : id
+    }
+
+    func wear(_ styleID: String?) {
+        placed[Self.styleKey] = styleID ?? ""
+        save()
+    }
+
+    func checkStyle(hasPlus: Bool, hasPro: Bool) {
+        guard let id = styleID, let style = StyleCatalog.style(id) else { return }
+        switch style.unlock {
+        case .plus where !hasPlus, .pro where !hasPro: wear(nil)
+        default: break
+        }
+    }
 
     private func rollDay() {
         let today = Calendar.current.startOfDay(for: .now).timeIntervalSince1970
@@ -123,6 +143,8 @@ final class Wallet {
         cloud.set(Int64(spent), forKey: Keys.spent)
         cloud.set(Array(owned), forKey: Keys.owned)
         cloud.set(placed, forKey: Keys.placed)
+
+        local.set(placed[Self.styleKey] ?? "", forKey: "gochi.style")
     }
 
     private func mergeFromCloud(takeRoom: Bool) {
