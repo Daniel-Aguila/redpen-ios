@@ -12,13 +12,14 @@ enum GochiAI {
     static let endpoint = URL(string: "https://gochimi-ai.gochimi.workers.dev")!
 
     enum AIError: LocalizedError {
-        case notPro, dailyLimit, failed
+        case notPro, dailyLimit, slowDown, failed
 
         var errorDescription: String? {
             switch self {
             case .notPro: String(localized: "This needs an active Pro plan.")
             case .dailyLimit: String(localized: "Gochi needs a rest. Try again tomorrow.")
             case .failed: String(localized: "Something went wrong. Check your connection and try again.")
+            case .slowDown: String(localized: "Gochi is catching his breath. Try again in a minute.")
             }
         }
     }
@@ -130,7 +131,8 @@ enum GochiAI {
         switch (response as? HTTPURLResponse)?.statusCode ?? 0 {
         case 200: break
         case 403: throw AIError.notPro
-        case 429: throw AIError.dailyLimit
+        case 429:
+            throw String(data: data, encoding: .utf8)?.contains("slow_down") == true ? AIError.slowDown : AIError.dailyLimit
         default: throw AIError.failed
         }
         do {

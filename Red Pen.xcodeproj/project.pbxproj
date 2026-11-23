@@ -175,6 +175,16 @@
 				en,
 				Base,
 				"es-419",
+				ja,
+				"zh-Hans",
+				"zh-Hant",
+				"pt-BR",
+				fr,
+				de,
+				vi,
+				id,
+				th,
+				es,
 			);
 			mainGroup = 8797E3BE309270EF006DA87F;
 			minimizedProjectReferenceProxies = 1;
