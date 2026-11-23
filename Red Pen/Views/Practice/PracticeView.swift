@@ -22,6 +22,7 @@ struct PracticeView: View {
     @State private var scope: PracticeScope = .all
     @State private var session: [Exercise] = []
     @State private var index = 0
+    @State private var pendingPro: (() -> Void)?
     @State private var correctCount = 0
     @State private var sessionXP = 0
     @State private var sessionTangerines = 0
@@ -157,9 +158,7 @@ struct PracticeView: View {
             .fullScreenCover(isPresented: $showGochiPractice) {
                 GochiPracticeView(mistakes: aiMistakes, saved: practiceToRun)
             }
-            .fullScreenCover(isPresented: $showDiary) {
-                DiaryView()
-            }
+            .proConsent($pendingPro)
             .confirmationDialog("Your mistakes are mostly the same as last time",
                                 isPresented: Binding(get: { redoCandidate != nil }, set: { if !$0 { redoCandidate = nil } }),
                                 titleVisibility: .visible,
@@ -280,7 +279,7 @@ struct PracticeView: View {
                                    subtitle: isPro ? "Exercises and a story from your mistakes" : "Personal practice with Pro",
                                    symbol: "wand.and.stars",
                                    isPro: isPro) {
-                        if isPro { openGochiPractice() } else { showProPaywall = true }
+                        if isPro { withConsent { openGochiPractice() } } else { showProPaywall = true }
                     }
                 }
 
@@ -288,7 +287,7 @@ struct PracticeView: View {
                                subtitle: isPro ? "Write in Korean, Gochi corrects it" : "Personal corrections with Pro",
                                symbol: "book.pages",
                                isPro: isPro) {
-                    if isPro { showDiary = true } else { showProPaywall = true }
+                    if isPro { withConsent { showDiary = true } } else { showProPaywall = true }
                 }
 
                 if isPro {
@@ -385,6 +384,10 @@ struct PracticeView: View {
         correctCount = 0
         sessionXP = 0
         sessionTangerines = 0
+    }
+    
+    private func withConsent(_ run: @escaping () -> Void) {
+        if ProConsent.agreed { run() } else { pendingPro = run }
     }
 
     private func openGochiPractice() {

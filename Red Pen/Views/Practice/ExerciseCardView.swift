@@ -15,6 +15,7 @@ struct ExerciseCardView: View {
     @State private var result: AnswerResult? = nil
     @State private var showExplain = false
     @State private var hops = 0
+    @State private var pendingPro: (() -> Void)?
     @State private var wobbles = 0
 
     @AppStorage("hideGochi") private var hideGochi = false
@@ -72,6 +73,7 @@ struct ExerciseCardView: View {
             ExplainSheet(correction: exercise.correction)
                 .presentationDetents([.medium, .large])
         }
+        .proConsent($pendingPro)
         .sensoryFeedback(trigger: picked) { _, newValue in
             guard let newValue else { return nil }
             return newValue == exercise.answer ? .success : .error
@@ -97,11 +99,15 @@ struct ExerciseCardView: View {
             }
         }
     }
+    
+    private func withConsent(_ run: @escaping () -> Void) {
+        if ProConsent.agreed { run() } else { pendingPro = run }
+    }
 
     private var explainButton: some View {
         ExplainButtonCard(isPro: store.tier >= .pro,
                           hasSaved: exercise.correction.savedExplanation != nil) {
-            if store.tier >= .pro { showExplain = true } else { onUpsell() }
+            if store.tier >= .pro { withConsent { showExplain = true } } else { onUpsell() }
         }
     }
 

@@ -20,6 +20,7 @@ struct CorrectionDetailView: View {
     @State private var showExplain = false
     @State private var showProPaywall = false
     @State private var showRule = false
+    @State private var pendingPro: (() -> Void)?
     @State private var peeked = false
     @State private var gochiTaps = 0
     let correction: Correction
@@ -51,6 +52,7 @@ struct CorrectionDetailView: View {
         .sheet(isPresented: $showingEdit) {
             AddCorrectionView(correction: correction)
         }
+        .proConsent($pendingPro)
         .sheet(isPresented: $showExplain) {
             ExplainSheet(correction: correction)
                 .presentationDetents([.medium, .large])
@@ -150,6 +152,10 @@ struct CorrectionDetailView: View {
             EmptyView()
         }
     }
+    
+    private func withConsent(_ run: @escaping () -> Void) {
+        if ProConsent.agreed { run() } else { pendingPro = run }
+    }
 
     private func changeBox(from: String, to: String, why: String?) -> some View {
         VStack(alignment: .leading, spacing: 4) {
@@ -227,7 +233,7 @@ struct CorrectionDetailView: View {
             }
         } else {
             ExplainButtonCard(isPro: isPro) {
-                if isPro { showExplain = true } else { showProPaywall = true }
+                if isPro { withConsent { showExplain = true } } else { showProPaywall = true }
             }
         }
     }
