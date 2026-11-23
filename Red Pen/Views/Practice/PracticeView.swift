@@ -18,8 +18,7 @@ struct PracticeView: View {
     @Environment(Wallet.self) private var wallet
     @AppStorage("reviewAskedVersion") private var reviewAskedVersion = ""
     @AppStorage("hideGochi") private var hideGochi = false
-    
-    @State private var showGochiPractice = false
+
     @State private var scope: PracticeScope = .all
     @State private var session: [Exercise] = []
     @State private var index = 0
@@ -31,10 +30,17 @@ struct PracticeView: View {
     @State private var paywallReady = false
     @State private var showPaywall = false
     @State private var showProPaywall = false
+    @State private var showShop = false
+    @State private var showGochiPractice = false
+    @State private var showDiary = false
+    @State private var practiceToRun: SavedPractice?
+    @State private var redoCandidate: SavedPractice?
 
     @AppStorage("dailyGoal") private var dailyGoal = 10
     @State private var showGoalBanner = false
     @State private var goalFlips = 0
+
+    private var isPro: Bool { store.tier >= .pro }
 
     private var pool: [Correction] {
         corrections.filter { c in
@@ -45,7 +51,7 @@ struct PracticeView: View {
             }
         }
     }
-    
+
     private var aiMistakes: [GochiAI.MistakeInput] {
         Scheduler.order(corrections, all: corrections, smart: true).prefix(10).map(\.aiInput)
     }
@@ -145,8 +151,27 @@ struct PracticeView: View {
             .sheet(isPresented: $showProPaywall) {
                 PaywallView(startOn: .pro)
             }
+            .sheet(isPresented: $showShop) {
+                ShopView()
+            }
             .fullScreenCover(isPresented: $showGochiPractice) {
-                GochiPracticeView(mistakes: aiMistakes)
+                GochiPracticeView(mistakes: aiMistakes, saved: practiceToRun)
+            }
+            .fullScreenCover(isPresented: $showDiary) {
+                DiaryView()
+            }
+            .confirmationDialog("Your mistakes are mostly the same as last time",
+                                isPresented: Binding(get: { redoCandidate != nil }, set: { if !$0 { redoCandidate = nil } }),
+                                titleVisibility: .visible,
+                                presenting: redoCandidate) { item in
+                Button("Redo last practice") {
+                    practiceToRun = item
+                    showGochiPractice = true
+                }
+                Button("New practice") {
+                    practiceToRun = nil
+                    showGochiPractice = true
+                }
             }
             .onChange(of: folders) {
                 if case .folder(let f) = scope, !folders.contains(f) {
@@ -245,11 +270,38 @@ struct PracticeView: View {
 
                 if !corrections.isEmpty {
                     ProFeatureCard(title: "Gochi's practice",
-                                   subtitle: store.tier >= .pro ? "Exercises and a story from your mistakes" : "Personal practice with Pro",
+                                   subtitle: isPro ? "Exercises and a story from your mistakes" : "Personal practice with Pro",
                                    symbol: "wand.and.stars",
-                                   isPro: store.tier >= .pro) {
-                        if store.tier >= .pro { showGochiPractice = true } else { showProPaywall = true }
+                                   isPro: isPro) {
+                        if isPro { openGochiPractice() } else { showProPaywall = true }
                     }
+                }
+
+                ProFeatureCard(title: "Gochi's diary",
+                               subtitle: isPro ? "Write in Korean, Gochi corrects it" : "Personal corrections with Pro",
+                               symbol: "book.pages",
+                               isPro: isPro) {
+                    if isPro { showDiary = true } else { showProPaywall = true }
+                }
+
+                if isPro {
+                    NavigationLink {
+                        PracticeHistoryView()
+                    } label: {
+                        HStack(spacing: 12) {
+                            Image(systemName: "books.vertical.fill")
+                                .foregroundStyle(Color.gochiRed)
+                            Text("My stories and past practice")
+                                .font(.subheadline.weight(.semibold))
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                                .font(.caption.weight(.semibold))
+                                .foregroundStyle(.secondary)
+                        }
+                        .padding()
+                        .softCard()
+                    }
+                    .buttonStyle(.plain)
                 }
             }
             .padding()
@@ -283,22 +335,18 @@ struct PracticeView: View {
                     .padding(.vertical, 8)
                     .background(Color.taegeukBlue, in: Capsule())
                 if sessionTangerines > 0 {
-                    Text("+\(sessionTangerines) 🍊")
-                        .font(.headline)
-                        .foregroundStyle(.white)
-                        .padding(.horizontal, 16)
-                        .padding(.vertical, 8)
-                        .background(Color.orange, in: Capsule())
-                }
-            }
-
-            if correctCount < session.count && store.tier != .pro {
-                Button {
-                    showProPaywall = true
-                } label: {
-                    Label("Get personal help on the ones you missed", systemImage: "sparkles")
-                        .font(.footnote)
-                        .multilineTextAlignment(.center)
+                    Button {
+                        showShop = true
+                    } label: {
+                        Text("+\(sessionTangerines) 🍊")
+                            .font(.headline)
+                            .foregroundStyle(.white)
+                            .padding(.horizontal, 16)
+                            .padding(.vertical, 8)
+                            .background(Color.orange, in: Capsule())
+                    }
+                    .buttonStyle(PressableStyle())
+                    .accessibilityLabel("Open shop, earned \(sessionTangerines) tangerines")
                 }
             }
 
@@ -330,6 +378,15 @@ struct PracticeView: View {
         correctCount = 0
         sessionXP = 0
         sessionTangerines = 0
+    }
+
+    private func openGochiPractice() {
+        if let match = PracticeLibrary.shared.similarRecent(to: aiMistakes.map(\.key)) {
+            redoCandidate = match
+        } else {
+            practiceToRun = nil
+            showGochiPractice = true
+        }
     }
 
     private func finish(_ rating: Rating) {

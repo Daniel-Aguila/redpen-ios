@@ -9,10 +9,12 @@ import SwiftUI
 
 struct GochiPracticeView: View {
     let mistakes: [GochiAI.MistakeInput]
+    var saved: SavedPractice? = nil
 
     @Environment(\.dismiss) private var dismiss
     @Environment(ProgressStore.self) private var progress
     @Environment(ProStore.self) private var store
+    @AppStorage("hideGochi") private var hideGochi = false
 
     @State private var practice: GochiAI.Practice?
     @State private var errorMessage: String?
@@ -22,7 +24,8 @@ struct GochiPracticeView: View {
     @State private var showHint = false
     @State private var correctCount = 0
     @State private var showStory = false
-    @State private var showTranslations = false
+    @State private var hops = 0
+    @State private var wobbles = 0
     @FocusState private var focused: Bool
 
     var body: some View {
@@ -93,6 +96,11 @@ struct GochiPracticeView: View {
         VStack(spacing: 16) {
             ProgressView(value: Double(index), total: Double(total))
                 .tint(Color.gochiRed)
+
+            if !hideGochi {
+                GochiView(xp: progress.xp, hop: hops, wobble: wobbles)
+                    .frame(height: 72)
+            }
 
             VStack(spacing: 10) {
                 Text("Fill in the blank")
@@ -190,6 +198,7 @@ struct GochiPracticeView: View {
         focused = false
         let r = AnswerChecker.check(typed, against: ex.answer, spacingMatters: false)
         if r != .wrong { correctCount += 1 }
+        if r == .wrong { wobbles += 1 } else { hops += 1 }
         progress.countAnswer()
         withAnimation(.snappy) { result = r }
     }
@@ -208,58 +217,10 @@ struct GochiPracticeView: View {
 
     private func storyView(_ story: GochiAI.Practice.Story, total: Int) -> some View {
         VStack(alignment: .leading, spacing: 16) {
-            VStack(alignment: .leading, spacing: 4) {
-                Text(verbatim: story.title)
-                    .font(.title2.bold())
-                Text("\(correctCount) of \(total) exercises right")
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
-            }
+            StoryHeader(title: story.title,
+                        subtitle: String(localized: "\(correctCount) of \(total) exercises right"))
 
-            HStack {
-                Toggle("Translations", isOn: $showTranslations.animation(.snappy))
-                    .font(.subheadline.weight(.semibold))
-            }
-            .softCard()
-
-            VStack(alignment: .leading, spacing: 10) {
-                ForEach(story.sentences, id: \.self) { s in
-                    HStack(alignment: .top, spacing: 10) {
-                        VStack(alignment: .leading, spacing: 3) {
-                            Text(verbatim: s.ko)
-                                .font(.body.weight(.semibold))
-                            if showTranslations {
-                                Text(s.translation)
-                                    .font(.subheadline)
-                                    .foregroundStyle(.secondary)
-                            }
-                        }
-                        Spacer(minLength: 0)
-                        Button {
-                            Speaker.shared.speak(s.ko)
-                        } label: {
-                            Image(systemName: "speaker.wave.2.fill")
-                                .font(.caption)
-                                .foregroundStyle(Color.gochiRed)
-                                .frame(width: 32, height: 32)
-                                .background(Color.gochiRed.opacity(0.1), in: .circle)
-                        }
-                        .buttonStyle(PressableStyle())
-                        .accessibilityLabel("Listen")
-                    }
-                }
-            }
-            .softCard()
-
-            Button {
-                Speaker.shared.speak(story.sentences.map(\.ko).joined(separator: " "))
-            } label: {
-                Label("Listen to the whole story", systemImage: "play.fill")
-                    .frame(maxWidth: .infinity)
-            }
-            .buttonStyle(.bordered)
-            .controlSize(.large)
-            .tint(Color.gochiRed)
+            StoryContent(story: story)
 
             Button {
                 dismiss()
@@ -275,15 +236,146 @@ struct GochiPracticeView: View {
 
     private func load() async {
         guard practice == nil else { return }
+        if let saved {
+            practice = saved.practice
+            return
+        }
         do {
             let p = try await GochiAI.practice(mistakes)
             guard !p.exercises.isEmpty else {
                 errorMessage = GochiAI.AIError.failed.localizedDescription
                 return
             }
+            PracticeLibrary.shared.add(p, keys: mistakes.map(\.key))
             withAnimation(.snappy) { practice = p }
         } catch {
             errorMessage = error.localizedDescription
+        }
+    }
+}
+
+struct StoryHeader: View {
+    let title: String
+    let subtitle: String
+    var color: Color = .gochiRed
+
+    @Environment(ProgressStore.self) private var progress
+    @AppStorage("hideGochi") private var hideGochi = false
+    @State private var taps = 0
+
+    var body: some View {
+        HStack(alignment: .center, spacing: 12) {
+            VStack(alignment: .leading, spacing: 6) {
+                Label("Gochi's story", systemImage: "book.fill")
+                    .font(.caption.weight(.bold))
+                    .foregroundStyle(color)
+                Text(verbatim: title)
+                    .font(.title2.bold())
+                    .fixedSize(horizontal: false, vertical: true)
+                Text(subtitle)
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+            }
+            Spacer(minLength: 0)
+            if !hideGochi {
+                GochiView(xp: progress.xp, celebrate: taps, mood: .happy)
+                    .frame(width: 80, height: 80)
+                    .onTapGesture { taps += 1 }
+            }
+        }
+        .padding(18)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(
+            LinearGradient(colors: [color.opacity(0.14), color.opacity(0.04)],
+                           startPoint: .topLeading, endPoint: .bottomTrailing),
+            in: .rect(cornerRadius: 24)
+        )
+        .overlay {
+            RoundedRectangle(cornerRadius: 24)
+                .strokeBorder(color.opacity(0.15), lineWidth: 1)
+        }
+    }
+}
+
+struct StoryContent: View {
+    let story: GochiAI.Practice.Story
+    var color: Color = .gochiRed
+
+    @State private var showTranslations = false
+    @State private var playing: Int?
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 14) {
+            HStack {
+                Text("Tap a line to hear it")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                Spacer()
+                Button {
+                    withAnimation(.snappy) { showTranslations.toggle() }
+                } label: {
+                    Label(showTranslations ? "Hide translation" : "Show translation", systemImage: "character.bubble")
+                        .font(.caption.weight(.semibold))
+                        .foregroundStyle(color)
+                        .padding(.horizontal, 10)
+                        .padding(.vertical, 6)
+                        .background(color.opacity(0.1), in: .capsule)
+                }
+                .buttonStyle(PressableStyle())
+            }
+
+            VStack(alignment: .leading, spacing: 0) {
+                ForEach(Array(story.sentences.enumerated()), id: \.offset) { i, s in
+                    Button {
+                        playing = i
+                        Speaker.shared.speak(s.ko)
+                    } label: {
+                        HStack(alignment: .firstTextBaseline, spacing: 12) {
+                            Text("\(i + 1)")
+                                .font(.caption.weight(.bold).monospacedDigit())
+                                .foregroundStyle(color.opacity(0.7))
+                                .frame(width: 18)
+                            VStack(alignment: .leading, spacing: 3) {
+                                Text(verbatim: s.ko)
+                                    .font(.body.weight(.medium))
+                                    .foregroundStyle(.primary)
+                                    .multilineTextAlignment(.leading)
+                                if showTranslations {
+                                    Text(s.translation)
+                                        .font(.subheadline)
+                                        .foregroundStyle(.secondary)
+                                        .multilineTextAlignment(.leading)
+                                }
+                            }
+                            Spacer(minLength: 0)
+                            Image(systemName: "speaker.wave.2.fill")
+                                .font(.caption)
+                                .foregroundStyle(playing == i ? color : Color.secondary.opacity(0.4))
+                        }
+                        .padding(.vertical, 12)
+                        .padding(.horizontal, 10)
+                        .background(playing == i ? color.opacity(0.08) : .clear, in: .rect(cornerRadius: 12))
+                        .contentShape(.rect)
+                    }
+                    .buttonStyle(.plain)
+
+                    if i < story.sentences.count - 1 {
+                        Divider().padding(.leading, 40)
+                    }
+                }
+            }
+            .softCard()
+
+            Button {
+                playing = nil
+                Speaker.shared.speak(story.sentences.map(\.ko).joined(separator: " "))
+            } label: {
+                Label("Listen to the whole story", systemImage: "play.fill")
+                    .frame(maxWidth: .infinity)
+            }
+            .buttonStyle(.bordered)
+            .controlSize(.large)
+            .tint(color)
         }
     }
 }
