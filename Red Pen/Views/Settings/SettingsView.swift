@@ -121,6 +121,16 @@ struct SettingsView: View {
                 } footer: {
                     Text("Hides the pet and the evolution screen. Your XP and streak still count.")
                 }
+                
+                Section {
+                    if let feedbackURL {
+                        Link(destination: feedbackURL) {
+                            Label("Send feedback", systemImage: "envelope")
+                        }
+                    }
+                } footer: {
+                    Text("support@gochimi.com")
+                }
 
                 #if DEBUG
                 Section("Developer") {
@@ -182,6 +192,27 @@ struct SettingsView: View {
                 refreshReminder()
             }
         }
+    }
+    
+    private var feedbackURL: URL? {
+        let info = Bundle.main.infoDictionary
+        let version = info?["CFBundleShortVersionString"] as? String ?? "?"
+        let build = info?["CFBundleVersion"] as? String ?? "?"
+        let plan = switch store.tier {
+        case .free: "Free"
+        case .plus: "Plus"
+        case .pro: "Pro"
+        }
+        let body = "\n\n\n---\nGochimi \(version) (\(build)) · iOS \(UIDevice.current.systemVersion) · \(plan)"
+
+        var c = URLComponents()
+        c.scheme = "mailto"
+        c.path = "support@gochimi.com"
+        c.queryItems = [
+            URLQueryItem(name: "subject", value: "Gochimi feedback"),
+            URLQueryItem(name: "body", value: body),
+        ]
+        return c.url
     }
 }
 

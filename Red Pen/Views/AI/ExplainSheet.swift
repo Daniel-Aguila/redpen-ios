@@ -92,34 +92,8 @@ struct ExplainSheet: View {
     }
 
     private func answer(_ r: GochiAI.Explanation) -> some View {
-        VStack(alignment: .leading, spacing: 16) {
-            Text(r.explanation)
-                .fixedSize(horizontal: false, vertical: true)
-
-            HStack(alignment: .top, spacing: 10) {
-                Image(systemName: "lightbulb.fill")
-                    .foregroundStyle(.yellow)
-                Text(r.tip)
-                    .font(.subheadline.weight(.semibold))
-                    .fixedSize(horizontal: false, vertical: true)
-            }
-            .padding()
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .background(Color.yellow.opacity(0.12), in: .rect(cornerRadius: 14))
-
-            VStack(alignment: .leading, spacing: 10) {
-                Text("Examples")
-                    .font(.headline)
-                ForEach(r.examples, id: \.self) { ex in
-                    VStack(alignment: .leading, spacing: 2) {
-                        Text(verbatim: ex.ko)
-                            .font(.body.weight(.semibold))
-                        Text(ex.translation)
-                            .font(.subheadline)
-                            .foregroundStyle(.secondary)
-                    }
-                }
-            }
+        ExplanationContent(explanation: r, tint: correction.type.color) { up in
+            Task { await GochiAI.sendFeedback(up: up, mistake: correction.aiInput, explanation: r) }
         }
         .padding()
         .background(Color(.secondarySystemGroupedBackground), in: .rect(cornerRadius: 18))

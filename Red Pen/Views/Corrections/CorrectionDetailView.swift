@@ -205,7 +205,9 @@ struct CorrectionDetailView: View {
                 Label("Gochi explains", systemImage: "sparkles")
                     .font(.subheadline.weight(.semibold))
                     .foregroundStyle(tint)
-                ExplanationContent(explanation: saved, tint: tint)
+                ExplanationContent(explanation: saved, tint: tint) { up in
+                    Task { await GochiAI.sendFeedback(up: up, mistake: correction.aiInput, explanation: saved) }
+                }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .softCard(.gochiRed)
@@ -298,6 +300,9 @@ struct CorrectionDetailView: View {
 struct ExplanationContent: View {
     let explanation: GochiAI.Explanation
     var tint: Color = .gochiRed
+    var onVote: ((Bool) -> Void)? = nil
+
+    @State private var voted: Bool?
 
     var body: some View {
         VStack(alignment: .leading, spacing: 14) {
@@ -342,7 +347,41 @@ struct ExplanationContent: View {
                     .background(Color.primary.opacity(0.03), in: .rect(cornerRadius: 14))
                 }
             }
+
+            if let onVote {
+                HStack(spacing: 12) {
+                    if let voted {
+                        Label(voted ? "Thanks! Glad it helped." : "Thanks, Gochi will do better.",
+                              systemImage: "checkmark.circle.fill")
+                            .font(.footnote)
+                            .foregroundStyle(.secondary)
+                    } else {
+                        Text("Was this helpful?")
+                            .font(.footnote)
+                            .foregroundStyle(.secondary)
+                        Spacer()
+                        voteButton(up: true, onVote: onVote)
+                        voteButton(up: false, onVote: onVote)
+                    }
+                }
+                .animation(.snappy, value: voted)
+            }
         }
+    }
+
+    private func voteButton(up: Bool, onVote: @escaping (Bool) -> Void) -> some View {
+        Button {
+            voted = up
+            onVote(up)
+        } label: {
+            Image(systemName: up ? "hand.thumbsup" : "hand.thumbsdown")
+                .font(.subheadline)
+                .foregroundStyle(tint)
+                .frame(width: 36, height: 36)
+                .background(tint.opacity(0.1), in: .circle)
+        }
+        .buttonStyle(PressableStyle())
+        .accessibilityLabel(up ? "Helpful" : "Not helpful")
     }
 }
 

@@ -34,7 +34,6 @@ enum GochiAI {
     private struct PracticeInput: Encodable { let mistakes: [MistakeInput] }
     private struct DiaryInput: Encodable { let text: String }
 
-
     struct Example: Codable, Hashable {
         let ko: String
         let translation: String
@@ -82,6 +81,28 @@ enum GochiAI {
         try await send("diary", input: DiaryInput(text: String(text.prefix(1500))))
     }
 
+    private struct FeedbackBody: Encodable {
+        let transaction: String
+        let vote: String
+        let task: String
+        let input: MistakeInput
+        let output: Explanation
+        let lang: String
+    }
+
+    static func sendFeedback(up: Bool, mistake: MistakeInput, explanation: Explanation) async {
+        guard let jws = await proTransaction() else { return }
+        var request = URLRequest(url: endpoint.appending(path: "feedback"))
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.timeoutInterval = 15
+        request.httpBody = try? JSONEncoder().encode(
+            FeedbackBody(transaction: jws, vote: up ? "up" : "down", task: "explain",
+                         input: mistake, output: explanation, lang: languageCode)
+        )
+        _ = try? await URLSession.shared.data(for: request)
+    }
+
     private struct Body<Input: Encodable>: Encodable {
         let transaction: String
         let task: String
@@ -103,6 +124,9 @@ enum GochiAI {
         request.httpBody = try JSONEncoder().encode(Body(transaction: jws, task: task, input: input, lang: languageCode))
 
         let (data, response) = try await URLSession.shared.data(for: request)
+        #if DEBUG
+        print("GochiAI", (response as? HTTPURLResponse)?.statusCode ?? 0, String(data: data, encoding: .utf8) ?? "")
+        #endif
         switch (response as? HTTPURLResponse)?.statusCode ?? 0 {
         case 200: break
         case 403: throw AIError.notPro
