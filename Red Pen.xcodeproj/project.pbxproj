@@ -6,20 +6,80 @@
 	objectVersion = 110;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		877F0AC430B3B8F0001D7691 /* ShareExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 877F0ABA30B3B8F0001D7691 /* ShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		877F0AC230B3B8F0001D7691 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8797E3BF309270EF006DA87F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 877F0AB930B3B8F0001D7691;
+			remoteInfo = ShareExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		877F0AC930B3B8F0001D7691 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			dstPath = "";
+			dstSubfolder = PlugIns;
+			files = (
+				877F0AC430B3B8F0001D7691 /* ShareExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		873FA83D30B2AACF00963CEB /* Red-Pen-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Red-Pen-Info.plist"; sourceTree = "<group>"; };
+		877F0ABA30B3B8F0001D7691 /* ShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		8797E3C7309270EF006DA87F /* Red Pen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Red Pen.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		877F0AC530B3B8F0001D7691 /* Exceptions for "ShareExtension" folder in "ShareExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 877F0AB930B3B8F0001D7691 /* ShareExtension */;
+		};
+		877F0AD030B3C7BC001D7691 /* Exceptions for "Red Pen" folder in "ShareExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Services/ShareInbox.swift,
+			);
+			target = 877F0AB930B3B8F0001D7691 /* ShareExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		877F0ABB30B3B8F0001D7691 /* ShareExtension */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				877F0AC530B3B8F0001D7691 /* Exceptions for "ShareExtension" folder in "ShareExtension" target */,
+			);
+			path = ShareExtension;
+			sourceTree = "<group>";
+		};
 		8797E3C9309270EF006DA87F /* Red Pen */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				877F0AD030B3C7BC001D7691 /* Exceptions for "Red Pen" folder in "ShareExtension" target */,
+			);
 			path = "Red Pen";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		877F0AB730B3B8F0001D7691 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+			);
+		};
 		8797E3C4309270EF006DA87F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			files = (
@@ -33,6 +93,7 @@
 			children = (
 				873FA83D30B2AACF00963CEB /* Red-Pen-Info.plist */,
 				8797E3C9309270EF006DA87F /* Red Pen */,
+				877F0ABB30B3B8F0001D7691 /* ShareExtension */,
 				8797E3C8309270EF006DA87F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				8797E3C7309270EF006DA87F /* Red Pen.app */,
+				877F0ABA30B3B8F0001D7691 /* ShareExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,6 +110,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		877F0AB930B3B8F0001D7691 /* ShareExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 877F0AC630B3B8F0001D7691 /* Build configuration list for PBXNativeTarget "ShareExtension" */;
+			buildPhases = (
+				877F0AB630B3B8F0001D7691 /* Sources */,
+				877F0AB730B3B8F0001D7691 /* Frameworks */,
+				877F0AB830B3B8F0001D7691 /* Resources */,
+			);
+			buildRules = (
+			);
+			fileSystemSynchronizedGroups = (
+				877F0ABB30B3B8F0001D7691 /* ShareExtension */,
+			);
+			name = ShareExtension;
+			productName = ShareExtension;
+			productReference = 877F0ABA30B3B8F0001D7691 /* ShareExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		8797E3C6309270EF006DA87F /* Red Pen */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8797E3D4309270F0006DA87F /* Build configuration list for PBXNativeTarget "Red Pen" */;
@@ -55,8 +135,12 @@
 				8797E3C3309270EF006DA87F /* Sources */,
 				8797E3C4309270EF006DA87F /* Frameworks */,
 				8797E3C5309270EF006DA87F /* Resources */,
+				877F0AC930B3B8F0001D7691 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
+			);
+			dependencies = (
+				877F0AC330B3B8F0001D7691 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				8797E3C9309270EF006DA87F /* Red Pen */,
@@ -73,9 +157,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 2710;
+				LastSwiftUpdateCheck = 2720;
 				LastUpgradeCheck = 2720;
 				TargetAttributes = {
+					877F0AB930B3B8F0001D7691 = {
+						CreatedOnToolsVersion = 27.2;
+					};
 					8797E3C6309270EF006DA87F = {
 						CreatedOnToolsVersion = 27.1;
 					};
@@ -97,11 +184,17 @@
 			projectRoot = "";
 			targets = (
 				8797E3C6309270EF006DA87F /* Red Pen */,
+				877F0AB930B3B8F0001D7691 /* ShareExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		877F0AB830B3B8F0001D7691 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+			);
+		};
 		8797E3C5309270EF006DA87F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			files = (
@@ -110,6 +203,11 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		877F0AB630B3B8F0001D7691 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+			);
+		};
 		8797E3C3309270EF006DA87F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			files = (
@@ -117,7 +215,77 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		877F0AC330B3B8F0001D7691 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 877F0AB930B3B8F0001D7691 /* ShareExtension */;
+			targetProxy = 877F0AC230B3B8F0001D7691 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		877F0AC730B3B8F0001D7691 /* Debug configuration for PBXNativeTarget "ShareExtension" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ShareExtension/ShareExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DVGVU68A8K;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ShareExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Gochimi;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.danielaguila.redpen.ShareExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		877F0AC830B3B8F0001D7691 /* Release configuration for PBXNativeTarget "ShareExtension" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ShareExtension/ShareExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DVGVU68A8K;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ShareExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Gochimi;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.danielaguila.redpen.ShareExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		8797E3D2309270F0006DA87F /* Debug configuration for PBXProject "Red Pen" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -273,6 +441,7 @@
 				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.danielaguila.redpen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -314,6 +483,7 @@
 				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.danielaguila.redpen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -330,6 +500,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		877F0AC630B3B8F0001D7691 /* Build configuration list for PBXNativeTarget "ShareExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				877F0AC730B3B8F0001D7691 /* Debug configuration for PBXNativeTarget "ShareExtension" */,
+				877F0AC830B3B8F0001D7691 /* Release configuration for PBXNativeTarget "ShareExtension" */,
+			);
+			defaultConfigurationName = Release;
+		};
 		8797E3C2309270EF006DA87F /* Build configuration list for PBXProject "Red Pen" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

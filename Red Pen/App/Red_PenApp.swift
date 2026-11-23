@@ -80,7 +80,10 @@ struct Red_PenApp: App {
                 if hideGochi, form != nil { progress.pendingEvolution = nil }
             }
             .onChange(of: scenePhase) { _, phase in
-                if phase == .active { refreshReminder() }
+                if phase == .active {
+                    refreshReminder()
+                    importShared()
+                }
             }
             .onChange(of: progress.lastPracticeDay) {
                 refreshReminder()
@@ -102,5 +105,15 @@ struct Red_PenApp: App {
     private func refreshReminder() {
         Reminder.refresh(enabled: reminderOn, minutesAfterMidnight: reminderMinutes,
                          practicedToday: progress.practicedToday)
+    }
+    
+    private func importShared() {
+        let context = container.mainContext
+        for shared in ShareInbox.takeAll() {
+            let c = Correction(original: shared.original, corrected: shared.corrected)
+            c.type = MistakeDetector.detect(original: shared.original, corrected: shared.corrected)
+            context.insert(c)
+        }
+        try? context.save()
     }
 }
