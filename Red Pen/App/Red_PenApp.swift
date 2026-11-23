@@ -12,26 +12,32 @@ import SwiftData
 struct Red_PenApp: App {
     @AppStorage("hasSeenOnboarding") private var hasSeenOnboarding = false
     @AppStorage("whatsNewSeen") private var whatsNewSeen = ""
-    @AppStorage("selectedTab") private var selectedTab = "practice"
+    @AppStorage("selectedTab") private var selectedTab = "home"
     @AppStorage("reminderOn") private var reminderOn = false
     @AppStorage("hideGochi") private var hideGochi = false
+    @AppStorage("iCloudSync") private var iCloudSync = false
     @AppStorage("reminderMinutes") private var reminderMinutes = 20 * 60
     @Environment(\.scenePhase) private var scenePhase
     @State private var progress = ProgressStore()
+    @State private var store = ProStore()
+    @State private var wallet = Wallet()
+    @State private var container = Red_PenApp.makeContainer(
+        sync: UserDefaults.standard.bool(forKey: "iCloudSync")
+    )
 
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Correction.self,
-            Folder.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
+    static func makeContainer(sync: Bool) -> ModelContainer {
+        let schema = Schema([Correction.self, Folder.self])
+        let config = ModelConfiguration(
+            schema: schema,
+            isStoredInMemoryOnly: false,
+            cloudKitDatabase: sync ? .automatic : .none
+        )
         do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
+            return try ModelContainer(for: schema, configurations: [config])
         } catch {
             fatalError("Could not create ModelContainer: \(error)")
         }
-    }()
+    }
 
     var body: some Scene {
         WindowGroup {
@@ -41,6 +47,9 @@ struct Red_PenApp: App {
                 }
                 Tab("Notebook", systemImage: "book.closed", value: "notebook") {
                     ContentView()
+                }
+                Tab("Home", systemImage: "house.fill", value: "home") {
+                    HabitatView()
                 }
                 Tab("Stats", systemImage: "chart.bar", value: "stats") {
                     StatsView()
@@ -71,18 +80,42 @@ struct Red_PenApp: App {
                 if hideGochi, form != nil { progress.pendingEvolution = nil }
             }
             .onChange(of: scenePhase) { _, phase in
-                if phase == .active { refreshReminder() }
+                if phase == .active {
+                    refreshReminder()
+                    importShared()
+                }
             }
             .onChange(of: progress.lastPracticeDay) {
                 refreshReminder()
             }
+            .onChange(of: store.tier) { _, tier in
+                if tier < .plus { iCloudSync = false }
+                if AppIcon.current.requiredTier > tier {
+                    Task { try? await UIApplication.shared.setAlternateIconName(nil) }
+                }
+                wallet.checkStyle(hasPlus: tier >= .plus, hasPro: tier >= .pro)
+            }
             .environment(progress)
+            .environment(store)
+            .environment(wallet)
+            .task { await store.start { wallet.addPurchased($0) } }
         }
-        .modelContainer(sharedModelContainer)
+        .modelContainer(container)
     }
 
     private func refreshReminder() {
         Reminder.refresh(enabled: reminderOn, minutesAfterMidnight: reminderMinutes,
                          practicedToday: progress.practicedToday)
+    }
+    
+    private func importShared() {
+        let context = container.mainContext
+        for shared in ShareInbox.takeAll() {
+            let c = Correction(original: shared.original, corrected: shared.corrected)
+            c.type = MistakeDetector.detect(original: shared.original, corrected: shared.corrected)
+            c.source = .share
+            context.insert(c)
+        }
+        try? context.save()
     }
 }

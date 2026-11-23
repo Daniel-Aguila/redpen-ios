@@ -1,0 +1,4398 @@
+{
+ "units": [
+  {
+   "id": 0,
+   "title": "Hangul",
+   "subtitle": "Đọc tiếng Hàn qua sáu bài ngắn",
+   "lessons": [
+    {
+     "id": "h1",
+     "title": "Nguyên âm cơ bản",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "안녕! Mình là Gochi. Chữ Hàn gọi là Hangul, và bạn có thể học đọc chỉ trong vài bài."
+      },
+      {
+       "kind": "say",
+       "text": "Các chữ cái ghép lại thành khối. Mỗi khối là một âm tiết."
+      },
+      {
+       "kind": "say",
+       "text": "Nguyên âm không đứng một mình được, nên đi kèm với ㅇ. Ở đây, ㅇ không phát âm."
+      },
+      {
+       "kind": "example",
+       "ko": "아",
+       "translation": "a, giống 'a' trong 'ba'"
+      },
+      {
+       "kind": "example",
+       "ko": "어",
+       "translation": "eo, giống 'ơ' trong 'cơm'"
+      },
+      {
+       "kind": "example",
+       "ko": "오",
+       "translation": "o, giống 'ô' trong 'cô'"
+      },
+      {
+       "kind": "example",
+       "ko": "우",
+       "translation": "u, giống 'u' trong 'mua'"
+      },
+      {
+       "kind": "example",
+       "ko": "으",
+       "translation": "eu, giống 'ư' trong 'thư'"
+      },
+      {
+       "kind": "example",
+       "ko": "이",
+       "translation": "i, giống 'i' trong 'đi'"
+      },
+      {
+       "kind": "choice",
+       "text": "Chữ nào đọc là 'a'?",
+       "options": [
+        "어",
+        "아",
+        "오",
+        "이"
+       ],
+       "answer": 1,
+       "why": "아 có gạch ngắn hướng sang phải."
+      },
+      {
+       "kind": "choice",
+       "text": "Chữ nào đọc là 'u'?",
+       "options": [
+        "오",
+        "으",
+        "우",
+        "어"
+       ],
+       "answer": 2,
+       "why": "Trong 우 gạch hướng xuống. Trong 오 gạch hướng lên."
+      },
+      {
+       "kind": "example",
+       "ko": "아이",
+       "translation": "đứa trẻ"
+      },
+      {
+       "kind": "example",
+       "ko": "오이",
+       "translation": "dưa chuột"
+      },
+      {
+       "kind": "choice",
+       "text": "Đọc 오이 thế nào?",
+       "options": [
+        "ai",
+        "oi",
+        "ui",
+        "eoi"
+       ],
+       "answer": 1,
+       "why": "오 là 'ô' và 이 là 'i'."
+      }
+     ]
+    },
+    {
+     "id": "h2",
+     "title": "Phụ âm cơ bản",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Giờ đến phụ âm. Mỗi phụ âm đứng trước nguyên âm trong khối."
+      },
+      {
+       "kind": "example",
+       "ko": "가",
+       "translation": "ga (ㄱ nằm giữa 'g' và 'c')"
+      },
+      {
+       "kind": "example",
+       "ko": "나",
+       "translation": "na"
+      },
+      {
+       "kind": "example",
+       "ko": "다",
+       "translation": "da (ㄷ nằm giữa 'đ' và 't')"
+      },
+      {
+       "kind": "example",
+       "ko": "라",
+       "translation": "ra (ㄹ là âm r nhẹ, gần với 'l')"
+      },
+      {
+       "kind": "example",
+       "ko": "마",
+       "translation": "ma"
+      },
+      {
+       "kind": "example",
+       "ko": "바",
+       "translation": "ba (ㅂ nằm giữa 'b' và 'p')"
+      },
+      {
+       "kind": "example",
+       "ko": "사",
+       "translation": "sa"
+      },
+      {
+       "kind": "example",
+       "ko": "자",
+       "translation": "ja"
+      },
+      {
+       "kind": "example",
+       "ko": "하",
+       "translation": "ha"
+      },
+      {
+       "kind": "say",
+       "text": "Ghép chúng lại là bạn đọc được từ thật rồi."
+      },
+      {
+       "kind": "example",
+       "ko": "나무",
+       "translation": "cây"
+      },
+      {
+       "kind": "example",
+       "ko": "바다",
+       "translation": "biển"
+      },
+      {
+       "kind": "example",
+       "ko": "모자",
+       "translation": "mũ"
+      },
+      {
+       "kind": "example",
+       "ko": "하나",
+       "translation": "một"
+      },
+      {
+       "kind": "choice",
+       "text": "Từ nào nghĩa là 'biển'?",
+       "options": [
+        "나무",
+        "하나",
+        "바다",
+        "모자"
+       ],
+       "answer": 2,
+       "why": "바 + 다 = 바다."
+      },
+      {
+       "kind": "choice",
+       "text": "Đọc 가수 (ca sĩ) thế nào?",
+       "options": [
+        "gasu",
+        "nasu",
+        "gamu",
+        "dasu"
+       ],
+       "answer": 0,
+       "why": "ㄱ là g, ㅅ là s."
+      },
+      {
+       "kind": "choice",
+       "text": "Chữ nào phát âm 'm'?",
+       "options": [
+        "ㄴ",
+        "ㅁ",
+        "ㅂ",
+        "ㄹ"
+       ],
+       "answer": 1,
+       "why": "ㅁ là một cái hộp nhỏ, giống đôi môi khép lại."
+      }
+     ]
+    },
+    {
+     "id": "h3",
+     "title": "Thêm nguyên âm",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Thêm một gạch ngắn vào nguyên âm, nó sẽ có âm 'y' phía trước."
+      },
+      {
+       "kind": "example",
+       "ko": "야",
+       "translation": "ya"
+      },
+      {
+       "kind": "example",
+       "ko": "여",
+       "translation": "yeo"
+      },
+      {
+       "kind": "example",
+       "ko": "요",
+       "translation": "yo"
+      },
+      {
+       "kind": "example",
+       "ko": "유",
+       "translation": "yu"
+      },
+      {
+       "kind": "example",
+       "ko": "우유",
+       "translation": "sữa"
+      },
+      {
+       "kind": "example",
+       "ko": "여자",
+       "translation": "phụ nữ"
+      },
+      {
+       "kind": "say",
+       "text": "Ngày nay ㅐ và ㅔ gần như đọc giống nhau, gần với 'e' trong 'em'."
+      },
+      {
+       "kind": "example",
+       "ko": "개",
+       "translation": "con chó"
+      },
+      {
+       "kind": "example",
+       "ko": "네",
+       "translation": "vâng"
+      },
+      {
+       "kind": "say",
+       "text": "Một số nguyên âm ghép với nhau. ㅗ + ㅏ = ㅘ (wa), ㅜ + ㅓ = ㅝ (wo)."
+      },
+      {
+       "kind": "example",
+       "ko": "사과",
+       "translation": "quả táo"
+      },
+      {
+       "kind": "example",
+       "ko": "뭐",
+       "translation": "cái gì"
+      },
+      {
+       "kind": "choice",
+       "text": "Chữ nào đọc là 'yo'?",
+       "options": [
+        "여",
+        "유",
+        "요",
+        "야"
+       ],
+       "answer": 2,
+       "why": "요 là 오 thêm một gạch."
+      },
+      {
+       "kind": "choice",
+       "text": "네 nghĩa là gì?",
+       "options": [
+        "không",
+        "vâng",
+        "con chó",
+        "cái gì"
+       ],
+       "answer": 1,
+       "why": "네 nghĩa là vâng. 개 là con chó."
+      },
+      {
+       "kind": "choice",
+       "text": "Đọc 사과 thế nào?",
+       "options": [
+        "sagwa",
+        "sago",
+        "sagu",
+        "sageo"
+       ],
+       "answer": 0,
+       "why": "ㄱ + ㅘ thành 과 (gwa)."
+      }
+     ]
+    },
+    {
+     "id": "h4",
+     "title": "Phụ âm mạnh",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Một số phụ âm bật hơi, giống 'th' trong tiếng Việt. Đặt tay trước miệng để cảm nhận."
+      },
+      {
+       "kind": "example",
+       "ko": "카",
+       "translation": "ka, bật hơi"
+      },
+      {
+       "kind": "example",
+       "ko": "타",
+       "translation": "ta, bật hơi"
+      },
+      {
+       "kind": "example",
+       "ko": "파",
+       "translation": "pa, bật hơi"
+      },
+      {
+       "kind": "example",
+       "ko": "차",
+       "translation": "cha, bật hơi"
+      },
+      {
+       "kind": "example",
+       "ko": "커피",
+       "translation": "cà phê"
+      },
+      {
+       "kind": "example",
+       "ko": "포도",
+       "translation": "nho"
+      },
+      {
+       "kind": "say",
+       "text": "Phụ âm đôi là âm căng: ngắn, mạnh, không bật hơi, giống 'c' và 't' trong tiếng Việt."
+      },
+      {
+       "kind": "example",
+       "ko": "까",
+       "translation": "kka"
+      },
+      {
+       "kind": "example",
+       "ko": "따",
+       "translation": "tta"
+      },
+      {
+       "kind": "example",
+       "ko": "빠",
+       "translation": "ppa"
+      },
+      {
+       "kind": "example",
+       "ko": "싸",
+       "translation": "ssa"
+      },
+      {
+       "kind": "example",
+       "ko": "짜",
+       "translation": "jja"
+      },
+      {
+       "kind": "example",
+       "ko": "아빠",
+       "translation": "bố"
+      },
+      {
+       "kind": "example",
+       "ko": "떡",
+       "translation": "bánh gạo"
+      },
+      {
+       "kind": "choice",
+       "text": "Chữ nào bật hơi?",
+       "options": [
+        "가",
+        "까",
+        "카"
+       ],
+       "answer": 2,
+       "why": "ㅋ có thêm một gạch và bật hơi. ㄲ là âm căng, không bật hơi."
+      },
+      {
+       "kind": "choice",
+       "text": "아빠 nghĩa là gì?",
+       "options": [
+        "mẹ",
+        "bố",
+        "cà phê",
+        "nho"
+       ],
+       "answer": 1,
+       "why": "아빠 là bố. Mẹ là 엄마."
+      },
+      {
+       "kind": "choice",
+       "text": "Đọc 차 (xe, trà) thế nào?",
+       "options": [
+        "ja",
+        "cha",
+        "jja",
+        "sa"
+       ],
+       "answer": 1,
+       "why": "ㅊ là ㅈ bật hơi: cha."
+      }
+     ]
+    },
+    {
+     "id": "h5",
+     "title": "Phụ âm cuối (받침)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Phụ âm cũng có thể nằm ở dưới khối. Gọi là 받침 (patchim)."
+      },
+      {
+       "kind": "say",
+       "text": "Phụ âm cuối chỉ có 7 âm: k, n, t, l, m, p, ng."
+      },
+      {
+       "kind": "example",
+       "ko": "밥",
+       "translation": "cơm, bữa ăn"
+      },
+      {
+       "kind": "example",
+       "ko": "물",
+       "translation": "nước"
+      },
+      {
+       "kind": "example",
+       "ko": "산",
+       "translation": "núi"
+      },
+      {
+       "kind": "example",
+       "ko": "강",
+       "translation": "sông"
+      },
+      {
+       "kind": "example",
+       "ko": "집",
+       "translation": "nhà"
+      },
+      {
+       "kind": "example",
+       "ko": "책",
+       "translation": "sách"
+      },
+      {
+       "kind": "say",
+       "text": "Ở dưới, ㅅ, ㅈ và ㅊ đều đọc là t. ㅇ ở dưới đọc là ng."
+      },
+      {
+       "kind": "example",
+       "ko": "옷",
+       "translation": "quần áo (đọc như 옫)"
+      },
+      {
+       "kind": "example",
+       "ko": "꽃",
+       "translation": "hoa (đọc như 꼳)"
+      },
+      {
+       "kind": "choice",
+       "text": "ㅇ ở dưới trong 강 đọc thế nào?",
+       "options": [
+        "không phát âm",
+        "ng",
+        "n",
+        "g"
+       ],
+       "answer": 1,
+       "why": "ㅇ ở trên không phát âm, nhưng ở dưới đọc là ng."
+      },
+      {
+       "kind": "choice",
+       "text": "Từ nào nghĩa là 'nước'?",
+       "options": [
+        "물",
+        "밥",
+        "집",
+        "산"
+       ],
+       "answer": 0,
+       "why": "물 là nước. 밥 là cơm."
+      },
+      {
+       "kind": "choice",
+       "text": "옷 đọc thế nào?",
+       "options": [
+        "os",
+        "ot",
+        "oj",
+        "och"
+       ],
+       "answer": 1,
+       "why": "ㅅ ở dưới đọc là t."
+      }
+     ]
+    },
+    {
+     "id": "h6",
+     "title": "Luyện đọc",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Mẹo cuối: khi phụ âm cuối gặp ㅇ câm, âm đó sẽ nối sang khối tiếp theo."
+      },
+      {
+       "kind": "example",
+       "ko": "한국어",
+       "translation": "tiếng Hàn (đọc như 한구거)"
+      },
+      {
+       "kind": "example",
+       "ko": "음악",
+       "translation": "âm nhạc (đọc như 으막)"
+      },
+      {
+       "kind": "say",
+       "text": "Giờ bạn đã đọc được tiếng Hàn thật. Thử mấy từ này nhé."
+      },
+      {
+       "kind": "example",
+       "ko": "안녕하세요",
+       "translation": "xin chào"
+      },
+      {
+       "kind": "example",
+       "ko": "감사합니다",
+       "translation": "cảm ơn"
+      },
+      {
+       "kind": "example",
+       "ko": "한국",
+       "translation": "Hàn Quốc"
+      },
+      {
+       "kind": "example",
+       "ko": "서울",
+       "translation": "Seoul"
+      },
+      {
+       "kind": "choice",
+       "text": "한국어 đọc thế nào?",
+       "options": [
+        "han-guk-eo",
+        "han-gu-geo",
+        "hang-uk-eo"
+       ],
+       "answer": 1,
+       "why": "ㄱ nối sang ㅇ câm: 한구거."
+      },
+      {
+       "kind": "choice",
+       "text": "감사합니다 nghĩa là gì?",
+       "options": [
+        "xin chào",
+        "xin lỗi",
+        "cảm ơn",
+        "tạm biệt"
+       ],
+       "answer": 2,
+       "why": "감사합니다 là lời cảm ơn lịch sự."
+      },
+      {
+       "kind": "choice",
+       "text": "Từ nào là 'Seoul'?",
+       "options": [
+        "서울",
+        "한국",
+        "사람",
+        "선물"
+       ],
+       "answer": 0,
+       "why": "서 + 울 = 서울."
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요! Bạn đã đọc được Hangul. Tiếp theo, bạn sẽ tự giới thiệu bằng tiếng Hàn."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 1,
+   "title": "Giới thiệu",
+   "subtitle": "Nói bạn là ai",
+   "lessons": [
+    {
+     "id": "u1l1",
+     "title": "Từ vựng: quốc gia và nghề nghiệp",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Cùng học từ để nói về bản thân. Chạm vào từng từ để nghe."
+      },
+      {
+       "kind": "example",
+       "ko": "한국",
+       "translation": "Hàn Quốc"
+      },
+      {
+       "kind": "example",
+       "ko": "미국",
+       "translation": "Mỹ"
+      },
+      {
+       "kind": "example",
+       "ko": "일본",
+       "translation": "Nhật Bản"
+      },
+      {
+       "kind": "example",
+       "ko": "중국",
+       "translation": "Trung Quốc"
+      },
+      {
+       "kind": "example",
+       "ko": "멕시코",
+       "translation": "Mexico"
+      },
+      {
+       "kind": "say",
+       "text": "Thêm 사람 (người) sau tên nước để nói ai đó đến từ đâu."
+      },
+      {
+       "kind": "example",
+       "ko": "한국 사람",
+       "translation": "người Hàn"
+      },
+      {
+       "kind": "example",
+       "ko": "학생",
+       "translation": "học sinh, sinh viên"
+      },
+      {
+       "kind": "example",
+       "ko": "선생님",
+       "translation": "giáo viên"
+      },
+      {
+       "kind": "example",
+       "ko": "회사원",
+       "translation": "nhân viên văn phòng"
+      },
+      {
+       "kind": "example",
+       "ko": "의사",
+       "translation": "bác sĩ"
+      },
+      {
+       "kind": "choice",
+       "text": "'Người Nhật' nói thế nào?",
+       "options": [
+        "일본 사람",
+        "중국 사람",
+        "일본 학생",
+        "미국 사람"
+       ],
+       "answer": 0,
+       "why": "일본 (Nhật Bản) + 사람 (người)."
+      },
+      {
+       "kind": "choice",
+       "text": "회사원 nghĩa là gì?",
+       "options": [
+        "giáo viên",
+        "bác sĩ",
+        "nhân viên văn phòng",
+        "học sinh, sinh viên"
+       ],
+       "answer": 2,
+       "why": "회사 là công ty, nên 회사원 là nhân viên công ty."
+      },
+      {
+       "kind": "choice",
+       "text": "선생님 nghĩa là gì?",
+       "options": [
+        "giáo viên",
+        "học sinh, sinh viên",
+        "bác sĩ",
+        "người"
+       ],
+       "answer": 0,
+       "why": "선생님 là giáo viên. 학생 là học sinh."
+      }
+     ]
+    },
+    {
+     "id": "u1l2",
+     "title": "Tôi là... (이에요/예요)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Để nói 'tôi là ___' hay 'là ___', thêm 이에요 hoặc 예요 vào sau danh từ."
+      },
+      {
+       "kind": "say",
+       "text": "Nếu danh từ kết thúc bằng phụ âm, thêm 이에요."
+      },
+      {
+       "kind": "example",
+       "ko": "학생이에요.",
+       "translation": "Tôi là học sinh."
+      },
+      {
+       "kind": "example",
+       "ko": "선생님이에요.",
+       "translation": "Tôi là giáo viên."
+      },
+      {
+       "kind": "say",
+       "text": "Nếu kết thúc bằng nguyên âm, thêm 예요."
+      },
+      {
+       "kind": "example",
+       "ko": "의사예요.",
+       "translation": "Tôi là bác sĩ."
+      },
+      {
+       "kind": "example",
+       "ko": "고치예요.",
+       "translation": "Mình là Gochi."
+      },
+      {
+       "kind": "say",
+       "text": "Khi hỏi, dùng y như vậy và lên giọng ở cuối."
+      },
+      {
+       "kind": "example",
+       "ko": "학생이에요?",
+       "translation": "Bạn là học sinh à?"
+      },
+      {
+       "kind": "choice",
+       "text": "회사원___",
+       "options": [
+        "이에요",
+        "예요"
+       ],
+       "answer": 0,
+       "why": "회사원 kết thúc bằng ㄴ, một phụ âm, nên dùng 이에요."
+      },
+      {
+       "kind": "choice",
+       "text": "의사___",
+       "options": [
+        "이에요",
+        "예요"
+       ],
+       "answer": 1,
+       "why": "의사 kết thúc bằng nguyên âm, nên dùng 예요."
+      },
+      {
+       "kind": "choice",
+       "text": "Câu nào đúng?",
+       "options": [
+        "한국 사람예요",
+        "한국 사람이에요",
+        "한국 사람이예요"
+       ],
+       "answer": 1,
+       "why": "사람 kết thúc bằng ㅁ, nên dùng 이에요."
+      },
+      {
+       "kind": "build",
+       "translation": "Tôi là giáo viên.",
+       "words": [
+        "저는",
+        "선생님이에요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u1l3",
+     "title": "Trợ từ chủ đề (은/는)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "은/는 đánh dấu điều bạn đang nói đến, giống 'còn về...'."
+      },
+      {
+       "kind": "say",
+       "text": "Sau phụ âm dùng 은. Sau nguyên âm dùng 는."
+      },
+      {
+       "kind": "example",
+       "ko": "저는 학생이에요.",
+       "translation": "Tôi là học sinh."
+      },
+      {
+       "kind": "example",
+       "ko": "이름은 고치예요.",
+       "translation": "Mình tên là Gochi."
+      },
+      {
+       "kind": "example",
+       "ko": "민수 씨는 의사예요.",
+       "translation": "Minsu là bác sĩ."
+      },
+      {
+       "kind": "say",
+       "text": "씨 đặt sau tên để lịch sự. Đừng dùng với tên của chính mình."
+      },
+      {
+       "kind": "choice",
+       "text": "저___ 회사원이에요.",
+       "options": [
+        "은",
+        "는"
+       ],
+       "answer": 1,
+       "why": "저 kết thúc bằng nguyên âm, nên dùng 는."
+      },
+      {
+       "kind": "choice",
+       "text": "이름___ 하나예요.",
+       "options": [
+        "은",
+        "는"
+       ],
+       "answer": 0,
+       "why": "이름 kết thúc bằng ㅁ, nên dùng 은."
+      },
+      {
+       "kind": "choice",
+       "text": "Câu nào lịch sự?",
+       "options": [
+        "하나 씨는 학생이에요",
+        "저 씨는 학생이에요"
+       ],
+       "answer": 0,
+       "why": "Dùng 씨 cho người khác, không dùng cho mình."
+      },
+      {
+       "kind": "build",
+       "translation": "Tôi là người Hàn.",
+       "words": [
+        "저는",
+        "한국",
+        "사람이에요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Minsu là giáo viên.",
+       "words": [
+        "민수",
+        "씨는",
+        "선생님이에요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u1l4",
+     "title": "Tổng hợp: rất vui được gặp",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Đây là cuộc gặp đầu tiên. Nghe từng câu nhé."
+      },
+      {
+       "kind": "example",
+       "ko": "안녕하세요? 저는 하나예요.",
+       "translation": "Chào bạn, mình là Hana."
+      },
+      {
+       "kind": "example",
+       "ko": "안녕하세요? 저는 민수예요.",
+       "translation": "Chào bạn, mình là Minsu."
+      },
+      {
+       "kind": "example",
+       "ko": "만나서 반가워요.",
+       "translation": "Rất vui được gặp bạn."
+      },
+      {
+       "kind": "example",
+       "ko": "하나 씨는 학생이에요?",
+       "translation": "Hana là sinh viên à?"
+      },
+      {
+       "kind": "example",
+       "ko": "네, 학생이에요. 민수 씨는요?",
+       "translation": "Vâng, mình là sinh viên. Còn Minsu?"
+      },
+      {
+       "kind": "example",
+       "ko": "저는 회사원이에요.",
+       "translation": "Mình là nhân viên văn phòng."
+      },
+      {
+       "kind": "say",
+       "text": "Thêm 요 sau tên, như 민수 씨는요?, nghĩa là 'còn bạn?'."
+      },
+      {
+       "kind": "choice",
+       "text": "만나서 반가워요 nghĩa là gì?",
+       "options": [
+        "Tạm biệt",
+        "Rất vui được gặp",
+        "Cảm ơn",
+        "Hẹn gặp lại"
+       ],
+       "answer": 1,
+       "why": "Bạn nói câu này khi gặp ai đó lần đầu."
+      },
+      {
+       "kind": "choice",
+       "text": "'Còn Hana thì sao?' nói thế nào?",
+       "options": [
+        "하나 씨예요?",
+        "하나 씨는요?",
+        "하나는 씨요?"
+       ],
+       "answer": 1,
+       "why": "Tên + 씨는요? nghĩa là 'còn bạn?'."
+      },
+      {
+       "kind": "build",
+       "translation": "Chào bạn, mình là Gochi.",
+       "words": [
+        "안녕하세요?",
+        "저는",
+        "고치예요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Tôi là người Mexico.",
+       "words": [
+        "저는",
+        "멕시코",
+        "사람이에요."
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요! Giờ bạn đã biết tự giới thiệu bằng tiếng Hàn."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "title": "Gia đình",
+   "subtitle": "Nói về gia đình bạn",
+   "lessons": [
+    {
+     "id": "u2l1",
+     "title": "Từ vựng: gia đình",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Cùng làm quen với gia đình nhé. Chạm vào từng từ để nghe."
+      },
+      {
+       "kind": "example",
+       "ko": "가족",
+       "translation": "gia đình"
+      },
+      {
+       "kind": "example",
+       "ko": "아버지",
+       "translation": "bố"
+      },
+      {
+       "kind": "example",
+       "ko": "어머니",
+       "translation": "mẹ"
+      },
+      {
+       "kind": "example",
+       "ko": "할아버지",
+       "translation": "ông"
+      },
+      {
+       "kind": "example",
+       "ko": "할머니",
+       "translation": "bà"
+      },
+      {
+       "kind": "example",
+       "ko": "동생",
+       "translation": "em"
+      },
+      {
+       "kind": "say",
+       "text": "Cách gọi anh chị tùy vào người nói là nam hay nữ."
+      },
+      {
+       "kind": "example",
+       "ko": "형",
+       "translation": "anh trai (nam gọi)"
+      },
+      {
+       "kind": "example",
+       "ko": "오빠",
+       "translation": "anh trai (nữ gọi)"
+      },
+      {
+       "kind": "example",
+       "ko": "누나",
+       "translation": "chị gái (nam gọi)"
+      },
+      {
+       "kind": "example",
+       "ko": "언니",
+       "translation": "chị gái (nữ gọi)"
+      },
+      {
+       "kind": "example",
+       "ko": "요리사",
+       "translation": "đầu bếp"
+      },
+      {
+       "kind": "example",
+       "ko": "간호사",
+       "translation": "y tá"
+      },
+      {
+       "kind": "choice",
+       "text": "Một người nam nói về chị gái mình. Dùng từ nào?",
+       "options": [
+        "언니",
+        "누나",
+        "오빠",
+        "형"
+       ],
+       "answer": 1,
+       "why": "Nam nói 누나. Nữ nói 언니."
+      },
+      {
+       "kind": "choice",
+       "text": "동생 nghĩa là gì?",
+       "options": [
+        "em",
+        "anh trai",
+        "bố",
+        "gia đình"
+       ],
+       "answer": 0,
+       "why": "동생 là em trai hoặc em gái."
+      },
+      {
+       "kind": "choice",
+       "text": "할머니 nghĩa là gì?",
+       "options": [
+        "mẹ",
+        "ông",
+        "bà",
+        "y tá"
+       ],
+       "answer": 2,
+       "why": "할머니 là bà. 할아버지 là ông."
+      }
+     ]
+    },
+    {
+     "id": "u2l2",
+     "title": "Trợ từ chủ ngữ (이/가)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "이/가 đánh dấu ai hoặc cái gì làm việc gì, hoặc thông tin mới."
+      },
+      {
+       "kind": "say",
+       "text": "Sau phụ âm dùng 이. Sau nguyên âm dùng 가."
+      },
+      {
+       "kind": "example",
+       "ko": "동생이 학생이에요.",
+       "translation": "Em tôi là học sinh."
+      },
+      {
+       "kind": "example",
+       "ko": "아버지가 요리사예요.",
+       "translation": "Bố tôi là đầu bếp."
+      },
+      {
+       "kind": "say",
+       "text": "Khi hỏi 'ai?', câu trả lời dùng 이/가."
+      },
+      {
+       "kind": "example",
+       "ko": "누가 의사예요?",
+       "translation": "Ai là bác sĩ?"
+      },
+      {
+       "kind": "example",
+       "ko": "어머니가 의사예요.",
+       "translation": "Mẹ tôi là bác sĩ."
+      },
+      {
+       "kind": "choice",
+       "text": "형___ 회사원이에요.",
+       "options": [
+        "이",
+        "가"
+       ],
+       "answer": 0,
+       "why": "형 kết thúc bằng ㅇ, nên dùng 이."
+      },
+      {
+       "kind": "choice",
+       "text": "누나___ 간호사예요.",
+       "options": [
+        "이",
+        "가"
+       ],
+       "answer": 1,
+       "why": "누나 kết thúc bằng nguyên âm, nên dùng 가."
+      },
+      {
+       "kind": "choice",
+       "text": "누가 선생님이에요? Trả lời:",
+       "options": [
+        "할머니는 선생님이에요",
+        "할머니가 선생님이에요"
+       ],
+       "answer": 1,
+       "why": "Để trả lời 'ai?', dùng 이/가."
+      },
+      {
+       "kind": "build",
+       "translation": "Bố tôi là bác sĩ.",
+       "words": [
+        "아버지가",
+        "의사예요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u2l3",
+     "title": "Không phải (이/가 아니에요)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Để nói 'không phải', dùng 이/가 아니에요."
+      },
+      {
+       "kind": "example",
+       "ko": "저는 학생이 아니에요.",
+       "translation": "Tôi không phải là học sinh."
+      },
+      {
+       "kind": "example",
+       "ko": "오빠는 의사가 아니에요.",
+       "translation": "Anh trai tôi không phải là bác sĩ."
+      },
+      {
+       "kind": "say",
+       "text": "Quy tắc như cũ: 이 sau phụ âm, 가 sau nguyên âm."
+      },
+      {
+       "kind": "say",
+       "text": "Trả lời 'vâng' bằng 네 và 'không' bằng 아니요."
+      },
+      {
+       "kind": "example",
+       "ko": "요리사예요?",
+       "translation": "Bạn là đầu bếp à?"
+      },
+      {
+       "kind": "example",
+       "ko": "아니요, 요리사가 아니에요. 간호사예요.",
+       "translation": "Không, tôi không phải đầu bếp. Tôi là y tá."
+      },
+      {
+       "kind": "choice",
+       "text": "선생님___ 아니에요.",
+       "options": [
+        "이",
+        "가"
+       ],
+       "answer": 0,
+       "why": "선생님 kết thúc bằng ㅁ, nên dùng 이."
+      },
+      {
+       "kind": "choice",
+       "text": "Câu nào đúng?",
+       "options": [
+        "의사이 아니에요",
+        "의사가 아니에요",
+        "의사 아니예요"
+       ],
+       "answer": 1,
+       "why": "의사 kết thúc bằng nguyên âm, nên dùng 가 아니에요."
+      },
+      {
+       "kind": "choice",
+       "text": "회사원이에요? (Không)",
+       "options": [
+        "네, 회사원이에요",
+        "아니요, 회사원이 아니에요"
+       ],
+       "answer": 1,
+       "why": "아니요 là không, rồi đến 이/가 아니에요."
+      },
+      {
+       "kind": "build",
+       "translation": "Tôi không phải người Nhật.",
+       "words": [
+        "저는",
+        "일본",
+        "사람이",
+        "아니에요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u2l4",
+     "title": "Tổng hợp: ảnh gia đình",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Hana đang cho Minsu xem ảnh gia đình. Nghe nhé."
+      },
+      {
+       "kind": "example",
+       "ko": "이 사람은 누구예요?",
+       "translation": "Người này là ai?"
+      },
+      {
+       "kind": "example",
+       "ko": "우리 언니예요.",
+       "translation": "Là chị gái mình."
+      },
+      {
+       "kind": "example",
+       "ko": "언니는 학생이에요?",
+       "translation": "Chị ấy là sinh viên à?"
+      },
+      {
+       "kind": "example",
+       "ko": "아니요, 학생이 아니에요. 간호사예요.",
+       "translation": "Không, chị ấy không phải sinh viên. Chị ấy là y tá."
+      },
+      {
+       "kind": "example",
+       "ko": "이 사람은 동생이에요?",
+       "translation": "Người này là em bạn à?"
+      },
+      {
+       "kind": "example",
+       "ko": "네, 동생이에요. 동생은 고등학생이에요.",
+       "translation": "Vâng, là em mình. Em ấy học cấp ba."
+      },
+      {
+       "kind": "say",
+       "text": "Người Hàn nói 우리 (của chúng tôi) khi nói về gia đình, kể cả khi mình hay nói 'của tôi'."
+      },
+      {
+       "kind": "choice",
+       "text": "'Mẹ tôi' nói sao cho tự nhiên?",
+       "options": [
+        "저 어머니",
+        "우리 어머니",
+        "나 어머니"
+       ],
+       "answer": 1,
+       "why": "Dùng 우리 cho gia đình mình."
+      },
+      {
+       "kind": "choice",
+       "text": "누구예요? nghĩa là gì?",
+       "options": [
+        "Ở đâu?",
+        "Là ai?",
+        "Là cái gì?"
+       ],
+       "answer": 1,
+       "why": "누구 nghĩa là ai."
+      },
+      {
+       "kind": "build",
+       "translation": "Là chị gái mình.",
+       "words": [
+        "우리",
+        "언니예요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Em tôi không phải là học sinh.",
+       "words": [
+        "동생은",
+        "학생이",
+        "아니에요."
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요! Giờ bạn đã biết giới thiệu gia đình."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "title": "Cuộc sống hằng ngày",
+   "subtitle": "Nói điều bạn thích và việc bạn làm",
+   "lessons": [
+    {
+     "id": "u3l1",
+     "title": "Từ vựng: cuộc sống hằng ngày",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Trong từ điển, động từ tiếng Hàn kết thúc bằng 다. Cùng học vài từ bạn sẽ dùng mỗi ngày."
+      },
+      {
+       "kind": "example",
+       "ko": "먹다",
+       "translation": "ăn"
+      },
+      {
+       "kind": "example",
+       "ko": "마시다",
+       "translation": "uống"
+      },
+      {
+       "kind": "example",
+       "ko": "보다",
+       "translation": "xem, nhìn"
+      },
+      {
+       "kind": "example",
+       "ko": "자다",
+       "translation": "ngủ"
+      },
+      {
+       "kind": "example",
+       "ko": "공부하다",
+       "translation": "học"
+      },
+      {
+       "kind": "example",
+       "ko": "일하다",
+       "translation": "làm việc"
+      },
+      {
+       "kind": "example",
+       "ko": "좋아하다",
+       "translation": "thích"
+      },
+      {
+       "kind": "example",
+       "ko": "커피",
+       "translation": "cà phê"
+      },
+      {
+       "kind": "example",
+       "ko": "영화",
+       "translation": "phim"
+      },
+      {
+       "kind": "example",
+       "ko": "드라마",
+       "translation": "phim truyền hình"
+      },
+      {
+       "kind": "example",
+       "ko": "빵",
+       "translation": "bánh mì"
+      },
+      {
+       "kind": "choice",
+       "text": "마시다 nghĩa là gì?",
+       "options": [
+        "ăn",
+        "uống",
+        "ngủ",
+        "xem"
+       ],
+       "answer": 1,
+       "why": "마시다 là uống. 먹다 là ăn."
+      },
+      {
+       "kind": "choice",
+       "text": "Động từ nào nghĩa là 'học'?",
+       "options": [
+        "일하다",
+        "좋아하다",
+        "공부하다",
+        "보다"
+       ],
+       "answer": 2,
+       "why": "공부 là việc học, và 하다 là làm."
+      },
+      {
+       "kind": "choice",
+       "text": "영화 nghĩa là gì?",
+       "options": [
+        "phim",
+        "phim truyền hình",
+        "bánh mì",
+        "cà phê"
+       ],
+       "answer": 0,
+       "why": "영화 là phim điện ảnh. Phim truyền hình là 드라마."
+      }
+     ]
+    },
+    {
+     "id": "u3l2",
+     "title": "Kiểu trang trọng (-습니다)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "-습니다 là kiểu nói lịch sự trang trọng. Bạn nghe thấy trong thời sự, nơi làm việc và các thông báo."
+      },
+      {
+       "kind": "say",
+       "text": "Bỏ 다. Nếu gốc từ kết thúc bằng phụ âm, thêm 습니다."
+      },
+      {
+       "kind": "example",
+       "ko": "먹습니다.",
+       "translation": "Tôi ăn."
+      },
+      {
+       "kind": "example",
+       "ko": "읽습니다.",
+       "translation": "Tôi đọc."
+      },
+      {
+       "kind": "say",
+       "text": "Nếu kết thúc bằng nguyên âm, thêm ㅂ니다 vào khối cuối."
+      },
+      {
+       "kind": "example",
+       "ko": "갑니다.",
+       "translation": "Tôi đi."
+      },
+      {
+       "kind": "example",
+       "ko": "마십니다.",
+       "translation": "Tôi uống."
+      },
+      {
+       "kind": "example",
+       "ko": "공부합니다.",
+       "translation": "Tôi học."
+      },
+      {
+       "kind": "say",
+       "text": "Để hỏi, dùng 습니까 hoặc ㅂ니까. Ở kiểu này, 이에요 thành 입니다."
+      },
+      {
+       "kind": "example",
+       "ko": "학생입니까?",
+       "translation": "Bạn là học sinh à?"
+      },
+      {
+       "kind": "choice",
+       "text": "먹다 →",
+       "options": [
+        "먹ㅂ니다",
+        "먹습니다",
+        "먹니다"
+       ],
+       "answer": 1,
+       "why": "먹 kết thúc bằng phụ âm, nên dùng 습니다."
+      },
+      {
+       "kind": "choice",
+       "text": "보다 →",
+       "options": [
+        "보습니다",
+        "봅니다",
+        "봐습니다"
+       ],
+       "answer": 1,
+       "why": "보 kết thúc bằng nguyên âm, nên ㅂ đặt bên dưới: 봅니다."
+      },
+      {
+       "kind": "choice",
+       "text": "Câu nào là câu hỏi?",
+       "options": [
+        "일합니다",
+        "일합니까?",
+        "일했습니다"
+       ],
+       "answer": 1,
+       "why": "-ㅂ니까 tạo câu hỏi trang trọng."
+      },
+      {
+       "kind": "build",
+       "translation": "Tôi là nhân viên văn phòng. (trang trọng)",
+       "words": [
+        "저는",
+        "회사원입니다."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u3l3",
+     "title": "Tân ngữ (을/를) và cũng (도)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "을/를 đánh dấu thứ bạn ăn, uống, xem hoặc thích."
+      },
+      {
+       "kind": "say",
+       "text": "Sau phụ âm dùng 을. Sau nguyên âm dùng 를."
+      },
+      {
+       "kind": "example",
+       "ko": "빵을 먹습니다.",
+       "translation": "Tôi ăn bánh mì."
+      },
+      {
+       "kind": "example",
+       "ko": "커피를 마십니다.",
+       "translation": "Tôi uống cà phê."
+      },
+      {
+       "kind": "say",
+       "text": "도 nghĩa là 'cũng'. Nó thay cho 은/는, 이/가 hoặc 을/를."
+      },
+      {
+       "kind": "example",
+       "ko": "저도 학생입니다.",
+       "translation": "Tôi cũng là học sinh."
+      },
+      {
+       "kind": "example",
+       "ko": "드라마도 좋아합니다.",
+       "translation": "Tôi cũng thích phim truyền hình."
+      },
+      {
+       "kind": "choice",
+       "text": "영화___ 봅니다.",
+       "options": [
+        "을",
+        "를"
+       ],
+       "answer": 1,
+       "why": "영화 kết thúc bằng nguyên âm, nên dùng 를."
+      },
+      {
+       "kind": "choice",
+       "text": "빵___ 먹습니다.",
+       "options": [
+        "을",
+        "를"
+       ],
+       "answer": 0,
+       "why": "빵 kết thúc bằng ㅇ, một phụ âm, nên dùng 을."
+      },
+      {
+       "kind": "choice",
+       "text": "Câu nào đúng?",
+       "options": [
+        "커피를도 마십니다",
+        "커피도 마십니다"
+       ],
+       "answer": 1,
+       "why": "도 thay cho 을/를. Đừng dùng cả hai."
+      },
+      {
+       "kind": "build",
+       "translation": "Tôi cũng thích cà phê.",
+       "words": [
+        "저도",
+        "커피를",
+        "좋아합니다."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Tôi xem phim truyền hình.",
+       "words": [
+        "저는",
+        "드라마를",
+        "봅니다."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u3l4",
+     "title": "Tổng hợp: bạn thích gì?",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Hana và Minsu nói về những thứ họ thích. Nghe nhé."
+      },
+      {
+       "kind": "example",
+       "ko": "민수 씨는 무엇을 좋아합니까?",
+       "translation": "Minsu thích gì?"
+      },
+      {
+       "kind": "example",
+       "ko": "저는 드라마를 좋아합니다.",
+       "translation": "Mình thích phim truyền hình."
+      },
+      {
+       "kind": "example",
+       "ko": "하나 씨는요?",
+       "translation": "Còn Hana?"
+      },
+      {
+       "kind": "example",
+       "ko": "저도 드라마를 좋아합니다. 영화도 좋아합니다.",
+       "translation": "Mình cũng thích phim truyền hình. Mình cũng thích phim điện ảnh."
+      },
+      {
+       "kind": "example",
+       "ko": "커피를 마십니까?",
+       "translation": "Bạn uống cà phê không?"
+      },
+      {
+       "kind": "example",
+       "ko": "아니요, 저는 차를 마십니다.",
+       "translation": "Không, mình uống trà."
+      },
+      {
+       "kind": "say",
+       "text": "무엇 nghĩa là 'cái gì'. Khi nói thường rút gọn thành 뭐."
+      },
+      {
+       "kind": "choice",
+       "text": "무엇을 좋아합니까? hỏi gì?",
+       "options": [
+        "Bạn đi đâu?",
+        "Bạn thích gì?",
+        "Bạn thích ai?"
+       ],
+       "answer": 1,
+       "why": "무엇 là cái gì, 좋아합니까 là 'bạn thích không?'."
+      },
+      {
+       "kind": "choice",
+       "text": "차___ 마십니다.",
+       "options": [
+        "을",
+        "를",
+        "도를"
+       ],
+       "answer": 1,
+       "why": "차 kết thúc bằng nguyên âm, nên dùng 를."
+      },
+      {
+       "kind": "build",
+       "translation": "Tôi học tiếng Hàn.",
+       "words": [
+        "저는",
+        "한국어를",
+        "공부합니다."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Tôi cũng thích phim điện ảnh.",
+       "words": [
+        "영화도",
+        "좋아합니다."
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요! Giờ bạn đã biết nói điều mình thích."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "title": "Trường học",
+   "subtitle": "Nói về trường học và đồ vật",
+   "lessons": [
+    {
+     "id": "u4l1",
+     "title": "Từ vựng: trường học",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Cùng học từ về trường học. Chạm vào từng từ để nghe."
+      },
+      {
+       "kind": "example",
+       "ko": "학교",
+       "translation": "trường học"
+      },
+      {
+       "kind": "example",
+       "ko": "교실",
+       "translation": "lớp học"
+      },
+      {
+       "kind": "example",
+       "ko": "도서관",
+       "translation": "thư viện"
+      },
+      {
+       "kind": "example",
+       "ko": "식당",
+       "translation": "căn tin, nhà hàng"
+      },
+      {
+       "kind": "example",
+       "ko": "책",
+       "translation": "sách"
+      },
+      {
+       "kind": "example",
+       "ko": "책상",
+       "translation": "bàn học"
+      },
+      {
+       "kind": "example",
+       "ko": "의자",
+       "translation": "ghế"
+      },
+      {
+       "kind": "example",
+       "ko": "가방",
+       "translation": "cặp, túi"
+      },
+      {
+       "kind": "example",
+       "ko": "친구",
+       "translation": "bạn"
+      },
+      {
+       "kind": "example",
+       "ko": "읽다",
+       "translation": "đọc"
+      },
+      {
+       "kind": "example",
+       "ko": "쓰다",
+       "translation": "viết"
+      },
+      {
+       "kind": "example",
+       "ko": "배우다",
+       "translation": "học"
+      },
+      {
+       "kind": "example",
+       "ko": "크다",
+       "translation": "to, lớn"
+      },
+      {
+       "kind": "example",
+       "ko": "작다",
+       "translation": "nhỏ"
+      },
+      {
+       "kind": "choice",
+       "text": "도서관 nghĩa là gì?",
+       "options": [
+        "lớp học",
+        "thư viện",
+        "căn tin",
+        "trường học"
+       ],
+       "answer": 1,
+       "why": "도서관 là thư viện. 교실 là lớp học."
+      },
+      {
+       "kind": "choice",
+       "text": "Từ nào nghĩa là 'ghế'?",
+       "options": [
+        "책상",
+        "가방",
+        "의자",
+        "책"
+       ],
+       "answer": 2,
+       "why": "의자 là ghế. 책상 là bàn học."
+      },
+      {
+       "kind": "choice",
+       "text": "배우다 nghĩa là gì?",
+       "options": [
+        "học",
+        "đọc",
+        "viết",
+        "ngủ"
+       ],
+       "answer": 0,
+       "why": "배우다 là học. 읽다 là đọc."
+      }
+     ]
+    },
+    {
+     "id": "u4l2",
+     "title": "Và, với (과/와, 하고)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Để nối hai danh từ, dùng 과/와 hoặc 하고. Chúng nghĩa là 'và'."
+      },
+      {
+       "kind": "say",
+       "text": "과 sau phụ âm, 와 sau nguyên âm. 하고 dùng sau bất cứ từ nào và nghe thân mật hơn."
+      },
+      {
+       "kind": "example",
+       "ko": "책과 가방",
+       "translation": "một quyển sách và một cái cặp"
+      },
+      {
+       "kind": "example",
+       "ko": "의자와 책상",
+       "translation": "ghế và bàn"
+      },
+      {
+       "kind": "example",
+       "ko": "커피하고 빵",
+       "translation": "cà phê và bánh mì"
+      },
+      {
+       "kind": "say",
+       "text": "하고 và 과/와 cũng có nghĩa là 'với'."
+      },
+      {
+       "kind": "example",
+       "ko": "친구하고 공부합니다.",
+       "translation": "Tôi học với bạn."
+      },
+      {
+       "kind": "choice",
+       "text": "책상___ 의자",
+       "options": [
+        "과",
+        "와"
+       ],
+       "answer": 0,
+       "why": "책상 kết thúc bằng ㅇ, nên dùng 과."
+      },
+      {
+       "kind": "choice",
+       "text": "의자___ 책상",
+       "options": [
+        "과",
+        "와"
+       ],
+       "answer": 1,
+       "why": "의자 kết thúc bằng nguyên âm, nên dùng 와."
+      },
+      {
+       "kind": "choice",
+       "text": "Từ nào dùng được sau mọi danh từ?",
+       "options": [
+        "과",
+        "와",
+        "하고"
+       ],
+       "answer": 2,
+       "why": "하고 không đổi. Rất hay dùng khi nói."
+      },
+      {
+       "kind": "build",
+       "translation": "Tôi học với bạn.",
+       "words": [
+        "친구하고",
+        "공부합니다."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u4l3",
+     "title": "Sở hữu (의)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "의 nghĩa là 'của'. Nó đứng giữa người sở hữu và đồ vật, ngược thứ tự với tiếng Việt."
+      },
+      {
+       "kind": "example",
+       "ko": "민수 씨의 가방",
+       "translation": "cặp của Minsu"
+      },
+      {
+       "kind": "example",
+       "ko": "학교의 도서관",
+       "translation": "thư viện của trường"
+      },
+      {
+       "kind": "say",
+       "text": "Khi nói, 의 thường đọc như 에."
+      },
+      {
+       "kind": "say",
+       "text": "'Của tôi' là 제. Đó là dạng rút gọn của 저의."
+      },
+      {
+       "kind": "example",
+       "ko": "제 책입니다.",
+       "translation": "Đây là sách của tôi."
+      },
+      {
+       "kind": "example",
+       "ko": "제 친구입니다.",
+       "translation": "Đây là bạn tôi."
+      },
+      {
+       "kind": "choice",
+       "text": "'Sách của Hana' nói thế nào?",
+       "options": [
+        "하나 씨의 책",
+        "책의 하나 씨",
+        "하나 씨 의책"
+       ],
+       "answer": 0,
+       "why": "Người sở hữu trước, rồi 의, rồi đồ vật."
+      },
+      {
+       "kind": "choice",
+       "text": "Dạng rút gọn của 저의 là gì?",
+       "options": [
+        "저",
+        "제",
+        "내"
+       ],
+       "answer": 1,
+       "why": "저의 thành 제. 제 가방 là cặp của tôi."
+      },
+      {
+       "kind": "choice",
+       "text": "Câu nào đúng?",
+       "options": [
+        "제 친구입니다",
+        "저 친구입니다의"
+       ],
+       "answer": 0,
+       "why": "제 친구 là bạn tôi."
+      },
+      {
+       "kind": "build",
+       "translation": "Đây là cặp của Minsu.",
+       "words": [
+        "민수",
+        "씨의",
+        "가방입니다."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u4l4",
+     "title": "Tổng hợp: trong lớp học",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Hana nhặt được một quyển sách trong lớp. Nghe nhé."
+      },
+      {
+       "kind": "example",
+       "ko": "이것은 하나 씨의 책입니까?",
+       "translation": "Đây là sách của Hana à?"
+      },
+      {
+       "kind": "example",
+       "ko": "아니요, 제 책이 아닙니다.",
+       "translation": "Không, không phải sách của mình."
+      },
+      {
+       "kind": "example",
+       "ko": "민수 씨의 책입니다.",
+       "translation": "Là sách của Minsu."
+      },
+      {
+       "kind": "example",
+       "ko": "민수 씨는 무엇을 배웁니까?",
+       "translation": "Minsu học gì?"
+      },
+      {
+       "kind": "example",
+       "ko": "민수 씨는 친구하고 한국어를 배웁니다.",
+       "translation": "Minsu học tiếng Hàn với bạn."
+      },
+      {
+       "kind": "say",
+       "text": "아닙니다 là dạng trang trọng của 아니에요."
+      },
+      {
+       "kind": "say",
+       "text": "이것 nghĩa là 'cái này'. Sau này bạn sẽ học 이, 그, 저."
+      },
+      {
+       "kind": "choice",
+       "text": "제 책이 아닙니다 nghĩa là gì?",
+       "options": [
+        "Đây là sách của tôi",
+        "Không phải sách của tôi",
+        "Có phải sách của tôi không?"
+       ],
+       "answer": 1,
+       "why": "아닙니다 nghĩa là 'không phải', ở kiểu trang trọng."
+      },
+      {
+       "kind": "choice",
+       "text": "가방___ 책",
+       "options": [
+        "과",
+        "와"
+       ],
+       "answer": 0,
+       "why": "가방 kết thúc bằng ㅇ, nên dùng 과."
+      },
+      {
+       "kind": "build",
+       "translation": "Không phải cặp của tôi.",
+       "words": [
+        "제",
+        "가방이",
+        "아닙니다."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Tôi đọc sách với bạn.",
+       "words": [
+        "친구하고",
+        "책을",
+        "읽습니다."
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요! Giờ bạn đã biết nói về trường học."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "title": "Thời tiết",
+   "subtitle": "Nói về thời tiết và các mùa",
+   "lessons": [
+    {
+     "id": "u5l1",
+     "title": "Từ vựng: thời tiết và các mùa",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Người Hàn hay nói về thời tiết lắm. Cùng học từ nhé."
+      },
+      {
+       "kind": "example",
+       "ko": "날씨",
+       "translation": "thời tiết"
+      },
+      {
+       "kind": "example",
+       "ko": "봄",
+       "translation": "mùa xuân"
+      },
+      {
+       "kind": "example",
+       "ko": "여름",
+       "translation": "mùa hè"
+      },
+      {
+       "kind": "example",
+       "ko": "가을",
+       "translation": "mùa thu"
+      },
+      {
+       "kind": "example",
+       "ko": "겨울",
+       "translation": "mùa đông"
+      },
+      {
+       "kind": "example",
+       "ko": "비",
+       "translation": "mưa"
+      },
+      {
+       "kind": "example",
+       "ko": "눈",
+       "translation": "tuyết"
+      },
+      {
+       "kind": "example",
+       "ko": "덥다",
+       "translation": "nóng"
+      },
+      {
+       "kind": "example",
+       "ko": "춥다",
+       "translation": "lạnh"
+      },
+      {
+       "kind": "example",
+       "ko": "따뜻하다",
+       "translation": "ấm áp"
+      },
+      {
+       "kind": "example",
+       "ko": "시원하다",
+       "translation": "mát mẻ"
+      },
+      {
+       "kind": "example",
+       "ko": "맑다",
+       "translation": "trời quang, nắng"
+      },
+      {
+       "kind": "choice",
+       "text": "겨울 nghĩa là gì?",
+       "options": [
+        "mùa hè",
+        "mùa thu",
+        "mùa đông",
+        "mùa xuân"
+       ],
+       "answer": 2,
+       "why": "겨울 là mùa đông. 여름 là mùa hè."
+      },
+      {
+       "kind": "choice",
+       "text": "Từ nào nghĩa là 'lạnh'?",
+       "options": [
+        "덥다",
+        "춥다",
+        "맑다",
+        "시원하다"
+       ],
+       "answer": 1,
+       "why": "춥다 là lạnh. 덥다 là nóng."
+      },
+      {
+       "kind": "choice",
+       "text": "눈 ở đây nghĩa là gì?",
+       "options": [
+        "mưa",
+        "tuyết",
+        "thời tiết"
+       ],
+       "answer": 1,
+       "why": "눈 là tuyết. Nó cũng có nghĩa là mắt."
+      }
+     ]
+    },
+    {
+     "id": "u5l2",
+     "title": "Lịch sự thường ngày (-아요/어요)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "-아요/어요 là kiểu lịch sự dùng hằng ngày. Nghe nhẹ nhàng hơn -습니다."
+      },
+      {
+       "kind": "say",
+       "text": "Nhìn nguyên âm cuối của gốc từ. Nếu là ㅏ hoặc ㅗ, thêm 아요."
+      },
+      {
+       "kind": "example",
+       "ko": "좋아요.",
+       "translation": "Tốt."
+      },
+      {
+       "kind": "example",
+       "ko": "맑아요.",
+       "translation": "Trời quang."
+      },
+      {
+       "kind": "say",
+       "text": "Nguyên âm khác thì thêm 어요."
+      },
+      {
+       "kind": "example",
+       "ko": "먹어요.",
+       "translation": "Tôi ăn."
+      },
+      {
+       "kind": "example",
+       "ko": "읽어요.",
+       "translation": "Tôi đọc."
+      },
+      {
+       "kind": "say",
+       "text": "Động từ có 하다 thành 해요."
+      },
+      {
+       "kind": "example",
+       "ko": "따뜻해요.",
+       "translation": "Trời ấm."
+      },
+      {
+       "kind": "example",
+       "ko": "공부해요.",
+       "translation": "Tôi học."
+      },
+      {
+       "kind": "say",
+       "text": "덥다 và 춥다 đổi dạng: 더워요, 추워요. Cứ nhớ nguyên như vậy."
+      },
+      {
+       "kind": "example",
+       "ko": "오늘 추워요.",
+       "translation": "Hôm nay trời lạnh."
+      },
+      {
+       "kind": "choice",
+       "text": "작다 →",
+       "options": [
+        "작어요",
+        "작아요",
+        "작해요"
+       ],
+       "answer": 1,
+       "why": "Nguyên âm của 작 là ㅏ, nên dùng 아요."
+      },
+      {
+       "kind": "choice",
+       "text": "시원하다 →",
+       "options": [
+        "시원아요",
+        "시원해요",
+        "시원어요"
+       ],
+       "answer": 1,
+       "why": "하다 thành 해요."
+      },
+      {
+       "kind": "choice",
+       "text": "읽다 →",
+       "options": [
+        "읽아요",
+        "읽어요",
+        "읽해요"
+       ],
+       "answer": 1,
+       "why": "Nguyên âm của 읽 là ㅣ, nên dùng 어요."
+      },
+      {
+       "kind": "build",
+       "translation": "Thời tiết đẹp.",
+       "words": [
+        "날씨가",
+        "좋아요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u5l3",
+     "title": "Không (-지 않아요)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Để nói 'không', bỏ 다 rồi thêm 지 않아요."
+      },
+      {
+       "kind": "example",
+       "ko": "춥지 않아요.",
+       "translation": "Không lạnh."
+      },
+      {
+       "kind": "example",
+       "ko": "덥지 않아요.",
+       "translation": "Không nóng."
+      },
+      {
+       "kind": "example",
+       "ko": "좋지 않아요.",
+       "translation": "Không tốt."
+      },
+      {
+       "kind": "say",
+       "text": "Dùng được cho hành động nữa."
+      },
+      {
+       "kind": "example",
+       "ko": "커피를 마시지 않아요.",
+       "translation": "Tôi không uống cà phê."
+      },
+      {
+       "kind": "say",
+       "text": "Ở đây không đổi dạng: 춥다 thành 춥지 않아요, không phải 추워지 않아요."
+      },
+      {
+       "kind": "choice",
+       "text": "크다 → không to",
+       "options": [
+        "크지 않아요",
+        "커지 않아요",
+        "크 않아요"
+       ],
+       "answer": 0,
+       "why": "Gốc 크 + 지 않아요."
+      },
+      {
+       "kind": "choice",
+       "text": "Câu nào đúng?",
+       "options": [
+        "날씨가 좋지 않아요",
+        "날씨가 좋아지 않아요"
+       ],
+       "answer": 0,
+       "why": "Gốc 좋 + 지 않아요."
+      },
+      {
+       "kind": "choice",
+       "text": "먹다 → tôi không ăn",
+       "options": [
+        "먹지 않아요",
+        "먹어지 않아요",
+        "먹않아요"
+       ],
+       "answer": 0,
+       "why": "Gốc 먹 + 지 않아요."
+      },
+      {
+       "kind": "build",
+       "translation": "Hôm nay trời không lạnh.",
+       "words": [
+        "오늘",
+        "춥지",
+        "않아요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u5l4",
+     "title": "Tổng hợp: thời tiết thế nào?",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Minsu gọi điện cho Hana. Nghe nhé."
+      },
+      {
+       "kind": "example",
+       "ko": "오늘 날씨가 어때요?",
+       "translation": "Hôm nay thời tiết thế nào?"
+      },
+      {
+       "kind": "example",
+       "ko": "날씨가 좋지 않아요. 비가 와요.",
+       "translation": "Thời tiết không đẹp. Trời đang mưa."
+      },
+      {
+       "kind": "example",
+       "ko": "추워요?",
+       "translation": "Lạnh không?"
+      },
+      {
+       "kind": "example",
+       "ko": "아니요, 춥지 않아요. 시원해요.",
+       "translation": "Không, không lạnh. Mát mẻ."
+      },
+      {
+       "kind": "example",
+       "ko": "저는 봄을 좋아해요. 봄은 따뜻해요.",
+       "translation": "Mình thích mùa xuân. Mùa xuân ấm áp."
+      },
+      {
+       "kind": "say",
+       "text": "어때요? nghĩa là 'thế nào?'. Dùng cho thời tiết, đồ ăn, gì cũng được."
+      },
+      {
+       "kind": "say",
+       "text": "비가 와요 nghĩa là 'trời mưa', nghĩa đen là 'mưa đến'."
+      },
+      {
+       "kind": "choice",
+       "text": "'Trời đang mưa' nói thế nào?",
+       "options": [
+        "비가 와요",
+        "비를 와요",
+        "비가 해요"
+       ],
+       "answer": 0,
+       "why": "비가 와요: mưa đến."
+      },
+      {
+       "kind": "choice",
+       "text": "어때요? nghĩa là gì?",
+       "options": [
+        "Là cái gì?",
+        "Thế nào?",
+        "Ở đâu?"
+       ],
+       "answer": 1,
+       "why": "어때요? hỏi cái gì đó thế nào."
+      },
+      {
+       "kind": "build",
+       "translation": "Tôi thích mùa đông.",
+       "words": [
+        "저는",
+        "겨울을",
+        "좋아해요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Mùa hè nóng.",
+       "words": [
+        "여름은",
+        "더워요."
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요! Giờ bạn đã biết nói về thời tiết."
+      }
+     ]
+    },
+    {
+     "id": "u5r",
+     "title": "Ôn tập: Bài 1 đến 5",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Cùng ôn lại mọi thứ từ bài 1 đến 5. Không có ngữ pháp mới, chỉ luyện tập."
+      },
+      {
+       "kind": "choice",
+       "text": "저___ 학생이에요.",
+       "options": [
+        "은",
+        "는"
+       ],
+       "answer": 1,
+       "why": "저 kết thúc bằng nguyên âm, nên dùng 는."
+      },
+      {
+       "kind": "choice",
+       "text": "의사___ 아니에요.",
+       "options": [
+        "이",
+        "가"
+       ],
+       "answer": 1,
+       "why": "의사 kết thúc bằng nguyên âm, nên dùng 가 아니에요."
+      },
+      {
+       "kind": "choice",
+       "text": "빵___ 먹습니다.",
+       "options": [
+        "을",
+        "를"
+       ],
+       "answer": 0,
+       "why": "빵 kết thúc bằng phụ âm, nên dùng 을."
+      },
+      {
+       "kind": "choice",
+       "text": "친구___ 가방",
+       "options": [
+        "과",
+        "의"
+       ],
+       "answer": 1,
+       "why": "의 cho biết của ai: cặp của bạn."
+      },
+      {
+       "kind": "choice",
+       "text": "좋다 →",
+       "options": [
+        "좋아요",
+        "좋어요",
+        "좋해요"
+       ],
+       "answer": 0,
+       "why": "Nguyên âm là ㅗ, nên dùng 아요."
+      },
+      {
+       "kind": "choice",
+       "text": "춥다 → không lạnh",
+       "options": [
+        "추워지 않아요",
+        "춥지 않아요"
+       ],
+       "answer": 1,
+       "why": "Gốc 춥 + 지 않아요."
+      },
+      {
+       "kind": "choice",
+       "text": "마시다 → trang trọng",
+       "options": [
+        "마시습니다",
+        "마십니다"
+       ],
+       "answer": 1,
+       "why": "Gốc kết thúc bằng nguyên âm, nên dùng ㅂ니다."
+      },
+      {
+       "kind": "build",
+       "translation": "Chị gái tôi là y tá.",
+       "words": [
+        "우리",
+        "언니는",
+        "간호사예요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Tôi uống cà phê với bạn.",
+       "words": [
+        "친구하고",
+        "커피를",
+        "마십니다."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Hôm nay thời tiết không đẹp.",
+       "words": [
+        "오늘",
+        "날씨가",
+        "좋지",
+        "않아요."
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "대단해요! Bạn đã hoàn thành năm bài đầu tiên. Gochi tự hào về bạn."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "title": "Bạn bè",
+   "subtitle": "Tặng, gửi và gọi điện",
+   "lessons": [
+    {
+     "id": "u6l1",
+     "title": "Từ vựng: bạn bè và quà tặng",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Cùng học từ về bạn bè, quà tặng và tin nhắn."
+      },
+      {
+       "kind": "example",
+       "ko": "선물",
+       "translation": "quà"
+      },
+      {
+       "kind": "example",
+       "ko": "편지",
+       "translation": "thư"
+      },
+      {
+       "kind": "example",
+       "ko": "꽃",
+       "translation": "hoa"
+      },
+      {
+       "kind": "example",
+       "ko": "생일",
+       "translation": "sinh nhật"
+      },
+      {
+       "kind": "example",
+       "ko": "주다",
+       "translation": "cho, tặng"
+      },
+      {
+       "kind": "example",
+       "ko": "보내다",
+       "translation": "gửi"
+      },
+      {
+       "kind": "example",
+       "ko": "전화하다",
+       "translation": "gọi điện"
+      },
+      {
+       "kind": "example",
+       "ko": "만나다",
+       "translation": "gặp"
+      },
+      {
+       "kind": "example",
+       "ko": "고마워요",
+       "translation": "cảm ơn (thân mật)"
+      },
+      {
+       "kind": "example",
+       "ko": "미안해요",
+       "translation": "xin lỗi"
+      },
+      {
+       "kind": "example",
+       "ko": "생일 축하해요!",
+       "translation": "Chúc mừng sinh nhật!"
+      },
+      {
+       "kind": "choice",
+       "text": "선물 nghĩa là gì?",
+       "options": [
+        "thư",
+        "quà",
+        "hoa",
+        "sinh nhật"
+       ],
+       "answer": 1,
+       "why": "선물 là quà. 편지 là thư."
+      },
+      {
+       "kind": "choice",
+       "text": "Động từ nào nghĩa là 'gửi'?",
+       "options": [
+        "주다",
+        "보내다",
+        "만나다",
+        "전화하다"
+       ],
+       "answer": 1,
+       "why": "보내다 là gửi. 주다 là cho."
+      },
+      {
+       "kind": "choice",
+       "text": "'Chúc mừng sinh nhật!' nói thế nào?",
+       "options": [
+        "생일 고마워요!",
+        "생일 축하해요!",
+        "생일 미안해요!"
+       ],
+       "answer": 1,
+       "why": "축하해요 nghĩa là chúc mừng."
+      }
+     ]
+    },
+    {
+     "id": "u6l2",
+     "title": "Cho ai đó (에게/한테)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "에게 và 한테 nghĩa là 'cho' ai đó. 한테 thân mật hơn. Cả hai dùng được sau mọi tên."
+      },
+      {
+       "kind": "example",
+       "ko": "친구에게 편지를 보내요.",
+       "translation": "Tôi gửi thư cho bạn."
+      },
+      {
+       "kind": "example",
+       "ko": "동생한테 전화해요.",
+       "translation": "Tôi gọi điện cho em."
+      },
+      {
+       "kind": "say",
+       "text": "Một số động từ rút gọn ở kiểu 요. 주다 thành 줘요, 보다 thành 봐요, 마시다 thành 마셔요."
+      },
+      {
+       "kind": "example",
+       "ko": "어머니한테 꽃을 줘요.",
+       "translation": "Tôi tặng hoa cho mẹ."
+      },
+      {
+       "kind": "say",
+       "text": "Với nơi chốn, dùng 에, không dùng 에게. 에게 chỉ dùng cho người và động vật."
+      },
+      {
+       "kind": "choice",
+       "text": "친구___ 선물을 줘요.",
+       "options": [
+        "에게",
+        "에서",
+        "을"
+       ],
+       "answer": 0,
+       "why": "에게 nghĩa là 'cho' ai đó."
+      },
+      {
+       "kind": "choice",
+       "text": "Từ nào thân mật?",
+       "options": [
+        "에게",
+        "한테"
+       ],
+       "answer": 1,
+       "why": "한테 hay dùng khi nói. 에게 thiên về văn viết."
+      },
+      {
+       "kind": "choice",
+       "text": "주다 → kiểu 요",
+       "options": [
+        "chỉ 주어요",
+        "줘요",
+        "주요"
+       ],
+       "answer": 1,
+       "why": "주 + 어요 rút gọn thành 줘요."
+      },
+      {
+       "kind": "build",
+       "translation": "Tôi gọi điện cho bạn.",
+       "words": [
+        "친구한테",
+        "전화해요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Tôi tặng quà cho chị gái.",
+       "words": [
+        "언니에게",
+        "선물을",
+        "줘요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u6l3",
+     "title": "Chỉ (만)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "만 nghĩa là 'chỉ'. Đặt ngay sau danh từ."
+      },
+      {
+       "kind": "example",
+       "ko": "커피만 마셔요.",
+       "translation": "Tôi chỉ uống cà phê."
+      },
+      {
+       "kind": "example",
+       "ko": "동생만 와요.",
+       "translation": "Chỉ có em tôi đến."
+      },
+      {
+       "kind": "say",
+       "text": "Giống 도, 만 cũng thay cho 을/를 và 이/가."
+      },
+      {
+       "kind": "example",
+       "ko": "저는 드라마만 봐요.",
+       "translation": "Tôi chỉ xem phim truyền hình."
+      },
+      {
+       "kind": "choice",
+       "text": "Tôi chỉ ăn bánh mì: 빵___ 먹어요.",
+       "options": [
+        "만",
+        "도",
+        "을"
+       ],
+       "answer": 0,
+       "why": "만 nghĩa là chỉ. 도 nghĩa là cũng."
+      },
+      {
+       "kind": "choice",
+       "text": "Câu nào đúng?",
+       "options": [
+        "물을만 마셔요",
+        "물만 마셔요"
+       ],
+       "answer": 1,
+       "why": "만 thay cho 을/를."
+      },
+      {
+       "kind": "choice",
+       "text": "친구만 와요 nghĩa là gì?",
+       "options": [
+        "Bạn cũng đến",
+        "Chỉ có bạn đến",
+        "Bạn không đến"
+       ],
+       "answer": 1,
+       "why": "만 nghĩa là chỉ."
+      },
+      {
+       "kind": "build",
+       "translation": "Tôi chỉ uống trà.",
+       "words": [
+        "저는",
+        "차만",
+        "마셔요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u6l4",
+     "title": "Tổng hợp: sinh nhật",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Hôm nay là sinh nhật Hana. Nghe nhé."
+      },
+      {
+       "kind": "example",
+       "ko": "하나 씨, 생일 축하해요!",
+       "translation": "Hana, chúc mừng sinh nhật!"
+      },
+      {
+       "kind": "example",
+       "ko": "이거 선물이에요.",
+       "translation": "Đây là quà cho bạn."
+      },
+      {
+       "kind": "example",
+       "ko": "와, 고마워요! 꽃이에요?",
+       "translation": "Ôi, cảm ơn! Là hoa à?"
+      },
+      {
+       "kind": "example",
+       "ko": "네. 그리고 편지도 있어요.",
+       "translation": "Ừ. Còn có cả thư nữa."
+      },
+      {
+       "kind": "choice",
+       "text": "고마워요 nghĩa là gì?",
+       "options": [
+        "Xin lỗi",
+        "Cảm ơn",
+        "Xin chào"
+       ],
+       "answer": 1,
+       "why": "고마워요 là lời cảm ơn thân mật."
+      },
+      {
+       "kind": "choice",
+       "text": "친구___ 꽃을 보내요.",
+       "options": [
+        "한테",
+        "에서",
+        "는"
+       ],
+       "answer": 0,
+       "why": "한테 nghĩa là 'cho' ai đó."
+      },
+      {
+       "kind": "build",
+       "translation": "Đây là quà.",
+       "words": [
+        "이거",
+        "선물이에요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Tôi gửi thư cho bạn tôi.",
+       "words": [
+        "친구에게",
+        "편지를",
+        "보내요."
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요! Giờ bạn đã biết tặng quà và gửi tin nhắn."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "title": "Đồ vật ở đâu",
+   "subtitle": "Nói đồ vật ở đâu và bạn làm gì ở đâu",
+   "lessons": [
+    {
+     "id": "u7l1",
+     "title": "Từ vựng: phòng và nơi chốn",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Cùng học từ để nói đồ vật ở đâu."
+      },
+      {
+       "kind": "example",
+       "ko": "방",
+       "translation": "phòng"
+      },
+      {
+       "kind": "example",
+       "ko": "집",
+       "translation": "nhà"
+      },
+      {
+       "kind": "example",
+       "ko": "침대",
+       "translation": "giường"
+      },
+      {
+       "kind": "example",
+       "ko": "고양이",
+       "translation": "con mèo"
+      },
+      {
+       "kind": "example",
+       "ko": "위",
+       "translation": "trên"
+      },
+      {
+       "kind": "example",
+       "ko": "아래",
+       "translation": "dưới"
+      },
+      {
+       "kind": "example",
+       "ko": "앞",
+       "translation": "trước"
+      },
+      {
+       "kind": "example",
+       "ko": "뒤",
+       "translation": "sau"
+      },
+      {
+       "kind": "example",
+       "ko": "옆",
+       "translation": "bên cạnh"
+      },
+      {
+       "kind": "example",
+       "ko": "안",
+       "translation": "trong"
+      },
+      {
+       "kind": "example",
+       "ko": "있다",
+       "translation": "có, ở"
+      },
+      {
+       "kind": "example",
+       "ko": "없다",
+       "translation": "không có, không ở"
+      },
+      {
+       "kind": "choice",
+       "text": "옆 nghĩa là gì?",
+       "options": [
+        "phía sau",
+        "bên cạnh",
+        "dưới",
+        "trong"
+       ],
+       "answer": 1,
+       "why": "옆 là bên cạnh. 뒤 là phía sau."
+      },
+      {
+       "kind": "choice",
+       "text": "Từ trái nghĩa của 있다 là gì?",
+       "options": [
+        "없다",
+        "아래",
+        "안"
+       ],
+       "answer": 0,
+       "why": "있다 là 'có', 없다 là 'không có'."
+      },
+      {
+       "kind": "choice",
+       "text": "침대 nghĩa là gì?",
+       "options": [
+        "phòng",
+        "giường",
+        "bàn học",
+        "ghế"
+       ],
+       "answer": 1,
+       "why": "침대 là giường."
+      }
+     ]
+    },
+    {
+     "id": "u7l2",
+     "title": "Đồ vật ở đâu (에 있어요)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Để nói cái gì ở đâu, dùng nơi chốn + 에 + 있어요."
+      },
+      {
+       "kind": "example",
+       "ko": "고양이가 방에 있어요.",
+       "translation": "Con mèo ở trong phòng."
+      },
+      {
+       "kind": "say",
+       "text": "Với vị trí, nói đồ vật trước, rồi từ chỉ vị trí, rồi 에."
+      },
+      {
+       "kind": "example",
+       "ko": "책이 책상 위에 있어요.",
+       "translation": "Quyển sách ở trên bàn."
+      },
+      {
+       "kind": "example",
+       "ko": "가방이 의자 아래에 있어요.",
+       "translation": "Cái cặp ở dưới ghế."
+      },
+      {
+       "kind": "say",
+       "text": "Để hỏi ở đâu, dùng 어디에 있어요?"
+      },
+      {
+       "kind": "example",
+       "ko": "화장실이 어디에 있어요?",
+       "translation": "Nhà vệ sinh ở đâu?"
+      },
+      {
+       "kind": "example",
+       "ko": "집에 고양이가 없어요.",
+       "translation": "Ở nhà không có mèo."
+      },
+      {
+       "kind": "choice",
+       "text": "책이 침대 위___ 있어요.",
+       "options": [
+        "에",
+        "에서",
+        "를"
+       ],
+       "answer": 0,
+       "why": "Đồ vật ở đâu: 에 있어요."
+      },
+      {
+       "kind": "choice",
+       "text": "'Bên cạnh bàn' nói thế nào?",
+       "options": [
+        "책상 옆에",
+        "옆 책상에",
+        "책상에 옆"
+       ],
+       "answer": 0,
+       "why": "Đồ vật trước, rồi 옆, rồi 에."
+      },
+      {
+       "kind": "choice",
+       "text": "Câu nào nghĩa là 'không có cặp'?",
+       "options": [
+        "가방이 있어요",
+        "가방이 없어요"
+       ],
+       "answer": 1,
+       "why": "없어요 nghĩa là không có."
+      },
+      {
+       "kind": "build",
+       "translation": "Con mèo ở dưới giường.",
+       "words": [
+        "고양이가",
+        "침대",
+        "아래에",
+        "있어요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u7l3",
+     "title": "Làm gì ở đâu (에서)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "에서 đánh dấu nơi diễn ra hành động."
+      },
+      {
+       "kind": "example",
+       "ko": "도서관에서 공부해요.",
+       "translation": "Tôi học ở thư viện."
+      },
+      {
+       "kind": "example",
+       "ko": "식당에서 밥을 먹어요.",
+       "translation": "Tôi ăn ở nhà hàng."
+      },
+      {
+       "kind": "say",
+       "text": "So sánh: 에 dùng khi ở đâu đó. 에서 dùng khi làm gì ở đó."
+      },
+      {
+       "kind": "example",
+       "ko": "집에 있어요.",
+       "translation": "Tôi đang ở nhà."
+      },
+      {
+       "kind": "example",
+       "ko": "집에서 일해요.",
+       "translation": "Tôi làm việc ở nhà."
+      },
+      {
+       "kind": "choice",
+       "text": "학교___ 한국어를 배워요.",
+       "options": [
+        "에",
+        "에서"
+       ],
+       "answer": 1,
+       "why": "배우다 là hành động, nên dùng 에서."
+      },
+      {
+       "kind": "choice",
+       "text": "저는 지금 집___ 있어요.",
+       "options": [
+        "에",
+        "에서"
+       ],
+       "answer": 0,
+       "why": "있다 là ở đâu đó, nên dùng 에."
+      },
+      {
+       "kind": "choice",
+       "text": "방___ 드라마를 봐요.",
+       "options": [
+        "에",
+        "에서"
+       ],
+       "answer": 1,
+       "why": "Xem là hành động, nên dùng 에서."
+      },
+      {
+       "kind": "build",
+       "translation": "Tôi học ở thư viện.",
+       "words": [
+        "도서관에서",
+        "공부해요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u7l4",
+     "title": "Tổng hợp: bạn đang ở đâu?",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Minsu gọi điện cho Hana. Nghe nhé."
+      },
+      {
+       "kind": "example",
+       "ko": "하나 씨, 지금 어디에 있어요?",
+       "translation": "Hana, giờ bạn đang ở đâu?"
+      },
+      {
+       "kind": "example",
+       "ko": "집에 있어요. 방에서 드라마를 봐요.",
+       "translation": "Mình ở nhà. Mình đang xem phim trong phòng."
+      },
+      {
+       "kind": "example",
+       "ko": "제 가방이 하나 씨 집에 있어요?",
+       "translation": "Cặp của mình có ở nhà Hana không?"
+      },
+      {
+       "kind": "example",
+       "ko": "네, 의자 옆에 있어요.",
+       "translation": "Có, ở bên cạnh ghế."
+      },
+      {
+       "kind": "example",
+       "ko": "고마워요! 내일 가요.",
+       "translation": "Cảm ơn! Mai mình qua lấy."
+      },
+      {
+       "kind": "say",
+       "text": "지금 nghĩa là bây giờ. 내일 nghĩa là ngày mai."
+      },
+      {
+       "kind": "choice",
+       "text": "가방이 의자 옆___ 있어요.",
+       "options": [
+        "에",
+        "에서"
+       ],
+       "answer": 0,
+       "why": "Ở đâu đó: 에."
+      },
+      {
+       "kind": "choice",
+       "text": "어디에 있어요? nghĩa là gì?",
+       "options": [
+        "Là cái gì?",
+        "Ở đâu?",
+        "Là ai?"
+       ],
+       "answer": 1,
+       "why": "어디 nghĩa là ở đâu."
+      },
+      {
+       "kind": "build",
+       "translation": "Bây giờ tôi đang ở nhà.",
+       "words": [
+        "지금",
+        "집에",
+        "있어요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Tôi ăn ở nhà.",
+       "words": [
+        "집에서",
+        "밥을",
+        "먹어요."
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요! Giờ bạn đã biết nói đồ vật ở đâu."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "title": "Ngày tháng",
+   "subtitle": "Nói về ngày tháng và quá khứ",
+   "lessons": [
+    {
+     "id": "u8l1",
+     "title": "Từ vựng: số và ngày",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Tiếng Hàn có hai hệ số. Hệ này có gốc Hán, dùng cho ngày tháng, tiền và số điện thoại, nghe khá giống âm Hán Việt."
+      },
+      {
+       "kind": "example",
+       "ko": "일, 이, 삼",
+       "translation": "1, 2, 3"
+      },
+      {
+       "kind": "example",
+       "ko": "사, 오, 육",
+       "translation": "4, 5, 6"
+      },
+      {
+       "kind": "example",
+       "ko": "칠, 팔, 구, 십",
+       "translation": "7, 8, 9, 10"
+      },
+      {
+       "kind": "example",
+       "ko": "십오",
+       "translation": "15 (10 + 5)"
+      },
+      {
+       "kind": "example",
+       "ko": "이십",
+       "translation": "20 (2 × 10)"
+      },
+      {
+       "kind": "say",
+       "text": "Tháng là số + 월. Chú ý: tháng 6 là 유월 và tháng 10 là 시월."
+      },
+      {
+       "kind": "example",
+       "ko": "삼월 십오일",
+       "translation": "ngày 15 tháng 3"
+      },
+      {
+       "kind": "example",
+       "ko": "월요일",
+       "translation": "thứ Hai"
+      },
+      {
+       "kind": "example",
+       "ko": "금요일",
+       "translation": "thứ Sáu"
+      },
+      {
+       "kind": "example",
+       "ko": "토요일",
+       "translation": "thứ Bảy"
+      },
+      {
+       "kind": "example",
+       "ko": "일요일",
+       "translation": "Chủ nhật"
+      },
+      {
+       "kind": "example",
+       "ko": "어제, 오늘, 내일",
+       "translation": "hôm qua, hôm nay, ngày mai"
+      },
+      {
+       "kind": "example",
+       "ko": "주말",
+       "translation": "cuối tuần"
+      },
+      {
+       "kind": "choice",
+       "text": "25 nói thế nào?",
+       "options": [
+        "이오",
+        "이십오",
+        "오십이"
+       ],
+       "answer": 1,
+       "why": "이십 (20) + 오 (5)."
+      },
+      {
+       "kind": "choice",
+       "text": "Tháng 6 nói thế nào?",
+       "options": [
+        "육월",
+        "유월",
+        "오월"
+       ],
+       "answer": 1,
+       "why": "Tháng 6 là 유월, không phải 육월."
+      },
+      {
+       "kind": "choice",
+       "text": "토요일 nghĩa là gì?",
+       "options": [
+        "thứ Sáu",
+        "thứ Bảy",
+        "Chủ nhật"
+       ],
+       "answer": 1,
+       "why": "토요일 là thứ Bảy. 일요일 là Chủ nhật."
+      }
+     ]
+    },
+    {
+     "id": "u8l2",
+     "title": "Thì quá khứ (-았/었어요)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Thì quá khứ giống -아요/어요. Chỉ cần dùng 았어요 hoặc 었어요."
+      },
+      {
+       "kind": "say",
+       "text": "Nếu nguyên âm cuối là ㅏ hoặc ㅗ, dùng 았어요."
+      },
+      {
+       "kind": "example",
+       "ko": "좋았어요.",
+       "translation": "Đã rất tốt."
+      },
+      {
+       "kind": "example",
+       "ko": "만났어요.",
+       "translation": "Tôi đã gặp (ai đó)."
+      },
+      {
+       "kind": "example",
+       "ko": "봤어요.",
+       "translation": "Tôi đã xem."
+      },
+      {
+       "kind": "say",
+       "text": "Nguyên âm khác dùng 었어요. 하다 thành 했어요."
+      },
+      {
+       "kind": "example",
+       "ko": "먹었어요.",
+       "translation": "Tôi đã ăn."
+      },
+      {
+       "kind": "example",
+       "ko": "읽었어요.",
+       "translation": "Tôi đọc."
+      },
+      {
+       "kind": "example",
+       "ko": "공부했어요.",
+       "translation": "Tôi đã học."
+      },
+      {
+       "kind": "choice",
+       "text": "먹다 → quá khứ",
+       "options": [
+        "먹았어요",
+        "먹었어요",
+        "먹했어요"
+       ],
+       "answer": 1,
+       "why": "Nguyên âm của 먹 là ㅓ, nên dùng 었어요."
+      },
+      {
+       "kind": "choice",
+       "text": "일하다 → quá khứ",
+       "options": [
+        "일했어요",
+        "일았어요",
+        "일하었어요"
+       ],
+       "answer": 0,
+       "why": "하다 thành 했어요."
+      },
+      {
+       "kind": "choice",
+       "text": "작다 → quá khứ",
+       "options": [
+        "작었어요",
+        "작았어요"
+       ],
+       "answer": 1,
+       "why": "Nguyên âm của 작 là ㅏ, nên dùng 았어요."
+      },
+      {
+       "kind": "build",
+       "translation": "Hôm qua tôi đã xem phim.",
+       "words": [
+        "어제",
+        "영화를",
+        "봤어요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u8l3",
+     "title": "Vào lúc (에)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Để nói khi nào việc gì xảy ra, thêm 에 sau thời gian."
+      },
+      {
+       "kind": "example",
+       "ko": "토요일에 친구를 만났어요.",
+       "translation": "Thứ Bảy tôi đã gặp bạn."
+      },
+      {
+       "kind": "example",
+       "ko": "삼월에 한국에 가요.",
+       "translation": "Tháng 3 tôi đi Hàn Quốc."
+      },
+      {
+       "kind": "example",
+       "ko": "주말에 뭐 했어요?",
+       "translation": "Cuối tuần bạn đã làm gì?"
+      },
+      {
+       "kind": "say",
+       "text": "어제, 오늘 và 내일 không thêm 에."
+      },
+      {
+       "kind": "example",
+       "ko": "어제 공부했어요.",
+       "translation": "Hôm qua tôi đã học."
+      },
+      {
+       "kind": "choice",
+       "text": "금요일___ 영화를 봤어요.",
+       "options": [
+        "에",
+        "에서",
+        "를"
+       ],
+       "answer": 0,
+       "why": "Thời gian + 에."
+      },
+      {
+       "kind": "choice",
+       "text": "Câu nào đúng?",
+       "options": [
+        "어제에 먹었어요",
+        "어제 먹었어요"
+       ],
+       "answer": 1,
+       "why": "어제 không bao giờ thêm 에."
+      },
+      {
+       "kind": "choice",
+       "text": "일요일에 뭐 ___?",
+       "options": [
+        "했어요",
+        "해요었어요",
+        "했요"
+       ],
+       "answer": 0,
+       "why": "했어요 là quá khứ của 해요."
+      },
+      {
+       "kind": "build",
+       "translation": "Cuối tuần tôi đã gặp bạn.",
+       "words": [
+        "주말에",
+        "친구를",
+        "만났어요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u8l4",
+     "title": "Tổng hợp: cuối tuần của bạn",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Sáng thứ Hai ở trường. Nghe nhé."
+      },
+      {
+       "kind": "example",
+       "ko": "주말에 뭐 했어요?",
+       "translation": "Cuối tuần bạn đã làm gì?"
+      },
+      {
+       "kind": "example",
+       "ko": "토요일에 친구를 만났어요. 같이 영화를 봤어요.",
+       "translation": "Thứ Bảy mình đã gặp bạn. Bọn mình đã cùng xem phim."
+      },
+      {
+       "kind": "example",
+       "ko": "영화가 어땠어요?",
+       "translation": "Phim thế nào?"
+      },
+      {
+       "kind": "example",
+       "ko": "정말 좋았어요! 일요일에는 집에서 쉬었어요.",
+       "translation": "Hay lắm! Chủ nhật mình nghỉ ở nhà."
+      },
+      {
+       "kind": "say",
+       "text": "어땠어요? là quá khứ của 어때요?. 같이 nghĩa là cùng nhau."
+      },
+      {
+       "kind": "say",
+       "text": "쉬다 nghĩa là nghỉ ngơi. 쉬었어요 là quá khứ của nó."
+      },
+      {
+       "kind": "choice",
+       "text": "어땠어요? hỏi gì?",
+       "options": [
+        "Thế nào?",
+        "Đã thế nào?",
+        "Đã ở đâu?"
+       ],
+       "answer": 1,
+       "why": "어땠어요 là thì quá khứ."
+      },
+      {
+       "kind": "choice",
+       "text": "일요일___ 집에서 쉬었어요.",
+       "options": [
+        "에",
+        "에서",
+        "을"
+       ],
+       "answer": 0,
+       "why": "Thời gian + 에."
+      },
+      {
+       "kind": "build",
+       "translation": "Hôm qua tôi nghỉ ở nhà.",
+       "words": [
+        "어제",
+        "집에서",
+        "쉬었어요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Phim hay.",
+       "words": [
+        "영화가",
+        "좋았어요."
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요! Giờ bạn đã biết nói về quá khứ."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 9,
+   "title": "Thể thao",
+   "subtitle": "Nói điều bạn làm được và không làm được",
+   "lessons": [
+    {
+     "id": "u9l1",
+     "title": "Từ vựng: thể thao",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Cùng học các môn thể thao và từ chỉ mức độ thường xuyên."
+      },
+      {
+       "kind": "example",
+       "ko": "운동",
+       "translation": "tập thể dục, thể thao"
+      },
+      {
+       "kind": "example",
+       "ko": "수영",
+       "translation": "bơi"
+      },
+      {
+       "kind": "example",
+       "ko": "축구",
+       "translation": "bóng đá"
+      },
+      {
+       "kind": "example",
+       "ko": "야구",
+       "translation": "bóng chày"
+      },
+      {
+       "kind": "example",
+       "ko": "테니스",
+       "translation": "quần vợt"
+      },
+      {
+       "kind": "example",
+       "ko": "요가",
+       "translation": "yoga"
+      },
+      {
+       "kind": "example",
+       "ko": "잘",
+       "translation": "giỏi, tốt"
+      },
+      {
+       "kind": "example",
+       "ko": "매일",
+       "translation": "mỗi ngày"
+      },
+      {
+       "kind": "example",
+       "ko": "자주",
+       "translation": "thường xuyên"
+      },
+      {
+       "kind": "example",
+       "ko": "가끔",
+       "translation": "thỉnh thoảng"
+      },
+      {
+       "kind": "choice",
+       "text": "축구 nghĩa là gì?",
+       "options": [
+        "bóng chày",
+        "bóng đá",
+        "bơi"
+       ],
+       "answer": 1,
+       "why": "축구 là bóng đá. 야구 là bóng chày."
+      },
+      {
+       "kind": "choice",
+       "text": "Từ nào nghĩa là 'thỉnh thoảng'?",
+       "options": [
+        "매일",
+        "자주",
+        "가끔"
+       ],
+       "answer": 2,
+       "why": "가끔 là thỉnh thoảng. 자주 là thường xuyên."
+      },
+      {
+       "kind": "choice",
+       "text": "잘 nghĩa là gì?",
+       "options": [
+        "giỏi, tốt",
+        "mỗi ngày",
+        "không"
+       ],
+       "answer": 0,
+       "why": "잘 nghĩa là giỏi: 잘해요, tôi làm giỏi."
+      }
+     ]
+    },
+    {
+     "id": "u9l2",
+     "title": "Từ... đến... (부터, 까지)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "부터 nghĩa là 'từ' và 까지 nghĩa là 'đến'. Dùng với giờ và ngày."
+      },
+      {
+       "kind": "example",
+       "ko": "월요일부터 금요일까지 일해요.",
+       "translation": "Tôi làm việc từ thứ Hai đến thứ Sáu."
+      },
+      {
+       "kind": "example",
+       "ko": "오늘부터 운동해요.",
+       "translation": "Từ hôm nay tôi tập thể dục."
+      },
+      {
+       "kind": "example",
+       "ko": "일요일까지 쉬어요.",
+       "translation": "Tôi nghỉ đến Chủ nhật."
+      },
+      {
+       "kind": "choice",
+       "text": "월요일___ 수영해요. (từ thứ Hai)",
+       "options": [
+        "부터",
+        "까지",
+        "에서"
+       ],
+       "answer": 0,
+       "why": "부터 nghĩa là từ."
+      },
+      {
+       "kind": "choice",
+       "text": "금요일___ 공부해요. (đến thứ Sáu)",
+       "options": [
+        "부터",
+        "까지"
+       ],
+       "answer": 1,
+       "why": "까지 nghĩa là đến."
+      },
+      {
+       "kind": "choice",
+       "text": "Câu nào đúng?",
+       "options": [
+        "월요일까지 금요일부터",
+        "월요일부터 금요일까지"
+       ],
+       "answer": 1,
+       "why": "부터 trước, rồi đến 까지."
+      },
+      {
+       "kind": "build",
+       "translation": "Tôi bơi từ thứ Hai đến thứ Sáu.",
+       "words": [
+        "월요일부터",
+        "금요일까지",
+        "수영해요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u9l3",
+     "title": "Không thể (못, -지 못해요)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "못 nghĩa là 'không thể'. Đặt ngay trước động từ."
+      },
+      {
+       "kind": "example",
+       "ko": "저는 수영을 못해요.",
+       "translation": "Tôi không biết bơi."
+      },
+      {
+       "kind": "example",
+       "ko": "오늘은 못 가요.",
+       "translation": "Hôm nay tôi không đi được."
+      },
+      {
+       "kind": "say",
+       "text": "Bạn cũng có thể thêm 지 못해요 vào gốc. Nghĩa giống nhau, trang trọng hơn một chút."
+      },
+      {
+       "kind": "example",
+       "ko": "축구를 하지 못해요.",
+       "translation": "Tôi không biết đá bóng."
+      },
+      {
+       "kind": "say",
+       "text": "So sánh: 안 (dạng ngắn của -지 않아요) là không làm. 못 là không thể làm."
+      },
+      {
+       "kind": "example",
+       "ko": "수영을 잘해요.",
+       "translation": "Tôi bơi giỏi."
+      },
+      {
+       "kind": "choice",
+       "text": "Tôi không uống được cà phê: 커피를 ___ 마셔요.",
+       "options": [
+        "못",
+        "만",
+        "도"
+       ],
+       "answer": 0,
+       "why": "못 + động từ nghĩa là không thể."
+      },
+      {
+       "kind": "choice",
+       "text": "가다 → không thể (dạng 지)",
+       "options": [
+        "가지 못해요",
+        "가 못해요",
+        "가지 못가요"
+       ],
+       "answer": 0,
+       "why": "Gốc 가 + 지 못해요."
+      },
+      {
+       "kind": "choice",
+       "text": "Câu nào nghĩa là 'Tôi không biết bơi'?",
+       "options": [
+        "수영을 안 해요",
+        "수영을 못해요"
+       ],
+       "answer": 1,
+       "why": "못 là không thể. 안 là không làm."
+      },
+      {
+       "kind": "build",
+       "translation": "Tôi không biết chơi quần vợt.",
+       "words": [
+        "저는",
+        "테니스를",
+        "못해요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u9l4",
+     "title": "Tổng hợp: môn thể thao yêu thích",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Hana và Minsu nói về thể thao. Nghe nhé."
+      },
+      {
+       "kind": "example",
+       "ko": "무슨 운동을 좋아해요?",
+       "translation": "Bạn thích môn thể thao nào?"
+      },
+      {
+       "kind": "example",
+       "ko": "축구를 좋아해요. 매일 해요.",
+       "translation": "Mình thích bóng đá. Ngày nào mình cũng chơi."
+      },
+      {
+       "kind": "example",
+       "ko": "수영도 해요?",
+       "translation": "Bạn cũng bơi à?"
+      },
+      {
+       "kind": "example",
+       "ko": "아니요, 저는 수영을 못해요.",
+       "translation": "Không, mình không biết bơi."
+      },
+      {
+       "kind": "example",
+       "ko": "저는 수영을 잘해요. 월요일부터 금요일까지 수영장에 가요.",
+       "translation": "Mình bơi giỏi lắm. Từ thứ Hai đến thứ Sáu mình đều đi bể bơi."
+      },
+      {
+       "kind": "say",
+       "text": "무슨 nghĩa là 'loại gì'. 수영장 là bể bơi."
+      },
+      {
+       "kind": "choice",
+       "text": "잘해요 nghĩa là gì?",
+       "options": [
+        "Tôi kém môn này",
+        "Tôi giỏi môn này",
+        "Tôi không chơi"
+       ],
+       "answer": 1,
+       "why": "잘 + 해요 nghĩa là bạn làm giỏi."
+      },
+      {
+       "kind": "choice",
+       "text": "저는 야구를 ___ 해요. (không thể)",
+       "options": [
+        "못",
+        "잘",
+        "만"
+       ],
+       "answer": 0,
+       "why": "못 nghĩa là không thể."
+      },
+      {
+       "kind": "build",
+       "translation": "Ngày nào tôi cũng đá bóng.",
+       "words": [
+        "저는",
+        "매일",
+        "축구를",
+        "해요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Hôm nay tôi không đi được.",
+       "words": [
+        "오늘은",
+        "못",
+        "가요."
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요! Giờ bạn đã biết nói về thể thao."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 10,
+   "title": "Lên kế hoạch",
+   "subtitle": "Rủ bạn bè đi chơi",
+   "lessons": [
+    {
+     "id": "u10l1",
+     "title": "Từ vựng: đếm số và giờ",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Đây là hệ số thuần Hàn. Dùng để đếm đồ vật và nói giờ."
+      },
+      {
+       "kind": "example",
+       "ko": "하나, 둘, 셋",
+       "translation": "1, 2, 3"
+      },
+      {
+       "kind": "example",
+       "ko": "넷, 다섯, 여섯",
+       "translation": "4, 5, 6"
+      },
+      {
+       "kind": "example",
+       "ko": "일곱, 여덟, 아홉, 열",
+       "translation": "7, 8, 9, 10"
+      },
+      {
+       "kind": "say",
+       "text": "Trước 시 (giờ), một số số rút gọn: 한 시, 두 시, 세 시, 네 시."
+      },
+      {
+       "kind": "example",
+       "ko": "한 시",
+       "translation": "1 giờ"
+      },
+      {
+       "kind": "example",
+       "ko": "세 시",
+       "translation": "3 giờ"
+      },
+      {
+       "kind": "example",
+       "ko": "열두 시",
+       "translation": "12 giờ"
+      },
+      {
+       "kind": "say",
+       "text": "Phút dùng hệ số kia: 삼십 분 là 30 phút."
+      },
+      {
+       "kind": "example",
+       "ko": "두 시 삼십 분",
+       "translation": "2:30"
+      },
+      {
+       "kind": "example",
+       "ko": "점심",
+       "translation": "bữa trưa"
+      },
+      {
+       "kind": "example",
+       "ko": "저녁",
+       "translation": "bữa tối, buổi tối"
+      },
+      {
+       "kind": "example",
+       "ko": "같이",
+       "translation": "cùng nhau"
+      },
+      {
+       "kind": "choice",
+       "text": "4 giờ nói thế nào?",
+       "options": [
+        "사 시",
+        "네 시",
+        "넷 시"
+       ],
+       "answer": 1,
+       "why": "넷 rút gọn thành 네 trước 시."
+      },
+      {
+       "kind": "choice",
+       "text": "다섯 là số mấy?",
+       "options": [
+        "4",
+        "5",
+        "6"
+       ],
+       "answer": 1,
+       "why": "다섯 là 5."
+      },
+      {
+       "kind": "choice",
+       "text": "7 giờ 30 nói thế nào?",
+       "options": [
+        "일곱 시 삼십 분",
+        "칠 시 서른 분"
+       ],
+       "answer": 0,
+       "why": "Giờ dùng số thuần Hàn, phút dùng 일, 이, 삼."
+      }
+     ]
+    },
+    {
+     "id": "u10l2",
+     "title": "Mình... nhé? Cùng... nào! (-을까요, -읍시다)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "-을까요? nghĩa là 'mình... nhé?'. Dùng để rủ rê."
+      },
+      {
+       "kind": "say",
+       "text": "Sau phụ âm thêm 을까요. Sau nguyên âm thêm ㄹ까요."
+      },
+      {
+       "kind": "example",
+       "ko": "같이 먹을까요?",
+       "translation": "Mình ăn cùng nhau nhé?"
+      },
+      {
+       "kind": "example",
+       "ko": "영화를 볼까요?",
+       "translation": "Mình xem phim nhé?"
+      },
+      {
+       "kind": "say",
+       "text": "-읍시다 nghĩa là 'cùng... nào'. Sau nguyên âm là ㅂ시다."
+      },
+      {
+       "kind": "example",
+       "ko": "갑시다!",
+       "translation": "Đi nào!"
+      },
+      {
+       "kind": "example",
+       "ko": "점심을 먹읍시다.",
+       "translation": "Cùng ăn trưa nào."
+      },
+      {
+       "kind": "say",
+       "text": "-읍시다 có thể nghe như ra lệnh với người lớn tuổi. Với họ, hãy dùng -을까요?."
+      },
+      {
+       "kind": "choice",
+       "text": "마시다 → mình... nhé?",
+       "options": [
+        "마실까요",
+        "마시을까요",
+        "마셔까요"
+       ],
+       "answer": 0,
+       "why": "Gốc kết thúc bằng nguyên âm, nên dùng ㄹ까요: 마실까요."
+      },
+      {
+       "kind": "choice",
+       "text": "읽다 → mình... nhé?",
+       "options": [
+        "읽ㄹ까요",
+        "읽을까요"
+       ],
+       "answer": 1,
+       "why": "Gốc kết thúc bằng phụ âm, nên dùng 을까요."
+      },
+      {
+       "kind": "choice",
+       "text": "만나다 → cùng... nào",
+       "options": [
+        "만납시다",
+        "만나읍시다"
+       ],
+       "answer": 0,
+       "why": "Gốc kết thúc bằng nguyên âm, nên dùng ㅂ시다."
+      },
+      {
+       "kind": "build",
+       "translation": "Mình ăn tối cùng nhau nhé?",
+       "words": [
+        "같이",
+        "저녁을",
+        "먹을까요?"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u10l3",
+     "title": "Và rồi (-고)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "-고 nối hai hành động hoặc hai tính chất, giống 'và'. Thêm vào gốc từ."
+      },
+      {
+       "kind": "example",
+       "ko": "밥을 먹고 영화를 봐요.",
+       "translation": "Tôi ăn cơm rồi xem phim."
+      },
+      {
+       "kind": "example",
+       "ko": "날씨가 좋고 따뜻해요.",
+       "translation": "Thời tiết đẹp và ấm áp."
+      },
+      {
+       "kind": "example",
+       "ko": "숙제를 하고 잤어요.",
+       "translation": "Tôi làm bài tập rồi đi ngủ."
+      },
+      {
+       "kind": "say",
+       "text": "Thì chỉ đặt ở động từ cuối cùng."
+      },
+      {
+       "kind": "choice",
+       "text": "Tôi đã ăn và uống. Câu nào đúng?",
+       "options": [
+        "먹고 마셨어요",
+        "먹었어요고 마셨어요"
+       ],
+       "answer": 0,
+       "why": "Quá khứ đặt ở động từ cuối: 먹고 마셨어요."
+      },
+      {
+       "kind": "choice",
+       "text": "공부하다 + 자다",
+       "options": [
+        "공부하고 자요",
+        "공부해고 자요"
+       ],
+       "answer": 0,
+       "why": "Gốc 공부하 + 고."
+      },
+      {
+       "kind": "choice",
+       "text": "크고 좋아요 nghĩa là gì?",
+       "options": [
+        "To nhưng không tốt",
+        "To và tốt",
+        "Không to"
+       ],
+       "answer": 1,
+       "why": "-고 nghĩa là và."
+      },
+      {
+       "kind": "build",
+       "translation": "Tôi ăn trưa rồi uống cà phê.",
+       "words": [
+        "점심을",
+        "먹고",
+        "커피를",
+        "마셔요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u10l4",
+     "title": "Tổng hợp: lên kế hoạch",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Minsu rủ Hana ăn trưa. Nghe nhé."
+      },
+      {
+       "kind": "example",
+       "ko": "하나 씨, 내일 같이 점심을 먹을까요?",
+       "translation": "Hana, mai mình ăn trưa cùng nhau nhé?"
+      },
+      {
+       "kind": "example",
+       "ko": "좋아요! 몇 시에 만날까요?",
+       "translation": "Được chứ! Mấy giờ mình gặp?"
+      },
+      {
+       "kind": "example",
+       "ko": "열두 시에 만납시다.",
+       "translation": "Gặp nhau lúc 12 giờ nhé."
+      },
+      {
+       "kind": "example",
+       "ko": "점심을 먹고 커피도 마실까요?",
+       "translation": "Ăn trưa xong mình uống cà phê luôn nhé?"
+      },
+      {
+       "kind": "example",
+       "ko": "네, 좋아요. 내일 봐요!",
+       "translation": "Ừ, hay đó. Mai gặp nhé!"
+      },
+      {
+       "kind": "say",
+       "text": "몇 시 nghĩa là 'mấy giờ'. 내일 봐요 nghĩa là 'mai gặp nhé'."
+      },
+      {
+       "kind": "choice",
+       "text": "Hỏi 'Mấy giờ?' thế nào?",
+       "options": [
+        "몇 시예요?",
+        "무슨 시예요?",
+        "어디 시예요?"
+       ],
+       "answer": 0,
+       "why": "몇 nghĩa là mấy: 몇 시 là mấy giờ."
+      },
+      {
+       "kind": "choice",
+       "text": "가다 → cùng... nào",
+       "options": [
+        "갑시다",
+        "가읍시다",
+        "갈시다"
+       ],
+       "answer": 0,
+       "why": "Gốc kết thúc bằng nguyên âm, nên dùng ㅂ시다."
+      },
+      {
+       "kind": "build",
+       "translation": "Gặp nhau lúc 3 giờ nhé.",
+       "words": [
+        "세",
+        "시에",
+        "만납시다."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Mình cùng xem phim nhé?",
+       "words": [
+        "같이",
+        "영화를",
+        "볼까요?"
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요! Giờ bạn đã biết lên kế hoạch bằng tiếng Hàn."
+      }
+     ]
+    },
+    {
+     "id": "u10r",
+     "title": "Ôn tập: Bài 6 đến 10",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Cùng ôn lại bài 6 đến 10."
+      },
+      {
+       "kind": "choice",
+       "text": "동생___ 선물을 줘요.",
+       "options": [
+        "한테",
+        "에서",
+        "부터"
+       ],
+       "answer": 0,
+       "why": "한테 nghĩa là 'cho' ai đó."
+      },
+      {
+       "kind": "choice",
+       "text": "저는 커피___ 마셔요. (chỉ)",
+       "options": [
+        "만",
+        "도",
+        "까지"
+       ],
+       "answer": 0,
+       "why": "만 nghĩa là chỉ."
+      },
+      {
+       "kind": "choice",
+       "text": "고양이가 침대 아래___ 있어요.",
+       "options": [
+        "에",
+        "에서"
+       ],
+       "answer": 0,
+       "why": "Ở đâu đó: 에."
+      },
+      {
+       "kind": "choice",
+       "text": "도서관___ 공부해요.",
+       "options": [
+        "에",
+        "에서"
+       ],
+       "answer": 1,
+       "why": "Hành động ở một nơi: 에서."
+      },
+      {
+       "kind": "choice",
+       "text": "보다 → quá khứ",
+       "options": [
+        "봤어요",
+        "보었어요",
+        "봐았어요"
+       ],
+       "answer": 0,
+       "why": "보 + 았어요 rút gọn thành 봤어요."
+      },
+      {
+       "kind": "choice",
+       "text": "월요일___ 금요일까지",
+       "options": [
+        "부터",
+        "에",
+        "만"
+       ],
+       "answer": 0,
+       "why": "부터 ... 까지: từ ... đến."
+      },
+      {
+       "kind": "choice",
+       "text": "Tôi không biết bơi: 수영을 ___",
+       "options": [
+        "못해요",
+        "안해요",
+        "잘해요"
+       ],
+       "answer": 0,
+       "why": "못 nghĩa là không thể."
+      },
+      {
+       "kind": "choice",
+       "text": "먹다 → mình... nhé?",
+       "options": [
+        "먹을까요",
+        "먹ㄹ까요"
+       ],
+       "answer": 0,
+       "why": "Gốc kết thúc bằng phụ âm, nên dùng 을까요."
+      },
+      {
+       "kind": "build",
+       "translation": "Thứ Bảy tôi đã gặp bạn.",
+       "words": [
+        "토요일에",
+        "친구를",
+        "만났어요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Mình ăn cơm rồi xem phim nhé?",
+       "words": [
+        "밥을",
+        "먹고",
+        "영화를",
+        "볼까요?"
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "대단해요! Bạn đã hoàn thành mười bài. Gochi rất tự hào."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

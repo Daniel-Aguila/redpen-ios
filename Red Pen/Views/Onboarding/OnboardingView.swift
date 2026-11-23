@@ -2,24 +2,34 @@ import SwiftUI
 import SwiftData
 
 struct OnboardingView: View {
+    enum StartLevel { case new, hangul, some }
+
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
     @Environment(ProgressStore.self) private var progress
+    @Environment(ProStore.self) private var store
     @AppStorage("whatsNewSeen") private var whatsNewSeen = ""
     @AppStorage("selectedTab") private var selectedTab = "practice"
     @AppStorage("reminderOn") private var reminderOn = false
     @AppStorage("reminderMinutes") private var reminderMinutes = 20 * 60
+    @AppStorage("dailyGoal") private var dailyGoal = 10
     @State private var page = 0
     @State private var hops = [0, 0, 0]
+    @State private var welcomeHop = 0
+    @State private var level: StartLevel = .new
+    @State private var addExamples = true
+    @State private var showPlacement = false
+    @State private var showPaywall = false
 
-    private let lastPage = 3
+    private let lastPage = 4
 
     var body: some View {
         TabView(selection: $page) {
             welcomePage.tag(0)
-            howItWorksPage.tag(1)
-            gochiPage.tag(2)
-            startPage.tag(3)
+            levelPage.tag(1)
+            howPage.tag(2)
+            goalPage.tag(3)
+            startPage.tag(4)
         }
         .tabViewStyle(.page)
         .indexViewStyle(.page(backgroundDisplayMode: .always))
@@ -33,12 +43,17 @@ struct OnboardingView: View {
                 }
                 .buttonStyle(.borderedProminent)
                 .controlSize(.large)
+                .tint(Color.gochiRed)
                 .padding(.horizontal, 32)
                 .padding(.bottom, 16)
             }
         }
+        .task {
+            try? await Task.sleep(for: .milliseconds(400))
+            welcomeHop += 1
+        }
         .onChange(of: page) { _, newPage in
-            guard newPage == 2 else { return }
+            guard newPage == 3 else { return }
             Task {
                 for i in hops.indices {
                     try? await Task.sleep(for: .milliseconds(300))
@@ -46,68 +61,97 @@ struct OnboardingView: View {
                 }
             }
         }
+        .sheet(isPresented: $showPlacement, onDismiss: openPaywall) {
+            PlacementView { passed in markUnitsDone(passed) }
+        }
+        .sheet(isPresented: $showPaywall, onDismiss: {
+            PaywallPolicy.recordClosed(tier: store.tier)
+            dismiss()
+        }) {
+            PaywallView(startOn: .plus)
+        }
     }
 
     private var welcomePage: some View {
         VStack(spacing: 20) {
-            PageTitle(marked: "오답", rest: "노트", subtitle: "Your Korean mistake notebook")
-            Text("When a Korean speaker corrects your sentence, save it here. Gochimi explains the mistake and turns it into practice.")
-                .multilineTextAlignment(.center)
-                .foregroundStyle(.secondary)
+            Spacer()
+            GochiView(xp: GochiForm.baby.minXP, hop: welcomeHop)
+                .frame(width: 150, height: 150)
+            bubble("안녕! I'm Gochi. Let's learn Korean together.")
                 .padding(.horizontal, 32)
+            PageTitle(marked: "고치", rest: "미", subtitle: "Learn Korean and fix your mistakes")
+            Spacer()
+            Spacer()
+        }
+    }
+
+    private var levelPage: some View {
+        VStack(alignment: .leading, spacing: 14) {
+            gochiSays("How much Korean do you know?")
+                .padding(.bottom, 8)
+            optionRow(selected: level == .new, emoji: "🌱",
+                      title: "I'm brand new", subtitle: "Start from the Korean alphabet") {
+                level = .new
+            }
+            optionRow(selected: level == .hangul, emoji: "가",
+                      title: "I can read Hangul", subtitle: "Skip straight to Unit 1") {
+                level = .hangul
+            }
+            optionRow(selected: level == .some, emoji: "🎯",
+                      title: "I know some Korean", subtitle: "Take a 2-minute check to find your level") {
+                level = .some
+            }
+        }
+        .padding(.horizontal, 24)
+        .padding(.bottom, 60)
+    }
+
+    private var howPage: some View {
+        VStack(alignment: .leading, spacing: 18) {
+            Text("Two ways to learn")
+                .font(.largeTitle.weight(.heavy))
+            featureCard(emoji: "📚", title: "Lessons with Gochi",
+                        text: "Short lessons from Hangul to real conversations.")
+            featureCard(emoji: "📝", title: "Your mistake notebook",
+                        text: "When someone corrects your Korean, tap the red + and save it. Gochi turns it into practice.")
             exampleCard
+                .frame(maxWidth: .infinity)
         }
+        .padding(.horizontal, 24)
         .padding(.bottom, 60)
     }
 
-    private var howItWorksPage: some View {
-        VStack(alignment: .leading, spacing: 28) {
-            Text("How it works")
-                .font(.largeTitle.weight(.heavy))
-            step(1, title: "Get corrected",
-                 text: "Chat in Korean. When someone fixes your sentence, copy it.") {
-                Image(systemName: "bubble.left.and.bubble.right.fill")
-            }
-            step(2, title: "Tap the red +",
-                 text: "Paste what you wrote and the corrected version, then Save.") {
-                Image(systemName: "plus")
-                    .font(.headline.weight(.bold))
-                    .foregroundStyle(.white)
-                    .frame(width: 40, height: 40)
-                    .background(Color.accentColor, in: Circle())
-            }
-            step(3, title: "Practice a few minutes a day",
-                 text: "Open the Practice tab and tap Start.") {
-                Image(systemName: "target")
-            }
-        }
-        .padding(.horizontal, 32)
-        .padding(.bottom, 60)
-    }
-
-    private var gochiPage: some View {
-        VStack(spacing: 20) {
+    private var goalPage: some View {
+        VStack(spacing: 14) {
             HStack(alignment: .bottom, spacing: 6) {
-                GochiView(xp: GochiForm.bean.minXP, hop: hops[0])
-                    .frame(width: 56, height: 56)
+                GochiView(xp: GochiForm.bean.minXP, hop: hops[0], styled: false)
+                    .frame(width: 48, height: 48)
                 Image(systemName: "chevron.right")
                     .foregroundStyle(.tertiary)
-                    .padding(.bottom, 20)
-                GochiView(xp: GochiForm.baby.minXP, hop: hops[1])
-                    .frame(width: 76, height: 76)
+                    .padding(.bottom, 16)
+                GochiView(xp: GochiForm.baby.minXP, hop: hops[1], styled: false)
+                    .frame(width: 64, height: 64)
                 Image(systemName: "chevron.right")
                     .foregroundStyle(.tertiary)
-                    .padding(.bottom, 28)
-                GochiView(xp: GochiForm.adult.minXP, hop: hops[2])
-                    .frame(width: 104, height: 104)
+                    .padding(.bottom, 22)
+                GochiView(xp: GochiForm.adult.minXP, hop: hops[2], styled: false)
+                    .frame(width: 88, height: 88)
             }
-
-            Text("Meet 고치")
-                .font(.largeTitle.weight(.heavy))
-            Text("Your study buddy. Every mistake you practice helps Gochi grow, all the way to 용.")
-                .multilineTextAlignment(.center)
+            Text("Pick a daily goal")
+                .font(.title.weight(.heavy))
+            Text("Every answer helps Gochi grow, all the way to 용.")
+                .font(.subheadline)
                 .foregroundStyle(.secondary)
-                .padding(.horizontal, 32)
+                .multilineTextAlignment(.center)
+
+            VStack(spacing: 10) {
+                optionRow(selected: dailyGoal == 5, emoji: "🌤️",
+                          title: "Casual", subtitle: "5 answers a day") { dailyGoal = 5 }
+                optionRow(selected: dailyGoal == 10, emoji: "☀️",
+                          title: "Regular", subtitle: "10 answers a day") { dailyGoal = 10 }
+                optionRow(selected: dailyGoal == 20, emoji: "🔥",
+                          title: "Serious", subtitle: "20 answers a day") { dailyGoal = 20 }
+            }
 
             if reminderOn {
                 Label("Gochi will remind you to practice", systemImage: "checkmark.circle.fill")
@@ -120,78 +164,138 @@ struct OnboardingView: View {
                     Label("Remind me to practice 🍊", systemImage: "bell.fill")
                 }
                 .buttonStyle(.bordered)
-                .controlSize(.large)
+                .tint(Color.gochiRed)
             }
         }
+        .padding(.horizontal, 24)
         .padding(.bottom, 60)
     }
 
     private var startPage: some View {
         VStack(spacing: 20) {
-            Image(systemName: "sparkles")
-                .font(.system(size: 56))
-                .foregroundStyle(Color.accentColor)
-            Text("Try it first?")
+            Spacer()
+            GochiView(xp: GochiForm.baby.minXP, hop: welcomeHop)
+                .frame(width: 120, height: 120)
+            Text("You're all set!")
                 .font(.largeTitle.weight(.heavy))
-            Text("Start with \(SampleData.pairs.count) example corrections to see how it works. You can delete them anytime.")
-                .multilineTextAlignment(.center)
-                .foregroundStyle(.secondary)
-                .padding(.horizontal, 32)
-            VStack(spacing: 12) {
-                Button {
-                    SampleData.insert(into: modelContext)
-                    finish()
-                } label: {
-                    Text("Start with examples").frame(maxWidth: .infinity)
+            Group {
+                switch level {
+                case .new: Text("First stop: Hangul. You'll be reading Korean in a few short lessons.")
+                case .hangul: Text("First stop: Unit 1, Introductions.")
+                case .some: Text("First, a quick check to find your level.")
                 }
-                .buttonStyle(.borderedProminent)
-
-                Button {
-                    finish()
-                } label: {
-                    Text("Start with an empty notebook").frame(maxWidth: .infinity)
-                }
-                .buttonStyle(.bordered)
             }
-            .controlSize(.large)
+            .multilineTextAlignment(.center)
+            .foregroundStyle(.secondary)
             .padding(.horizontal, 32)
-        }
-        .padding(.bottom, 60)
-    }
 
-    private func turnOnReminder() async {
-        guard await Reminder.requestPermission() else { return }
-        reminderOn = true
-        Reminder.refresh(enabled: true, minutesAfterMidnight: reminderMinutes,
-                         practicedToday: progress.practicedToday)
-    }
-
-    private func finish() {
-        whatsNewSeen = WhatsNewView.version
-        selectedTab = "notebook"
-        dismiss()
-    }
-
-    private func step<Icon: View>(_ n: Int, title: LocalizedStringKey, text: LocalizedStringKey,
-                                  @ViewBuilder icon: () -> Icon) -> some View {
-        HStack(alignment: .top, spacing: 16) {
-            icon()
-                .font(.title2)
-                .foregroundStyle(Color.accentColor)
-                .frame(width: 44, height: 44)
-            VStack(alignment: .leading, spacing: 4) {
-                Text("\(n). \(Text(title))").font(.headline)
-                Text(text).foregroundStyle(.secondary)
+            Toggle(isOn: $addExamples) {
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("Add \(SampleData.pairs.count) example corrections")
+                        .font(.subheadline.weight(.semibold))
+                    Text("So you can try practice right away. Delete them anytime.")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
             }
+            .tint(Color.gochiRed)
+            .padding()
+            .softCard()
+            .padding(.horizontal, 24)
+
+            Spacer()
+
+            Button {
+                finish()
+            } label: {
+                Text("Let's go!").frame(maxWidth: .infinity)
+            }
+            .buttonStyle(.borderedProminent)
+            .controlSize(.large)
+            .tint(Color.gochiRed)
+            .padding(.horizontal, 32)
+            .padding(.bottom, 56)
         }
+    }
+
+    private func bubble(_ text: LocalizedStringKey) -> some View {
+        Text(text)
+            .font(.headline)
+            .multilineTextAlignment(.center)
+            .padding(.horizontal, 18)
+            .padding(.vertical, 12)
+            .softCard()
+    }
+
+    private func gochiSays(_ text: LocalizedStringKey) -> some View {
+        HStack(alignment: .bottom, spacing: 10) {
+            GochiView(xp: GochiForm.baby.minXP, hop: welcomeHop)
+                .frame(width: 64, height: 64)
+            Text(text)
+                .font(.title3.weight(.bold))
+                .padding(14)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .softCard()
+        }
+    }
+
+    private func optionRow(selected: Bool, emoji: String, title: LocalizedStringKey,
+                           subtitle: LocalizedStringKey, action: @escaping () -> Void) -> some View {
+        Button {
+            withAnimation(.snappy) { action() }
+        } label: {
+            HStack(spacing: 14) {
+                Text(verbatim: emoji)
+                    .font(.title2)
+                    .frame(width: 40)
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(title)
+                        .font(.headline)
+                    Text(subtitle)
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                }
+                Spacer()
+                Image(systemName: selected ? "checkmark.circle.fill" : "circle")
+                    .font(.title3)
+                    .foregroundStyle(selected ? Color.gochiRed : .secondary)
+            }
+            .padding()
+            .background(Color(.systemBackground), in: .rect(cornerRadius: 18))
+            .overlay {
+                RoundedRectangle(cornerRadius: 18)
+                    .strokeBorder(selected ? Color.gochiRed : Color.primary.opacity(0.06),
+                                  lineWidth: selected ? 2 : 1)
+            }
+            .contentShape(.rect)
+        }
+        .buttonStyle(.plain)
+    }
+
+    private func featureCard(emoji: String, title: LocalizedStringKey, text: LocalizedStringKey) -> some View {
+        HStack(alignment: .top, spacing: 14) {
+            Text(verbatim: emoji)
+                .font(.title)
+            VStack(alignment: .leading, spacing: 4) {
+                Text(title)
+                    .font(.headline)
+                Text(text)
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+            Spacer(minLength: 0)
+        }
+        .padding()
+        .softCard()
     }
 
     private var exampleCard: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text("저는 학생가 아니에요")
+            Text(verbatim: "저는 학생가 아니에요")
                 .strikethrough(color: .accentColor)
                 .foregroundStyle(.secondary)
-            Text("저는 학생이 아니에요")
+            Text(verbatim: "저는 학생이 아니에요")
                 .font(.headline)
             Label("Particle  가 → 이", systemImage: "link")
                 .font(.subheadline.weight(.semibold))
@@ -205,10 +309,48 @@ struct OnboardingView: View {
         .background(Color(.secondarySystemGroupedBackground), in: .rect(cornerRadius: 16))
         .shadow(color: .black.opacity(0.06), radius: 4, y: 2)
     }
+
+    private func turnOnReminder() async {
+        guard await Reminder.requestPermission() else { return }
+        reminderOn = true
+        Reminder.refresh(enabled: true, minutesAfterMidnight: reminderMinutes,
+                         practicedToday: progress.practicedToday)
+    }
+
+    private func markUnitsDone(_ count: Int) {
+        let library = CourseStore.shared
+        for unit in library.course.units.prefix(count) {
+            for lesson in unit.lessons {
+                library.markDone(lesson)
+            }
+        }
+    }
+
+    private func finish() {
+        if addExamples { SampleData.insert(into: modelContext) }
+        if level == .hangul { markUnitsDone(1) }
+        whatsNewSeen = WhatsNewView.version
+        selectedTab = "practice"
+        if level == .some {
+            showPlacement = true
+        } else {
+            openPaywall()
+        }
+    }
+
+    private func openPaywall() {
+        if store.tier >= .plus {
+            dismiss()
+        } else {
+            PaywallPolicy.recordShown()
+            showPaywall = true
+        }
+    }
 }
 
 #Preview {
     OnboardingView()
         .modelContainer(for: Correction.self, inMemory: true)
         .environment(ProgressStore())
+        .environment(ProStore())
 }

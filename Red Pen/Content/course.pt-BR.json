@@ -1,0 +1,4398 @@
+{
+ "units": [
+  {
+   "id": 0,
+   "title": "Hangul",
+   "subtitle": "Leia coreano em seis lições curtas",
+   "lessons": [
+    {
+     "id": "h1",
+     "title": "Vogais básicas",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "안녕! Eu sou o Gochi. As letras coreanas se chamam Hangul, e você pode aprender a ler em poucas lições."
+      },
+      {
+       "kind": "say",
+       "text": "As letras se juntam em blocos. Cada bloco é uma sílaba."
+      },
+      {
+       "kind": "say",
+       "text": "Uma vogal não fica sozinha, então ela vai ao lado de ㅇ. Aqui, ㅇ é mudo."
+      },
+      {
+       "kind": "example",
+       "ko": "아",
+       "translation": "a, como o 'a' de casa"
+      },
+      {
+       "kind": "example",
+       "ko": "어",
+       "translation": "eo, como o 'ó' aberto de avó"
+      },
+      {
+       "kind": "example",
+       "ko": "오",
+       "translation": "o, como o 'ô' de avô"
+      },
+      {
+       "kind": "example",
+       "ko": "우",
+       "translation": "u, como o 'u' de lua"
+      },
+      {
+       "kind": "example",
+       "ko": "으",
+       "translation": "eu, diga 'u' com os lábios esticados"
+      },
+      {
+       "kind": "example",
+       "ko": "이",
+       "translation": "i, como o 'i' de vida"
+      },
+      {
+       "kind": "choice",
+       "text": "Qual soa 'a'?",
+       "options": [
+        "어",
+        "아",
+        "오",
+        "이"
+       ],
+       "answer": 1,
+       "why": "아 tem o tracinho para a direita."
+      },
+      {
+       "kind": "choice",
+       "text": "Qual soa 'u'?",
+       "options": [
+        "오",
+        "으",
+        "우",
+        "어"
+       ],
+       "answer": 2,
+       "why": "Em 우 o traço aponta para baixo. Em 오 aponta para cima."
+      },
+      {
+       "kind": "example",
+       "ko": "아이",
+       "translation": "criança"
+      },
+      {
+       "kind": "example",
+       "ko": "오이",
+       "translation": "pepino"
+      },
+      {
+       "kind": "choice",
+       "text": "Como se lê 오이?",
+       "options": [
+        "ai",
+        "oi",
+        "ui",
+        "eoi"
+       ],
+       "answer": 1,
+       "why": "오 é 'o' e 이 é 'i'."
+      }
+     ]
+    },
+    {
+     "id": "h2",
+     "title": "Consoantes básicas",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Agora as consoantes. Cada uma vem antes da vogal no bloco."
+      },
+      {
+       "kind": "example",
+       "ko": "가",
+       "translation": "ga (ㄱ fica entre g e k)"
+      },
+      {
+       "kind": "example",
+       "ko": "나",
+       "translation": "na"
+      },
+      {
+       "kind": "example",
+       "ko": "다",
+       "translation": "da (ㄷ fica entre d e t)"
+      },
+      {
+       "kind": "example",
+       "ko": "라",
+       "translation": "ra (ㄹ é um r leve, como em 'caro')"
+      },
+      {
+       "kind": "example",
+       "ko": "마",
+       "translation": "ma"
+      },
+      {
+       "kind": "example",
+       "ko": "바",
+       "translation": "ba (ㅂ fica entre b e p)"
+      },
+      {
+       "kind": "example",
+       "ko": "사",
+       "translation": "sa"
+      },
+      {
+       "kind": "example",
+       "ko": "자",
+       "translation": "ja"
+      },
+      {
+       "kind": "example",
+       "ko": "하",
+       "translation": "ha"
+      },
+      {
+       "kind": "say",
+       "text": "Junte tudo e você já lê palavras de verdade."
+      },
+      {
+       "kind": "example",
+       "ko": "나무",
+       "translation": "árvore"
+      },
+      {
+       "kind": "example",
+       "ko": "바다",
+       "translation": "mar"
+      },
+      {
+       "kind": "example",
+       "ko": "모자",
+       "translation": "chapéu"
+      },
+      {
+       "kind": "example",
+       "ko": "하나",
+       "translation": "um"
+      },
+      {
+       "kind": "choice",
+       "text": "Qual palavra significa 'mar'?",
+       "options": [
+        "나무",
+        "하나",
+        "바다",
+        "모자"
+       ],
+       "answer": 2,
+       "why": "바 + 다 = 바다."
+      },
+      {
+       "kind": "choice",
+       "text": "Como se lê 가수 (cantor)?",
+       "options": [
+        "gasu",
+        "nasu",
+        "gamu",
+        "dasu"
+       ],
+       "answer": 0,
+       "why": "ㄱ é g, ㅅ é s."
+      },
+      {
+       "kind": "choice",
+       "text": "Qual letra faz o som de 'm'?",
+       "options": [
+        "ㄴ",
+        "ㅁ",
+        "ㅂ",
+        "ㄹ"
+       ],
+       "answer": 1,
+       "why": "ㅁ é uma caixinha, como lábios fechados."
+      }
+     ]
+    },
+    {
+     "id": "h3",
+     "title": "Mais vogais",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Coloque mais um tracinho em uma vogal e ela ganha um som de 'i' na frente."
+      },
+      {
+       "kind": "example",
+       "ko": "야",
+       "translation": "ya"
+      },
+      {
+       "kind": "example",
+       "ko": "여",
+       "translation": "yeo"
+      },
+      {
+       "kind": "example",
+       "ko": "요",
+       "translation": "yo"
+      },
+      {
+       "kind": "example",
+       "ko": "유",
+       "translation": "yu"
+      },
+      {
+       "kind": "example",
+       "ko": "우유",
+       "translation": "leite"
+      },
+      {
+       "kind": "example",
+       "ko": "여자",
+       "translation": "mulher"
+      },
+      {
+       "kind": "say",
+       "text": "Hoje ㅐ e ㅔ soam quase iguais, como o 'é' de café."
+      },
+      {
+       "kind": "example",
+       "ko": "개",
+       "translation": "cachorro"
+      },
+      {
+       "kind": "example",
+       "ko": "네",
+       "translation": "sim"
+      },
+      {
+       "kind": "say",
+       "text": "Algumas vogais se juntam. ㅗ + ㅏ = ㅘ (wa), ㅜ + ㅓ = ㅝ (wo)."
+      },
+      {
+       "kind": "example",
+       "ko": "사과",
+       "translation": "maçã"
+      },
+      {
+       "kind": "example",
+       "ko": "뭐",
+       "translation": "o quê"
+      },
+      {
+       "kind": "choice",
+       "text": "Qual soa 'yo'?",
+       "options": [
+        "여",
+        "유",
+        "요",
+        "야"
+       ],
+       "answer": 2,
+       "why": "요 é 오 com mais um traço."
+      },
+      {
+       "kind": "choice",
+       "text": "O que significa 네?",
+       "options": [
+        "não",
+        "sim",
+        "cachorro",
+        "o quê"
+       ],
+       "answer": 1,
+       "why": "네 significa sim. 개 é cachorro."
+      },
+      {
+       "kind": "choice",
+       "text": "Como se lê 사과?",
+       "options": [
+        "sagwa",
+        "sago",
+        "sagu",
+        "sageo"
+       ],
+       "answer": 0,
+       "why": "ㄱ + ㅘ forma 과 (gwa)."
+      }
+     ]
+    },
+    {
+     "id": "h4",
+     "title": "Consoantes fortes",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Algumas consoantes saem com um sopro de ar. Coloque a mão na frente da boca e sinta."
+      },
+      {
+       "kind": "example",
+       "ko": "카",
+       "translation": "ka, com ar"
+      },
+      {
+       "kind": "example",
+       "ko": "타",
+       "translation": "ta, com ar"
+      },
+      {
+       "kind": "example",
+       "ko": "파",
+       "translation": "pa, com ar"
+      },
+      {
+       "kind": "example",
+       "ko": "차",
+       "translation": "cha, com ar"
+      },
+      {
+       "kind": "example",
+       "ko": "커피",
+       "translation": "café"
+      },
+      {
+       "kind": "example",
+       "ko": "포도",
+       "translation": "uvas"
+      },
+      {
+       "kind": "say",
+       "text": "As letras duplas são tensas: curtas, firmes e sem ar, parecidas com o p, t e k do português."
+      },
+      {
+       "kind": "example",
+       "ko": "까",
+       "translation": "kka"
+      },
+      {
+       "kind": "example",
+       "ko": "따",
+       "translation": "tta"
+      },
+      {
+       "kind": "example",
+       "ko": "빠",
+       "translation": "ppa"
+      },
+      {
+       "kind": "example",
+       "ko": "싸",
+       "translation": "ssa"
+      },
+      {
+       "kind": "example",
+       "ko": "짜",
+       "translation": "jja"
+      },
+      {
+       "kind": "example",
+       "ko": "아빠",
+       "translation": "papai"
+      },
+      {
+       "kind": "example",
+       "ko": "떡",
+       "translation": "bolinho de arroz"
+      },
+      {
+       "kind": "choice",
+       "text": "Qual sai com um sopro de ar?",
+       "options": [
+        "가",
+        "까",
+        "카"
+       ],
+       "answer": 2,
+       "why": "ㅋ tem um traço extra e um sopro de ar. ㄲ é tensa e sem ar."
+      },
+      {
+       "kind": "choice",
+       "text": "O que significa 아빠?",
+       "options": [
+        "mamãe",
+        "papai",
+        "café",
+        "uvas"
+       ],
+       "answer": 1,
+       "why": "아빠 é papai. Mamãe é 엄마."
+      },
+      {
+       "kind": "choice",
+       "text": "Como se lê 차 (carro, chá)?",
+       "options": [
+        "ja",
+        "cha",
+        "jja",
+        "sa"
+       ],
+       "answer": 1,
+       "why": "ㅊ é ㅈ com um sopro de ar: cha."
+      }
+     ]
+    },
+    {
+     "id": "h5",
+     "title": "Letras de baixo (받침)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Uma consoante também pode ficar embaixo no bloco. Ela se chama 받침."
+      },
+      {
+       "kind": "say",
+       "text": "As letras de baixo só têm 7 sons: k, n, t, l, m, p, ng."
+      },
+      {
+       "kind": "example",
+       "ko": "밥",
+       "translation": "arroz, refeição"
+      },
+      {
+       "kind": "example",
+       "ko": "물",
+       "translation": "água"
+      },
+      {
+       "kind": "example",
+       "ko": "산",
+       "translation": "montanha"
+      },
+      {
+       "kind": "example",
+       "ko": "강",
+       "translation": "rio"
+      },
+      {
+       "kind": "example",
+       "ko": "집",
+       "translation": "casa"
+      },
+      {
+       "kind": "example",
+       "ko": "책",
+       "translation": "livro"
+      },
+      {
+       "kind": "say",
+       "text": "Embaixo, ㅅ, ㅈ e ㅊ soam como t. ㅇ embaixo soa ng."
+      },
+      {
+       "kind": "example",
+       "ko": "옷",
+       "translation": "roupa (soa como 옫)"
+      },
+      {
+       "kind": "example",
+       "ko": "꽃",
+       "translation": "flor (soa como 꼳)"
+      },
+      {
+       "kind": "choice",
+       "text": "Que som ㅇ faz embaixo em 강?",
+       "options": [
+        "mudo",
+        "ng",
+        "n",
+        "g"
+       ],
+       "answer": 1,
+       "why": "ㅇ é mudo em cima, mas embaixo soa ng."
+      },
+      {
+       "kind": "choice",
+       "text": "Qual palavra significa 'água'?",
+       "options": [
+        "물",
+        "밥",
+        "집",
+        "산"
+       ],
+       "answer": 0,
+       "why": "물 é água. 밥 é arroz."
+      },
+      {
+       "kind": "choice",
+       "text": "Como soa 옷?",
+       "options": [
+        "os",
+        "ot",
+        "oj",
+        "och"
+       ],
+       "answer": 1,
+       "why": "ㅅ embaixo soa como t."
+      }
+     ]
+    },
+    {
+     "id": "h6",
+     "title": "Prática de leitura",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Último truque: quando uma letra de baixo encontra um ㅇ mudo, ela passa para o bloco seguinte."
+      },
+      {
+       "kind": "example",
+       "ko": "한국어",
+       "translation": "língua coreana (soa como 한구거)"
+      },
+      {
+       "kind": "example",
+       "ko": "음악",
+       "translation": "música (soa como 으막)"
+      },
+      {
+       "kind": "say",
+       "text": "Agora você já lê coreano de verdade. Tente estas."
+      },
+      {
+       "kind": "example",
+       "ko": "안녕하세요",
+       "translation": "olá"
+      },
+      {
+       "kind": "example",
+       "ko": "감사합니다",
+       "translation": "obrigado"
+      },
+      {
+       "kind": "example",
+       "ko": "한국",
+       "translation": "Coreia"
+      },
+      {
+       "kind": "example",
+       "ko": "서울",
+       "translation": "Seul"
+      },
+      {
+       "kind": "choice",
+       "text": "Como soa 한국어?",
+       "options": [
+        "han-guk-eo",
+        "han-gu-geo",
+        "hang-uk-eo"
+       ],
+       "answer": 1,
+       "why": "ㄱ passa para o ㅇ mudo: 한구거."
+      },
+      {
+       "kind": "choice",
+       "text": "O que significa 감사합니다?",
+       "options": [
+        "olá",
+        "desculpa",
+        "obrigado",
+        "tchau"
+       ],
+       "answer": 2,
+       "why": "감사합니다 é um obrigado formal."
+      },
+      {
+       "kind": "choice",
+       "text": "Qual palavra é 'Seul'?",
+       "options": [
+        "서울",
+        "한국",
+        "사람",
+        "선물"
+       ],
+       "answer": 0,
+       "why": "서 + 울 = 서울."
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요! Você já sabe ler Hangul. Agora vai se apresentar em coreano."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 1,
+   "title": "Apresentações",
+   "subtitle": "Diga quem você é",
+   "lessons": [
+    {
+     "id": "u1l1",
+     "title": "Palavras: países e profissões",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Vamos aprender palavras para falar de você. Toque em cada uma para ouvir."
+      },
+      {
+       "kind": "example",
+       "ko": "한국",
+       "translation": "Coreia"
+      },
+      {
+       "kind": "example",
+       "ko": "미국",
+       "translation": "EUA"
+      },
+      {
+       "kind": "example",
+       "ko": "일본",
+       "translation": "Japão"
+      },
+      {
+       "kind": "example",
+       "ko": "중국",
+       "translation": "China"
+      },
+      {
+       "kind": "example",
+       "ko": "멕시코",
+       "translation": "México"
+      },
+      {
+       "kind": "say",
+       "text": "Coloque 사람 (pessoa) depois de um país para dizer de onde alguém é."
+      },
+      {
+       "kind": "example",
+       "ko": "한국 사람",
+       "translation": "coreano (pessoa)"
+      },
+      {
+       "kind": "example",
+       "ko": "학생",
+       "translation": "estudante"
+      },
+      {
+       "kind": "example",
+       "ko": "선생님",
+       "translation": "professor"
+      },
+      {
+       "kind": "example",
+       "ko": "회사원",
+       "translation": "funcionário de escritório"
+      },
+      {
+       "kind": "example",
+       "ko": "의사",
+       "translation": "médico"
+      },
+      {
+       "kind": "choice",
+       "text": "Como se diz 'japonês' (pessoa)?",
+       "options": [
+        "일본 사람",
+        "중국 사람",
+        "일본 학생",
+        "미국 사람"
+       ],
+       "answer": 0,
+       "why": "일본 (Japão) + 사람 (pessoa)."
+      },
+      {
+       "kind": "choice",
+       "text": "O que significa 회사원?",
+       "options": [
+        "professor",
+        "médico",
+        "funcionário de escritório",
+        "estudante"
+       ],
+       "answer": 2,
+       "why": "회사 é empresa, então 회사원 é funcionário de empresa."
+      },
+      {
+       "kind": "choice",
+       "text": "O que significa 선생님?",
+       "options": [
+        "professor",
+        "estudante",
+        "médico",
+        "pessoa"
+       ],
+       "answer": 0,
+       "why": "선생님 é professor. 학생 é estudante."
+      }
+     ]
+    },
+    {
+     "id": "u1l2",
+     "title": "Eu sou... (이에요/예요)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Para dizer 'eu sou ___' ou 'é ___', coloque 이에요 ou 예요 depois do substantivo."
+      },
+      {
+       "kind": "say",
+       "text": "Se o substantivo termina em consoante, use 이에요."
+      },
+      {
+       "kind": "example",
+       "ko": "학생이에요.",
+       "translation": "Eu sou estudante."
+      },
+      {
+       "kind": "example",
+       "ko": "선생님이에요.",
+       "translation": "Eu sou professor."
+      },
+      {
+       "kind": "say",
+       "text": "Se termina em vogal, use 예요."
+      },
+      {
+       "kind": "example",
+       "ko": "의사예요.",
+       "translation": "Eu sou médico."
+      },
+      {
+       "kind": "example",
+       "ko": "고치예요.",
+       "translation": "Eu sou o Gochi."
+      },
+      {
+       "kind": "say",
+       "text": "Para perguntar, use as mesmas palavras e suba a voz no final."
+      },
+      {
+       "kind": "example",
+       "ko": "학생이에요?",
+       "translation": "Você é estudante?"
+      },
+      {
+       "kind": "choice",
+       "text": "회사원___",
+       "options": [
+        "이에요",
+        "예요"
+       ],
+       "answer": 0,
+       "why": "회사원 termina em ㄴ, uma consoante, então 이에요."
+      },
+      {
+       "kind": "choice",
+       "text": "의사___",
+       "options": [
+        "이에요",
+        "예요"
+       ],
+       "answer": 1,
+       "why": "의사 termina em vogal, então 예요."
+      },
+      {
+       "kind": "choice",
+       "text": "Qual está certa?",
+       "options": [
+        "한국 사람예요",
+        "한국 사람이에요",
+        "한국 사람이예요"
+       ],
+       "answer": 1,
+       "why": "사람 termina em ㅁ, então 이에요."
+      },
+      {
+       "kind": "build",
+       "translation": "Eu sou professor.",
+       "words": [
+        "저는",
+        "선생님이에요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u1l3",
+     "title": "Marcador de tópico (은/는)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "은/는 marca do que você está falando, como 'quanto a...'."
+      },
+      {
+       "kind": "say",
+       "text": "Depois de consoante use 은. Depois de vogal use 는."
+      },
+      {
+       "kind": "example",
+       "ko": "저는 학생이에요.",
+       "translation": "Eu sou estudante."
+      },
+      {
+       "kind": "example",
+       "ko": "이름은 고치예요.",
+       "translation": "Meu nome é Gochi."
+      },
+      {
+       "kind": "example",
+       "ko": "민수 씨는 의사예요.",
+       "translation": "O Minsu é médico."
+      },
+      {
+       "kind": "say",
+       "text": "씨 vem depois de um nome para ser educado. Nunca use com o seu próprio nome."
+      },
+      {
+       "kind": "choice",
+       "text": "저___ 회사원이에요.",
+       "options": [
+        "은",
+        "는"
+       ],
+       "answer": 1,
+       "why": "저 termina em vogal, então 는."
+      },
+      {
+       "kind": "choice",
+       "text": "이름___ 하나예요.",
+       "options": [
+        "은",
+        "는"
+       ],
+       "answer": 0,
+       "why": "이름 termina em ㅁ, então 은."
+      },
+      {
+       "kind": "choice",
+       "text": "Qual é educada?",
+       "options": [
+        "하나 씨는 학생이에요",
+        "저 씨는 학생이에요"
+       ],
+       "answer": 0,
+       "why": "Use 씨 para outras pessoas, não para você."
+      },
+      {
+       "kind": "build",
+       "translation": "Eu sou coreano.",
+       "words": [
+        "저는",
+        "한국",
+        "사람이에요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "O Minsu é professor.",
+       "words": [
+        "민수",
+        "씨는",
+        "선생님이에요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u1l4",
+     "title": "Juntando tudo: prazer",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "É assim que soa um primeiro encontro. Ouça cada frase."
+      },
+      {
+       "kind": "example",
+       "ko": "안녕하세요? 저는 하나예요.",
+       "translation": "Oi, eu sou a Hana."
+      },
+      {
+       "kind": "example",
+       "ko": "안녕하세요? 저는 민수예요.",
+       "translation": "Oi, eu sou o Minsu."
+      },
+      {
+       "kind": "example",
+       "ko": "만나서 반가워요.",
+       "translation": "Prazer em te conhecer."
+      },
+      {
+       "kind": "example",
+       "ko": "하나 씨는 학생이에요?",
+       "translation": "Hana, você é estudante?"
+      },
+      {
+       "kind": "example",
+       "ko": "네, 학생이에요. 민수 씨는요?",
+       "translation": "Sim, sou estudante. E você, Minsu?"
+      },
+      {
+       "kind": "example",
+       "ko": "저는 회사원이에요.",
+       "translation": "Eu sou funcionário de escritório."
+      },
+      {
+       "kind": "say",
+       "text": "Colocar 요 depois de um nome, como 민수 씨는요?, significa 'e você?'."
+      },
+      {
+       "kind": "choice",
+       "text": "O que significa 만나서 반가워요?",
+       "options": [
+        "Tchau",
+        "Prazer",
+        "Obrigado",
+        "Até mais"
+       ],
+       "answer": 1,
+       "why": "Você diz isso quando conhece alguém pela primeira vez."
+      },
+      {
+       "kind": "choice",
+       "text": "Como se diz 'E você, Hana?'",
+       "options": [
+        "하나 씨예요?",
+        "하나 씨는요?",
+        "하나는 씨요?"
+       ],
+       "answer": 1,
+       "why": "Nome + 씨는요? significa 'e você?'."
+      },
+      {
+       "kind": "build",
+       "translation": "Oi, eu sou o Gochi.",
+       "words": [
+        "안녕하세요?",
+        "저는",
+        "고치예요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Eu sou mexicano.",
+       "words": [
+        "저는",
+        "멕시코",
+        "사람이에요."
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요! Agora você sabe se apresentar em coreano."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "title": "Família",
+   "subtitle": "Fale da sua família",
+   "lessons": [
+    {
+     "id": "u2l1",
+     "title": "Palavras: família",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Vamos conhecer a família. Toque em cada palavra para ouvir."
+      },
+      {
+       "kind": "example",
+       "ko": "가족",
+       "translation": "família"
+      },
+      {
+       "kind": "example",
+       "ko": "아버지",
+       "translation": "pai"
+      },
+      {
+       "kind": "example",
+       "ko": "어머니",
+       "translation": "mãe"
+      },
+      {
+       "kind": "example",
+       "ko": "할아버지",
+       "translation": "avô"
+      },
+      {
+       "kind": "example",
+       "ko": "할머니",
+       "translation": "avó"
+      },
+      {
+       "kind": "example",
+       "ko": "동생",
+       "translation": "irmão ou irmã mais novo"
+      },
+      {
+       "kind": "say",
+       "text": "Para irmãos mais velhos, depende de quem fala."
+      },
+      {
+       "kind": "example",
+       "ko": "형",
+       "translation": "irmão mais velho (dito por um homem)"
+      },
+      {
+       "kind": "example",
+       "ko": "오빠",
+       "translation": "irmão mais velho (dito por uma mulher)"
+      },
+      {
+       "kind": "example",
+       "ko": "누나",
+       "translation": "irmã mais velha (dito por um homem)"
+      },
+      {
+       "kind": "example",
+       "ko": "언니",
+       "translation": "irmã mais velha (dito por uma mulher)"
+      },
+      {
+       "kind": "example",
+       "ko": "요리사",
+       "translation": "cozinheiro, chef"
+      },
+      {
+       "kind": "example",
+       "ko": "간호사",
+       "translation": "enfermeiro"
+      },
+      {
+       "kind": "choice",
+       "text": "Um homem fala da irmã mais velha. Qual palavra?",
+       "options": [
+        "언니",
+        "누나",
+        "오빠",
+        "형"
+       ],
+       "answer": 1,
+       "why": "Homens dizem 누나. Mulheres dizem 언니."
+      },
+      {
+       "kind": "choice",
+       "text": "O que significa 동생?",
+       "options": [
+        "irmão ou irmã mais novo",
+        "irmão mais velho",
+        "pai",
+        "família"
+       ],
+       "answer": 0,
+       "why": "동생 é qualquer irmão ou irmã mais novo."
+      },
+      {
+       "kind": "choice",
+       "text": "O que significa 할머니?",
+       "options": [
+        "mãe",
+        "avô",
+        "avó",
+        "enfermeiro"
+       ],
+       "answer": 2,
+       "why": "할머니 é avó. 할아버지 é avô."
+      }
+     ]
+    },
+    {
+     "id": "u2l2",
+     "title": "Marcador de sujeito (이/가)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "이/가 marca quem ou o que faz algo, ou uma informação nova."
+      },
+      {
+       "kind": "say",
+       "text": "Depois de consoante use 이. Depois de vogal use 가."
+      },
+      {
+       "kind": "example",
+       "ko": "동생이 학생이에요.",
+       "translation": "Meu irmão mais novo é estudante."
+      },
+      {
+       "kind": "example",
+       "ko": "아버지가 요리사예요.",
+       "translation": "Meu pai é cozinheiro."
+      },
+      {
+       "kind": "say",
+       "text": "Quando você pergunta 'quem?', a resposta usa 이/가."
+      },
+      {
+       "kind": "example",
+       "ko": "누가 의사예요?",
+       "translation": "Quem é médico?"
+      },
+      {
+       "kind": "example",
+       "ko": "어머니가 의사예요.",
+       "translation": "Minha mãe é (a) médica."
+      },
+      {
+       "kind": "choice",
+       "text": "형___ 회사원이에요.",
+       "options": [
+        "이",
+        "가"
+       ],
+       "answer": 0,
+       "why": "형 termina em ㅇ, então 이."
+      },
+      {
+       "kind": "choice",
+       "text": "누나___ 간호사예요.",
+       "options": [
+        "이",
+        "가"
+       ],
+       "answer": 1,
+       "why": "누나 termina em vogal, então 가."
+      },
+      {
+       "kind": "choice",
+       "text": "누가 선생님이에요? Resposta:",
+       "options": [
+        "할머니는 선생님이에요",
+        "할머니가 선생님이에요"
+       ],
+       "answer": 1,
+       "why": "Para responder 'quem?', use 이/가."
+      },
+      {
+       "kind": "build",
+       "translation": "Meu pai é médico.",
+       "words": [
+        "아버지가",
+        "의사예요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u2l3",
+     "title": "Não é (이/가 아니에요)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Para dizer 'não é', use 이/가 아니에요."
+      },
+      {
+       "kind": "example",
+       "ko": "저는 학생이 아니에요.",
+       "translation": "Eu não sou estudante."
+      },
+      {
+       "kind": "example",
+       "ko": "오빠는 의사가 아니에요.",
+       "translation": "Meu irmão mais velho não é médico."
+      },
+      {
+       "kind": "say",
+       "text": "Mesma regra: 이 depois de consoante, 가 depois de vogal."
+      },
+      {
+       "kind": "say",
+       "text": "Responda sim com 네 e não com 아니요."
+      },
+      {
+       "kind": "example",
+       "ko": "요리사예요?",
+       "translation": "Você é cozinheiro?"
+      },
+      {
+       "kind": "example",
+       "ko": "아니요, 요리사가 아니에요. 간호사예요.",
+       "translation": "Não, não sou cozinheiro. Sou enfermeiro."
+      },
+      {
+       "kind": "choice",
+       "text": "선생님___ 아니에요.",
+       "options": [
+        "이",
+        "가"
+       ],
+       "answer": 0,
+       "why": "선생님 termina em ㅁ, então 이."
+      },
+      {
+       "kind": "choice",
+       "text": "Qual está certa?",
+       "options": [
+        "의사이 아니에요",
+        "의사가 아니에요",
+        "의사 아니예요"
+       ],
+       "answer": 1,
+       "why": "의사 termina em vogal, então 가 아니에요."
+      },
+      {
+       "kind": "choice",
+       "text": "회사원이에요? (Não)",
+       "options": [
+        "네, 회사원이에요",
+        "아니요, 회사원이 아니에요"
+       ],
+       "answer": 1,
+       "why": "아니요 é não, depois 이/가 아니에요."
+      },
+      {
+       "kind": "build",
+       "translation": "Eu não sou japonês.",
+       "words": [
+        "저는",
+        "일본",
+        "사람이",
+        "아니에요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u2l4",
+     "title": "Juntando tudo: uma foto de família",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "A Hana mostra uma foto de família para o Minsu. Ouça."
+      },
+      {
+       "kind": "example",
+       "ko": "이 사람은 누구예요?",
+       "translation": "Quem é?"
+      },
+      {
+       "kind": "example",
+       "ko": "우리 언니예요.",
+       "translation": "É minha irmã mais velha."
+      },
+      {
+       "kind": "example",
+       "ko": "언니는 학생이에요?",
+       "translation": "Ela é estudante?"
+      },
+      {
+       "kind": "example",
+       "ko": "아니요, 학생이 아니에요. 간호사예요.",
+       "translation": "Não, ela não é estudante. Ela é enfermeira."
+      },
+      {
+       "kind": "example",
+       "ko": "이 사람은 동생이에요?",
+       "translation": "É seu irmão mais novo?"
+      },
+      {
+       "kind": "example",
+       "ko": "네, 동생이에요. 동생은 고등학생이에요.",
+       "translation": "Sim, é meu irmão mais novo. Ele está no ensino médio."
+      },
+      {
+       "kind": "say",
+       "text": "Os coreanos dizem 우리 (nosso) para a família, mesmo quando a gente diria 'meu'."
+      },
+      {
+       "kind": "choice",
+       "text": "Como dizer 'minha mãe' de forma natural?",
+       "options": [
+        "저 어머니",
+        "우리 어머니",
+        "나 어머니"
+       ],
+       "answer": 1,
+       "why": "Use 우리 para a sua própria família."
+      },
+      {
+       "kind": "choice",
+       "text": "O que significa 누구예요?",
+       "options": [
+        "Onde está?",
+        "Quem é?",
+        "O que é?"
+       ],
+       "answer": 1,
+       "why": "누구 significa quem."
+      },
+      {
+       "kind": "build",
+       "translation": "É minha irmã mais velha.",
+       "words": [
+        "우리",
+        "언니예요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Meu irmão mais novo não é estudante.",
+       "words": [
+        "동생은",
+        "학생이",
+        "아니에요."
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요! Agora você sabe apresentar sua família."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "title": "Dia a dia",
+   "subtitle": "Diga do que você gosta e o que faz",
+   "lessons": [
+    {
+     "id": "u3l1",
+     "title": "Palavras: dia a dia",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "No dicionário, os verbos coreanos terminam em 다. Vamos aprender alguns que você vai usar todo dia."
+      },
+      {
+       "kind": "example",
+       "ko": "먹다",
+       "translation": "comer"
+      },
+      {
+       "kind": "example",
+       "ko": "마시다",
+       "translation": "beber"
+      },
+      {
+       "kind": "example",
+       "ko": "보다",
+       "translation": "ver, assistir"
+      },
+      {
+       "kind": "example",
+       "ko": "자다",
+       "translation": "dormir"
+      },
+      {
+       "kind": "example",
+       "ko": "공부하다",
+       "translation": "estudar"
+      },
+      {
+       "kind": "example",
+       "ko": "일하다",
+       "translation": "trabalhar"
+      },
+      {
+       "kind": "example",
+       "ko": "좋아하다",
+       "translation": "gostar"
+      },
+      {
+       "kind": "example",
+       "ko": "커피",
+       "translation": "café"
+      },
+      {
+       "kind": "example",
+       "ko": "영화",
+       "translation": "filme"
+      },
+      {
+       "kind": "example",
+       "ko": "드라마",
+       "translation": "novela, série"
+      },
+      {
+       "kind": "example",
+       "ko": "빵",
+       "translation": "pão"
+      },
+      {
+       "kind": "choice",
+       "text": "O que significa 마시다?",
+       "options": [
+        "comer",
+        "beber",
+        "dormir",
+        "assistir"
+       ],
+       "answer": 1,
+       "why": "마시다 é beber. 먹다 é comer."
+      },
+      {
+       "kind": "choice",
+       "text": "Qual verbo significa 'estudar'?",
+       "options": [
+        "일하다",
+        "좋아하다",
+        "공부하다",
+        "보다"
+       ],
+       "answer": 2,
+       "why": "공부 significa estudo, e 하다 significa fazer."
+      },
+      {
+       "kind": "choice",
+       "text": "O que significa 영화?",
+       "options": [
+        "filme",
+        "série",
+        "pão",
+        "café"
+       ],
+       "answer": 0,
+       "why": "영화 é um filme. Uma série é 드라마."
+      }
+     ]
+    },
+    {
+     "id": "u3l2",
+     "title": "Estilo formal (-습니다)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "-습니다 é o estilo educado formal. Você ouve no jornal, no trabalho e em avisos."
+      },
+      {
+       "kind": "say",
+       "text": "Tire o 다. Se o radical termina em consoante, coloque 습니다."
+      },
+      {
+       "kind": "example",
+       "ko": "먹습니다.",
+       "translation": "Eu como."
+      },
+      {
+       "kind": "example",
+       "ko": "읽습니다.",
+       "translation": "Eu leio."
+      },
+      {
+       "kind": "say",
+       "text": "Se termina em vogal, coloque ㅂ니다 no último bloco."
+      },
+      {
+       "kind": "example",
+       "ko": "갑니다.",
+       "translation": "Eu vou."
+      },
+      {
+       "kind": "example",
+       "ko": "마십니다.",
+       "translation": "Eu bebo."
+      },
+      {
+       "kind": "example",
+       "ko": "공부합니다.",
+       "translation": "Eu estudo."
+      },
+      {
+       "kind": "say",
+       "text": "Para perguntar, use 습니까 ou ㅂ니까. Nesse estilo, 이에요 vira 입니다."
+      },
+      {
+       "kind": "example",
+       "ko": "학생입니까?",
+       "translation": "Você é estudante?"
+      },
+      {
+       "kind": "choice",
+       "text": "먹다 →",
+       "options": [
+        "먹ㅂ니다",
+        "먹습니다",
+        "먹니다"
+       ],
+       "answer": 1,
+       "why": "먹 termina em consoante, então 습니다."
+      },
+      {
+       "kind": "choice",
+       "text": "보다 →",
+       "options": [
+        "보습니다",
+        "봅니다",
+        "봐습니다"
+       ],
+       "answer": 1,
+       "why": "보 termina em vogal, então ㅂ vai embaixo: 봅니다."
+      },
+      {
+       "kind": "choice",
+       "text": "Qual é uma pergunta?",
+       "options": [
+        "일합니다",
+        "일합니까?",
+        "일했습니다"
+       ],
+       "answer": 1,
+       "why": "-ㅂ니까 forma uma pergunta formal."
+      },
+      {
+       "kind": "build",
+       "translation": "Eu sou funcionário de escritório. (formal)",
+       "words": [
+        "저는",
+        "회사원입니다."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u3l3",
+     "title": "Objeto (을/를) e também (도)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "을/를 marca o que você come, bebe, assiste ou gosta."
+      },
+      {
+       "kind": "say",
+       "text": "Depois de consoante use 을. Depois de vogal use 를."
+      },
+      {
+       "kind": "example",
+       "ko": "빵을 먹습니다.",
+       "translation": "Eu como pão."
+      },
+      {
+       "kind": "example",
+       "ko": "커피를 마십니다.",
+       "translation": "Eu bebo café."
+      },
+      {
+       "kind": "say",
+       "text": "도 significa 'também'. Ele substitui 은/는, 이/가 ou 을/를."
+      },
+      {
+       "kind": "example",
+       "ko": "저도 학생입니다.",
+       "translation": "Eu também sou estudante."
+      },
+      {
+       "kind": "example",
+       "ko": "드라마도 좋아합니다.",
+       "translation": "Eu também gosto de séries."
+      },
+      {
+       "kind": "choice",
+       "text": "영화___ 봅니다.",
+       "options": [
+        "을",
+        "를"
+       ],
+       "answer": 1,
+       "why": "영화 termina em vogal, então 를."
+      },
+      {
+       "kind": "choice",
+       "text": "빵___ 먹습니다.",
+       "options": [
+        "을",
+        "를"
+       ],
+       "answer": 0,
+       "why": "빵 termina em ㅇ, uma consoante, então 을."
+      },
+      {
+       "kind": "choice",
+       "text": "Qual está certa?",
+       "options": [
+        "커피를도 마십니다",
+        "커피도 마십니다"
+       ],
+       "answer": 1,
+       "why": "도 substitui 을/를. Não use os dois."
+      },
+      {
+       "kind": "build",
+       "translation": "Eu também gosto de café.",
+       "words": [
+        "저도",
+        "커피를",
+        "좋아합니다."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Eu assisto séries.",
+       "words": [
+        "저는",
+        "드라마를",
+        "봅니다."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u3l4",
+     "title": "Juntando tudo: do que você gosta?",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Hana e Minsu falam do que gostam. Ouça."
+      },
+      {
+       "kind": "example",
+       "ko": "민수 씨는 무엇을 좋아합니까?",
+       "translation": "Minsu, do que você gosta?"
+      },
+      {
+       "kind": "example",
+       "ko": "저는 드라마를 좋아합니다.",
+       "translation": "Eu gosto de séries."
+      },
+      {
+       "kind": "example",
+       "ko": "하나 씨는요?",
+       "translation": "E você, Hana?"
+      },
+      {
+       "kind": "example",
+       "ko": "저도 드라마를 좋아합니다. 영화도 좋아합니다.",
+       "translation": "Eu também gosto de séries. E também de filmes."
+      },
+      {
+       "kind": "example",
+       "ko": "커피를 마십니까?",
+       "translation": "Você bebe café?"
+      },
+      {
+       "kind": "example",
+       "ko": "아니요, 저는 차를 마십니다.",
+       "translation": "Não, eu bebo chá."
+      },
+      {
+       "kind": "say",
+       "text": "무엇 significa 'o quê'. Na fala, muitas vezes vira 뭐."
+      },
+      {
+       "kind": "choice",
+       "text": "O que 무엇을 좋아합니까? pergunta?",
+       "options": [
+        "Aonde você vai?",
+        "Do que você gosta?",
+        "De quem você gosta?"
+       ],
+       "answer": 1,
+       "why": "무엇 é o quê, 좋아합니까 é 'você gosta?'."
+      },
+      {
+       "kind": "choice",
+       "text": "차___ 마십니다.",
+       "options": [
+        "을",
+        "를",
+        "도를"
+       ],
+       "answer": 1,
+       "why": "차 termina em vogal, então 를."
+      },
+      {
+       "kind": "build",
+       "translation": "Eu estudo coreano.",
+       "words": [
+        "저는",
+        "한국어를",
+        "공부합니다."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Eu também gosto de filmes.",
+       "words": [
+        "영화도",
+        "좋아합니다."
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요! Agora você sabe dizer do que gosta."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "title": "Escola",
+   "subtitle": "Fale da escola e das coisas",
+   "lessons": [
+    {
+     "id": "u4l1",
+     "title": "Palavras: escola",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Vamos aprender palavras da escola. Toque em cada uma para ouvir."
+      },
+      {
+       "kind": "example",
+       "ko": "학교",
+       "translation": "escola"
+      },
+      {
+       "kind": "example",
+       "ko": "교실",
+       "translation": "sala de aula"
+      },
+      {
+       "kind": "example",
+       "ko": "도서관",
+       "translation": "biblioteca"
+      },
+      {
+       "kind": "example",
+       "ko": "식당",
+       "translation": "refeitório, restaurante"
+      },
+      {
+       "kind": "example",
+       "ko": "책",
+       "translation": "livro"
+      },
+      {
+       "kind": "example",
+       "ko": "책상",
+       "translation": "mesa (de estudo)"
+      },
+      {
+       "kind": "example",
+       "ko": "의자",
+       "translation": "cadeira"
+      },
+      {
+       "kind": "example",
+       "ko": "가방",
+       "translation": "bolsa, mochila"
+      },
+      {
+       "kind": "example",
+       "ko": "친구",
+       "translation": "amigo"
+      },
+      {
+       "kind": "example",
+       "ko": "읽다",
+       "translation": "ler"
+      },
+      {
+       "kind": "example",
+       "ko": "쓰다",
+       "translation": "escrever"
+      },
+      {
+       "kind": "example",
+       "ko": "배우다",
+       "translation": "aprender"
+      },
+      {
+       "kind": "example",
+       "ko": "크다",
+       "translation": "ser grande"
+      },
+      {
+       "kind": "example",
+       "ko": "작다",
+       "translation": "ser pequeno"
+      },
+      {
+       "kind": "choice",
+       "text": "O que significa 도서관?",
+       "options": [
+        "sala de aula",
+        "biblioteca",
+        "refeitório",
+        "escola"
+       ],
+       "answer": 1,
+       "why": "도서관 é biblioteca. 교실 é sala de aula."
+      },
+      {
+       "kind": "choice",
+       "text": "Qual palavra significa 'cadeira'?",
+       "options": [
+        "책상",
+        "가방",
+        "의자",
+        "책"
+       ],
+       "answer": 2,
+       "why": "의자 é cadeira. 책상 é mesa."
+      },
+      {
+       "kind": "choice",
+       "text": "O que significa 배우다?",
+       "options": [
+        "aprender",
+        "ler",
+        "escrever",
+        "dormir"
+       ],
+       "answer": 0,
+       "why": "배우다 é aprender. 읽다 é ler."
+      }
+     ]
+    },
+    {
+     "id": "u4l2",
+     "title": "E, com (과/와, 하고)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Para juntar dois substantivos, use 과/와 ou 하고. Eles significam 'e'."
+      },
+      {
+       "kind": "say",
+       "text": "과 depois de consoante, 와 depois de vogal. 하고 vai depois de qualquer coisa e soa mais informal."
+      },
+      {
+       "kind": "example",
+       "ko": "책과 가방",
+       "translation": "um livro e uma bolsa"
+      },
+      {
+       "kind": "example",
+       "ko": "의자와 책상",
+       "translation": "uma cadeira e uma mesa"
+      },
+      {
+       "kind": "example",
+       "ko": "커피하고 빵",
+       "translation": "café e pão"
+      },
+      {
+       "kind": "say",
+       "text": "하고 e 과/와 também podem significar 'com'."
+      },
+      {
+       "kind": "example",
+       "ko": "친구하고 공부합니다.",
+       "translation": "Eu estudo com um amigo."
+      },
+      {
+       "kind": "choice",
+       "text": "책상___ 의자",
+       "options": [
+        "과",
+        "와"
+       ],
+       "answer": 0,
+       "why": "책상 termina em ㅇ, então 과."
+      },
+      {
+       "kind": "choice",
+       "text": "의자___ 책상",
+       "options": [
+        "과",
+        "와"
+       ],
+       "answer": 1,
+       "why": "의자 termina em vogal, então 와."
+      },
+      {
+       "kind": "choice",
+       "text": "Qual vai depois de qualquer substantivo?",
+       "options": [
+        "과",
+        "와",
+        "하고"
+       ],
+       "answer": 2,
+       "why": "하고 não muda. É comum na fala."
+      },
+      {
+       "kind": "build",
+       "translation": "Eu estudo com um amigo.",
+       "words": [
+        "친구하고",
+        "공부합니다."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u4l3",
+     "title": "Possessivo (의)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "의 significa 'de'. Fica entre o dono e a coisa, na ordem inversa do português."
+      },
+      {
+       "kind": "example",
+       "ko": "민수 씨의 가방",
+       "translation": "a bolsa do Minsu"
+      },
+      {
+       "kind": "example",
+       "ko": "학교의 도서관",
+       "translation": "a biblioteca da escola"
+      },
+      {
+       "kind": "say",
+       "text": "Na fala, 의 muitas vezes soa como 에."
+      },
+      {
+       "kind": "say",
+       "text": "'Meu' é 제. É a forma curta de 저의."
+      },
+      {
+       "kind": "example",
+       "ko": "제 책입니다.",
+       "translation": "É o meu livro."
+      },
+      {
+       "kind": "example",
+       "ko": "제 친구입니다.",
+       "translation": "Este é o meu amigo."
+      },
+      {
+       "kind": "choice",
+       "text": "Como se diz 'o livro da Hana'?",
+       "options": [
+        "하나 씨의 책",
+        "책의 하나 씨",
+        "하나 씨 의책"
+       ],
+       "answer": 0,
+       "why": "Primeiro o dono, depois 의, depois a coisa."
+      },
+      {
+       "kind": "choice",
+       "text": "Qual é a forma curta de 저의?",
+       "options": [
+        "저",
+        "제",
+        "내"
+       ],
+       "answer": 1,
+       "why": "저의 vira 제. 제 가방 significa minha bolsa."
+      },
+      {
+       "kind": "choice",
+       "text": "Qual está certa?",
+       "options": [
+        "제 친구입니다",
+        "저 친구입니다의"
+       ],
+       "answer": 0,
+       "why": "제 친구 significa meu amigo."
+      },
+      {
+       "kind": "build",
+       "translation": "É a bolsa do Minsu.",
+       "words": [
+        "민수",
+        "씨의",
+        "가방입니다."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u4l4",
+     "title": "Juntando tudo: na sala de aula",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "A Hana acha um livro na sala de aula. Ouça."
+      },
+      {
+       "kind": "example",
+       "ko": "이것은 하나 씨의 책입니까?",
+       "translation": "Hana, esse livro é seu?"
+      },
+      {
+       "kind": "example",
+       "ko": "아니요, 제 책이 아닙니다.",
+       "translation": "Não, não é meu livro."
+      },
+      {
+       "kind": "example",
+       "ko": "민수 씨의 책입니다.",
+       "translation": "É o livro do Minsu."
+      },
+      {
+       "kind": "example",
+       "ko": "민수 씨는 무엇을 배웁니까?",
+       "translation": "O que o Minsu aprende?"
+      },
+      {
+       "kind": "example",
+       "ko": "민수 씨는 친구하고 한국어를 배웁니다.",
+       "translation": "O Minsu aprende coreano com um amigo."
+      },
+      {
+       "kind": "say",
+       "text": "아닙니다 é a forma formal de 아니에요."
+      },
+      {
+       "kind": "say",
+       "text": "이것 significa 'isto'. Você vai aprender 이, 그 e 저 mais tarde."
+      },
+      {
+       "kind": "choice",
+       "text": "O que significa 제 책이 아닙니다?",
+       "options": [
+        "É o meu livro",
+        "Não é o meu livro",
+        "É o meu livro?"
+       ],
+       "answer": 1,
+       "why": "아닙니다 significa 'não é', no estilo formal."
+      },
+      {
+       "kind": "choice",
+       "text": "가방___ 책",
+       "options": [
+        "과",
+        "와"
+       ],
+       "answer": 0,
+       "why": "가방 termina em ㅇ, então 과."
+      },
+      {
+       "kind": "build",
+       "translation": "Não é a minha bolsa.",
+       "words": [
+        "제",
+        "가방이",
+        "아닙니다."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Eu leio um livro com um amigo.",
+       "words": [
+        "친구하고",
+        "책을",
+        "읽습니다."
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요! Agora você sabe falar da escola."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "title": "Tempo",
+   "subtitle": "Fale do tempo e das estações",
+   "lessons": [
+    {
+     "id": "u5l1",
+     "title": "Palavras: tempo e estações",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Os coreanos falam muito do tempo. Vamos aprender as palavras."
+      },
+      {
+       "kind": "example",
+       "ko": "날씨",
+       "translation": "tempo (clima)"
+      },
+      {
+       "kind": "example",
+       "ko": "봄",
+       "translation": "primavera"
+      },
+      {
+       "kind": "example",
+       "ko": "여름",
+       "translation": "verão"
+      },
+      {
+       "kind": "example",
+       "ko": "가을",
+       "translation": "outono"
+      },
+      {
+       "kind": "example",
+       "ko": "겨울",
+       "translation": "inverno"
+      },
+      {
+       "kind": "example",
+       "ko": "비",
+       "translation": "chuva"
+      },
+      {
+       "kind": "example",
+       "ko": "눈",
+       "translation": "neve"
+      },
+      {
+       "kind": "example",
+       "ko": "덥다",
+       "translation": "fazer calor"
+      },
+      {
+       "kind": "example",
+       "ko": "춥다",
+       "translation": "fazer frio"
+      },
+      {
+       "kind": "example",
+       "ko": "따뜻하다",
+       "translation": "estar ameno"
+      },
+      {
+       "kind": "example",
+       "ko": "시원하다",
+       "translation": "estar fresco"
+      },
+      {
+       "kind": "example",
+       "ko": "맑다",
+       "translation": "estar limpo, ensolarado"
+      },
+      {
+       "kind": "choice",
+       "text": "O que significa 겨울?",
+       "options": [
+        "verão",
+        "outono",
+        "inverno",
+        "primavera"
+       ],
+       "answer": 2,
+       "why": "겨울 é inverno. 여름 é verão."
+      },
+      {
+       "kind": "choice",
+       "text": "Qual palavra significa 'fazer frio'?",
+       "options": [
+        "덥다",
+        "춥다",
+        "맑다",
+        "시원하다"
+       ],
+       "answer": 1,
+       "why": "춥다 é frio. 덥다 é calor."
+      },
+      {
+       "kind": "choice",
+       "text": "O que significa 눈 aqui?",
+       "options": [
+        "chuva",
+        "neve",
+        "tempo (clima)"
+       ],
+       "answer": 1,
+       "why": "눈 é neve. Também significa olho."
+      }
+     ]
+    },
+    {
+     "id": "u5l2",
+     "title": "Educado do dia a dia (-아요/어요)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "-아요/어요 é o estilo educado que se usa todo dia. É mais suave que -습니다."
+      },
+      {
+       "kind": "say",
+       "text": "Olhe a última vogal do radical. Se for ㅏ ou ㅗ, coloque 아요."
+      },
+      {
+       "kind": "example",
+       "ko": "좋아요.",
+       "translation": "Está bom."
+      },
+      {
+       "kind": "example",
+       "ko": "맑아요.",
+       "translation": "O céu está limpo."
+      },
+      {
+       "kind": "say",
+       "text": "Com qualquer outra vogal, coloque 어요."
+      },
+      {
+       "kind": "example",
+       "ko": "먹어요.",
+       "translation": "Eu como."
+      },
+      {
+       "kind": "example",
+       "ko": "읽어요.",
+       "translation": "Eu leio."
+      },
+      {
+       "kind": "say",
+       "text": "Verbos com 하다 viram 해요."
+      },
+      {
+       "kind": "example",
+       "ko": "따뜻해요.",
+       "translation": "Está ameno."
+      },
+      {
+       "kind": "example",
+       "ko": "공부해요.",
+       "translation": "Eu estudo."
+      },
+      {
+       "kind": "say",
+       "text": "덥다 e 춥다 mudam de forma: 더워요, 추워요. Aprenda assim mesmo."
+      },
+      {
+       "kind": "example",
+       "ko": "오늘 추워요.",
+       "translation": "Hoje está frio."
+      },
+      {
+       "kind": "choice",
+       "text": "작다 →",
+       "options": [
+        "작어요",
+        "작아요",
+        "작해요"
+       ],
+       "answer": 1,
+       "why": "A vogal de 작 é ㅏ, então 아요."
+      },
+      {
+       "kind": "choice",
+       "text": "시원하다 →",
+       "options": [
+        "시원아요",
+        "시원해요",
+        "시원어요"
+       ],
+       "answer": 1,
+       "why": "하다 vira 해요."
+      },
+      {
+       "kind": "choice",
+       "text": "읽다 →",
+       "options": [
+        "읽아요",
+        "읽어요",
+        "읽해요"
+       ],
+       "answer": 1,
+       "why": "A vogal de 읽 é ㅣ, então 어요."
+      },
+      {
+       "kind": "build",
+       "translation": "O tempo está bom.",
+       "words": [
+        "날씨가",
+        "좋아요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u5l3",
+     "title": "Não (-지 않아요)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Para dizer 'não', tire o 다 e coloque 지 않아요."
+      },
+      {
+       "kind": "example",
+       "ko": "춥지 않아요.",
+       "translation": "Não está frio."
+      },
+      {
+       "kind": "example",
+       "ko": "덥지 않아요.",
+       "translation": "Não está quente."
+      },
+      {
+       "kind": "example",
+       "ko": "좋지 않아요.",
+       "translation": "Não está bom."
+      },
+      {
+       "kind": "say",
+       "text": "Funciona com ações também."
+      },
+      {
+       "kind": "example",
+       "ko": "커피를 마시지 않아요.",
+       "translation": "Eu não bebo café."
+      },
+      {
+       "kind": "say",
+       "text": "Aqui a forma não muda: 춥다 vira 춥지 않아요, não 추워지 않아요."
+      },
+      {
+       "kind": "choice",
+       "text": "크다 → não é grande",
+       "options": [
+        "크지 않아요",
+        "커지 않아요",
+        "크 않아요"
+       ],
+       "answer": 0,
+       "why": "Radical 크 + 지 않아요."
+      },
+      {
+       "kind": "choice",
+       "text": "Qual está certa?",
+       "options": [
+        "날씨가 좋지 않아요",
+        "날씨가 좋아지 않아요"
+       ],
+       "answer": 0,
+       "why": "Radical 좋 + 지 않아요."
+      },
+      {
+       "kind": "choice",
+       "text": "먹다 → eu não como",
+       "options": [
+        "먹지 않아요",
+        "먹어지 않아요",
+        "먹않아요"
+       ],
+       "answer": 0,
+       "why": "Radical 먹 + 지 않아요."
+      },
+      {
+       "kind": "build",
+       "translation": "Hoje não está frio.",
+       "words": [
+        "오늘",
+        "춥지",
+        "않아요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u5l4",
+     "title": "Juntando tudo: como está o tempo?",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "O Minsu liga para a Hana. Ouça."
+      },
+      {
+       "kind": "example",
+       "ko": "오늘 날씨가 어때요?",
+       "translation": "Como está o tempo hoje?"
+      },
+      {
+       "kind": "example",
+       "ko": "날씨가 좋지 않아요. 비가 와요.",
+       "translation": "O tempo não está bom. Está chovendo."
+      },
+      {
+       "kind": "example",
+       "ko": "추워요?",
+       "translation": "Está frio?"
+      },
+      {
+       "kind": "example",
+       "ko": "아니요, 춥지 않아요. 시원해요.",
+       "translation": "Não, não está frio. Está fresco."
+      },
+      {
+       "kind": "example",
+       "ko": "저는 봄을 좋아해요. 봄은 따뜻해요.",
+       "translation": "Eu gosto da primavera. Na primavera faz um tempo ameno."
+      },
+      {
+       "kind": "say",
+       "text": "어때요? significa 'como está?'. Use para o tempo, comida, qualquer coisa."
+      },
+      {
+       "kind": "say",
+       "text": "비가 와요 significa 'está chovendo', literalmente 'a chuva vem'."
+      },
+      {
+       "kind": "choice",
+       "text": "Como se diz 'Está chovendo'?",
+       "options": [
+        "비가 와요",
+        "비를 와요",
+        "비가 해요"
+       ],
+       "answer": 0,
+       "why": "비가 와요: a chuva vem."
+      },
+      {
+       "kind": "choice",
+       "text": "O que significa 어때요?",
+       "options": [
+        "O que é?",
+        "Como está?",
+        "Onde está?"
+       ],
+       "answer": 1,
+       "why": "어때요? pergunta como algo está."
+      },
+      {
+       "kind": "build",
+       "translation": "Eu gosto do inverno.",
+       "words": [
+        "저는",
+        "겨울을",
+        "좋아해요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "No verão faz calor.",
+       "words": [
+        "여름은",
+        "더워요."
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요! Agora você sabe falar do tempo."
+      }
+     ]
+    },
+    {
+     "id": "u5r",
+     "title": "Revisão: unidades 1 a 5",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Vamos revisar tudo das unidades 1 a 5. Nada de gramática nova, só prática."
+      },
+      {
+       "kind": "choice",
+       "text": "저___ 학생이에요.",
+       "options": [
+        "은",
+        "는"
+       ],
+       "answer": 1,
+       "why": "저 termina em vogal, então 는."
+      },
+      {
+       "kind": "choice",
+       "text": "의사___ 아니에요.",
+       "options": [
+        "이",
+        "가"
+       ],
+       "answer": 1,
+       "why": "의사 termina em vogal, então 가 아니에요."
+      },
+      {
+       "kind": "choice",
+       "text": "빵___ 먹습니다.",
+       "options": [
+        "을",
+        "를"
+       ],
+       "answer": 0,
+       "why": "빵 termina em consoante, então 을."
+      },
+      {
+       "kind": "choice",
+       "text": "친구___ 가방",
+       "options": [
+        "과",
+        "의"
+       ],
+       "answer": 1,
+       "why": "의 mostra de quem é: a bolsa de um amigo."
+      },
+      {
+       "kind": "choice",
+       "text": "좋다 →",
+       "options": [
+        "좋아요",
+        "좋어요",
+        "좋해요"
+       ],
+       "answer": 0,
+       "why": "A vogal é ㅗ, então 아요."
+      },
+      {
+       "kind": "choice",
+       "text": "춥다 → não está frio",
+       "options": [
+        "추워지 않아요",
+        "춥지 않아요"
+       ],
+       "answer": 1,
+       "why": "Radical 춥 + 지 않아요."
+      },
+      {
+       "kind": "choice",
+       "text": "마시다 → formal",
+       "options": [
+        "마시습니다",
+        "마십니다"
+       ],
+       "answer": 1,
+       "why": "Radical em vogal, então ㅂ니다."
+      },
+      {
+       "kind": "build",
+       "translation": "Minha irmã mais velha é enfermeira.",
+       "words": [
+        "우리",
+        "언니는",
+        "간호사예요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Eu bebo café com um amigo.",
+       "words": [
+        "친구하고",
+        "커피를",
+        "마십니다."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Hoje o tempo não está bom.",
+       "words": [
+        "오늘",
+        "날씨가",
+        "좋지",
+        "않아요."
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "대단해요! Você terminou as cinco primeiras unidades. O Gochi está orgulhoso de você."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "title": "Amigos",
+   "subtitle": "Dar, enviar e ligar",
+   "lessons": [
+    {
+     "id": "u6l1",
+     "title": "Palavras: amigos e presentes",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Vamos aprender palavras sobre amigos, presentes e mensagens."
+      },
+      {
+       "kind": "example",
+       "ko": "선물",
+       "translation": "presente"
+      },
+      {
+       "kind": "example",
+       "ko": "편지",
+       "translation": "carta"
+      },
+      {
+       "kind": "example",
+       "ko": "꽃",
+       "translation": "flor"
+      },
+      {
+       "kind": "example",
+       "ko": "생일",
+       "translation": "aniversário"
+      },
+      {
+       "kind": "example",
+       "ko": "주다",
+       "translation": "dar"
+      },
+      {
+       "kind": "example",
+       "ko": "보내다",
+       "translation": "enviar"
+      },
+      {
+       "kind": "example",
+       "ko": "전화하다",
+       "translation": "ligar (telefone)"
+      },
+      {
+       "kind": "example",
+       "ko": "만나다",
+       "translation": "encontrar"
+      },
+      {
+       "kind": "example",
+       "ko": "고마워요",
+       "translation": "obrigado (informal)"
+      },
+      {
+       "kind": "example",
+       "ko": "미안해요",
+       "translation": "desculpa"
+      },
+      {
+       "kind": "example",
+       "ko": "생일 축하해요!",
+       "translation": "Feliz aniversário!"
+      },
+      {
+       "kind": "choice",
+       "text": "O que significa 선물?",
+       "options": [
+        "carta",
+        "presente",
+        "flor",
+        "aniversário"
+       ],
+       "answer": 1,
+       "why": "선물 é presente. 편지 é carta."
+      },
+      {
+       "kind": "choice",
+       "text": "Qual verbo significa 'enviar'?",
+       "options": [
+        "주다",
+        "보내다",
+        "만나다",
+        "전화하다"
+       ],
+       "answer": 1,
+       "why": "보내다 é enviar. 주다 é dar."
+      },
+      {
+       "kind": "choice",
+       "text": "Como se diz 'Feliz aniversário!'?",
+       "options": [
+        "생일 고마워요!",
+        "생일 축하해요!",
+        "생일 미안해요!"
+       ],
+       "answer": 1,
+       "why": "축하해요 significa parabéns."
+      }
+     ]
+    },
+    {
+     "id": "u6l2",
+     "title": "Para alguém (에게/한테)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "에게 e 한테 significam 'para' uma pessoa. 한테 é mais informal. Os dois vão depois de qualquer nome."
+      },
+      {
+       "kind": "example",
+       "ko": "친구에게 편지를 보내요.",
+       "translation": "Eu envio uma carta para um amigo."
+      },
+      {
+       "kind": "example",
+       "ko": "동생한테 전화해요.",
+       "translation": "Eu ligo para o meu irmão mais novo."
+      },
+      {
+       "kind": "say",
+       "text": "Alguns verbos encurtam no estilo 요. 주다 vira 줘요, 보다 vira 봐요, 마시다 vira 마셔요."
+      },
+      {
+       "kind": "example",
+       "ko": "어머니한테 꽃을 줘요.",
+       "translation": "Eu dou flores para a minha mãe."
+      },
+      {
+       "kind": "say",
+       "text": "Para lugares, use 에, não 에게. 에게 é só para pessoas e animais."
+      },
+      {
+       "kind": "choice",
+       "text": "친구___ 선물을 줘요.",
+       "options": [
+        "에게",
+        "에서",
+        "을"
+       ],
+       "answer": 0,
+       "why": "에게 significa 'para' uma pessoa."
+      },
+      {
+       "kind": "choice",
+       "text": "Qual é informal?",
+       "options": [
+        "에게",
+        "한테"
+       ],
+       "answer": 1,
+       "why": "한테 é comum na fala. 에게 é mais escrito."
+      },
+      {
+       "kind": "choice",
+       "text": "주다 → estilo 요",
+       "options": [
+        "só 주어요",
+        "줘요",
+        "주요"
+       ],
+       "answer": 1,
+       "why": "주 + 어요 encurta para 줘요."
+      },
+      {
+       "kind": "build",
+       "translation": "Eu ligo para o meu amigo.",
+       "words": [
+        "친구한테",
+        "전화해요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Eu dou um presente para a minha irmã mais velha.",
+       "words": [
+        "언니에게",
+        "선물을",
+        "줘요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u6l3",
+     "title": "Só (만)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "만 significa 'só'. Coloque logo depois do substantivo."
+      },
+      {
+       "kind": "example",
+       "ko": "커피만 마셔요.",
+       "translation": "Eu só bebo café."
+      },
+      {
+       "kind": "example",
+       "ko": "동생만 와요.",
+       "translation": "Só o meu irmão mais novo vem."
+      },
+      {
+       "kind": "say",
+       "text": "Igual ao 도, 만 substitui 을/를 e 이/가."
+      },
+      {
+       "kind": "example",
+       "ko": "저는 드라마만 봐요.",
+       "translation": "Eu só assisto séries."
+      },
+      {
+       "kind": "choice",
+       "text": "Eu só como pão: 빵___ 먹어요.",
+       "options": [
+        "만",
+        "도",
+        "을"
+       ],
+       "answer": 0,
+       "why": "만 significa só. 도 significa também."
+      },
+      {
+       "kind": "choice",
+       "text": "Qual está certa?",
+       "options": [
+        "물을만 마셔요",
+        "물만 마셔요"
+       ],
+       "answer": 1,
+       "why": "만 substitui 을/를."
+      },
+      {
+       "kind": "choice",
+       "text": "O que significa 친구만 와요?",
+       "options": [
+        "Um amigo também vem",
+        "Só um amigo vem",
+        "Um amigo não vem"
+       ],
+       "answer": 1,
+       "why": "만 significa só."
+      },
+      {
+       "kind": "build",
+       "translation": "Eu só bebo chá.",
+       "words": [
+        "저는",
+        "차만",
+        "마셔요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u6l4",
+     "title": "Juntando tudo: um aniversário",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "É aniversário da Hana. Ouça."
+      },
+      {
+       "kind": "example",
+       "ko": "하나 씨, 생일 축하해요!",
+       "translation": "Feliz aniversário, Hana!"
+      },
+      {
+       "kind": "example",
+       "ko": "이거 선물이에요.",
+       "translation": "Isto é um presente para você."
+      },
+      {
+       "kind": "example",
+       "ko": "와, 고마워요! 꽃이에요?",
+       "translation": "Nossa, obrigada! São flores?"
+      },
+      {
+       "kind": "example",
+       "ko": "네. 그리고 편지도 있어요.",
+       "translation": "Sim. E também tem uma carta."
+      },
+      {
+       "kind": "choice",
+       "text": "O que significa 고마워요?",
+       "options": [
+        "Desculpa",
+        "Obrigado",
+        "Olá"
+       ],
+       "answer": 1,
+       "why": "고마워요 é um obrigado informal."
+      },
+      {
+       "kind": "choice",
+       "text": "친구___ 꽃을 보내요.",
+       "options": [
+        "한테",
+        "에서",
+        "는"
+       ],
+       "answer": 0,
+       "why": "한테 significa 'para' uma pessoa."
+      },
+      {
+       "kind": "build",
+       "translation": "Isto é um presente.",
+       "words": [
+        "이거",
+        "선물이에요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Eu envio uma carta para o meu amigo.",
+       "words": [
+        "친구에게",
+        "편지를",
+        "보내요."
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요! Agora você sabe dar presentes e enviar mensagens."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "title": "Onde as coisas estão",
+   "subtitle": "Diga onde as coisas estão e onde você faz algo",
+   "lessons": [
+    {
+     "id": "u7l1",
+     "title": "Palavras: cômodos e lugares",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Vamos aprender palavras para dizer onde as coisas estão."
+      },
+      {
+       "kind": "example",
+       "ko": "방",
+       "translation": "quarto"
+      },
+      {
+       "kind": "example",
+       "ko": "집",
+       "translation": "casa, lar"
+      },
+      {
+       "kind": "example",
+       "ko": "침대",
+       "translation": "cama"
+      },
+      {
+       "kind": "example",
+       "ko": "고양이",
+       "translation": "gato"
+      },
+      {
+       "kind": "example",
+       "ko": "위",
+       "translation": "em cima, sobre"
+      },
+      {
+       "kind": "example",
+       "ko": "아래",
+       "translation": "embaixo"
+      },
+      {
+       "kind": "example",
+       "ko": "앞",
+       "translation": "na frente"
+      },
+      {
+       "kind": "example",
+       "ko": "뒤",
+       "translation": "atrás"
+      },
+      {
+       "kind": "example",
+       "ko": "옆",
+       "translation": "ao lado"
+      },
+      {
+       "kind": "example",
+       "ko": "안",
+       "translation": "dentro"
+      },
+      {
+       "kind": "example",
+       "ko": "있다",
+       "translation": "haver, estar, ter"
+      },
+      {
+       "kind": "example",
+       "ko": "없다",
+       "translation": "não haver, não ter"
+      },
+      {
+       "kind": "choice",
+       "text": "O que significa 옆?",
+       "options": [
+        "atrás",
+        "ao lado",
+        "embaixo",
+        "dentro"
+       ],
+       "answer": 1,
+       "why": "옆 significa ao lado. 뒤 significa atrás."
+      },
+      {
+       "kind": "choice",
+       "text": "Qual é o contrário de 있다?",
+       "options": [
+        "없다",
+        "아래",
+        "안"
+       ],
+       "answer": 0,
+       "why": "있다 é 'tem', 없다 é 'não tem'."
+      },
+      {
+       "kind": "choice",
+       "text": "O que significa 침대?",
+       "options": [
+        "quarto",
+        "cama",
+        "mesa (de estudo)",
+        "cadeira"
+       ],
+       "answer": 1,
+       "why": "침대 é cama."
+      }
+     ]
+    },
+    {
+     "id": "u7l2",
+     "title": "Onde algo está (에 있어요)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Para dizer onde algo está, use lugar + 에 + 있어요."
+      },
+      {
+       "kind": "example",
+       "ko": "고양이가 방에 있어요.",
+       "translation": "O gato está no quarto."
+      },
+      {
+       "kind": "say",
+       "text": "Para posições, diga primeiro a coisa, depois a palavra de posição e depois 에."
+      },
+      {
+       "kind": "example",
+       "ko": "책이 책상 위에 있어요.",
+       "translation": "O livro está em cima da mesa."
+      },
+      {
+       "kind": "example",
+       "ko": "가방이 의자 아래에 있어요.",
+       "translation": "A bolsa está embaixo da cadeira."
+      },
+      {
+       "kind": "say",
+       "text": "Para perguntar onde, use 어디에 있어요?"
+      },
+      {
+       "kind": "example",
+       "ko": "화장실이 어디에 있어요?",
+       "translation": "Onde fica o banheiro?"
+      },
+      {
+       "kind": "example",
+       "ko": "집에 고양이가 없어요.",
+       "translation": "Não tem gato em casa."
+      },
+      {
+       "kind": "choice",
+       "text": "책이 침대 위___ 있어요.",
+       "options": [
+        "에",
+        "에서",
+        "를"
+       ],
+       "answer": 0,
+       "why": "Onde algo está: 에 있어요."
+      },
+      {
+       "kind": "choice",
+       "text": "Como se diz 'ao lado da mesa'?",
+       "options": [
+        "책상 옆에",
+        "옆 책상에",
+        "책상에 옆"
+       ],
+       "answer": 0,
+       "why": "Primeiro a coisa, depois 옆, depois 에."
+      },
+      {
+       "kind": "choice",
+       "text": "Qual significa 'não tem bolsa'?",
+       "options": [
+        "가방이 있어요",
+        "가방이 없어요"
+       ],
+       "answer": 1,
+       "why": "없어요 significa não tem."
+      },
+      {
+       "kind": "build",
+       "translation": "O gato está embaixo da cama.",
+       "words": [
+        "고양이가",
+        "침대",
+        "아래에",
+        "있어요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u7l3",
+     "title": "Onde você faz algo (에서)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "에서 marca o lugar onde uma ação acontece."
+      },
+      {
+       "kind": "example",
+       "ko": "도서관에서 공부해요.",
+       "translation": "Eu estudo na biblioteca."
+      },
+      {
+       "kind": "example",
+       "ko": "식당에서 밥을 먹어요.",
+       "translation": "Eu como no restaurante."
+      },
+      {
+       "kind": "say",
+       "text": "Compare: 에 é para estar em algum lugar. 에서 é para fazer algo lá."
+      },
+      {
+       "kind": "example",
+       "ko": "집에 있어요.",
+       "translation": "Estou em casa."
+      },
+      {
+       "kind": "example",
+       "ko": "집에서 일해요.",
+       "translation": "Eu trabalho de casa."
+      },
+      {
+       "kind": "choice",
+       "text": "학교___ 한국어를 배워요.",
+       "options": [
+        "에",
+        "에서"
+       ],
+       "answer": 1,
+       "why": "배우다 é uma ação, então 에서."
+      },
+      {
+       "kind": "choice",
+       "text": "저는 지금 집___ 있어요.",
+       "options": [
+        "에",
+        "에서"
+       ],
+       "answer": 0,
+       "why": "있다 é estar em algum lugar, então 에."
+      },
+      {
+       "kind": "choice",
+       "text": "방___ 드라마를 봐요.",
+       "options": [
+        "에",
+        "에서"
+       ],
+       "answer": 1,
+       "why": "Assistir é uma ação, então 에서."
+      },
+      {
+       "kind": "build",
+       "translation": "Eu estudo na biblioteca.",
+       "words": [
+        "도서관에서",
+        "공부해요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u7l4",
+     "title": "Juntando tudo: onde você está?",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "O Minsu liga para a Hana. Ouça."
+      },
+      {
+       "kind": "example",
+       "ko": "하나 씨, 지금 어디에 있어요?",
+       "translation": "Hana, onde você está agora?"
+      },
+      {
+       "kind": "example",
+       "ko": "집에 있어요. 방에서 드라마를 봐요.",
+       "translation": "Estou em casa. Estou assistindo uma série no meu quarto."
+      },
+      {
+       "kind": "example",
+       "ko": "제 가방이 하나 씨 집에 있어요?",
+       "translation": "Minha bolsa está na sua casa?"
+      },
+      {
+       "kind": "example",
+       "ko": "네, 의자 옆에 있어요.",
+       "translation": "Sim, está ao lado da cadeira."
+      },
+      {
+       "kind": "example",
+       "ko": "고마워요! 내일 가요.",
+       "translation": "Valeu! Passo aí amanhã."
+      },
+      {
+       "kind": "say",
+       "text": "지금 significa agora. 내일 significa amanhã."
+      },
+      {
+       "kind": "choice",
+       "text": "가방이 의자 옆___ 있어요.",
+       "options": [
+        "에",
+        "에서"
+       ],
+       "answer": 0,
+       "why": "Estar em algum lugar: 에."
+      },
+      {
+       "kind": "choice",
+       "text": "O que significa 어디에 있어요?",
+       "options": [
+        "O que é?",
+        "Onde está?",
+        "Quem é?"
+       ],
+       "answer": 1,
+       "why": "어디 significa onde."
+      },
+      {
+       "kind": "build",
+       "translation": "Estou em casa agora.",
+       "words": [
+        "지금",
+        "집에",
+        "있어요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Eu como em casa.",
+       "words": [
+        "집에서",
+        "밥을",
+        "먹어요."
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요! Agora você sabe dizer onde as coisas estão."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "title": "Datas",
+   "subtitle": "Fale dos dias e do passado",
+   "lessons": [
+    {
+     "id": "u8l1",
+     "title": "Palavras: números e dias",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "O coreano tem dois sistemas de números. Este, de origem chinesa, é para datas, dinheiro e números de telefone."
+      },
+      {
+       "kind": "example",
+       "ko": "일, 이, 삼",
+       "translation": "1, 2, 3"
+      },
+      {
+       "kind": "example",
+       "ko": "사, 오, 육",
+       "translation": "4, 5, 6"
+      },
+      {
+       "kind": "example",
+       "ko": "칠, 팔, 구, 십",
+       "translation": "7, 8, 9, 10"
+      },
+      {
+       "kind": "example",
+       "ko": "십오",
+       "translation": "15 (10 + 5)"
+      },
+      {
+       "kind": "example",
+       "ko": "이십",
+       "translation": "20 (2 × 10)"
+      },
+      {
+       "kind": "say",
+       "text": "Os meses são número + 월. Cuidado: junho é 유월 e outubro é 시월."
+      },
+      {
+       "kind": "example",
+       "ko": "삼월 십오일",
+       "translation": "15 de março"
+      },
+      {
+       "kind": "example",
+       "ko": "월요일",
+       "translation": "segunda-feira"
+      },
+      {
+       "kind": "example",
+       "ko": "금요일",
+       "translation": "sexta-feira"
+      },
+      {
+       "kind": "example",
+       "ko": "토요일",
+       "translation": "sábado"
+      },
+      {
+       "kind": "example",
+       "ko": "일요일",
+       "translation": "domingo"
+      },
+      {
+       "kind": "example",
+       "ko": "어제, 오늘, 내일",
+       "translation": "ontem, hoje, amanhã"
+      },
+      {
+       "kind": "example",
+       "ko": "주말",
+       "translation": "fim de semana"
+      },
+      {
+       "kind": "choice",
+       "text": "Como se diz 25?",
+       "options": [
+        "이오",
+        "이십오",
+        "오십이"
+       ],
+       "answer": 1,
+       "why": "이십 (20) + 오 (5)."
+      },
+      {
+       "kind": "choice",
+       "text": "Como se diz junho?",
+       "options": [
+        "육월",
+        "유월",
+        "오월"
+       ],
+       "answer": 1,
+       "why": "Junho é 유월, não 육월."
+      },
+      {
+       "kind": "choice",
+       "text": "O que significa 토요일?",
+       "options": [
+        "sexta-feira",
+        "sábado",
+        "domingo"
+       ],
+       "answer": 1,
+       "why": "토요일 é sábado. 일요일 é domingo."
+      }
+     ]
+    },
+    {
+     "id": "u8l2",
+     "title": "Passado (-았/었어요)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "O passado funciona como -아요/어요. É só usar 았어요 ou 었어요."
+      },
+      {
+       "kind": "say",
+       "text": "Se a última vogal for ㅏ ou ㅗ, use 았어요."
+      },
+      {
+       "kind": "example",
+       "ko": "좋았어요.",
+       "translation": "Foi bom."
+      },
+      {
+       "kind": "example",
+       "ko": "만났어요.",
+       "translation": "Eu encontrei (alguém)."
+      },
+      {
+       "kind": "example",
+       "ko": "봤어요.",
+       "translation": "Eu vi, eu assisti."
+      },
+      {
+       "kind": "say",
+       "text": "Com as outras vogais, use 었어요. 하다 vira 했어요."
+      },
+      {
+       "kind": "example",
+       "ko": "먹었어요.",
+       "translation": "Eu comi."
+      },
+      {
+       "kind": "example",
+       "ko": "읽었어요.",
+       "translation": "Eu leio."
+      },
+      {
+       "kind": "example",
+       "ko": "공부했어요.",
+       "translation": "Eu estudei."
+      },
+      {
+       "kind": "choice",
+       "text": "먹다 → passado",
+       "options": [
+        "먹았어요",
+        "먹었어요",
+        "먹했어요"
+       ],
+       "answer": 1,
+       "why": "A vogal de 먹 é ㅓ, então 었어요."
+      },
+      {
+       "kind": "choice",
+       "text": "일하다 → passado",
+       "options": [
+        "일했어요",
+        "일았어요",
+        "일하었어요"
+       ],
+       "answer": 0,
+       "why": "하다 vira 했어요."
+      },
+      {
+       "kind": "choice",
+       "text": "작다 → passado",
+       "options": [
+        "작었어요",
+        "작았어요"
+       ],
+       "answer": 1,
+       "why": "A vogal de 작 é ㅏ, então 았어요."
+      },
+      {
+       "kind": "build",
+       "translation": "Ontem eu assisti um filme.",
+       "words": [
+        "어제",
+        "영화를",
+        "봤어요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u8l3",
+     "title": "Em um momento (에)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Para dizer quando algo acontece, coloque 에 depois do tempo."
+      },
+      {
+       "kind": "example",
+       "ko": "토요일에 친구를 만났어요.",
+       "translation": "No sábado eu encontrei um amigo."
+      },
+      {
+       "kind": "example",
+       "ko": "삼월에 한국에 가요.",
+       "translation": "Em março eu vou para a Coreia."
+      },
+      {
+       "kind": "example",
+       "ko": "주말에 뭐 했어요?",
+       "translation": "O que você fez no fim de semana?"
+      },
+      {
+       "kind": "say",
+       "text": "어제, 오늘 e 내일 não levam 에."
+      },
+      {
+       "kind": "example",
+       "ko": "어제 공부했어요.",
+       "translation": "Ontem eu estudei."
+      },
+      {
+       "kind": "choice",
+       "text": "금요일___ 영화를 봤어요.",
+       "options": [
+        "에",
+        "에서",
+        "를"
+       ],
+       "answer": 0,
+       "why": "Tempo + 에."
+      },
+      {
+       "kind": "choice",
+       "text": "Qual está certa?",
+       "options": [
+        "어제에 먹었어요",
+        "어제 먹었어요"
+       ],
+       "answer": 1,
+       "why": "어제 nunca leva 에."
+      },
+      {
+       "kind": "choice",
+       "text": "일요일에 뭐 ___?",
+       "options": [
+        "했어요",
+        "해요었어요",
+        "했요"
+       ],
+       "answer": 0,
+       "why": "했어요 é o passado de 해요."
+      },
+      {
+       "kind": "build",
+       "translation": "No fim de semana eu encontrei um amigo.",
+       "words": [
+        "주말에",
+        "친구를",
+        "만났어요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u8l4",
+     "title": "Juntando tudo: seu fim de semana",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Segunda de manhã na escola. Ouça."
+      },
+      {
+       "kind": "example",
+       "ko": "주말에 뭐 했어요?",
+       "translation": "O que você fez no fim de semana?"
+      },
+      {
+       "kind": "example",
+       "ko": "토요일에 친구를 만났어요. 같이 영화를 봤어요.",
+       "translation": "No sábado eu encontrei um amigo. A gente assistiu um filme juntos."
+      },
+      {
+       "kind": "example",
+       "ko": "영화가 어땠어요?",
+       "translation": "Como foi o filme?"
+      },
+      {
+       "kind": "example",
+       "ko": "정말 좋았어요! 일요일에는 집에서 쉬었어요.",
+       "translation": "Foi muito bom! No domingo eu descansei em casa."
+      },
+      {
+       "kind": "say",
+       "text": "어땠어요? é o passado de 어때요?. 같이 significa juntos."
+      },
+      {
+       "kind": "say",
+       "text": "쉬다 significa descansar. 쉬었어요 é o passado."
+      },
+      {
+       "kind": "choice",
+       "text": "O que 어땠어요? pergunta?",
+       "options": [
+        "Como está?",
+        "Como foi?",
+        "Onde foi?"
+       ],
+       "answer": 1,
+       "why": "어땠어요 está no passado."
+      },
+      {
+       "kind": "choice",
+       "text": "일요일___ 집에서 쉬었어요.",
+       "options": [
+        "에",
+        "에서",
+        "을"
+       ],
+       "answer": 0,
+       "why": "Tempo + 에."
+      },
+      {
+       "kind": "build",
+       "translation": "Ontem eu descansei em casa.",
+       "words": [
+        "어제",
+        "집에서",
+        "쉬었어요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "O filme foi bom.",
+       "words": [
+        "영화가",
+        "좋았어요."
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요! Agora você sabe falar do passado."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 9,
+   "title": "Esportes",
+   "subtitle": "Diga o que você sabe e não sabe fazer",
+   "lessons": [
+    {
+     "id": "u9l1",
+     "title": "Palavras: esportes",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Vamos aprender esportes e palavras de frequência."
+      },
+      {
+       "kind": "example",
+       "ko": "운동",
+       "translation": "exercício, esporte"
+      },
+      {
+       "kind": "example",
+       "ko": "수영",
+       "translation": "natação"
+      },
+      {
+       "kind": "example",
+       "ko": "축구",
+       "translation": "futebol"
+      },
+      {
+       "kind": "example",
+       "ko": "야구",
+       "translation": "beisebol"
+      },
+      {
+       "kind": "example",
+       "ko": "테니스",
+       "translation": "tênis"
+      },
+      {
+       "kind": "example",
+       "ko": "요가",
+       "translation": "ioga"
+      },
+      {
+       "kind": "example",
+       "ko": "잘",
+       "translation": "bem"
+      },
+      {
+       "kind": "example",
+       "ko": "매일",
+       "translation": "todo dia"
+      },
+      {
+       "kind": "example",
+       "ko": "자주",
+       "translation": "com frequência"
+      },
+      {
+       "kind": "example",
+       "ko": "가끔",
+       "translation": "às vezes"
+      },
+      {
+       "kind": "choice",
+       "text": "O que significa 축구?",
+       "options": [
+        "beisebol",
+        "futebol",
+        "natação"
+       ],
+       "answer": 1,
+       "why": "축구 é futebol. 야구 é beisebol."
+      },
+      {
+       "kind": "choice",
+       "text": "Qual palavra significa 'às vezes'?",
+       "options": [
+        "매일",
+        "자주",
+        "가끔"
+       ],
+       "answer": 2,
+       "why": "가끔 é às vezes. 자주 é com frequência."
+      },
+      {
+       "kind": "choice",
+       "text": "O que significa 잘?",
+       "options": [
+        "bem",
+        "todo dia",
+        "não"
+       ],
+       "answer": 0,
+       "why": "잘 significa bem: 잘해요, eu sou bom nisso."
+      }
+     ]
+    },
+    {
+     "id": "u9l2",
+     "title": "De... até... (부터, 까지)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "부터 significa 'a partir de' e 까지 significa 'até'. Use com horários e dias."
+      },
+      {
+       "kind": "example",
+       "ko": "월요일부터 금요일까지 일해요.",
+       "translation": "Eu trabalho de segunda a sexta."
+      },
+      {
+       "kind": "example",
+       "ko": "오늘부터 운동해요.",
+       "translation": "Começo a malhar a partir de hoje."
+      },
+      {
+       "kind": "example",
+       "ko": "일요일까지 쉬어요.",
+       "translation": "Vou descansar até domingo."
+      },
+      {
+       "kind": "choice",
+       "text": "월요일___ 수영해요. (a partir de segunda)",
+       "options": [
+        "부터",
+        "까지",
+        "에서"
+       ],
+       "answer": 0,
+       "why": "부터 significa a partir de."
+      },
+      {
+       "kind": "choice",
+       "text": "금요일___ 공부해요. (até sexta)",
+       "options": [
+        "부터",
+        "까지"
+       ],
+       "answer": 1,
+       "why": "까지 significa até."
+      },
+      {
+       "kind": "choice",
+       "text": "Qual está certa?",
+       "options": [
+        "월요일까지 금요일부터",
+        "월요일부터 금요일까지"
+       ],
+       "answer": 1,
+       "why": "Primeiro vem 부터, depois 까지."
+      },
+      {
+       "kind": "build",
+       "translation": "Eu nado de segunda a sexta.",
+       "words": [
+        "월요일부터",
+        "금요일까지",
+        "수영해요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u9l3",
+     "title": "Não conseguir (못, -지 못해요)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "못 significa 'não conseguir'. Coloque logo antes do verbo."
+      },
+      {
+       "kind": "example",
+       "ko": "저는 수영을 못해요.",
+       "translation": "Eu não sei nadar."
+      },
+      {
+       "kind": "example",
+       "ko": "오늘은 못 가요.",
+       "translation": "Hoje eu não consigo ir."
+      },
+      {
+       "kind": "say",
+       "text": "Você também pode colocar 지 못해요 no radical. Significa o mesmo, um pouco mais formal."
+      },
+      {
+       "kind": "example",
+       "ko": "축구를 하지 못해요.",
+       "translation": "Eu não sei jogar futebol."
+      },
+      {
+       "kind": "say",
+       "text": "Compare: 안 (curto de -지 않아요) significa que você não faz. 못 significa que você não consegue."
+      },
+      {
+       "kind": "example",
+       "ko": "수영을 잘해요.",
+       "translation": "Eu nado bem."
+      },
+      {
+       "kind": "choice",
+       "text": "Não consigo beber café: 커피를 ___ 마셔요.",
+       "options": [
+        "못",
+        "만",
+        "도"
+       ],
+       "answer": 0,
+       "why": "못 + verbo significa não conseguir."
+      },
+      {
+       "kind": "choice",
+       "text": "가다 → não conseguir (forma 지)",
+       "options": [
+        "가지 못해요",
+        "가 못해요",
+        "가지 못가요"
+       ],
+       "answer": 0,
+       "why": "Radical 가 + 지 못해요."
+      },
+      {
+       "kind": "choice",
+       "text": "Qual significa 'Eu não sei nadar'?",
+       "options": [
+        "수영을 안 해요",
+        "수영을 못해요"
+       ],
+       "answer": 1,
+       "why": "못 significa não conseguir. 안 significa não fazer."
+      },
+      {
+       "kind": "build",
+       "translation": "Eu não sei jogar tênis.",
+       "words": [
+        "저는",
+        "테니스를",
+        "못해요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u9l4",
+     "title": "Juntando tudo: esportes favoritos",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Hana e Minsu falam de esportes. Ouça."
+      },
+      {
+       "kind": "example",
+       "ko": "무슨 운동을 좋아해요?",
+       "translation": "De que esportes você gosta?"
+      },
+      {
+       "kind": "example",
+       "ko": "축구를 좋아해요. 매일 해요.",
+       "translation": "Eu gosto de futebol. Jogo todo dia."
+      },
+      {
+       "kind": "example",
+       "ko": "수영도 해요?",
+       "translation": "Você também nada?"
+      },
+      {
+       "kind": "example",
+       "ko": "아니요, 저는 수영을 못해요.",
+       "translation": "Não, eu não sei nadar."
+      },
+      {
+       "kind": "example",
+       "ko": "저는 수영을 잘해요. 월요일부터 금요일까지 수영장에 가요.",
+       "translation": "Eu nado bem. Vou à piscina de segunda a sexta."
+      },
+      {
+       "kind": "say",
+       "text": "무슨 significa 'que tipo de'. 수영장 é piscina."
+      },
+      {
+       "kind": "choice",
+       "text": "O que significa 잘해요?",
+       "options": [
+        "Sou ruim nisso",
+        "Sou bom nisso",
+        "Eu não faço"
+       ],
+       "answer": 1,
+       "why": "잘 + 해요 significa que você faz bem."
+      },
+      {
+       "kind": "choice",
+       "text": "저는 야구를 ___ 해요. (não conseguir)",
+       "options": [
+        "못",
+        "잘",
+        "만"
+       ],
+       "answer": 0,
+       "why": "못 significa não conseguir."
+      },
+      {
+       "kind": "build",
+       "translation": "Eu jogo futebol todo dia.",
+       "words": [
+        "저는",
+        "매일",
+        "축구를",
+        "해요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Hoje eu não consigo ir.",
+       "words": [
+        "오늘은",
+        "못",
+        "가요."
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요! Agora você sabe falar de esportes."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 10,
+   "title": "Fazendo planos",
+   "subtitle": "Proponha programas aos amigos",
+   "lessons": [
+    {
+     "id": "u10l1",
+     "title": "Palavras: contar e as horas",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Este é o sistema de números nativo coreano. Use para contar coisas e para as horas."
+      },
+      {
+       "kind": "example",
+       "ko": "하나, 둘, 셋",
+       "translation": "1, 2, 3"
+      },
+      {
+       "kind": "example",
+       "ko": "넷, 다섯, 여섯",
+       "translation": "4, 5, 6"
+      },
+      {
+       "kind": "example",
+       "ko": "일곱, 여덟, 아홉, 열",
+       "translation": "7, 8, 9, 10"
+      },
+      {
+       "kind": "say",
+       "text": "Antes de 시 (horas), alguns encurtam: 한 시, 두 시, 세 시, 네 시."
+      },
+      {
+       "kind": "example",
+       "ko": "한 시",
+       "translation": "1 hora"
+      },
+      {
+       "kind": "example",
+       "ko": "세 시",
+       "translation": "3 horas"
+      },
+      {
+       "kind": "example",
+       "ko": "열두 시",
+       "translation": "12 horas"
+      },
+      {
+       "kind": "say",
+       "text": "Os minutos usam o outro sistema: 삼십 분 são 30 minutos."
+      },
+      {
+       "kind": "example",
+       "ko": "두 시 삼십 분",
+       "translation": "2:30"
+      },
+      {
+       "kind": "example",
+       "ko": "점심",
+       "translation": "almoço"
+      },
+      {
+       "kind": "example",
+       "ko": "저녁",
+       "translation": "jantar, noite"
+      },
+      {
+       "kind": "example",
+       "ko": "같이",
+       "translation": "juntos"
+      },
+      {
+       "kind": "choice",
+       "text": "Como se diz 4 horas?",
+       "options": [
+        "사 시",
+        "네 시",
+        "넷 시"
+       ],
+       "answer": 1,
+       "why": "넷 vira 네 antes de 시."
+      },
+      {
+       "kind": "choice",
+       "text": "Que número é 다섯?",
+       "options": [
+        "4",
+        "5",
+        "6"
+       ],
+       "answer": 1,
+       "why": "다섯 é 5."
+      },
+      {
+       "kind": "choice",
+       "text": "Como se diz 7h30?",
+       "options": [
+        "일곱 시 삼십 분",
+        "칠 시 서른 분"
+       ],
+       "answer": 0,
+       "why": "As horas usam números nativos; os minutos usam 일, 이, 삼."
+      }
+     ]
+    },
+    {
+     "id": "u10l2",
+     "title": "Vamos? Vamos lá! (-을까요, -읍시다)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "-을까요? significa 'vamos...?'. Use para sugerir algo."
+      },
+      {
+       "kind": "say",
+       "text": "Depois de consoante coloque 을까요. Depois de vogal coloque ㄹ까요."
+      },
+      {
+       "kind": "example",
+       "ko": "같이 먹을까요?",
+       "translation": "Vamos comer juntos?"
+      },
+      {
+       "kind": "example",
+       "ko": "영화를 볼까요?",
+       "translation": "Vamos ver um filme?"
+      },
+      {
+       "kind": "say",
+       "text": "-읍시다 significa 'vamos'. Depois de vogal é ㅂ시다."
+      },
+      {
+       "kind": "example",
+       "ko": "갑시다!",
+       "translation": "Vamos!"
+      },
+      {
+       "kind": "example",
+       "ko": "점심을 먹읍시다.",
+       "translation": "Vamos almoçar."
+      },
+      {
+       "kind": "say",
+       "text": "-읍시다 pode soar mandão com pessoas mais velhas. Com elas, use -을까요?."
+      },
+      {
+       "kind": "choice",
+       "text": "마시다 → vamos...?",
+       "options": [
+        "마실까요",
+        "마시을까요",
+        "마셔까요"
+       ],
+       "answer": 0,
+       "why": "Radical em vogal, então ㄹ까요: 마실까요."
+      },
+      {
+       "kind": "choice",
+       "text": "읽다 → vamos...?",
+       "options": [
+        "읽ㄹ까요",
+        "읽을까요"
+       ],
+       "answer": 1,
+       "why": "Radical em consoante, então 을까요."
+      },
+      {
+       "kind": "choice",
+       "text": "만나다 → vamos",
+       "options": [
+        "만납시다",
+        "만나읍시다"
+       ],
+       "answer": 0,
+       "why": "Radical em vogal, então ㅂ시다."
+      },
+      {
+       "kind": "build",
+       "translation": "Vamos jantar juntos?",
+       "words": [
+        "같이",
+        "저녁을",
+        "먹을까요?"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u10l3",
+     "title": "E depois (-고)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "-고 junta duas ações ou descrições, como 'e'. Coloque no radical."
+      },
+      {
+       "kind": "example",
+       "ko": "밥을 먹고 영화를 봐요.",
+       "translation": "Eu como e (depois) assisto um filme."
+      },
+      {
+       "kind": "example",
+       "ko": "날씨가 좋고 따뜻해요.",
+       "translation": "O tempo está bom e ameno."
+      },
+      {
+       "kind": "example",
+       "ko": "숙제를 하고 잤어요.",
+       "translation": "Fiz a lição de casa e dormi."
+      },
+      {
+       "kind": "say",
+       "text": "O tempo verbal fica só no último verbo."
+      },
+      {
+       "kind": "choice",
+       "text": "Eu comi e bebi. Qual está certa?",
+       "options": [
+        "먹고 마셨어요",
+        "먹었어요고 마셨어요"
+       ],
+       "answer": 0,
+       "why": "O passado fica no último verbo: 먹고 마셨어요."
+      },
+      {
+       "kind": "choice",
+       "text": "공부하다 + 자다",
+       "options": [
+        "공부하고 자요",
+        "공부해고 자요"
+       ],
+       "answer": 0,
+       "why": "Radical 공부하 + 고."
+      },
+      {
+       "kind": "choice",
+       "text": "O que significa 크고 좋아요?",
+       "options": [
+        "É grande, mas ruim",
+        "É grande e bom",
+        "Não é grande"
+       ],
+       "answer": 1,
+       "why": "-고 significa e."
+      },
+      {
+       "kind": "build",
+       "translation": "Vou almoçar e tomar um café.",
+       "words": [
+        "점심을",
+        "먹고",
+        "커피를",
+        "마셔요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u10l4",
+     "title": "Juntando tudo: fazendo planos",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "O Minsu convida a Hana para almoçar. Ouça."
+      },
+      {
+       "kind": "example",
+       "ko": "하나 씨, 내일 같이 점심을 먹을까요?",
+       "translation": "Hana, vamos almoçar juntos amanhã?"
+      },
+      {
+       "kind": "example",
+       "ko": "좋아요! 몇 시에 만날까요?",
+       "translation": "Claro! Que horas a gente se encontra?"
+      },
+      {
+       "kind": "example",
+       "ko": "열두 시에 만납시다.",
+       "translation": "Vamos nos encontrar ao meio-dia."
+      },
+      {
+       "kind": "example",
+       "ko": "점심을 먹고 커피도 마실까요?",
+       "translation": "Vamos almoçar e depois tomar um café também?"
+      },
+      {
+       "kind": "example",
+       "ko": "네, 좋아요. 내일 봐요!",
+       "translation": "Sim, ótimo. Até amanhã!"
+      },
+      {
+       "kind": "say",
+       "text": "몇 시 significa 'que horas'. 내일 봐요 significa 'até amanhã'."
+      },
+      {
+       "kind": "choice",
+       "text": "Como perguntar 'Que horas?'",
+       "options": [
+        "몇 시예요?",
+        "무슨 시예요?",
+        "어디 시예요?"
+       ],
+       "answer": 0,
+       "why": "몇 significa quantos: 몇 시 é que horas."
+      },
+      {
+       "kind": "choice",
+       "text": "가다 → vamos",
+       "options": [
+        "갑시다",
+        "가읍시다",
+        "갈시다"
+       ],
+       "answer": 0,
+       "why": "Radical em vogal, então ㅂ시다."
+      },
+      {
+       "kind": "build",
+       "translation": "Vamos nos encontrar às 3.",
+       "words": [
+        "세",
+        "시에",
+        "만납시다."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Vamos ver um filme juntos?",
+       "words": [
+        "같이",
+        "영화를",
+        "볼까요?"
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요! Agora você sabe fazer planos em coreano."
+      }
+     ]
+    },
+    {
+     "id": "u10r",
+     "title": "Revisão: unidades 6 a 10",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Vamos revisar as unidades 6 a 10."
+      },
+      {
+       "kind": "choice",
+       "text": "동생___ 선물을 줘요.",
+       "options": [
+        "한테",
+        "에서",
+        "부터"
+       ],
+       "answer": 0,
+       "why": "한테 significa 'para' uma pessoa."
+      },
+      {
+       "kind": "choice",
+       "text": "저는 커피___ 마셔요. (só)",
+       "options": [
+        "만",
+        "도",
+        "까지"
+       ],
+       "answer": 0,
+       "why": "만 significa só."
+      },
+      {
+       "kind": "choice",
+       "text": "고양이가 침대 아래___ 있어요.",
+       "options": [
+        "에",
+        "에서"
+       ],
+       "answer": 0,
+       "why": "Estar em algum lugar: 에."
+      },
+      {
+       "kind": "choice",
+       "text": "도서관___ 공부해요.",
+       "options": [
+        "에",
+        "에서"
+       ],
+       "answer": 1,
+       "why": "Uma ação em um lugar: 에서."
+      },
+      {
+       "kind": "choice",
+       "text": "보다 → passado",
+       "options": [
+        "봤어요",
+        "보었어요",
+        "봐았어요"
+       ],
+       "answer": 0,
+       "why": "보 + 았어요 encurta para 봤어요."
+      },
+      {
+       "kind": "choice",
+       "text": "월요일___ 금요일까지",
+       "options": [
+        "부터",
+        "에",
+        "만"
+       ],
+       "answer": 0,
+       "why": "부터 ... 까지: de ... até."
+      },
+      {
+       "kind": "choice",
+       "text": "Eu não sei nadar: 수영을 ___",
+       "options": [
+        "못해요",
+        "안해요",
+        "잘해요"
+       ],
+       "answer": 0,
+       "why": "못 significa não conseguir."
+      },
+      {
+       "kind": "choice",
+       "text": "먹다 → vamos...?",
+       "options": [
+        "먹을까요",
+        "먹ㄹ까요"
+       ],
+       "answer": 0,
+       "why": "Radical em consoante, então 을까요."
+      },
+      {
+       "kind": "build",
+       "translation": "No sábado eu encontrei um amigo.",
+       "words": [
+        "토요일에",
+        "친구를",
+        "만났어요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Vamos comer e depois ver um filme?",
+       "words": [
+        "밥을",
+        "먹고",
+        "영화를",
+        "볼까요?"
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "대단해요! Você terminou dez unidades. O Gochi está muito orgulhoso."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
