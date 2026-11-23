@@ -43859,6 +43859,216 @@
           }
         }
       }
+    },
+    "Before you continue" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Antes de continuar"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Antes de continuar"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avant de continuer"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bevor du weitermachst"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Antes de continuar"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "続ける前に"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "继续之前"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "繼續之前"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sebelum lanjut"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ก่อนดำเนินการต่อ"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trước khi tiếp tục"
+          }
+        }
+      }
+    },
+    "Not now" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ahora no"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ahora no"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pas maintenant"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nicht jetzt"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Agora não"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "今はしない"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "暂不"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "暫不"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nanti saja"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ไว้ทีหลัง"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Để sau"
+          }
+        }
+      }
+    },
+    "To make this for you, Gochimi sends the text of your saved mistakes to our server. A third-party AI provider (Anthropic) writes the response and sends it back. We don't store your text." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Para crear esto para ti, Gochimi envía el texto de tus errores guardados a nuestro servidor. Un proveedor externo de IA (Anthropic) escribe la respuesta y la devuelve. No guardamos tu texto."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Para crear esto para ti, Gochimi envía el texto de tus errores guardados a nuestro servidor. Un proveedor externo de IA (Anthropic) escribe la respuesta y la devuelve. No guardamos tu texto."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pour créer ceci, Gochimi envoie le texte de vos erreurs enregistrées à notre serveur. Un fournisseur d’IA tiers (Anthropic) rédige la réponse et la renvoie. Nous ne conservons pas votre texte."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dafür sendet Gochimi den Text deiner gespeicherten Fehler an unseren Server. Ein externer KI-Anbieter (Anthropic) schreibt die Antwort und schickt sie zurück. Wir speichern deinen Text nicht."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Para criar isso para você, o Gochimi envia o texto dos seus erros salvos ao nosso servidor. Um provedor de IA externo (Anthropic) escreve a resposta e a envia de volta. Não armazenamos o seu texto."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "これを作るために、Gochimiは保存した間違いのテキストを当社のサーバーに送ります。外部のAIプロバイダー（Anthropic）が回答を作成して返します。あなたのテキストは保存しません。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "为了给你生成内容，Gochimi 会把你保存的错题文本发送到我们的服务器。由第三方 AI 提供商（Anthropic）撰写回复并返回。我们不会保存你的文本。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "為了幫你產生內容，Gochimi 會把你儲存的錯題文字傳送到我們的伺服器。由第三方 AI 供應商（Anthropic）撰寫回覆並傳回。我們不會儲存你的文字。"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Untuk membuatnya, Gochimi mengirim teks kesalahan yang kamu simpan ke server kami. Penyedia AI pihak ketiga (Anthropic) menulis jawabannya lalu mengirimkannya kembali. Kami tidak menyimpan teksmu."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เพื่อสร้างสิ่งนี้ให้คุณ Gochimi จะส่งข้อความข้อผิดที่คุณบันทึกไว้ไปยังเซิร์ฟเวอร์ของเรา ผู้ให้บริการ AI ภายนอก (Anthropic) จะเขียนคำตอบแล้วส่งกลับมา เราไม่เก็บข้อความของคุณ"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Để tạo nội dung này, Gochimi gửi văn bản các lỗi bạn đã lưu đến máy chủ của chúng tôi. Một nhà cung cấp AI bên thứ ba (Anthropic) viết câu trả lời và gửi lại. Chúng tôi không lưu văn bản của bạn."
+          }
+        }
+      }
     }
   },
   "version" : "1.3"
