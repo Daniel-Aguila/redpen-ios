@@ -5,15 +5,19 @@ struct ExerciseCardView: View {
     let exercise: Exercise
     let xp: Int
     let onFinish: (Rating) -> Void
+    var onUpsell: () -> Void = {}
 
+    @Environment(ProStore.self) private var store
+    @FocusState private var fieldFocused: Bool
     @State private var picked: String? = nil
     @State private var revealed: Bool = false
     @State private var typed: String = ""
     @State private var result: AnswerResult? = nil
-    @FocusState private var fieldFocused: Bool
+    @State private var showExplain = false
     @State private var hops = 0
+    @State private var pendingPro: (() -> Void)?
     @State private var wobbles = 0
-    
+
     @AppStorage("hideGochi") private var hideGochi = false
 
     private var instruction: String {
@@ -32,35 +36,44 @@ struct ExerciseCardView: View {
     }
 
     var body: some View {
-        VStack(spacing: 24) {
-            if !hideGochi {
-                GochiView(xp: xp, hop: hops, wobble: wobbles)
-                    .frame(height: 72)
-            }
-            VStack(spacing: 12) {
-                Text(instruction)
-                    .font(.subheadline.weight(.semibold))
-                    .foregroundStyle(.secondary)
-                Text(exercise.prompt)
-                    .font(.title2.weight(.semibold))
-                    .multilineTextAlignment(.center)
-                    .frame(maxWidth: .infinity)
-                if let speechHint {
-                    Label(speechHint, systemImage: exercise.correction.audience == .unknown
-                          ? "person.2.fill" : exercise.correction.audience.symbol)
-                        .font(.footnote.weight(.semibold))
-                        .foregroundStyle(exercise.correction.type.color)
+        ScrollView {
+            VStack(spacing: 24) {
+                if !hideGochi {
+                    GochiView(xp: xp, hop: hops, wobble: wobbles)
+                        .frame(height: 72)
+                }
+                VStack(spacing: 12) {
+                    Text(instruction)
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(.secondary)
+                    Text(exercise.prompt)
+                        .font(.title2.weight(.semibold))
+                        .multilineTextAlignment(.center)
+                        .frame(maxWidth: .infinity)
+                    if let speechHint {
+                        Label(speechHint, systemImage: exercise.correction.audience == .unknown
+                              ? "person.2.fill" : exercise.correction.audience.symbol)
+                            .font(.footnote.weight(.semibold))
+                            .foregroundStyle(exercise.correction.type.color)
+                    }
+                }
+                .card()
+
+                switch exercise.kind {
+                case .fillGap: choicesView
+                case .flashcard: flashcardView
+                case .typeFix: typeFixView
                 }
             }
-            .card()
-
-            switch exercise.kind {
-            case .fillGap: choicesView
-            case .flashcard: flashcardView
-            case .typeFix: typeFixView
-            }
+            .padding()
         }
-        .padding()
+        .scrollBounceBehavior(.basedOnSize)
+        .scrollDismissesKeyboard(.interactively)
+        .sheet(isPresented: $showExplain) {
+            ExplainSheet(correction: exercise.correction)
+                .presentationDetents([.medium, .large])
+        }
+        .proConsent($pendingPro)
         .sensoryFeedback(trigger: picked) { _, newValue in
             guard let newValue else { return nil }
             return newValue == exercise.answer ? .success : .error
@@ -76,14 +89,25 @@ struct ExerciseCardView: View {
         .sensoryFeedback(.impact(weight: .light), trigger: revealed)
         .onChange(of: picked) { _, newValue in
             guard let newValue else { return }
-            if newValue == exercise.answer { hops += 1} else { wobbles += 1}
+            if newValue == exercise.answer { hops += 1 } else { wobbles += 1 }
         }
-        .onChange(of: result) {_, newValue in
+        .onChange(of: result) { _, newValue in
             switch newValue {
             case .correct: hops += 1
             case .wrong: wobbles += 1
             default: break
             }
+        }
+    }
+    
+    private func withConsent(_ run: @escaping () -> Void) {
+        if ProConsent.agreed { run() } else { pendingPro = run }
+    }
+
+    private var explainButton: some View {
+        ExplainButtonCard(isPro: store.tier >= .pro,
+                          hasSaved: exercise.correction.savedExplanation != nil) {
+            if store.tier >= .pro { withConsent { showExplain = true } } else { onUpsell() }
         }
     }
 
@@ -161,8 +185,12 @@ struct ExerciseCardView: View {
                 .multilineTextAlignment(.center)
         }
 
+        if result != .correct {
+            explainButton
+        }
+
         if result != .correct, let note = exercise.correction.type.note {
-            DisclosureGroup("How it works") {
+            DisclosureGroup("The rule") {
                 GrammarNoteView(note: note, tint: exercise.correction.type.color)
                     .padding(.top, 8)
             }
@@ -251,8 +279,12 @@ struct ExerciseCardView: View {
                 }
                 .padding(.top, 4)
 
+                if picked != exercise.answer {
+                    explainButton
+                }
+
                 if picked != exercise.answer, let note = exercise.correction.type.note {
-                    DisclosureGroup("How it works") {
+                    DisclosureGroup("The rule") {
                         GrammarNoteView(note: note, tint: exercise.correction.type.color)
                             .padding(.top, 8)
                     }
@@ -307,7 +339,7 @@ struct ExerciseCardView: View {
             }
         }
     }
-    
+
     private var speechHint: String? {
         guard exercise.correction.type == .speechLevel else { return nil }
         let who = exercise.correction.audience
@@ -376,4 +408,6 @@ struct ExerciseCardView: View {
         print(rating)
     }
     .modelContainer(for: Correction.self, inMemory: true)
+    .environment(ProStore())
+    .environment(ProgressStore())
 }

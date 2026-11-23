@@ -14,20 +14,34 @@ struct PracticeView: View {
     @Query(sort: \Folder.createdAt) private var folders: [Folder]
     @Environment(ProgressStore.self) private var progress
     @Environment(\.requestReview) private var requestReview
+    @Environment(ProStore.self) private var store
+    @Environment(Wallet.self) private var wallet
     @AppStorage("reviewAskedVersion") private var reviewAskedVersion = ""
     @AppStorage("hideGochi") private var hideGochi = false
 
     @State private var scope: PracticeScope = .all
     @State private var session: [Exercise] = []
     @State private var index = 0
+    @State private var pendingPro: (() -> Void)?
     @State private var correctCount = 0
     @State private var sessionXP = 0
+    @State private var sessionTangerines = 0
     @State private var showingChart = false
     @State private var doneFlips = 0
-    
+    @State private var paywallReady = false
+    @State private var showPaywall = false
+    @State private var showProPaywall = false
+    @State private var showShop = false
+    @State private var showGochiPractice = false
+    @State private var showDiary = false
+    @State private var practiceToRun: SavedPractice?
+    @State private var redoCandidate: SavedPractice?
+
     @AppStorage("dailyGoal") private var dailyGoal = 10
     @State private var showGoalBanner = false
     @State private var goalFlips = 0
+
+    private var isPro: Bool { store.tier >= .pro }
 
     private var pool: [Correction] {
         corrections.filter { c in
@@ -38,12 +52,15 @@ struct PracticeView: View {
             }
         }
     }
-    
+
+    private var aiMistakes: [GochiAI.MistakeInput] {
+        Scheduler.order(corrections, all: corrections, smart: true).prefix(10).map(\.aiInput)
+    }
+
     private var due: [Correction] {
         pool.filter { $0.dueDate <= .now }
     }
-    
-    
+
     private var scopeFolder: Folder? {
         if case .folder(let f) = scope { return f }
         return nil
@@ -73,12 +90,12 @@ struct PracticeView: View {
                 } else if index < session.count {
                     ProgressView(value: Double(index), total: Double(session.count))
                         .padding()
-                    Spacer()
                     ExerciseCardView(exercise: session[index], xp: progress.xp) { rating in
                         finish(rating)
+                    } onUpsell: {
+                        showProPaywall = true
                     }
                     .id(session[index].id)
-                    Spacer()
                 } else {
                     doneView
                 }
@@ -127,6 +144,34 @@ struct PracticeView: View {
                 HangulChartView()
                     .presentationDetents([.medium, .large])
             }
+            .sheet(isPresented: $showPaywall, onDismiss: {
+                PaywallPolicy.recordClosed(tier: store.tier)
+            }) {
+                PaywallView()
+            }
+            .sheet(isPresented: $showProPaywall) {
+                PaywallView(startOn: .pro)
+            }
+            .sheet(isPresented: $showShop) {
+                ShopView()
+            }
+            .fullScreenCover(isPresented: $showGochiPractice) {
+                GochiPracticeView(mistakes: aiMistakes, saved: practiceToRun)
+            }
+            .proConsent($pendingPro)
+            .confirmationDialog("Your mistakes are mostly the same as last time",
+                                isPresented: Binding(get: { redoCandidate != nil }, set: { if !$0 { redoCandidate = nil } }),
+                                titleVisibility: .visible,
+                                presenting: redoCandidate) { item in
+                Button("Redo last practice") {
+                    practiceToRun = item
+                    showGochiPractice = true
+                }
+                Button("New practice") {
+                    practiceToRun = nil
+                    showGochiPractice = true
+                }
+            }
             .onChange(of: folders) {
                 if case .folder(let f) = scope, !folders.contains(f) {
                     scope = .all
@@ -140,6 +185,13 @@ struct PracticeView: View {
             VStack(alignment: .leading, spacing: 20) {
                 PageTitle(marked: "연습", subtitle: "Practice your mistakes")
                     .padding(.leading, 20)
+
+                NavigationLink {
+                    CourseView()
+                } label: {
+                    LessonsEntryCard()
+                }
+                .buttonStyle(.plain)
 
                 VStack(spacing: 16) {
                     if !folders.isEmpty {
@@ -221,6 +273,42 @@ struct PracticeView: View {
                 }
                 .frame(maxWidth: .infinity)
                 .card()
+
+                if !corrections.isEmpty {
+                    ProFeatureCard(title: "Gochi's practice",
+                                   subtitle: isPro ? "Exercises and a story from your mistakes" : "Personal practice with Pro",
+                                   symbol: "wand.and.stars",
+                                   isPro: isPro) {
+                        if isPro { withConsent { openGochiPractice() } } else { showProPaywall = true }
+                    }
+                }
+
+                ProFeatureCard(title: "Gochi's diary",
+                               subtitle: isPro ? "Write in Korean, Gochi corrects it" : "Personal corrections with Pro",
+                               symbol: "book.pages",
+                               isPro: isPro) {
+                    if isPro { withConsent { showDiary = true } } else { showProPaywall = true }
+                }
+
+                if isPro {
+                    NavigationLink {
+                        PracticeHistoryView()
+                    } label: {
+                        HStack(spacing: 12) {
+                            Image(systemName: "books.vertical.fill")
+                                .foregroundStyle(Color.gochiRed)
+                            Text("My stories and past practice")
+                                .font(.subheadline.weight(.semibold))
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                                .font(.caption.weight(.semibold))
+                                .foregroundStyle(.secondary)
+                        }
+                        .padding()
+                        .softCard()
+                    }
+                    .buttonStyle(.plain)
+                }
             }
             .padding()
         }
@@ -244,26 +332,37 @@ struct PracticeView: View {
             Text("\(correctCount) / \(session.count) correct")
                 .font(.title3)
                 .foregroundStyle(.secondary)
-            Text("+\(sessionXP) XP")
-                .font(.headline)
-                .foregroundStyle(.white)
-                .padding(.horizontal, 16)
-                .padding(.vertical, 8)
-                .background(Color.taegeukBlue, in: Capsule())
 
-            if correctCount < session.count {
-                NavigationLink {
-                    ProRoadmapView()
-                } label: {
-                    Label("Explanations for the ones you missed · Pro, coming soon",
-                          systemImage: "sparkles")
-                        .font(.footnote)
-                        .multilineTextAlignment(.center)
+            HStack(spacing: 8) {
+                Text("+\(sessionXP) XP")
+                    .font(.headline)
+                    .foregroundStyle(.white)
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 8)
+                    .background(Color.taegeukBlue, in: Capsule())
+                if sessionTangerines > 0 {
+                    Button {
+                        showShop = true
+                    } label: {
+                        Text("+\(sessionTangerines) 🍊")
+                            .font(.headline)
+                            .foregroundStyle(.white)
+                            .padding(.horizontal, 16)
+                            .padding(.vertical, 8)
+                            .background(Color.orange, in: Capsule())
+                    }
+                    .buttonStyle(PressableStyle())
+                    .accessibilityLabel("Open shop, earned \(sessionTangerines) tangerines")
                 }
             }
 
             Button {
                 session = []
+                if paywallReady {
+                    paywallReady = false
+                    PaywallPolicy.recordShown()
+                    showPaywall = true
+                }
             } label: {
                 Text("Done")
                     .frame(maxWidth: .infinity)
@@ -278,10 +377,26 @@ struct PracticeView: View {
     }
 
     private func start(_ items: [Correction]) {
-        session = items.shuffled().prefix(10).map { ExerciseGenerator.make(from: $0) }
+        let smart = store.tier >= .plus
+        let ordered = smart ? Scheduler.order(items, all: corrections, smart: true) : items.shuffled()
+        session = ordered.prefix(10).shuffled().map { ExerciseGenerator.make(from: $0) }
         index = 0
         correctCount = 0
         sessionXP = 0
+        sessionTangerines = 0
+    }
+    
+    private func withConsent(_ run: @escaping () -> Void) {
+        if ProConsent.agreed { run() } else { pendingPro = run }
+    }
+
+    private func openGochiPractice() {
+        if let match = PracticeLibrary.shared.similarRecent(to: aiMistakes.map(\.key)) {
+            redoCandidate = match
+        } else {
+            practiceToRun = nil
+            showGochiPractice = true
+        }
     }
 
     private func finish(_ rating: Rating) {
@@ -291,7 +406,13 @@ struct PracticeView: View {
             Scheduler.apply(rating, to: correction)
         }
         progress.countAnswer()
-        if progress.todayCount == dailyGoal { celebrateGoal() }
+        if wasDue {
+            sessionTangerines += wallet.earn(rating == .again ? Reward.wrongDue : Reward.correctDue)
+        }
+        if progress.todayCount == dailyGoal {
+            celebrateGoal()
+            sessionTangerines += wallet.earn(Reward.dailyGoal)
+        }
 
         let gained: Int
         if wasDue {
@@ -306,12 +427,17 @@ struct PracticeView: View {
         index += 1
 
         if index == session.count {
-            progress.recordPracticeDay()
-            askForReviewIfHappy()
+            let firstToday = !progress.practicedToday
+            progress.recordPracticeDay(freezeAllowance: store.tier >= .plus ? ProgressStore.plusFreezesPerMonth : 0)
+            if firstToday {
+                sessionTangerines += wallet.earn(Reward.streakBonus(progress.streak))
+            }
+            let askedForReview = askForReviewIfHappy()
+            let goodSession = correctCount * 10 >= session.count * 7
+            paywallReady = !askedForReview && goodSession && PaywallPolicy.canAutoShow(tier: store.tier)
         }
     }
-    
-    
+
     private func celebrateGoal() {
         withAnimation(.spring(duration: 0.4)) { showGoalBanner = true }
         Task {
@@ -321,17 +447,19 @@ struct PracticeView: View {
             withAnimation(.easeOut) { showGoalBanner = false }
         }
     }
-    
-    private func askForReviewIfHappy() {
+
+    @discardableResult
+    private func askForReviewIfHappy() -> Bool {
         let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
         let goodSession = correctCount * 10 >= session.count * 7
-        guard reviewAskedVersion != version, progress.streak >= 3, goodSession else { return }
+        guard reviewAskedVersion != version, progress.streak >= 3, goodSession else { return false }
 
         reviewAskedVersion = version
         Task {
             try? await Task.sleep(for: .seconds(1.5))
             requestReview()
         }
+        return true
     }
 }
 
@@ -362,4 +490,6 @@ struct PracticeView: View {
     return PracticeView()
         .modelContainer(container)
         .environment(ProgressStore())
+        .environment(ProStore())
+        .environment(Wallet())
 }

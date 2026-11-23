@@ -10,8 +10,22 @@ import Charts
 struct StatsView: View {
     @Query private var corrections: [Correction]
     @Environment(ProgressStore.self) private var progress
+    @Environment(ProStore.self) private var store
     @State private var gochiTaps = 0
+    @State private var showPaywall = false
     @AppStorage("hideGochi") private var hideGochi = false
+
+    private struct TypeMastery: Identifiable {
+        let type: MistakeType
+        let total: Int
+        let mastered: Int
+        var id: MistakeType { type }
+        var ratio: Double { total == 0 ? 0 : Double(mastered) / Double(total) }
+    }
+
+    private var isPlus: Bool { store.tier >= .plus }
+
+    private var freezeAllowance: Int { isPlus ? ProgressStore.plusFreezesPerMonth : 0 }
 
     private var countsByType: [(type: MistakeType, count: Int)] {
         MistakeType.allCases
@@ -25,7 +39,31 @@ struct StatsView: View {
     }
 
     private var currentStreak: Int {
-        DailyProgress.currentStreak(streak: progress.streak, lastPracticeDay: progress.lastPracticeDay)
+        progress.streakIsAlive(freezeAllowance: freezeAllowance) ? progress.streak : 0
+    }
+
+    private var mastery: [TypeMastery] {
+        MistakeType.allCases
+            .map { type in
+                let ofType = corrections.filter { $0.type == type }
+                return TypeMastery(type: type, total: ofType.count,
+                                   mastered: ofType.filter(Scheduler.isMastered).count)
+            }
+            .filter { $0.total > 0 }
+            .sorted { $0.ratio < $1.ratio }
+    }
+
+    private var upcoming: [(day: Date, count: Int)] {
+        let calendar = Calendar.current
+        let today = calendar.startOfDay(for: .now)
+        return (0..<7).map { offset in
+            let day = calendar.date(byAdding: .day, value: offset, to: today) ?? today
+            let count = corrections.filter { c in
+                let due = calendar.startOfDay(for: c.dueDate)
+                return offset == 0 ? due <= day : due == day
+            }.count
+            return (day, count)
+        }
     }
 
     var body: some View {
@@ -49,36 +87,19 @@ struct StatsView: View {
                                      symbol: "checkmark.seal.fill", color: .green)
                         }
 
-                        if let top = countsByType.first {
+                        if let top = countsByType.first,
+                           countsByType.count == 1 || top.count > countsByType[1].count {
                             topMistake(top.type, count: top.count)
                         }
 
-                        VStack(alignment: .leading, spacing: 12) {
-                            Text("Mistakes by type")
-                                .font(.headline)
-                            Chart(countsByType, id: \.type) { item in
-                                BarMark(
-                                    x: .value("Count", item.count),
-                                    y: .value("Type", item.type.label)
-                                )
-                                .foregroundStyle(item.type.color.gradient)
-                                .cornerRadius(6)
-                                .annotation(position: .overlay, alignment: .trailing) {
-                                    Text("\(item.count)")
-                                        .font(.caption.weight(.bold))
-                                        .foregroundStyle(.white)
-                                        .padding(.trailing, 6)
-                                }
-                            }
-                            .chartXAxis(.hidden)
-                            .chartYAxis {
-                                AxisMarks { _ in
-                                    AxisValueLabel()
-                                }
-                            }
-                            .frame(height: CGFloat(countsByType.count) * 36)
+                        byTypeCard
+
+                        if isPlus {
+                            upcomingCard
+                            masteryCard
+                        } else {
+                            lockedCard
                         }
-                        .card()
                     }
                 }
                 .padding()
@@ -91,6 +112,9 @@ struct StatsView: View {
                 ToolbarItem(placement: .principal) {
                     Text("")
                 }
+            }
+            .sheet(isPresented: $showPaywall) {
+                PaywallView()
             }
         }
     }
@@ -141,9 +165,138 @@ struct StatsView: View {
                 Text("day streak")
                     .font(.caption2)
                     .foregroundStyle(.secondary)
+                if isPlus {
+                    Label("\(progress.freezesLeft(allowance: freezeAllowance)) freezes", systemImage: "snowflake")
+                        .font(.caption2.weight(.semibold))
+                        .foregroundStyle(.cyan)
+                }
             }
         }
         .card()
+    }
+
+    private var byTypeCard: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text("Mistakes by type")
+                .font(.headline)
+            Chart(countsByType, id: \.type) { item in
+                BarMark(
+                    x: .value("Count", item.count),
+                    y: .value("Type", item.type.label)
+                )
+                .foregroundStyle(item.type.color.gradient)
+                .cornerRadius(6)
+                .annotation(position: .overlay, alignment: .trailing) {
+                    Text("\(item.count)")
+                        .font(.caption.weight(.bold))
+                        .foregroundStyle(.white)
+                        .padding(.trailing, 6)
+                }
+            }
+            .chartXAxis(.hidden)
+            .chartYAxis {
+                AxisMarks { _ in
+                    AxisValueLabel()
+                }
+            }
+            .frame(height: CGFloat(countsByType.count) * 36)
+        }
+        .card()
+    }
+
+    private var upcomingCard: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack {
+                Text("Coming up")
+                    .font(.headline)
+                Spacer()
+                Text("\(upcoming.map(\.count).reduce(0, +)) this week")
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+            }
+            Chart(upcoming, id: \.day) { item in
+                BarMark(
+                    x: .value("Day", item.day, unit: .day),
+                    y: .value("Reviews", item.count),
+                    width: .ratio(0.5)
+                )
+                .foregroundStyle(Color.gochiRed.gradient)
+                .cornerRadius(4)
+                .annotation(position: .top) {
+                    if item.count > 0 {
+                        Text("\(item.count)")
+                            .font(.caption2.weight(.bold))
+                            .foregroundStyle(.secondary)
+                    }
+                }
+            }
+            .chartXAxis {
+                AxisMarks(values: .stride(by: .day)) { _ in
+                    AxisValueLabel(format: .dateTime.weekday(.narrow), centered: true)
+                }
+            }
+            .chartYAxis(.hidden)
+            .frame(height: 120)
+        }
+        .card()
+    }
+
+    private var masteryCard: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text("Needs work")
+                .font(.headline)
+            ForEach(mastery.prefix(4)) { item in
+                VStack(alignment: .leading, spacing: 4) {
+                    HStack {
+                        Image(systemName: item.type.symbol)
+                            .foregroundStyle(item.type.color)
+                            .frame(width: 24)
+                        Text(item.type.label)
+                            .font(.subheadline.weight(.semibold))
+                        Spacer()
+                        Text("\(item.mastered)/\(item.total) solid")
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                    }
+                    ProgressView(value: item.ratio)
+                        .tint(item.type.color)
+                }
+            }
+            Text("Smart review puts these first.")
+                .font(.caption)
+                .foregroundStyle(.secondary)
+        }
+        .card()
+    }
+
+    private var lockedCard: some View {
+        masteryCard
+            .blur(radius: 6)
+            .allowsHitTesting(false)
+            .overlay {
+                VStack(spacing: 8) {
+                    Image(systemName: "lock.fill")
+                        .font(.title3)
+                    Text("Detailed stats")
+                        .font(.headline)
+                    Text("See what's coming up and which mistakes need work.")
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                        .multilineTextAlignment(.center)
+                    Button {
+                        showPaywall = true
+                    } label: {
+                        Text("Get Plus")
+                            .font(.headline)
+                            .foregroundStyle(.white)
+                            .padding(.horizontal, 22)
+                            .frame(height: 40)
+                            .background(Color.gochiRed, in: .capsule)
+                    }
+                    .buttonStyle(PressableStyle())
+                }
+                .padding()
+            }
     }
 
     private func topMistake(_ type: MistakeType, count: Int) -> some View {
@@ -196,4 +349,5 @@ struct StatsView: View {
     StatsView()
         .modelContainer(for: Correction.self, inMemory: true)
         .environment(ProgressStore())
+        .environment(ProStore())
 }

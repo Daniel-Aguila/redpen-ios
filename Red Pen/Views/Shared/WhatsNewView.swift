@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct WhatsNewView: View {
-    static let version = "1.1"
+    static let version = "1.2"
 
     @Environment(\.dismiss) private var dismiss
     @Environment(ProgressStore.self) private var progress
+    @AppStorage("selectedTab") private var selectedTab = "practice"
     @State private var flips = 0
 
     var body: some View {
@@ -26,49 +27,65 @@ struct WhatsNewView: View {
                 .background(Color.accentColor.opacity(0.15), in: Capsule())
 
             GochiView(xp: progress.xp, celebrate: flips)
-                .frame(height: 160)
+                .frame(height: 140)
 
-            Text("Meet 고치")
+            Text("Gochi's big update")
                 .font(.largeTitle.weight(.heavy))
+                .multilineTextAlignment(.center)
 
-            if progress.form == .bean {
-                Text("Your study buddy. Every mistake you practice helps Gochi grow, all the way to 용.")
-                    .multilineTextAlignment(.center)
-                    .foregroundStyle(.secondary)
-            } else {
-                Text(verbatim: "\(progress.form.title)\(progress.form.title.subjectParticle) 되었어요!")
-                    .font(.title3.weight(.bold))
-                Text("Your practice so far already helped Gochi grow. Keep going, all the way to 용.")
-                    .multilineTextAlignment(.center)
-                    .foregroundStyle(.secondary)
+            VStack(alignment: .leading, spacing: 14) {
+                row("graduationcap.fill", .taegeukBlue,
+                    "Lessons", "From Hangul to real conversations, with Gochi as your teacher.")
+                row("house.fill", .orange,
+                    "Gochi's home", "A hot spring to decorate with 🍊 you earn by practicing.")
+                row("square.and.arrow.up.fill", .green,
+                    "Save from any app", "Got corrected in KakaoTalk or HelloTalk? Share it straight to Gochimi.")
+                row("star.fill", .gochiRed,
+                    "Plus and Pro", "Streak freezes, smart review, and personal help for every mistake.")
             }
-
-            VStack(alignment: .leading, spacing: 10) {
-                Label("Gochi's journey in Stats", systemImage: "map")
-                Label("Who you're talking to, for speech-level practice", systemImage: "person.2")
-                Label("Smarter reminders that skip days you practiced", systemImage: "bell")
-            }
-            .font(.subheadline)
             .padding()
             .frame(maxWidth: .infinity, alignment: .leading)
-            .background(Color(.secondarySystemGroupedBackground), in: .rect(cornerRadius: 16))
+            .softCard()
 
             Spacer()
 
             Button {
+                selectedTab = "practice"
                 dismiss()
             } label: {
-                Text("좋아요!").frame(maxWidth: .infinity)
+                Text("Try a lesson").frame(maxWidth: .infinity)
             }
             .buttonStyle(.borderedProminent)
             .controlSize(.large)
+            .tint(Color.gochiRed)
+
+            Button("좋아요!") { dismiss() }
+                .font(.subheadline.weight(.semibold))
         }
-        .padding(.horizontal, 32)
+        .padding(.horizontal, 28)
         .padding(.bottom, 16)
         .background(NotebookPaper())
         .task {
             try? await Task.sleep(for: .milliseconds(500))
             flips += 1
+        }
+    }
+
+    private func row(_ symbol: String, _ color: Color, _ title: LocalizedStringKey, _ text: LocalizedStringKey) -> some View {
+        HStack(alignment: .top, spacing: 12) {
+            Image(systemName: symbol)
+                .font(.body.weight(.semibold))
+                .foregroundStyle(.white)
+                .frame(width: 34, height: 34)
+                .background(color, in: .rect(cornerRadius: 9))
+            VStack(alignment: .leading, spacing: 2) {
+                Text(title)
+                    .font(.subheadline.weight(.bold))
+                Text(text)
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
         }
     }
 }

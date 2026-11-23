@@ -1,0 +1,4398 @@
+{
+ "units": [
+  {
+   "id": 0,
+   "title": "Hangul",
+   "subtitle": "Baca bahasa Korea dalam enam pelajaran singkat",
+   "lessons": [
+    {
+     "id": "h1",
+     "title": "Vokal dasar",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "안녕! Aku Gochi. Huruf Korea disebut Hangul, dan kamu bisa belajar membacanya dalam beberapa pelajaran."
+      },
+      {
+       "kind": "say",
+       "text": "Huruf-huruf disusun menjadi blok. Setiap blok adalah satu suku kata."
+      },
+      {
+       "kind": "say",
+       "text": "Vokal tidak bisa berdiri sendiri, jadi ditulis di samping ㅇ. Di sini, ㅇ tidak dibaca."
+      },
+      {
+       "kind": "example",
+       "ko": "아",
+       "translation": "a, seperti 'a' pada 'apa'"
+      },
+      {
+       "kind": "example",
+       "ko": "어",
+       "translation": "eo, seperti 'o' terbuka, dengan mulut lebih lebar"
+      },
+      {
+       "kind": "example",
+       "ko": "오",
+       "translation": "o, seperti 'o' pada 'toko'"
+      },
+      {
+       "kind": "example",
+       "ko": "우",
+       "translation": "u, seperti 'u' pada 'buku'"
+      },
+      {
+       "kind": "example",
+       "ko": "으",
+       "translation": "eu, seperti 'eu' dalam bahasa Sunda, atau 'u' dengan bibir ditarik ke samping"
+      },
+      {
+       "kind": "example",
+       "ko": "이",
+       "translation": "i, seperti 'i' pada 'ini'"
+      },
+      {
+       "kind": "choice",
+       "text": "Mana yang dibaca 'a'?",
+       "options": [
+        "어",
+        "아",
+        "오",
+        "이"
+       ],
+       "answer": 1,
+       "why": "아 punya garis pendek yang menghadap ke kanan."
+      },
+      {
+       "kind": "choice",
+       "text": "Mana yang dibaca 'u'?",
+       "options": [
+        "오",
+        "으",
+        "우",
+        "어"
+       ],
+       "answer": 2,
+       "why": "Pada 우 garisnya menghadap ke bawah. Pada 오 menghadap ke atas."
+      },
+      {
+       "kind": "example",
+       "ko": "아이",
+       "translation": "anak"
+      },
+      {
+       "kind": "example",
+       "ko": "오이",
+       "translation": "mentimun"
+      },
+      {
+       "kind": "choice",
+       "text": "Bagaimana membaca 오이?",
+       "options": [
+        "ai",
+        "oi",
+        "ui",
+        "eoi"
+       ],
+       "answer": 1,
+       "why": "오 dibaca 'o' dan 이 dibaca 'i'."
+      }
+     ]
+    },
+    {
+     "id": "h2",
+     "title": "Konsonan dasar",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Sekarang konsonan. Setiap konsonan ditulis sebelum vokal dalam blok."
+      },
+      {
+       "kind": "example",
+       "ko": "가",
+       "translation": "ga (ㄱ di antara g dan k)"
+      },
+      {
+       "kind": "example",
+       "ko": "나",
+       "translation": "na"
+      },
+      {
+       "kind": "example",
+       "ko": "다",
+       "translation": "da (ㄷ di antara d dan t)"
+      },
+      {
+       "kind": "example",
+       "ko": "라",
+       "translation": "ra (ㄹ adalah r yang ringan, hampir seperti l)"
+      },
+      {
+       "kind": "example",
+       "ko": "마",
+       "translation": "ma"
+      },
+      {
+       "kind": "example",
+       "ko": "바",
+       "translation": "ba (ㅂ di antara b dan p)"
+      },
+      {
+       "kind": "example",
+       "ko": "사",
+       "translation": "sa"
+      },
+      {
+       "kind": "example",
+       "ko": "자",
+       "translation": "ja"
+      },
+      {
+       "kind": "example",
+       "ko": "하",
+       "translation": "ha"
+      },
+      {
+       "kind": "say",
+       "text": "Gabungkan, dan kamu bisa membaca kata sungguhan."
+      },
+      {
+       "kind": "example",
+       "ko": "나무",
+       "translation": "pohon"
+      },
+      {
+       "kind": "example",
+       "ko": "바다",
+       "translation": "laut"
+      },
+      {
+       "kind": "example",
+       "ko": "모자",
+       "translation": "topi"
+      },
+      {
+       "kind": "example",
+       "ko": "하나",
+       "translation": "satu"
+      },
+      {
+       "kind": "choice",
+       "text": "Kata mana yang berarti 'laut'?",
+       "options": [
+        "나무",
+        "하나",
+        "바다",
+        "모자"
+       ],
+       "answer": 2,
+       "why": "바 + 다 = 바다."
+      },
+      {
+       "kind": "choice",
+       "text": "Bagaimana membaca 가수 (penyanyi)?",
+       "options": [
+        "gasu",
+        "nasu",
+        "gamu",
+        "dasu"
+       ],
+       "answer": 0,
+       "why": "ㄱ adalah g, ㅅ adalah s."
+      },
+      {
+       "kind": "choice",
+       "text": "Huruf mana yang berbunyi 'm'?",
+       "options": [
+        "ㄴ",
+        "ㅁ",
+        "ㅂ",
+        "ㄹ"
+       ],
+       "answer": 1,
+       "why": "ㅁ seperti kotak kecil, seperti bibir yang tertutup."
+      }
+     ]
+    },
+    {
+     "id": "h3",
+     "title": "Vokal lainnya",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Tambahkan satu garis pendek pada vokal, dan bunyinya jadi diawali 'y'."
+      },
+      {
+       "kind": "example",
+       "ko": "야",
+       "translation": "ya"
+      },
+      {
+       "kind": "example",
+       "ko": "여",
+       "translation": "yeo"
+      },
+      {
+       "kind": "example",
+       "ko": "요",
+       "translation": "yo"
+      },
+      {
+       "kind": "example",
+       "ko": "유",
+       "translation": "yu"
+      },
+      {
+       "kind": "example",
+       "ko": "우유",
+       "translation": "susu"
+      },
+      {
+       "kind": "example",
+       "ko": "여자",
+       "translation": "perempuan"
+      },
+      {
+       "kind": "say",
+       "text": "Sekarang ㅐ dan ㅔ hampir sama bunyinya, seperti 'e' pada 'enak'."
+      },
+      {
+       "kind": "example",
+       "ko": "개",
+       "translation": "anjing"
+      },
+      {
+       "kind": "example",
+       "ko": "네",
+       "translation": "ya"
+      },
+      {
+       "kind": "say",
+       "text": "Beberapa vokal bisa bergabung. ㅗ + ㅏ = ㅘ (wa), ㅜ + ㅓ = ㅝ (wo)."
+      },
+      {
+       "kind": "example",
+       "ko": "사과",
+       "translation": "apel"
+      },
+      {
+       "kind": "example",
+       "ko": "뭐",
+       "translation": "apa"
+      },
+      {
+       "kind": "choice",
+       "text": "Mana yang dibaca 'yo'?",
+       "options": [
+        "여",
+        "유",
+        "요",
+        "야"
+       ],
+       "answer": 2,
+       "why": "요 adalah 오 dengan satu garis tambahan."
+      },
+      {
+       "kind": "choice",
+       "text": "Apa arti 네?",
+       "options": [
+        "tidak",
+        "ya",
+        "anjing",
+        "apa"
+       ],
+       "answer": 1,
+       "why": "네 artinya ya. 개 artinya anjing."
+      },
+      {
+       "kind": "choice",
+       "text": "Bagaimana membaca 사과?",
+       "options": [
+        "sagwa",
+        "sago",
+        "sagu",
+        "sageo"
+       ],
+       "answer": 0,
+       "why": "ㄱ + ㅘ menjadi 과 (gwa)."
+      }
+     ]
+    },
+    {
+     "id": "h4",
+     "title": "Konsonan kuat",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Beberapa konsonan diucapkan dengan hembusan napas. Letakkan tangan di depan mulut dan rasakan."
+      },
+      {
+       "kind": "example",
+       "ko": "카",
+       "translation": "ka, dengan hembusan"
+      },
+      {
+       "kind": "example",
+       "ko": "타",
+       "translation": "ta, dengan hembusan"
+      },
+      {
+       "kind": "example",
+       "ko": "파",
+       "translation": "pa, dengan hembusan"
+      },
+      {
+       "kind": "example",
+       "ko": "차",
+       "translation": "cha, dengan hembusan"
+      },
+      {
+       "kind": "example",
+       "ko": "커피",
+       "translation": "kopi"
+      },
+      {
+       "kind": "example",
+       "ko": "포도",
+       "translation": "anggur"
+      },
+      {
+       "kind": "say",
+       "text": "Huruf ganda itu tegang: pendek, kuat, tanpa hembusan, mirip p, t, k dalam bahasa Indonesia."
+      },
+      {
+       "kind": "example",
+       "ko": "까",
+       "translation": "kka"
+      },
+      {
+       "kind": "example",
+       "ko": "따",
+       "translation": "tta"
+      },
+      {
+       "kind": "example",
+       "ko": "빠",
+       "translation": "ppa"
+      },
+      {
+       "kind": "example",
+       "ko": "싸",
+       "translation": "ssa"
+      },
+      {
+       "kind": "example",
+       "ko": "짜",
+       "translation": "jja"
+      },
+      {
+       "kind": "example",
+       "ko": "아빠",
+       "translation": "ayah"
+      },
+      {
+       "kind": "example",
+       "ko": "떡",
+       "translation": "kue beras"
+      },
+      {
+       "kind": "choice",
+       "text": "Mana yang diucapkan dengan hembusan napas?",
+       "options": [
+        "가",
+        "까",
+        "카"
+       ],
+       "answer": 2,
+       "why": "ㅋ punya garis tambahan dan hembusan napas. ㄲ tegang tanpa hembusan."
+      },
+      {
+       "kind": "choice",
+       "text": "Apa arti 아빠?",
+       "options": [
+        "ibu",
+        "ayah",
+        "kopi",
+        "anggur"
+       ],
+       "answer": 1,
+       "why": "아빠 artinya ayah. Ibu adalah 엄마."
+      },
+      {
+       "kind": "choice",
+       "text": "Bagaimana membaca 차 (mobil, teh)?",
+       "options": [
+        "ja",
+        "cha",
+        "jja",
+        "sa"
+       ],
+       "answer": 1,
+       "why": "ㅊ adalah ㅈ dengan hembusan napas: cha."
+      }
+     ]
+    },
+    {
+     "id": "h5",
+     "title": "Huruf bawah (받침)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Konsonan juga bisa ditulis di bagian bawah blok. Ini disebut 받침."
+      },
+      {
+       "kind": "say",
+       "text": "Huruf bawah hanya punya 7 bunyi: k, n, t, l, m, p, ng."
+      },
+      {
+       "kind": "example",
+       "ko": "밥",
+       "translation": "nasi, makanan"
+      },
+      {
+       "kind": "example",
+       "ko": "물",
+       "translation": "air"
+      },
+      {
+       "kind": "example",
+       "ko": "산",
+       "translation": "gunung"
+      },
+      {
+       "kind": "example",
+       "ko": "강",
+       "translation": "sungai"
+      },
+      {
+       "kind": "example",
+       "ko": "집",
+       "translation": "rumah"
+      },
+      {
+       "kind": "example",
+       "ko": "책",
+       "translation": "buku"
+      },
+      {
+       "kind": "say",
+       "text": "Di bawah, ㅅ, ㅈ, dan ㅊ semuanya berbunyi t. ㅇ di bawah berbunyi ng."
+      },
+      {
+       "kind": "example",
+       "ko": "옷",
+       "translation": "baju (dibaca 옫)"
+      },
+      {
+       "kind": "example",
+       "ko": "꽃",
+       "translation": "bunga (dibaca 꼳)"
+      },
+      {
+       "kind": "choice",
+       "text": "Apa bunyi ㅇ di bagian bawah 강?",
+       "options": [
+        "tidak dibaca",
+        "ng",
+        "n",
+        "g"
+       ],
+       "answer": 1,
+       "why": "ㅇ tidak dibaca di atas, tapi di bawah berbunyi ng."
+      },
+      {
+       "kind": "choice",
+       "text": "Kata mana yang berarti 'air'?",
+       "options": [
+        "물",
+        "밥",
+        "집",
+        "산"
+       ],
+       "answer": 0,
+       "why": "물 artinya air. 밥 artinya nasi."
+      },
+      {
+       "kind": "choice",
+       "text": "Bagaimana bunyi 옷?",
+       "options": [
+        "os",
+        "ot",
+        "oj",
+        "och"
+       ],
+       "answer": 1,
+       "why": "ㅅ di bawah berbunyi t."
+      }
+     ]
+    },
+    {
+     "id": "h6",
+     "title": "Latihan membaca",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Trik terakhir: kalau huruf bawah bertemu ㅇ yang tidak dibaca, bunyinya pindah ke blok berikutnya."
+      },
+      {
+       "kind": "example",
+       "ko": "한국어",
+       "translation": "bahasa Korea (dibaca 한구거)"
+      },
+      {
+       "kind": "example",
+       "ko": "음악",
+       "translation": "musik (dibaca 으막)"
+      },
+      {
+       "kind": "say",
+       "text": "Sekarang kamu bisa membaca bahasa Korea sungguhan. Coba yang ini."
+      },
+      {
+       "kind": "example",
+       "ko": "안녕하세요",
+       "translation": "halo"
+      },
+      {
+       "kind": "example",
+       "ko": "감사합니다",
+       "translation": "terima kasih"
+      },
+      {
+       "kind": "example",
+       "ko": "한국",
+       "translation": "Korea"
+      },
+      {
+       "kind": "example",
+       "ko": "서울",
+       "translation": "Seoul"
+      },
+      {
+       "kind": "choice",
+       "text": "Bagaimana bunyi 한국어?",
+       "options": [
+        "han-guk-eo",
+        "han-gu-geo",
+        "hang-uk-eo"
+       ],
+       "answer": 1,
+       "why": "ㄱ pindah ke ㅇ yang tidak dibaca: 한구거."
+      },
+      {
+       "kind": "choice",
+       "text": "Apa arti 감사합니다?",
+       "options": [
+        "halo",
+        "maaf",
+        "terima kasih",
+        "selamat tinggal"
+       ],
+       "answer": 2,
+       "why": "감사합니다 adalah terima kasih yang sopan."
+      },
+      {
+       "kind": "choice",
+       "text": "Kata mana yang berarti 'Seoul'?",
+       "options": [
+        "서울",
+        "한국",
+        "사람",
+        "선물"
+       ],
+       "answer": 0,
+       "why": "서 + 울 = 서울."
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요! Kamu sudah bisa membaca Hangul. Berikutnya, kamu akan memperkenalkan diri dalam bahasa Korea."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 1,
+   "title": "Perkenalan",
+   "subtitle": "Katakan siapa dirimu",
+   "lessons": [
+    {
+     "id": "u1l1",
+     "title": "Kosakata: negara dan pekerjaan",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Ayo belajar kata-kata untuk bercerita tentang dirimu. Ketuk setiap kata untuk mendengarnya."
+      },
+      {
+       "kind": "example",
+       "ko": "한국",
+       "translation": "Korea"
+      },
+      {
+       "kind": "example",
+       "ko": "미국",
+       "translation": "Amerika Serikat"
+      },
+      {
+       "kind": "example",
+       "ko": "일본",
+       "translation": "Jepang"
+      },
+      {
+       "kind": "example",
+       "ko": "중국",
+       "translation": "Tiongkok"
+      },
+      {
+       "kind": "example",
+       "ko": "멕시코",
+       "translation": "Meksiko"
+      },
+      {
+       "kind": "say",
+       "text": "Tambahkan 사람 (orang) setelah nama negara untuk menyebut asal seseorang."
+      },
+      {
+       "kind": "example",
+       "ko": "한국 사람",
+       "translation": "orang Korea"
+      },
+      {
+       "kind": "example",
+       "ko": "학생",
+       "translation": "pelajar"
+      },
+      {
+       "kind": "example",
+       "ko": "선생님",
+       "translation": "guru"
+      },
+      {
+       "kind": "example",
+       "ko": "회사원",
+       "translation": "pegawai kantor"
+      },
+      {
+       "kind": "example",
+       "ko": "의사",
+       "translation": "dokter"
+      },
+      {
+       "kind": "choice",
+       "text": "Bagaimana menyebut 'orang Jepang'?",
+       "options": [
+        "일본 사람",
+        "중국 사람",
+        "일본 학생",
+        "미국 사람"
+       ],
+       "answer": 0,
+       "why": "일본 (Jepang) + 사람 (orang)."
+      },
+      {
+       "kind": "choice",
+       "text": "Apa arti 회사원?",
+       "options": [
+        "guru",
+        "dokter",
+        "pegawai kantor",
+        "pelajar"
+       ],
+       "answer": 2,
+       "why": "회사 artinya perusahaan, jadi 회사원 adalah karyawan perusahaan."
+      },
+      {
+       "kind": "choice",
+       "text": "Apa arti 선생님?",
+       "options": [
+        "guru",
+        "pelajar",
+        "dokter",
+        "orang"
+       ],
+       "answer": 0,
+       "why": "선생님 artinya guru. 학생 artinya pelajar."
+      }
+     ]
+    },
+    {
+     "id": "u1l2",
+     "title": "Saya adalah... (이에요/예요)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Untuk mengatakan 'saya ___' atau 'ini ___', tambahkan 이에요 atau 예요 pada kata benda."
+      },
+      {
+       "kind": "say",
+       "text": "Kalau kata bendanya berakhir dengan konsonan, tambahkan 이에요."
+      },
+      {
+       "kind": "example",
+       "ko": "학생이에요.",
+       "translation": "Saya pelajar."
+      },
+      {
+       "kind": "example",
+       "ko": "선생님이에요.",
+       "translation": "Saya guru."
+      },
+      {
+       "kind": "say",
+       "text": "Kalau berakhir dengan vokal, tambahkan 예요."
+      },
+      {
+       "kind": "example",
+       "ko": "의사예요.",
+       "translation": "Saya dokter."
+      },
+      {
+       "kind": "example",
+       "ko": "고치예요.",
+       "translation": "Aku Gochi."
+      },
+      {
+       "kind": "say",
+       "text": "Untuk bertanya, pakai kata yang sama dan naikkan nada di akhir."
+      },
+      {
+       "kind": "example",
+       "ko": "학생이에요?",
+       "translation": "Kamu pelajar?"
+      },
+      {
+       "kind": "choice",
+       "text": "회사원___",
+       "options": [
+        "이에요",
+        "예요"
+       ],
+       "answer": 0,
+       "why": "회사원 berakhir dengan ㄴ, konsonan, jadi 이에요."
+      },
+      {
+       "kind": "choice",
+       "text": "의사___",
+       "options": [
+        "이에요",
+        "예요"
+       ],
+       "answer": 1,
+       "why": "의사 berakhir dengan vokal, jadi 예요."
+      },
+      {
+       "kind": "choice",
+       "text": "Mana yang benar?",
+       "options": [
+        "한국 사람예요",
+        "한국 사람이에요",
+        "한국 사람이예요"
+       ],
+       "answer": 1,
+       "why": "사람 berakhir dengan ㅁ, jadi 이에요."
+      },
+      {
+       "kind": "build",
+       "translation": "Saya guru.",
+       "words": [
+        "저는",
+        "선생님이에요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u1l3",
+     "title": "Penanda topik (은/는)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "은/는 menandai hal yang sedang dibicarakan, seperti 'kalau...'."
+      },
+      {
+       "kind": "say",
+       "text": "Setelah konsonan pakai 은. Setelah vokal pakai 는."
+      },
+      {
+       "kind": "example",
+       "ko": "저는 학생이에요.",
+       "translation": "Saya pelajar."
+      },
+      {
+       "kind": "example",
+       "ko": "이름은 고치예요.",
+       "translation": "Namaku Gochi."
+      },
+      {
+       "kind": "example",
+       "ko": "민수 씨는 의사예요.",
+       "translation": "Minsu adalah dokter."
+      },
+      {
+       "kind": "say",
+       "text": "씨 ditambahkan setelah nama agar sopan. Jangan pakai untuk namamu sendiri."
+      },
+      {
+       "kind": "choice",
+       "text": "저___ 회사원이에요.",
+       "options": [
+        "은",
+        "는"
+       ],
+       "answer": 1,
+       "why": "저 berakhir dengan vokal, jadi 는."
+      },
+      {
+       "kind": "choice",
+       "text": "이름___ 하나예요.",
+       "options": [
+        "은",
+        "는"
+       ],
+       "answer": 0,
+       "why": "이름 berakhir dengan ㅁ, jadi 은."
+      },
+      {
+       "kind": "choice",
+       "text": "Mana yang sopan?",
+       "options": [
+        "하나 씨는 학생이에요",
+        "저 씨는 학생이에요"
+       ],
+       "answer": 0,
+       "why": "Pakai 씨 untuk orang lain, bukan untuk dirimu."
+      },
+      {
+       "kind": "build",
+       "translation": "Saya orang Korea.",
+       "words": [
+        "저는",
+        "한국",
+        "사람이에요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Minsu adalah guru.",
+       "words": [
+        "민수",
+        "씨는",
+        "선생님이에요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u1l4",
+     "title": "Gabungkan: senang bertemu",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Begini percakapan saat pertama bertemu. Dengarkan setiap kalimat."
+      },
+      {
+       "kind": "example",
+       "ko": "안녕하세요? 저는 하나예요.",
+       "translation": "Halo, aku Hana."
+      },
+      {
+       "kind": "example",
+       "ko": "안녕하세요? 저는 민수예요.",
+       "translation": "Halo, aku Minsu."
+      },
+      {
+       "kind": "example",
+       "ko": "만나서 반가워요.",
+       "translation": "Senang bertemu denganmu."
+      },
+      {
+       "kind": "example",
+       "ko": "하나 씨는 학생이에요?",
+       "translation": "Hana, kamu pelajar?"
+      },
+      {
+       "kind": "example",
+       "ko": "네, 학생이에요. 민수 씨는요?",
+       "translation": "Ya, aku pelajar. Kalau Minsu?"
+      },
+      {
+       "kind": "example",
+       "ko": "저는 회사원이에요.",
+       "translation": "Aku pegawai kantor."
+      },
+      {
+       "kind": "say",
+       "text": "Menambahkan 요 pada nama, seperti 민수 씨는요?, artinya 'kalau kamu?'."
+      },
+      {
+       "kind": "choice",
+       "text": "Apa arti 만나서 반가워요?",
+       "options": [
+        "Selamat tinggal",
+        "Senang bertemu denganmu",
+        "Terima kasih",
+        "Sampai jumpa"
+       ],
+       "answer": 1,
+       "why": "Kamu mengatakannya saat bertemu seseorang untuk pertama kali."
+      },
+      {
+       "kind": "choice",
+       "text": "Bagaimana mengatakan 'Kalau Hana?'",
+       "options": [
+        "하나 씨예요?",
+        "하나 씨는요?",
+        "하나는 씨요?"
+       ],
+       "answer": 1,
+       "why": "Nama + 씨는요? artinya 'kalau kamu?'."
+      },
+      {
+       "kind": "build",
+       "translation": "Halo, aku Gochi.",
+       "words": [
+        "안녕하세요?",
+        "저는",
+        "고치예요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Saya orang Meksiko.",
+       "words": [
+        "저는",
+        "멕시코",
+        "사람이에요."
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요! Sekarang kamu bisa memperkenalkan diri dalam bahasa Korea."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "title": "Keluarga",
+   "subtitle": "Ceritakan tentang keluargamu",
+   "lessons": [
+    {
+     "id": "u2l1",
+     "title": "Kosakata: keluarga",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Ayo kenalan dengan keluarga. Ketuk setiap kata untuk mendengarnya."
+      },
+      {
+       "kind": "example",
+       "ko": "가족",
+       "translation": "keluarga"
+      },
+      {
+       "kind": "example",
+       "ko": "아버지",
+       "translation": "ayah"
+      },
+      {
+       "kind": "example",
+       "ko": "어머니",
+       "translation": "ibu"
+      },
+      {
+       "kind": "example",
+       "ko": "할아버지",
+       "translation": "kakek"
+      },
+      {
+       "kind": "example",
+       "ko": "할머니",
+       "translation": "nenek"
+      },
+      {
+       "kind": "example",
+       "ko": "동생",
+       "translation": "adik"
+      },
+      {
+       "kind": "say",
+       "text": "Sebutan kakak tergantung siapa yang berbicara."
+      },
+      {
+       "kind": "example",
+       "ko": "형",
+       "translation": "kakak laki-laki (diucapkan laki-laki)"
+      },
+      {
+       "kind": "example",
+       "ko": "오빠",
+       "translation": "kakak laki-laki (diucapkan perempuan)"
+      },
+      {
+       "kind": "example",
+       "ko": "누나",
+       "translation": "kakak perempuan (diucapkan laki-laki)"
+      },
+      {
+       "kind": "example",
+       "ko": "언니",
+       "translation": "kakak perempuan (diucapkan perempuan)"
+      },
+      {
+       "kind": "example",
+       "ko": "요리사",
+       "translation": "juru masak, koki"
+      },
+      {
+       "kind": "example",
+       "ko": "간호사",
+       "translation": "perawat"
+      },
+      {
+       "kind": "choice",
+       "text": "Seorang laki-laki berbicara tentang kakak perempuannya. Kata apa yang dipakai?",
+       "options": [
+        "언니",
+        "누나",
+        "오빠",
+        "형"
+       ],
+       "answer": 1,
+       "why": "Laki-laki bilang 누나. Perempuan bilang 언니."
+      },
+      {
+       "kind": "choice",
+       "text": "Apa arti 동생?",
+       "options": [
+        "adik",
+        "kakak laki-laki",
+        "ayah",
+        "keluarga"
+       ],
+       "answer": 0,
+       "why": "동생 artinya adik, laki-laki maupun perempuan."
+      },
+      {
+       "kind": "choice",
+       "text": "Apa arti 할머니?",
+       "options": [
+        "ibu",
+        "kakek",
+        "nenek",
+        "perawat"
+       ],
+       "answer": 2,
+       "why": "할머니 artinya nenek. 할아버지 artinya kakek."
+      }
+     ]
+    },
+    {
+     "id": "u2l2",
+     "title": "Penanda subjek (이/가)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "이/가 menandai siapa atau apa yang melakukan sesuatu, atau informasi baru."
+      },
+      {
+       "kind": "say",
+       "text": "Setelah konsonan pakai 이. Setelah vokal pakai 가."
+      },
+      {
+       "kind": "example",
+       "ko": "동생이 학생이에요.",
+       "translation": "Adikku pelajar."
+      },
+      {
+       "kind": "example",
+       "ko": "아버지가 요리사예요.",
+       "translation": "Ayahku juru masak."
+      },
+      {
+       "kind": "say",
+       "text": "Kalau bertanya 'siapa?', jawabannya memakai 이/가."
+      },
+      {
+       "kind": "example",
+       "ko": "누가 의사예요?",
+       "translation": "Siapa yang dokter?"
+      },
+      {
+       "kind": "example",
+       "ko": "어머니가 의사예요.",
+       "translation": "Ibuku yang dokter."
+      },
+      {
+       "kind": "choice",
+       "text": "형___ 회사원이에요.",
+       "options": [
+        "이",
+        "가"
+       ],
+       "answer": 0,
+       "why": "형 berakhir dengan ㅇ, jadi 이."
+      },
+      {
+       "kind": "choice",
+       "text": "누나___ 간호사예요.",
+       "options": [
+        "이",
+        "가"
+       ],
+       "answer": 1,
+       "why": "누나 berakhir dengan vokal, jadi 가."
+      },
+      {
+       "kind": "choice",
+       "text": "누가 선생님이에요? Jawaban:",
+       "options": [
+        "할머니는 선생님이에요",
+        "할머니가 선생님이에요"
+       ],
+       "answer": 1,
+       "why": "Untuk menjawab 'siapa?', pakai 이/가."
+      },
+      {
+       "kind": "build",
+       "translation": "Ayahku dokter.",
+       "words": [
+        "아버지가",
+        "의사예요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u2l3",
+     "title": "Bukan (이/가 아니에요)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Untuk mengatakan 'bukan', pakai 이/가 아니에요."
+      },
+      {
+       "kind": "example",
+       "ko": "저는 학생이 아니에요.",
+       "translation": "Saya bukan pelajar."
+      },
+      {
+       "kind": "example",
+       "ko": "오빠는 의사가 아니에요.",
+       "translation": "Kakak laki-lakiku bukan dokter."
+      },
+      {
+       "kind": "say",
+       "text": "Aturannya sama: 이 setelah konsonan, 가 setelah vokal."
+      },
+      {
+       "kind": "say",
+       "text": "Jawab ya dengan 네 dan tidak dengan 아니요."
+      },
+      {
+       "kind": "example",
+       "ko": "요리사예요?",
+       "translation": "Kamu juru masak?"
+      },
+      {
+       "kind": "example",
+       "ko": "아니요, 요리사가 아니에요. 간호사예요.",
+       "translation": "Bukan, aku bukan juru masak. Aku perawat."
+      },
+      {
+       "kind": "choice",
+       "text": "선생님___ 아니에요.",
+       "options": [
+        "이",
+        "가"
+       ],
+       "answer": 0,
+       "why": "선생님 berakhir dengan ㅁ, jadi 이."
+      },
+      {
+       "kind": "choice",
+       "text": "Mana yang benar?",
+       "options": [
+        "의사이 아니에요",
+        "의사가 아니에요",
+        "의사 아니예요"
+       ],
+       "answer": 1,
+       "why": "의사 berakhir dengan vokal, jadi 가 아니에요."
+      },
+      {
+       "kind": "choice",
+       "text": "회사원이에요? (Bukan)",
+       "options": [
+        "네, 회사원이에요",
+        "아니요, 회사원이 아니에요"
+       ],
+       "answer": 1,
+       "why": "아니요 artinya tidak, lalu 이/가 아니에요."
+      },
+      {
+       "kind": "build",
+       "translation": "Saya bukan orang Jepang.",
+       "words": [
+        "저는",
+        "일본",
+        "사람이",
+        "아니에요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u2l4",
+     "title": "Gabungkan: foto keluarga",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Hana menunjukkan foto keluarga kepada Minsu. Dengarkan."
+      },
+      {
+       "kind": "example",
+       "ko": "이 사람은 누구예요?",
+       "translation": "Ini siapa?"
+      },
+      {
+       "kind": "example",
+       "ko": "우리 언니예요.",
+       "translation": "Ini kakak perempuanku."
+      },
+      {
+       "kind": "example",
+       "ko": "언니는 학생이에요?",
+       "translation": "Kakakmu pelajar?"
+      },
+      {
+       "kind": "example",
+       "ko": "아니요, 학생이 아니에요. 간호사예요.",
+       "translation": "Bukan, dia bukan pelajar. Dia perawat."
+      },
+      {
+       "kind": "example",
+       "ko": "이 사람은 동생이에요?",
+       "translation": "Ini adikmu?"
+      },
+      {
+       "kind": "example",
+       "ko": "네, 동생이에요. 동생은 고등학생이에요.",
+       "translation": "Ya, ini adikku. Dia anak SMA."
+      },
+      {
+       "kind": "say",
+       "text": "Orang Korea bilang 우리 (kami/kita) untuk keluarga, walaupun kita biasanya bilang '-ku'."
+      },
+      {
+       "kind": "choice",
+       "text": "Bagaimana mengatakan 'ibuku' dengan alami?",
+       "options": [
+        "저 어머니",
+        "우리 어머니",
+        "나 어머니"
+       ],
+       "answer": 1,
+       "why": "Pakai 우리 untuk keluargamu sendiri."
+      },
+      {
+       "kind": "choice",
+       "text": "Apa arti 누구예요?",
+       "options": [
+        "Di mana?",
+        "Siapa itu?",
+        "Apa itu?"
+       ],
+       "answer": 1,
+       "why": "누구 artinya siapa."
+      },
+      {
+       "kind": "build",
+       "translation": "Ini kakak perempuanku.",
+       "words": [
+        "우리",
+        "언니예요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Adikku bukan pelajar.",
+       "words": [
+        "동생은",
+        "학생이",
+        "아니에요."
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요! Sekarang kamu bisa memperkenalkan keluargamu."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "title": "Kehidupan sehari-hari",
+   "subtitle": "Ceritakan apa yang kamu suka dan lakukan",
+   "lessons": [
+    {
+     "id": "u3l1",
+     "title": "Kosakata: kehidupan sehari-hari",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Di kamus, kata kerja Korea berakhir dengan 다. Ayo belajar beberapa yang akan kamu pakai setiap hari."
+      },
+      {
+       "kind": "example",
+       "ko": "먹다",
+       "translation": "makan"
+      },
+      {
+       "kind": "example",
+       "ko": "마시다",
+       "translation": "minum"
+      },
+      {
+       "kind": "example",
+       "ko": "보다",
+       "translation": "melihat, menonton"
+      },
+      {
+       "kind": "example",
+       "ko": "자다",
+       "translation": "tidur"
+      },
+      {
+       "kind": "example",
+       "ko": "공부하다",
+       "translation": "belajar"
+      },
+      {
+       "kind": "example",
+       "ko": "일하다",
+       "translation": "bekerja"
+      },
+      {
+       "kind": "example",
+       "ko": "좋아하다",
+       "translation": "suka"
+      },
+      {
+       "kind": "example",
+       "ko": "커피",
+       "translation": "kopi"
+      },
+      {
+       "kind": "example",
+       "ko": "영화",
+       "translation": "film"
+      },
+      {
+       "kind": "example",
+       "ko": "드라마",
+       "translation": "drama TV"
+      },
+      {
+       "kind": "example",
+       "ko": "빵",
+       "translation": "roti"
+      },
+      {
+       "kind": "choice",
+       "text": "Apa arti 마시다?",
+       "options": [
+        "makan",
+        "minum",
+        "tidur",
+        "menonton"
+       ],
+       "answer": 1,
+       "why": "마시다 artinya minum. 먹다 artinya makan."
+      },
+      {
+       "kind": "choice",
+       "text": "Kata kerja mana yang berarti 'belajar'?",
+       "options": [
+        "일하다",
+        "좋아하다",
+        "공부하다",
+        "보다"
+       ],
+       "answer": 2,
+       "why": "공부 artinya belajar, dan 하다 artinya melakukan."
+      },
+      {
+       "kind": "choice",
+       "text": "Apa arti 영화?",
+       "options": [
+        "film",
+        "drama",
+        "roti",
+        "kopi"
+       ],
+       "answer": 0,
+       "why": "영화 artinya film. Drama TV adalah 드라마."
+      }
+     ]
+    },
+    {
+     "id": "u3l2",
+     "title": "Gaya formal (-습니다)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "-습니다 adalah gaya sopan yang formal. Kamu mendengarnya di berita, di kantor, dan dalam pengumuman."
+      },
+      {
+       "kind": "say",
+       "text": "Buang 다. Kalau akar katanya berakhir dengan konsonan, tambahkan 습니다."
+      },
+      {
+       "kind": "example",
+       "ko": "먹습니다.",
+       "translation": "Saya makan."
+      },
+      {
+       "kind": "example",
+       "ko": "읽습니다.",
+       "translation": "Saya membaca."
+      },
+      {
+       "kind": "say",
+       "text": "Kalau berakhir dengan vokal, tambahkan ㅂ니다 pada blok terakhir."
+      },
+      {
+       "kind": "example",
+       "ko": "갑니다.",
+       "translation": "Saya pergi."
+      },
+      {
+       "kind": "example",
+       "ko": "마십니다.",
+       "translation": "Saya minum."
+      },
+      {
+       "kind": "example",
+       "ko": "공부합니다.",
+       "translation": "Saya belajar."
+      },
+      {
+       "kind": "say",
+       "text": "Untuk bertanya, pakai 습니까 atau ㅂ니까. Dalam gaya ini, 이에요 menjadi 입니다."
+      },
+      {
+       "kind": "example",
+       "ko": "학생입니까?",
+       "translation": "Kamu pelajar?"
+      },
+      {
+       "kind": "choice",
+       "text": "먹다 →",
+       "options": [
+        "먹ㅂ니다",
+        "먹습니다",
+        "먹니다"
+       ],
+       "answer": 1,
+       "why": "먹 berakhir dengan konsonan, jadi 습니다."
+      },
+      {
+       "kind": "choice",
+       "text": "보다 →",
+       "options": [
+        "보습니다",
+        "봅니다",
+        "봐습니다"
+       ],
+       "answer": 1,
+       "why": "보 berakhir dengan vokal, jadi ㅂ ditulis di bawahnya: 봅니다."
+      },
+      {
+       "kind": "choice",
+       "text": "Mana yang kalimat tanya?",
+       "options": [
+        "일합니다",
+        "일합니까?",
+        "일했습니다"
+       ],
+       "answer": 1,
+       "why": "-ㅂ니까 membentuk pertanyaan formal."
+      },
+      {
+       "kind": "build",
+       "translation": "Saya pegawai kantor. (formal)",
+       "words": [
+        "저는",
+        "회사원입니다."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u3l3",
+     "title": "Objek (을/를) dan juga (도)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "을/를 menandai apa yang kamu makan, minum, tonton, atau sukai."
+      },
+      {
+       "kind": "say",
+       "text": "Setelah konsonan pakai 을. Setelah vokal pakai 를."
+      },
+      {
+       "kind": "example",
+       "ko": "빵을 먹습니다.",
+       "translation": "Saya makan roti."
+      },
+      {
+       "kind": "example",
+       "ko": "커피를 마십니다.",
+       "translation": "Saya minum kopi."
+      },
+      {
+       "kind": "say",
+       "text": "도 artinya 'juga'. Kata ini menggantikan 은/는, 이/가, atau 을/를."
+      },
+      {
+       "kind": "example",
+       "ko": "저도 학생입니다.",
+       "translation": "Saya juga pelajar."
+      },
+      {
+       "kind": "example",
+       "ko": "드라마도 좋아합니다.",
+       "translation": "Saya juga suka drama."
+      },
+      {
+       "kind": "choice",
+       "text": "영화___ 봅니다.",
+       "options": [
+        "을",
+        "를"
+       ],
+       "answer": 1,
+       "why": "영화 berakhir dengan vokal, jadi 를."
+      },
+      {
+       "kind": "choice",
+       "text": "빵___ 먹습니다.",
+       "options": [
+        "을",
+        "를"
+       ],
+       "answer": 0,
+       "why": "빵 berakhir dengan ㅇ, konsonan, jadi 을."
+      },
+      {
+       "kind": "choice",
+       "text": "Mana yang benar?",
+       "options": [
+        "커피를도 마십니다",
+        "커피도 마십니다"
+       ],
+       "answer": 1,
+       "why": "도 menggantikan 을/를. Jangan pakai keduanya."
+      },
+      {
+       "kind": "build",
+       "translation": "Saya juga suka kopi.",
+       "words": [
+        "저도",
+        "커피를",
+        "좋아합니다."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Saya menonton drama.",
+       "words": [
+        "저는",
+        "드라마를",
+        "봅니다."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u3l4",
+     "title": "Gabungkan: kamu suka apa?",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Hana dan Minsu membicarakan hal yang mereka sukai. Dengarkan."
+      },
+      {
+       "kind": "example",
+       "ko": "민수 씨는 무엇을 좋아합니까?",
+       "translation": "Minsu, kamu suka apa?"
+      },
+      {
+       "kind": "example",
+       "ko": "저는 드라마를 좋아합니다.",
+       "translation": "Aku suka drama."
+      },
+      {
+       "kind": "example",
+       "ko": "하나 씨는요?",
+       "translation": "Kalau Hana?"
+      },
+      {
+       "kind": "example",
+       "ko": "저도 드라마를 좋아합니다. 영화도 좋아합니다.",
+       "translation": "Aku juga suka drama. Aku juga suka film."
+      },
+      {
+       "kind": "example",
+       "ko": "커피를 마십니까?",
+       "translation": "Kamu minum kopi?"
+      },
+      {
+       "kind": "example",
+       "ko": "아니요, 저는 차를 마십니다.",
+       "translation": "Tidak, aku minum teh."
+      },
+      {
+       "kind": "say",
+       "text": "무엇 artinya 'apa'. Dalam percakapan sering disingkat jadi 뭐."
+      },
+      {
+       "kind": "choice",
+       "text": "Apa yang ditanyakan 무엇을 좋아합니까?",
+       "options": [
+        "Kamu pergi ke mana?",
+        "Kamu suka apa?",
+        "Kamu suka siapa?"
+       ],
+       "answer": 1,
+       "why": "무엇 artinya apa, 좋아합니까 artinya 'kamu suka?'."
+      },
+      {
+       "kind": "choice",
+       "text": "차___ 마십니다.",
+       "options": [
+        "을",
+        "를",
+        "도를"
+       ],
+       "answer": 1,
+       "why": "차 berakhir dengan vokal, jadi 를."
+      },
+      {
+       "kind": "build",
+       "translation": "Saya belajar bahasa Korea.",
+       "words": [
+        "저는",
+        "한국어를",
+        "공부합니다."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Saya juga suka film.",
+       "words": [
+        "영화도",
+        "좋아합니다."
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요! Sekarang kamu bisa bercerita tentang hal yang kamu suka."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "title": "Sekolah",
+   "subtitle": "Bicara tentang sekolah dan barang-barang",
+   "lessons": [
+    {
+     "id": "u4l1",
+     "title": "Kosakata: sekolah",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Ayo belajar kata-kata tentang sekolah. Ketuk setiap kata untuk mendengarnya."
+      },
+      {
+       "kind": "example",
+       "ko": "학교",
+       "translation": "sekolah"
+      },
+      {
+       "kind": "example",
+       "ko": "교실",
+       "translation": "ruang kelas"
+      },
+      {
+       "kind": "example",
+       "ko": "도서관",
+       "translation": "perpustakaan"
+      },
+      {
+       "kind": "example",
+       "ko": "식당",
+       "translation": "kantin, restoran"
+      },
+      {
+       "kind": "example",
+       "ko": "책",
+       "translation": "buku"
+      },
+      {
+       "kind": "example",
+       "ko": "책상",
+       "translation": "meja belajar"
+      },
+      {
+       "kind": "example",
+       "ko": "의자",
+       "translation": "kursi"
+      },
+      {
+       "kind": "example",
+       "ko": "가방",
+       "translation": "tas"
+      },
+      {
+       "kind": "example",
+       "ko": "친구",
+       "translation": "teman"
+      },
+      {
+       "kind": "example",
+       "ko": "읽다",
+       "translation": "membaca"
+      },
+      {
+       "kind": "example",
+       "ko": "쓰다",
+       "translation": "menulis"
+      },
+      {
+       "kind": "example",
+       "ko": "배우다",
+       "translation": "belajar (sesuatu)"
+      },
+      {
+       "kind": "example",
+       "ko": "크다",
+       "translation": "besar"
+      },
+      {
+       "kind": "example",
+       "ko": "작다",
+       "translation": "kecil"
+      },
+      {
+       "kind": "choice",
+       "text": "Apa arti 도서관?",
+       "options": [
+        "ruang kelas",
+        "perpustakaan",
+        "kantin",
+        "sekolah"
+       ],
+       "answer": 1,
+       "why": "도서관 artinya perpustakaan. 교실 artinya ruang kelas."
+      },
+      {
+       "kind": "choice",
+       "text": "Kata mana yang berarti 'kursi'?",
+       "options": [
+        "책상",
+        "가방",
+        "의자",
+        "책"
+       ],
+       "answer": 2,
+       "why": "의자 artinya kursi. 책상 artinya meja belajar."
+      },
+      {
+       "kind": "choice",
+       "text": "Apa arti 배우다?",
+       "options": [
+        "belajar (sesuatu)",
+        "membaca",
+        "menulis",
+        "tidur"
+       ],
+       "answer": 0,
+       "why": "배우다 artinya belajar. 읽다 artinya membaca."
+      }
+     ]
+    },
+    {
+     "id": "u4l2",
+     "title": "Dan, dengan (과/와, 하고)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Untuk menggabungkan dua kata benda, pakai 과/와 atau 하고. Artinya 'dan'."
+      },
+      {
+       "kind": "say",
+       "text": "과 setelah konsonan, 와 setelah vokal. 하고 bisa dipakai setelah apa saja dan terdengar lebih santai."
+      },
+      {
+       "kind": "example",
+       "ko": "책과 가방",
+       "translation": "buku dan tas"
+      },
+      {
+       "kind": "example",
+       "ko": "의자와 책상",
+       "translation": "kursi dan meja"
+      },
+      {
+       "kind": "example",
+       "ko": "커피하고 빵",
+       "translation": "kopi dan roti"
+      },
+      {
+       "kind": "say",
+       "text": "하고 dan 과/와 juga bisa berarti 'dengan'."
+      },
+      {
+       "kind": "example",
+       "ko": "친구하고 공부합니다.",
+       "translation": "Saya belajar dengan teman."
+      },
+      {
+       "kind": "choice",
+       "text": "책상___ 의자",
+       "options": [
+        "과",
+        "와"
+       ],
+       "answer": 0,
+       "why": "책상 berakhir dengan ㅇ, jadi 과."
+      },
+      {
+       "kind": "choice",
+       "text": "의자___ 책상",
+       "options": [
+        "과",
+        "와"
+       ],
+       "answer": 1,
+       "why": "의자 berakhir dengan vokal, jadi 와."
+      },
+      {
+       "kind": "choice",
+       "text": "Mana yang bisa dipakai setelah kata benda apa pun?",
+       "options": [
+        "과",
+        "와",
+        "하고"
+       ],
+       "answer": 2,
+       "why": "하고 tidak berubah. Sering dipakai dalam percakapan."
+      },
+      {
+       "kind": "build",
+       "translation": "Saya belajar dengan teman.",
+       "words": [
+        "친구하고",
+        "공부합니다."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u4l3",
+     "title": "Kepemilikan (의)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "의 menunjukkan kepemilikan. Letaknya di antara pemilik dan barang, urutannya terbalik dari bahasa Indonesia."
+      },
+      {
+       "kind": "example",
+       "ko": "민수 씨의 가방",
+       "translation": "tas Minsu"
+      },
+      {
+       "kind": "example",
+       "ko": "학교의 도서관",
+       "translation": "perpustakaan sekolah"
+      },
+      {
+       "kind": "say",
+       "text": "Dalam percakapan, 의 sering dibaca seperti 에."
+      },
+      {
+       "kind": "say",
+       "text": "'Saya punya' atau '-ku' adalah 제. Ini bentuk singkat dari 저의."
+      },
+      {
+       "kind": "example",
+       "ko": "제 책입니다.",
+       "translation": "Ini bukuku."
+      },
+      {
+       "kind": "example",
+       "ko": "제 친구입니다.",
+       "translation": "Ini temanku."
+      },
+      {
+       "kind": "choice",
+       "text": "Bagaimana mengatakan 'buku Hana'?",
+       "options": [
+        "하나 씨의 책",
+        "책의 하나 씨",
+        "하나 씨 의책"
+       ],
+       "answer": 0,
+       "why": "Pemilik dulu, lalu 의, lalu barangnya."
+      },
+      {
+       "kind": "choice",
+       "text": "Apa bentuk singkat dari 저의?",
+       "options": [
+        "저",
+        "제",
+        "내"
+       ],
+       "answer": 1,
+       "why": "저의 menjadi 제. 제 가방 artinya tasku."
+      },
+      {
+       "kind": "choice",
+       "text": "Mana yang benar?",
+       "options": [
+        "제 친구입니다",
+        "저 친구입니다의"
+       ],
+       "answer": 0,
+       "why": "제 친구 artinya temanku."
+      },
+      {
+       "kind": "build",
+       "translation": "Ini tas Minsu.",
+       "words": [
+        "민수",
+        "씨의",
+        "가방입니다."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u4l4",
+     "title": "Gabungkan: di ruang kelas",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Hana menemukan buku di ruang kelas. Dengarkan."
+      },
+      {
+       "kind": "example",
+       "ko": "이것은 하나 씨의 책입니까?",
+       "translation": "Hana, ini bukumu?"
+      },
+      {
+       "kind": "example",
+       "ko": "아니요, 제 책이 아닙니다.",
+       "translation": "Bukan, ini bukan bukuku."
+      },
+      {
+       "kind": "example",
+       "ko": "민수 씨의 책입니다.",
+       "translation": "Ini buku Minsu."
+      },
+      {
+       "kind": "example",
+       "ko": "민수 씨는 무엇을 배웁니까?",
+       "translation": "Minsu belajar apa?"
+      },
+      {
+       "kind": "example",
+       "ko": "민수 씨는 친구하고 한국어를 배웁니다.",
+       "translation": "Minsu belajar bahasa Korea dengan teman."
+      },
+      {
+       "kind": "say",
+       "text": "아닙니다 adalah bentuk formal dari 아니에요."
+      },
+      {
+       "kind": "say",
+       "text": "이것 artinya 'ini'. Nanti kamu akan belajar 이, 그, dan 저."
+      },
+      {
+       "kind": "choice",
+       "text": "Apa arti 제 책이 아닙니다?",
+       "options": [
+        "Ini bukuku",
+        "Ini bukan bukuku",
+        "Apakah ini bukuku?"
+       ],
+       "answer": 1,
+       "why": "아닙니다 artinya 'bukan', dalam gaya formal."
+      },
+      {
+       "kind": "choice",
+       "text": "가방___ 책",
+       "options": [
+        "과",
+        "와"
+       ],
+       "answer": 0,
+       "why": "가방 berakhir dengan ㅇ, jadi 과."
+      },
+      {
+       "kind": "build",
+       "translation": "Ini bukan tasku.",
+       "words": [
+        "제",
+        "가방이",
+        "아닙니다."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Saya membaca buku dengan teman.",
+       "words": [
+        "친구하고",
+        "책을",
+        "읽습니다."
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요! Sekarang kamu bisa bercerita tentang sekolah."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "title": "Cuaca",
+   "subtitle": "Bicara tentang cuaca dan musim",
+   "lessons": [
+    {
+     "id": "u5l1",
+     "title": "Kosakata: cuaca dan musim",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Orang Korea sering membicarakan cuaca. Ayo belajar katanya."
+      },
+      {
+       "kind": "example",
+       "ko": "날씨",
+       "translation": "cuaca"
+      },
+      {
+       "kind": "example",
+       "ko": "봄",
+       "translation": "musim semi"
+      },
+      {
+       "kind": "example",
+       "ko": "여름",
+       "translation": "musim panas"
+      },
+      {
+       "kind": "example",
+       "ko": "가을",
+       "translation": "musim gugur"
+      },
+      {
+       "kind": "example",
+       "ko": "겨울",
+       "translation": "musim dingin"
+      },
+      {
+       "kind": "example",
+       "ko": "비",
+       "translation": "hujan"
+      },
+      {
+       "kind": "example",
+       "ko": "눈",
+       "translation": "salju"
+      },
+      {
+       "kind": "example",
+       "ko": "덥다",
+       "translation": "panas"
+      },
+      {
+       "kind": "example",
+       "ko": "춥다",
+       "translation": "dingin"
+      },
+      {
+       "kind": "example",
+       "ko": "따뜻하다",
+       "translation": "hangat"
+      },
+      {
+       "kind": "example",
+       "ko": "시원하다",
+       "translation": "sejuk"
+      },
+      {
+       "kind": "example",
+       "ko": "맑다",
+       "translation": "cerah"
+      },
+      {
+       "kind": "choice",
+       "text": "Apa arti 겨울?",
+       "options": [
+        "musim panas",
+        "musim gugur",
+        "musim dingin",
+        "musim semi"
+       ],
+       "answer": 2,
+       "why": "겨울 artinya musim dingin. 여름 artinya musim panas."
+      },
+      {
+       "kind": "choice",
+       "text": "Kata mana yang berarti 'dingin'?",
+       "options": [
+        "덥다",
+        "춥다",
+        "맑다",
+        "시원하다"
+       ],
+       "answer": 1,
+       "why": "춥다 artinya dingin. 덥다 artinya panas."
+      },
+      {
+       "kind": "choice",
+       "text": "Apa arti 눈 di sini?",
+       "options": [
+        "hujan",
+        "salju",
+        "cuaca"
+       ],
+       "answer": 1,
+       "why": "눈 artinya salju. Bisa juga berarti mata."
+      }
+     ]
+    },
+    {
+     "id": "u5l2",
+     "title": "Sopan sehari-hari (-아요/어요)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "-아요/어요 adalah gaya sopan yang dipakai sehari-hari. Lebih lembut daripada -습니다."
+      },
+      {
+       "kind": "say",
+       "text": "Lihat vokal terakhir akar kata. Kalau ㅏ atau ㅗ, tambahkan 아요."
+      },
+      {
+       "kind": "example",
+       "ko": "좋아요.",
+       "translation": "Bagus."
+      },
+      {
+       "kind": "example",
+       "ko": "맑아요.",
+       "translation": "Cerah."
+      },
+      {
+       "kind": "say",
+       "text": "Vokal lainnya, tambahkan 어요."
+      },
+      {
+       "kind": "example",
+       "ko": "먹어요.",
+       "translation": "Saya makan."
+      },
+      {
+       "kind": "example",
+       "ko": "읽어요.",
+       "translation": "Saya membaca."
+      },
+      {
+       "kind": "say",
+       "text": "Kata kerja dengan 하다 menjadi 해요."
+      },
+      {
+       "kind": "example",
+       "ko": "따뜻해요.",
+       "translation": "Hangat."
+      },
+      {
+       "kind": "example",
+       "ko": "공부해요.",
+       "translation": "Saya belajar."
+      },
+      {
+       "kind": "say",
+       "text": "덥다 dan 춥다 berubah bentuk: 더워요, 추워요. Hafalkan saja apa adanya."
+      },
+      {
+       "kind": "example",
+       "ko": "오늘 추워요.",
+       "translation": "Hari ini dingin."
+      },
+      {
+       "kind": "choice",
+       "text": "작다 →",
+       "options": [
+        "작어요",
+        "작아요",
+        "작해요"
+       ],
+       "answer": 1,
+       "why": "Vokal pada 작 adalah ㅏ, jadi 아요."
+      },
+      {
+       "kind": "choice",
+       "text": "시원하다 →",
+       "options": [
+        "시원아요",
+        "시원해요",
+        "시원어요"
+       ],
+       "answer": 1,
+       "why": "하다 menjadi 해요."
+      },
+      {
+       "kind": "choice",
+       "text": "읽다 →",
+       "options": [
+        "읽아요",
+        "읽어요",
+        "읽해요"
+       ],
+       "answer": 1,
+       "why": "Vokal pada 읽 adalah ㅣ, jadi 어요."
+      },
+      {
+       "kind": "build",
+       "translation": "Cuacanya bagus.",
+       "words": [
+        "날씨가",
+        "좋아요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u5l3",
+     "title": "Tidak (-지 않아요)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Untuk mengatakan 'tidak', buang 다 dan tambahkan 지 않아요."
+      },
+      {
+       "kind": "example",
+       "ko": "춥지 않아요.",
+       "translation": "Tidak dingin."
+      },
+      {
+       "kind": "example",
+       "ko": "덥지 않아요.",
+       "translation": "Tidak panas."
+      },
+      {
+       "kind": "example",
+       "ko": "좋지 않아요.",
+       "translation": "Tidak bagus."
+      },
+      {
+       "kind": "say",
+       "text": "Bisa juga untuk kegiatan."
+      },
+      {
+       "kind": "example",
+       "ko": "커피를 마시지 않아요.",
+       "translation": "Saya tidak minum kopi."
+      },
+      {
+       "kind": "say",
+       "text": "Di sini bentuknya tidak berubah: 춥다 menjadi 춥지 않아요, bukan 추워지 않아요."
+      },
+      {
+       "kind": "choice",
+       "text": "크다 → tidak besar",
+       "options": [
+        "크지 않아요",
+        "커지 않아요",
+        "크 않아요"
+       ],
+       "answer": 0,
+       "why": "Akar kata 크 + 지 않아요."
+      },
+      {
+       "kind": "choice",
+       "text": "Mana yang benar?",
+       "options": [
+        "날씨가 좋지 않아요",
+        "날씨가 좋아지 않아요"
+       ],
+       "answer": 0,
+       "why": "Akar kata 좋 + 지 않아요."
+      },
+      {
+       "kind": "choice",
+       "text": "먹다 → saya tidak makan",
+       "options": [
+        "먹지 않아요",
+        "먹어지 않아요",
+        "먹않아요"
+       ],
+       "answer": 0,
+       "why": "Akar kata 먹 + 지 않아요."
+      },
+      {
+       "kind": "build",
+       "translation": "Hari ini tidak dingin.",
+       "words": [
+        "오늘",
+        "춥지",
+        "않아요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u5l4",
+     "title": "Gabungkan: bagaimana cuacanya?",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Minsu menelepon Hana. Dengarkan."
+      },
+      {
+       "kind": "example",
+       "ko": "오늘 날씨가 어때요?",
+       "translation": "Bagaimana cuaca hari ini?"
+      },
+      {
+       "kind": "example",
+       "ko": "날씨가 좋지 않아요. 비가 와요.",
+       "translation": "Cuacanya tidak bagus. Sedang hujan."
+      },
+      {
+       "kind": "example",
+       "ko": "추워요?",
+       "translation": "Dingin?"
+      },
+      {
+       "kind": "example",
+       "ko": "아니요, 춥지 않아요. 시원해요.",
+       "translation": "Tidak, tidak dingin. Sejuk."
+      },
+      {
+       "kind": "example",
+       "ko": "저는 봄을 좋아해요. 봄은 따뜻해요.",
+       "translation": "Aku suka musim semi. Musim semi itu hangat."
+      },
+      {
+       "kind": "say",
+       "text": "어때요? artinya 'bagaimana?'. Pakai untuk cuaca, makanan, apa saja."
+      },
+      {
+       "kind": "say",
+       "text": "비가 와요 artinya 'sedang hujan', secara harfiah 'hujan datang'."
+      },
+      {
+       "kind": "choice",
+       "text": "Bagaimana mengatakan 'Sedang hujan'?",
+       "options": [
+        "비가 와요",
+        "비를 와요",
+        "비가 해요"
+       ],
+       "answer": 0,
+       "why": "비가 와요: hujan datang."
+      },
+      {
+       "kind": "choice",
+       "text": "Apa arti 어때요?",
+       "options": [
+        "Apa itu?",
+        "Bagaimana?",
+        "Di mana?"
+       ],
+       "answer": 1,
+       "why": "어때요? menanyakan keadaan sesuatu."
+      },
+      {
+       "kind": "build",
+       "translation": "Saya suka musim dingin.",
+       "words": [
+        "저는",
+        "겨울을",
+        "좋아해요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Musim panas itu panas.",
+       "words": [
+        "여름은",
+        "더워요."
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요! Sekarang kamu bisa bicara tentang cuaca."
+      }
+     ]
+    },
+    {
+     "id": "u5r",
+     "title": "Ulasan: Unit 1 sampai 5",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Ayo ulang semua dari Unit 1 sampai 5. Tidak ada tata bahasa baru, hanya latihan."
+      },
+      {
+       "kind": "choice",
+       "text": "저___ 학생이에요.",
+       "options": [
+        "은",
+        "는"
+       ],
+       "answer": 1,
+       "why": "저 berakhir dengan vokal, jadi 는."
+      },
+      {
+       "kind": "choice",
+       "text": "의사___ 아니에요.",
+       "options": [
+        "이",
+        "가"
+       ],
+       "answer": 1,
+       "why": "의사 berakhir dengan vokal, jadi 가 아니에요."
+      },
+      {
+       "kind": "choice",
+       "text": "빵___ 먹습니다.",
+       "options": [
+        "을",
+        "를"
+       ],
+       "answer": 0,
+       "why": "빵 berakhir dengan konsonan, jadi 을."
+      },
+      {
+       "kind": "choice",
+       "text": "친구___ 가방",
+       "options": [
+        "과",
+        "의"
+       ],
+       "answer": 1,
+       "why": "의 menunjukkan pemiliknya: tas teman."
+      },
+      {
+       "kind": "choice",
+       "text": "좋다 →",
+       "options": [
+        "좋아요",
+        "좋어요",
+        "좋해요"
+       ],
+       "answer": 0,
+       "why": "Vokalnya ㅗ, jadi 아요."
+      },
+      {
+       "kind": "choice",
+       "text": "춥다 → tidak dingin",
+       "options": [
+        "추워지 않아요",
+        "춥지 않아요"
+       ],
+       "answer": 1,
+       "why": "Akar kata 춥 + 지 않아요."
+      },
+      {
+       "kind": "choice",
+       "text": "마시다 → formal",
+       "options": [
+        "마시습니다",
+        "마십니다"
+       ],
+       "answer": 1,
+       "why": "Akar kata berakhir vokal, jadi ㅂ니다."
+      },
+      {
+       "kind": "build",
+       "translation": "Kakak perempuanku perawat.",
+       "words": [
+        "우리",
+        "언니는",
+        "간호사예요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Saya minum kopi dengan teman.",
+       "words": [
+        "친구하고",
+        "커피를",
+        "마십니다."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Cuaca hari ini tidak bagus.",
+       "words": [
+        "오늘",
+        "날씨가",
+        "좋지",
+        "않아요."
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "대단해요! Kamu sudah menyelesaikan lima unit pertama. Gochi bangga padamu."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "title": "Teman",
+   "subtitle": "Memberi, mengirim, dan menelepon",
+   "lessons": [
+    {
+     "id": "u6l1",
+     "title": "Kosakata: teman dan hadiah",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Ayo belajar kata-kata tentang teman, hadiah, dan pesan."
+      },
+      {
+       "kind": "example",
+       "ko": "선물",
+       "translation": "hadiah"
+      },
+      {
+       "kind": "example",
+       "ko": "편지",
+       "translation": "surat"
+      },
+      {
+       "kind": "example",
+       "ko": "꽃",
+       "translation": "bunga"
+      },
+      {
+       "kind": "example",
+       "ko": "생일",
+       "translation": "ulang tahun"
+      },
+      {
+       "kind": "example",
+       "ko": "주다",
+       "translation": "memberi"
+      },
+      {
+       "kind": "example",
+       "ko": "보내다",
+       "translation": "mengirim"
+      },
+      {
+       "kind": "example",
+       "ko": "전화하다",
+       "translation": "menelepon"
+      },
+      {
+       "kind": "example",
+       "ko": "만나다",
+       "translation": "bertemu"
+      },
+      {
+       "kind": "example",
+       "ko": "고마워요",
+       "translation": "terima kasih (akrab)"
+      },
+      {
+       "kind": "example",
+       "ko": "미안해요",
+       "translation": "maaf"
+      },
+      {
+       "kind": "example",
+       "ko": "생일 축하해요!",
+       "translation": "Selamat ulang tahun!"
+      },
+      {
+       "kind": "choice",
+       "text": "Apa arti 선물?",
+       "options": [
+        "surat",
+        "hadiah",
+        "bunga",
+        "ulang tahun"
+       ],
+       "answer": 1,
+       "why": "선물 artinya hadiah. 편지 artinya surat."
+      },
+      {
+       "kind": "choice",
+       "text": "Kata kerja mana yang berarti 'mengirim'?",
+       "options": [
+        "주다",
+        "보내다",
+        "만나다",
+        "전화하다"
+       ],
+       "answer": 1,
+       "why": "보내다 artinya mengirim. 주다 artinya memberi."
+      },
+      {
+       "kind": "choice",
+       "text": "Bagaimana mengatakan 'Selamat ulang tahun!'?",
+       "options": [
+        "생일 고마워요!",
+        "생일 축하해요!",
+        "생일 미안해요!"
+       ],
+       "answer": 1,
+       "why": "축하해요 artinya selamat."
+      }
+     ]
+    },
+    {
+     "id": "u6l2",
+     "title": "Kepada seseorang (에게/한테)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "에게 dan 한테 artinya 'kepada' seseorang. 한테 lebih santai. Keduanya bisa dipakai setelah nama apa pun."
+      },
+      {
+       "kind": "example",
+       "ko": "친구에게 편지를 보내요.",
+       "translation": "Saya mengirim surat kepada teman."
+      },
+      {
+       "kind": "example",
+       "ko": "동생한테 전화해요.",
+       "translation": "Saya menelepon adik."
+      },
+      {
+       "kind": "say",
+       "text": "Beberapa kata kerja memendek dalam gaya 요. 주다 menjadi 줘요, 보다 menjadi 봐요, 마시다 menjadi 마셔요."
+      },
+      {
+       "kind": "example",
+       "ko": "어머니한테 꽃을 줘요.",
+       "translation": "Saya memberi bunga kepada ibu."
+      },
+      {
+       "kind": "say",
+       "text": "Untuk tempat, pakai 에, bukan 에게. 에게 hanya untuk orang dan hewan."
+      },
+      {
+       "kind": "choice",
+       "text": "친구___ 선물을 줘요.",
+       "options": [
+        "에게",
+        "에서",
+        "을"
+       ],
+       "answer": 0,
+       "why": "에게 artinya 'kepada' seseorang."
+      },
+      {
+       "kind": "choice",
+       "text": "Mana yang santai?",
+       "options": [
+        "에게",
+        "한테"
+       ],
+       "answer": 1,
+       "why": "한테 umum dalam percakapan. 에게 lebih ke bahasa tulis."
+      },
+      {
+       "kind": "choice",
+       "text": "주다 → gaya 요",
+       "options": [
+        "hanya 주어요",
+        "줘요",
+        "주요"
+       ],
+       "answer": 1,
+       "why": "주 + 어요 memendek jadi 줘요."
+      },
+      {
+       "kind": "build",
+       "translation": "Saya menelepon teman.",
+       "words": [
+        "친구한테",
+        "전화해요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Saya memberi hadiah kepada kakak perempuan.",
+       "words": [
+        "언니에게",
+        "선물을",
+        "줘요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u6l3",
+     "title": "Hanya (만)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "만 artinya 'hanya'. Letakkan tepat setelah kata benda."
+      },
+      {
+       "kind": "example",
+       "ko": "커피만 마셔요.",
+       "translation": "Saya hanya minum kopi."
+      },
+      {
+       "kind": "example",
+       "ko": "동생만 와요.",
+       "translation": "Hanya adikku yang datang."
+      },
+      {
+       "kind": "say",
+       "text": "Sama seperti 도, 만 menggantikan 을/를 dan 이/가."
+      },
+      {
+       "kind": "example",
+       "ko": "저는 드라마만 봐요.",
+       "translation": "Saya hanya menonton drama."
+      },
+      {
+       "kind": "choice",
+       "text": "Saya hanya makan roti: 빵___ 먹어요.",
+       "options": [
+        "만",
+        "도",
+        "을"
+       ],
+       "answer": 0,
+       "why": "만 artinya hanya. 도 artinya juga."
+      },
+      {
+       "kind": "choice",
+       "text": "Mana yang benar?",
+       "options": [
+        "물을만 마셔요",
+        "물만 마셔요"
+       ],
+       "answer": 1,
+       "why": "만 menggantikan 을/를."
+      },
+      {
+       "kind": "choice",
+       "text": "Apa arti 친구만 와요?",
+       "options": [
+        "Teman juga datang",
+        "Hanya teman yang datang",
+        "Teman tidak datang"
+       ],
+       "answer": 1,
+       "why": "만 artinya hanya."
+      },
+      {
+       "kind": "build",
+       "translation": "Saya hanya minum teh.",
+       "words": [
+        "저는",
+        "차만",
+        "마셔요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u6l4",
+     "title": "Gabungkan: ulang tahun",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Hari ini ulang tahun Hana. Dengarkan."
+      },
+      {
+       "kind": "example",
+       "ko": "하나 씨, 생일 축하해요!",
+       "translation": "Hana, selamat ulang tahun!"
+      },
+      {
+       "kind": "example",
+       "ko": "이거 선물이에요.",
+       "translation": "Ini hadiah untukmu."
+      },
+      {
+       "kind": "example",
+       "ko": "와, 고마워요! 꽃이에요?",
+       "translation": "Wah, terima kasih! Ini bunga?"
+      },
+      {
+       "kind": "example",
+       "ko": "네. 그리고 편지도 있어요.",
+       "translation": "Ya. Ada surat juga."
+      },
+      {
+       "kind": "choice",
+       "text": "Apa arti 고마워요?",
+       "options": [
+        "Maaf",
+        "Terima kasih",
+        "Halo"
+       ],
+       "answer": 1,
+       "why": "고마워요 adalah terima kasih yang akrab."
+      },
+      {
+       "kind": "choice",
+       "text": "친구___ 꽃을 보내요.",
+       "options": [
+        "한테",
+        "에서",
+        "는"
+       ],
+       "answer": 0,
+       "why": "한테 artinya 'kepada' seseorang."
+      },
+      {
+       "kind": "build",
+       "translation": "Ini hadiah.",
+       "words": [
+        "이거",
+        "선물이에요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Saya mengirim surat kepada temanku.",
+       "words": [
+        "친구에게",
+        "편지를",
+        "보내요."
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요! Sekarang kamu bisa memberi hadiah dan mengirim pesan."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "title": "Letak benda",
+   "subtitle": "Katakan di mana benda berada dan di mana kamu melakukan sesuatu",
+   "lessons": [
+    {
+     "id": "u7l1",
+     "title": "Kosakata: ruangan dan tempat",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Ayo belajar kata-kata untuk menyebut letak benda."
+      },
+      {
+       "kind": "example",
+       "ko": "방",
+       "translation": "kamar"
+      },
+      {
+       "kind": "example",
+       "ko": "집",
+       "translation": "rumah"
+      },
+      {
+       "kind": "example",
+       "ko": "침대",
+       "translation": "tempat tidur"
+      },
+      {
+       "kind": "example",
+       "ko": "고양이",
+       "translation": "kucing"
+      },
+      {
+       "kind": "example",
+       "ko": "위",
+       "translation": "atas"
+      },
+      {
+       "kind": "example",
+       "ko": "아래",
+       "translation": "bawah"
+      },
+      {
+       "kind": "example",
+       "ko": "앞",
+       "translation": "depan"
+      },
+      {
+       "kind": "example",
+       "ko": "뒤",
+       "translation": "belakang"
+      },
+      {
+       "kind": "example",
+       "ko": "옆",
+       "translation": "samping"
+      },
+      {
+       "kind": "example",
+       "ko": "안",
+       "translation": "dalam"
+      },
+      {
+       "kind": "example",
+       "ko": "있다",
+       "translation": "ada, punya"
+      },
+      {
+       "kind": "example",
+       "ko": "없다",
+       "translation": "tidak ada, tidak punya"
+      },
+      {
+       "kind": "choice",
+       "text": "Apa arti 옆?",
+       "options": [
+        "belakang",
+        "samping",
+        "bawah",
+        "dalam"
+       ],
+       "answer": 1,
+       "why": "옆 artinya samping. 뒤 artinya belakang."
+      },
+      {
+       "kind": "choice",
+       "text": "Apa lawan kata 있다?",
+       "options": [
+        "없다",
+        "아래",
+        "안"
+       ],
+       "answer": 0,
+       "why": "있다 artinya 'ada', 없다 artinya 'tidak ada'."
+      },
+      {
+       "kind": "choice",
+       "text": "Apa arti 침대?",
+       "options": [
+        "kamar",
+        "tempat tidur",
+        "meja belajar",
+        "kursi"
+       ],
+       "answer": 1,
+       "why": "침대 artinya tempat tidur."
+      }
+     ]
+    },
+    {
+     "id": "u7l2",
+     "title": "Letak sesuatu (에 있어요)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Untuk menyebut letak sesuatu, pakai tempat + 에 + 있어요."
+      },
+      {
+       "kind": "example",
+       "ko": "고양이가 방에 있어요.",
+       "translation": "Kucingnya ada di kamar."
+      },
+      {
+       "kind": "say",
+       "text": "Untuk posisi, sebut bendanya dulu, lalu kata posisi, lalu 에."
+      },
+      {
+       "kind": "example",
+       "ko": "책이 책상 위에 있어요.",
+       "translation": "Bukunya ada di atas meja."
+      },
+      {
+       "kind": "example",
+       "ko": "가방이 의자 아래에 있어요.",
+       "translation": "Tasnya ada di bawah kursi."
+      },
+      {
+       "kind": "say",
+       "text": "Untuk bertanya di mana, pakai 어디에 있어요?"
+      },
+      {
+       "kind": "example",
+       "ko": "화장실이 어디에 있어요?",
+       "translation": "Kamar mandinya di mana?"
+      },
+      {
+       "kind": "example",
+       "ko": "집에 고양이가 없어요.",
+       "translation": "Di rumah tidak ada kucing."
+      },
+      {
+       "kind": "choice",
+       "text": "책이 침대 위___ 있어요.",
+       "options": [
+        "에",
+        "에서",
+        "를"
+       ],
+       "answer": 0,
+       "why": "Letak sesuatu: 에 있어요."
+      },
+      {
+       "kind": "choice",
+       "text": "Bagaimana mengatakan 'di samping meja'?",
+       "options": [
+        "책상 옆에",
+        "옆 책상에",
+        "책상에 옆"
+       ],
+       "answer": 0,
+       "why": "Bendanya dulu, lalu 옆, lalu 에."
+      },
+      {
+       "kind": "choice",
+       "text": "Mana yang berarti 'tidak ada tas'?",
+       "options": [
+        "가방이 있어요",
+        "가방이 없어요"
+       ],
+       "answer": 1,
+       "why": "없어요 artinya tidak ada."
+      },
+      {
+       "kind": "build",
+       "translation": "Kucingnya ada di bawah tempat tidur.",
+       "words": [
+        "고양이가",
+        "침대",
+        "아래에",
+        "있어요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u7l3",
+     "title": "Tempat melakukan sesuatu (에서)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "에서 menandai tempat sebuah kegiatan terjadi."
+      },
+      {
+       "kind": "example",
+       "ko": "도서관에서 공부해요.",
+       "translation": "Saya belajar di perpustakaan."
+      },
+      {
+       "kind": "example",
+       "ko": "식당에서 밥을 먹어요.",
+       "translation": "Saya makan di restoran."
+      },
+      {
+       "kind": "say",
+       "text": "Bandingkan: 에 untuk berada di suatu tempat. 에서 untuk melakukan sesuatu di sana."
+      },
+      {
+       "kind": "example",
+       "ko": "집에 있어요.",
+       "translation": "Saya di rumah."
+      },
+      {
+       "kind": "example",
+       "ko": "집에서 일해요.",
+       "translation": "Saya bekerja dari rumah."
+      },
+      {
+       "kind": "choice",
+       "text": "학교___ 한국어를 배워요.",
+       "options": [
+        "에",
+        "에서"
+       ],
+       "answer": 1,
+       "why": "배우다 adalah kegiatan, jadi 에서."
+      },
+      {
+       "kind": "choice",
+       "text": "저는 지금 집___ 있어요.",
+       "options": [
+        "에",
+        "에서"
+       ],
+       "answer": 0,
+       "why": "있다 berarti berada di suatu tempat, jadi 에."
+      },
+      {
+       "kind": "choice",
+       "text": "방___ 드라마를 봐요.",
+       "options": [
+        "에",
+        "에서"
+       ],
+       "answer": 1,
+       "why": "Menonton adalah kegiatan, jadi 에서."
+      },
+      {
+       "kind": "build",
+       "translation": "Saya belajar di perpustakaan.",
+       "words": [
+        "도서관에서",
+        "공부해요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u7l4",
+     "title": "Gabungkan: kamu di mana?",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Minsu menelepon Hana. Dengarkan."
+      },
+      {
+       "kind": "example",
+       "ko": "하나 씨, 지금 어디에 있어요?",
+       "translation": "Hana, kamu di mana sekarang?"
+      },
+      {
+       "kind": "example",
+       "ko": "집에 있어요. 방에서 드라마를 봐요.",
+       "translation": "Aku di rumah. Aku sedang menonton drama di kamar."
+      },
+      {
+       "kind": "example",
+       "ko": "제 가방이 하나 씨 집에 있어요?",
+       "translation": "Tasku ada di rumahmu?"
+      },
+      {
+       "kind": "example",
+       "ko": "네, 의자 옆에 있어요.",
+       "translation": "Ya, ada di samping kursi."
+      },
+      {
+       "kind": "example",
+       "ko": "고마워요! 내일 가요.",
+       "translation": "Makasih! Besok aku ke sana."
+      },
+      {
+       "kind": "say",
+       "text": "지금 artinya sekarang. 내일 artinya besok."
+      },
+      {
+       "kind": "choice",
+       "text": "가방이 의자 옆___ 있어요.",
+       "options": [
+        "에",
+        "에서"
+       ],
+       "answer": 0,
+       "why": "Berada di suatu tempat: 에."
+      },
+      {
+       "kind": "choice",
+       "text": "Apa arti 어디에 있어요?",
+       "options": [
+        "Apa itu?",
+        "Di mana?",
+        "Siapa itu?"
+       ],
+       "answer": 1,
+       "why": "어디 artinya di mana."
+      },
+      {
+       "kind": "build",
+       "translation": "Sekarang saya di rumah.",
+       "words": [
+        "지금",
+        "집에",
+        "있어요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Saya makan di rumah.",
+       "words": [
+        "집에서",
+        "밥을",
+        "먹어요."
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요! Sekarang kamu bisa menyebut letak benda."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "title": "Tanggal",
+   "subtitle": "Bicara tentang hari dan masa lalu",
+   "lessons": [
+    {
+     "id": "u8l1",
+     "title": "Kosakata: angka dan hari",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Bahasa Korea punya dua sistem angka. Yang ini, dari bahasa Tionghoa, dipakai untuk tanggal, uang, dan nomor telepon."
+      },
+      {
+       "kind": "example",
+       "ko": "일, 이, 삼",
+       "translation": "1, 2, 3"
+      },
+      {
+       "kind": "example",
+       "ko": "사, 오, 육",
+       "translation": "4, 5, 6"
+      },
+      {
+       "kind": "example",
+       "ko": "칠, 팔, 구, 십",
+       "translation": "7, 8, 9, 10"
+      },
+      {
+       "kind": "example",
+       "ko": "십오",
+       "translation": "15 (10 + 5)"
+      },
+      {
+       "kind": "example",
+       "ko": "이십",
+       "translation": "20 (2 × 10)"
+      },
+      {
+       "kind": "say",
+       "text": "Bulan adalah angka + 월. Hati-hati: Juni adalah 유월 dan Oktober adalah 시월."
+      },
+      {
+       "kind": "example",
+       "ko": "삼월 십오일",
+       "translation": "15 Maret"
+      },
+      {
+       "kind": "example",
+       "ko": "월요일",
+       "translation": "Senin"
+      },
+      {
+       "kind": "example",
+       "ko": "금요일",
+       "translation": "Jumat"
+      },
+      {
+       "kind": "example",
+       "ko": "토요일",
+       "translation": "Sabtu"
+      },
+      {
+       "kind": "example",
+       "ko": "일요일",
+       "translation": "Minggu"
+      },
+      {
+       "kind": "example",
+       "ko": "어제, 오늘, 내일",
+       "translation": "kemarin, hari ini, besok"
+      },
+      {
+       "kind": "example",
+       "ko": "주말",
+       "translation": "akhir pekan"
+      },
+      {
+       "kind": "choice",
+       "text": "Bagaimana menyebut 25?",
+       "options": [
+        "이오",
+        "이십오",
+        "오십이"
+       ],
+       "answer": 1,
+       "why": "이십 (20) + 오 (5)."
+      },
+      {
+       "kind": "choice",
+       "text": "Bagaimana menyebut Juni?",
+       "options": [
+        "육월",
+        "유월",
+        "오월"
+       ],
+       "answer": 1,
+       "why": "Juni adalah 유월, bukan 육월."
+      },
+      {
+       "kind": "choice",
+       "text": "Apa arti 토요일?",
+       "options": [
+        "Jumat",
+        "Sabtu",
+        "Minggu"
+       ],
+       "answer": 1,
+       "why": "토요일 artinya Sabtu. 일요일 artinya Minggu."
+      }
+     ]
+    },
+    {
+     "id": "u8l2",
+     "title": "Bentuk lampau (-았/었어요)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Bentuk lampau sama seperti -아요/어요. Cukup pakai 았어요 atau 었어요."
+      },
+      {
+       "kind": "say",
+       "text": "Kalau vokal terakhirnya ㅏ atau ㅗ, pakai 았어요."
+      },
+      {
+       "kind": "example",
+       "ko": "좋았어요.",
+       "translation": "Tadi bagus."
+      },
+      {
+       "kind": "example",
+       "ko": "만났어요.",
+       "translation": "Saya sudah bertemu (seseorang)."
+      },
+      {
+       "kind": "example",
+       "ko": "봤어요.",
+       "translation": "Saya sudah melihat, menonton."
+      },
+      {
+       "kind": "say",
+       "text": "Vokal lainnya, pakai 었어요. 하다 menjadi 했어요."
+      },
+      {
+       "kind": "example",
+       "ko": "먹었어요.",
+       "translation": "Saya sudah makan."
+      },
+      {
+       "kind": "example",
+       "ko": "읽었어요.",
+       "translation": "Saya membaca."
+      },
+      {
+       "kind": "example",
+       "ko": "공부했어요.",
+       "translation": "Saya sudah belajar."
+      },
+      {
+       "kind": "choice",
+       "text": "먹다 → lampau",
+       "options": [
+        "먹았어요",
+        "먹었어요",
+        "먹했어요"
+       ],
+       "answer": 1,
+       "why": "Vokal pada 먹 adalah ㅓ, jadi 었어요."
+      },
+      {
+       "kind": "choice",
+       "text": "일하다 → lampau",
+       "options": [
+        "일했어요",
+        "일았어요",
+        "일하었어요"
+       ],
+       "answer": 0,
+       "why": "하다 menjadi 했어요."
+      },
+      {
+       "kind": "choice",
+       "text": "작다 → lampau",
+       "options": [
+        "작었어요",
+        "작았어요"
+       ],
+       "answer": 1,
+       "why": "Vokal pada 작 adalah ㅏ, jadi 았어요."
+      },
+      {
+       "kind": "build",
+       "translation": "Kemarin saya menonton film.",
+       "words": [
+        "어제",
+        "영화를",
+        "봤어요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u8l3",
+     "title": "Pada waktu tertentu (에)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Untuk menyebut kapan sesuatu terjadi, tambahkan 에 setelah waktunya."
+      },
+      {
+       "kind": "example",
+       "ko": "토요일에 친구를 만났어요.",
+       "translation": "Hari Sabtu saya bertemu teman."
+      },
+      {
+       "kind": "example",
+       "ko": "삼월에 한국에 가요.",
+       "translation": "Bulan Maret saya ke Korea."
+      },
+      {
+       "kind": "example",
+       "ko": "주말에 뭐 했어요?",
+       "translation": "Kamu melakukan apa saat akhir pekan?"
+      },
+      {
+       "kind": "say",
+       "text": "어제, 오늘, dan 내일 tidak memakai 에."
+      },
+      {
+       "kind": "example",
+       "ko": "어제 공부했어요.",
+       "translation": "Kemarin saya belajar."
+      },
+      {
+       "kind": "choice",
+       "text": "금요일___ 영화를 봤어요.",
+       "options": [
+        "에",
+        "에서",
+        "를"
+       ],
+       "answer": 0,
+       "why": "Waktu + 에."
+      },
+      {
+       "kind": "choice",
+       "text": "Mana yang benar?",
+       "options": [
+        "어제에 먹었어요",
+        "어제 먹었어요"
+       ],
+       "answer": 1,
+       "why": "어제 tidak pernah memakai 에."
+      },
+      {
+       "kind": "choice",
+       "text": "일요일에 뭐 ___?",
+       "options": [
+        "했어요",
+        "해요었어요",
+        "했요"
+       ],
+       "answer": 0,
+       "why": "했어요 adalah bentuk lampau dari 해요."
+      },
+      {
+       "kind": "build",
+       "translation": "Akhir pekan saya bertemu teman.",
+       "words": [
+        "주말에",
+        "친구를",
+        "만났어요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u8l4",
+     "title": "Gabungkan: akhir pekanmu",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Senin pagi di sekolah. Dengarkan."
+      },
+      {
+       "kind": "example",
+       "ko": "주말에 뭐 했어요?",
+       "translation": "Kamu melakukan apa saat akhir pekan?"
+      },
+      {
+       "kind": "example",
+       "ko": "토요일에 친구를 만났어요. 같이 영화를 봤어요.",
+       "translation": "Hari Sabtu aku bertemu teman. Kami menonton film bersama."
+      },
+      {
+       "kind": "example",
+       "ko": "영화가 어땠어요?",
+       "translation": "Filmnya bagaimana?"
+      },
+      {
+       "kind": "example",
+       "ko": "정말 좋았어요! 일요일에는 집에서 쉬었어요.",
+       "translation": "Bagus sekali! Hari Minggu aku istirahat di rumah."
+      },
+      {
+       "kind": "say",
+       "text": "어땠어요? adalah bentuk lampau dari 어때요?. 같이 artinya bersama."
+      },
+      {
+       "kind": "say",
+       "text": "쉬다 artinya istirahat. 쉬었어요 adalah bentuk lampaunya."
+      },
+      {
+       "kind": "choice",
+       "text": "Apa yang ditanyakan 어땠어요?",
+       "options": [
+        "Bagaimana?",
+        "Bagaimana tadi?",
+        "Tadi di mana?"
+       ],
+       "answer": 1,
+       "why": "어땠어요 adalah bentuk lampau."
+      },
+      {
+       "kind": "choice",
+       "text": "일요일___ 집에서 쉬었어요.",
+       "options": [
+        "에",
+        "에서",
+        "을"
+       ],
+       "answer": 0,
+       "why": "Waktu + 에."
+      },
+      {
+       "kind": "build",
+       "translation": "Kemarin saya istirahat di rumah.",
+       "words": [
+        "어제",
+        "집에서",
+        "쉬었어요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Filmnya bagus.",
+       "words": [
+        "영화가",
+        "좋았어요."
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요! Sekarang kamu bisa bercerita tentang masa lalu."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 9,
+   "title": "Olahraga",
+   "subtitle": "Katakan apa yang bisa dan tidak bisa kamu lakukan",
+   "lessons": [
+    {
+     "id": "u9l1",
+     "title": "Kosakata: olahraga",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Ayo belajar olahraga dan kata-kata untuk seberapa sering."
+      },
+      {
+       "kind": "example",
+       "ko": "운동",
+       "translation": "olahraga"
+      },
+      {
+       "kind": "example",
+       "ko": "수영",
+       "translation": "renang"
+      },
+      {
+       "kind": "example",
+       "ko": "축구",
+       "translation": "sepak bola"
+      },
+      {
+       "kind": "example",
+       "ko": "야구",
+       "translation": "bisbol"
+      },
+      {
+       "kind": "example",
+       "ko": "테니스",
+       "translation": "tenis"
+      },
+      {
+       "kind": "example",
+       "ko": "요가",
+       "translation": "yoga"
+      },
+      {
+       "kind": "example",
+       "ko": "잘",
+       "translation": "dengan baik"
+      },
+      {
+       "kind": "example",
+       "ko": "매일",
+       "translation": "setiap hari"
+      },
+      {
+       "kind": "example",
+       "ko": "자주",
+       "translation": "sering"
+      },
+      {
+       "kind": "example",
+       "ko": "가끔",
+       "translation": "kadang-kadang"
+      },
+      {
+       "kind": "choice",
+       "text": "Apa arti 축구?",
+       "options": [
+        "bisbol",
+        "sepak bola",
+        "renang"
+       ],
+       "answer": 1,
+       "why": "축구 artinya sepak bola. 야구 artinya bisbol."
+      },
+      {
+       "kind": "choice",
+       "text": "Kata mana yang berarti 'kadang-kadang'?",
+       "options": [
+        "매일",
+        "자주",
+        "가끔"
+       ],
+       "answer": 2,
+       "why": "가끔 artinya kadang-kadang. 자주 artinya sering."
+      },
+      {
+       "kind": "choice",
+       "text": "Apa arti 잘?",
+       "options": [
+        "dengan baik",
+        "setiap hari",
+        "tidak"
+       ],
+       "answer": 0,
+       "why": "잘 artinya dengan baik: 잘해요, saya jago."
+      }
+     ]
+    },
+    {
+     "id": "u9l2",
+     "title": "Dari... sampai... (부터, 까지)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "부터 artinya 'dari' atau 'mulai', dan 까지 artinya 'sampai'. Pakai untuk waktu dan hari."
+      },
+      {
+       "kind": "example",
+       "ko": "월요일부터 금요일까지 일해요.",
+       "translation": "Saya bekerja dari Senin sampai Jumat."
+      },
+      {
+       "kind": "example",
+       "ko": "오늘부터 운동해요.",
+       "translation": "Saya mulai olahraga hari ini."
+      },
+      {
+       "kind": "example",
+       "ko": "일요일까지 쉬어요.",
+       "translation": "Saya istirahat sampai hari Minggu."
+      },
+      {
+       "kind": "choice",
+       "text": "월요일___ 수영해요. (mulai Senin)",
+       "options": [
+        "부터",
+        "까지",
+        "에서"
+       ],
+       "answer": 0,
+       "why": "부터 artinya mulai atau dari."
+      },
+      {
+       "kind": "choice",
+       "text": "금요일___ 공부해요. (sampai Jumat)",
+       "options": [
+        "부터",
+        "까지"
+       ],
+       "answer": 1,
+       "why": "까지 artinya sampai."
+      },
+      {
+       "kind": "choice",
+       "text": "Mana yang benar?",
+       "options": [
+        "월요일까지 금요일부터",
+        "월요일부터 금요일까지"
+       ],
+       "answer": 1,
+       "why": "부터 dulu, lalu 까지."
+      },
+      {
+       "kind": "build",
+       "translation": "Saya berenang dari Senin sampai Jumat.",
+       "words": [
+        "월요일부터",
+        "금요일까지",
+        "수영해요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u9l3",
+     "title": "Tidak bisa (못, -지 못해요)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "못 artinya 'tidak bisa'. Letakkan tepat sebelum kata kerja."
+      },
+      {
+       "kind": "example",
+       "ko": "저는 수영을 못해요.",
+       "translation": "Saya tidak bisa berenang."
+      },
+      {
+       "kind": "example",
+       "ko": "오늘은 못 가요.",
+       "translation": "Hari ini saya tidak bisa pergi."
+      },
+      {
+       "kind": "say",
+       "text": "Kamu juga bisa menambahkan 지 못해요 pada akar kata. Artinya sama, sedikit lebih formal."
+      },
+      {
+       "kind": "example",
+       "ko": "축구를 하지 못해요.",
+       "translation": "Saya tidak bisa main sepak bola."
+      },
+      {
+       "kind": "say",
+       "text": "Bandingkan: 안 (bentuk pendek -지 않아요) artinya kamu tidak melakukannya. 못 artinya kamu tidak bisa."
+      },
+      {
+       "kind": "example",
+       "ko": "수영을 잘해요.",
+       "translation": "Saya jago berenang."
+      },
+      {
+       "kind": "choice",
+       "text": "Saya tidak bisa minum kopi: 커피를 ___ 마셔요.",
+       "options": [
+        "못",
+        "만",
+        "도"
+       ],
+       "answer": 0,
+       "why": "못 + kata kerja artinya tidak bisa."
+      },
+      {
+       "kind": "choice",
+       "text": "가다 → tidak bisa (bentuk 지)",
+       "options": [
+        "가지 못해요",
+        "가 못해요",
+        "가지 못가요"
+       ],
+       "answer": 0,
+       "why": "Akar kata 가 + 지 못해요."
+      },
+      {
+       "kind": "choice",
+       "text": "Mana yang berarti 'Saya tidak bisa berenang'?",
+       "options": [
+        "수영을 안 해요",
+        "수영을 못해요"
+       ],
+       "answer": 1,
+       "why": "못 artinya tidak bisa. 안 artinya tidak melakukan."
+      },
+      {
+       "kind": "build",
+       "translation": "Saya tidak bisa main tenis.",
+       "words": [
+        "저는",
+        "테니스를",
+        "못해요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u9l4",
+     "title": "Gabungkan: olahraga favorit",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Hana dan Minsu membicarakan olahraga. Dengarkan."
+      },
+      {
+       "kind": "example",
+       "ko": "무슨 운동을 좋아해요?",
+       "translation": "Kamu suka olahraga apa?"
+      },
+      {
+       "kind": "example",
+       "ko": "축구를 좋아해요. 매일 해요.",
+       "translation": "Aku suka sepak bola. Aku main setiap hari."
+      },
+      {
+       "kind": "example",
+       "ko": "수영도 해요?",
+       "translation": "Kamu juga berenang?"
+      },
+      {
+       "kind": "example",
+       "ko": "아니요, 저는 수영을 못해요.",
+       "translation": "Tidak, aku tidak bisa berenang."
+      },
+      {
+       "kind": "example",
+       "ko": "저는 수영을 잘해요. 월요일부터 금요일까지 수영장에 가요.",
+       "translation": "Aku jago berenang. Aku ke kolam renang dari Senin sampai Jumat."
+      },
+      {
+       "kind": "say",
+       "text": "무슨 artinya 'jenis apa'. 수영장 artinya kolam renang."
+      },
+      {
+       "kind": "choice",
+       "text": "Apa arti 잘해요?",
+       "options": [
+        "Saya tidak jago",
+        "Saya jago",
+        "Saya tidak melakukannya"
+       ],
+       "answer": 1,
+       "why": "잘 + 해요 artinya kamu melakukannya dengan baik."
+      },
+      {
+       "kind": "choice",
+       "text": "저는 야구를 ___ 해요. (tidak bisa)",
+       "options": [
+        "못",
+        "잘",
+        "만"
+       ],
+       "answer": 0,
+       "why": "못 artinya tidak bisa."
+      },
+      {
+       "kind": "build",
+       "translation": "Saya main sepak bola setiap hari.",
+       "words": [
+        "저는",
+        "매일",
+        "축구를",
+        "해요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Hari ini saya tidak bisa pergi.",
+       "words": [
+        "오늘은",
+        "못",
+        "가요."
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요! Sekarang kamu bisa bicara tentang olahraga."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 10,
+   "title": "Membuat rencana",
+   "subtitle": "Ajak teman membuat rencana",
+   "lessons": [
+    {
+     "id": "u10l1",
+     "title": "Kosakata: berhitung dan jam",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Ini sistem angka asli Korea. Pakai untuk menghitung benda dan menyebut jam."
+      },
+      {
+       "kind": "example",
+       "ko": "하나, 둘, 셋",
+       "translation": "1, 2, 3"
+      },
+      {
+       "kind": "example",
+       "ko": "넷, 다섯, 여섯",
+       "translation": "4, 5, 6"
+      },
+      {
+       "kind": "example",
+       "ko": "일곱, 여덟, 아홉, 열",
+       "translation": "7, 8, 9, 10"
+      },
+      {
+       "kind": "say",
+       "text": "Sebelum 시 (jam), beberapa angka memendek: 한 시, 두 시, 세 시, 네 시."
+      },
+      {
+       "kind": "example",
+       "ko": "한 시",
+       "translation": "jam 1"
+      },
+      {
+       "kind": "example",
+       "ko": "세 시",
+       "translation": "jam 3"
+      },
+      {
+       "kind": "example",
+       "ko": "열두 시",
+       "translation": "jam 12"
+      },
+      {
+       "kind": "say",
+       "text": "Menit memakai sistem yang lain: 삼십 분 artinya 30 menit."
+      },
+      {
+       "kind": "example",
+       "ko": "두 시 삼십 분",
+       "translation": "2:30"
+      },
+      {
+       "kind": "example",
+       "ko": "점심",
+       "translation": "makan siang"
+      },
+      {
+       "kind": "example",
+       "ko": "저녁",
+       "translation": "makan malam, malam"
+      },
+      {
+       "kind": "example",
+       "ko": "같이",
+       "translation": "bersama"
+      },
+      {
+       "kind": "choice",
+       "text": "Bagaimana menyebut jam 4?",
+       "options": [
+        "사 시",
+        "네 시",
+        "넷 시"
+       ],
+       "answer": 1,
+       "why": "넷 memendek menjadi 네 sebelum 시."
+      },
+      {
+       "kind": "choice",
+       "text": "다섯 itu angka berapa?",
+       "options": [
+        "4",
+        "5",
+        "6"
+       ],
+       "answer": 1,
+       "why": "다섯 adalah 5."
+      },
+      {
+       "kind": "choice",
+       "text": "Bagaimana menyebut jam 7.30?",
+       "options": [
+        "일곱 시 삼십 분",
+        "칠 시 서른 분"
+       ],
+       "answer": 0,
+       "why": "Jam memakai angka asli Korea, menit memakai 일, 이, 삼."
+      }
+     ]
+    },
+    {
+     "id": "u10l2",
+     "title": "Bagaimana kalau...? Ayo! (-을까요, -읍시다)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "-을까요? artinya 'bagaimana kalau kita...?'. Pakai untuk mengajak."
+      },
+      {
+       "kind": "say",
+       "text": "Setelah konsonan tambahkan 을까요. Setelah vokal tambahkan ㄹ까요."
+      },
+      {
+       "kind": "example",
+       "ko": "같이 먹을까요?",
+       "translation": "Bagaimana kalau kita makan bersama?"
+      },
+      {
+       "kind": "example",
+       "ko": "영화를 볼까요?",
+       "translation": "Bagaimana kalau kita nonton film?"
+      },
+      {
+       "kind": "say",
+       "text": "-읍시다 artinya 'ayo'. Setelah vokal menjadi ㅂ시다."
+      },
+      {
+       "kind": "example",
+       "ko": "갑시다!",
+       "translation": "Ayo pergi!"
+      },
+      {
+       "kind": "example",
+       "ko": "점심을 먹읍시다.",
+       "translation": "Ayo makan siang."
+      },
+      {
+       "kind": "say",
+       "text": "-읍시다 bisa terdengar memerintah kepada orang yang lebih tua. Kepada mereka, pakai -을까요?."
+      },
+      {
+       "kind": "choice",
+       "text": "마시다 → bagaimana kalau...?",
+       "options": [
+        "마실까요",
+        "마시을까요",
+        "마셔까요"
+       ],
+       "answer": 0,
+       "why": "Akar kata berakhir vokal, jadi ㄹ까요: 마실까요."
+      },
+      {
+       "kind": "choice",
+       "text": "읽다 → bagaimana kalau...?",
+       "options": [
+        "읽ㄹ까요",
+        "읽을까요"
+       ],
+       "answer": 1,
+       "why": "Akar kata berakhir konsonan, jadi 을까요."
+      },
+      {
+       "kind": "choice",
+       "text": "만나다 → ayo",
+       "options": [
+        "만납시다",
+        "만나읍시다"
+       ],
+       "answer": 0,
+       "why": "Akar kata berakhir vokal, jadi ㅂ시다."
+      },
+      {
+       "kind": "build",
+       "translation": "Bagaimana kalau kita makan malam bersama?",
+       "words": [
+        "같이",
+        "저녁을",
+        "먹을까요?"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u10l3",
+     "title": "Lalu (-고)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "-고 menggabungkan dua kegiatan atau keadaan, seperti 'dan'. Tambahkan pada akar kata."
+      },
+      {
+       "kind": "example",
+       "ko": "밥을 먹고 영화를 봐요.",
+       "translation": "Saya makan lalu menonton film."
+      },
+      {
+       "kind": "example",
+       "ko": "날씨가 좋고 따뜻해요.",
+       "translation": "Cuacanya bagus dan hangat."
+      },
+      {
+       "kind": "example",
+       "ko": "숙제를 하고 잤어요.",
+       "translation": "Saya mengerjakan PR lalu tidur."
+      },
+      {
+       "kind": "say",
+       "text": "Bentuk waktu hanya dipasang di kata kerja terakhir."
+      },
+      {
+       "kind": "choice",
+       "text": "Saya sudah makan dan minum. Mana yang benar?",
+       "options": [
+        "먹고 마셨어요",
+        "먹었어요고 마셨어요"
+       ],
+       "answer": 0,
+       "why": "Bentuk lampau ada di kata kerja terakhir: 먹고 마셨어요."
+      },
+      {
+       "kind": "choice",
+       "text": "공부하다 + 자다",
+       "options": [
+        "공부하고 자요",
+        "공부해고 자요"
+       ],
+       "answer": 0,
+       "why": "Akar kata 공부하 + 고."
+      },
+      {
+       "kind": "choice",
+       "text": "Apa arti 크고 좋아요?",
+       "options": [
+        "Besar tapi jelek",
+        "Besar dan bagus",
+        "Tidak besar"
+       ],
+       "answer": 1,
+       "why": "-고 artinya dan."
+      },
+      {
+       "kind": "build",
+       "translation": "Saya makan siang lalu minum kopi.",
+       "words": [
+        "점심을",
+        "먹고",
+        "커피를",
+        "마셔요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u10l4",
+     "title": "Gabungkan: membuat rencana",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Minsu mengajak Hana makan siang. Dengarkan."
+      },
+      {
+       "kind": "example",
+       "ko": "하나 씨, 내일 같이 점심을 먹을까요?",
+       "translation": "Hana, besok kita makan siang bersama, yuk?"
+      },
+      {
+       "kind": "example",
+       "ko": "좋아요! 몇 시에 만날까요?",
+       "translation": "Boleh! Kita ketemu jam berapa?"
+      },
+      {
+       "kind": "example",
+       "ko": "열두 시에 만납시다.",
+       "translation": "Ayo ketemu jam 12."
+      },
+      {
+       "kind": "example",
+       "ko": "점심을 먹고 커피도 마실까요?",
+       "translation": "Habis makan siang, kita minum kopi juga, yuk?"
+      },
+      {
+       "kind": "example",
+       "ko": "네, 좋아요. 내일 봐요!",
+       "translation": "Ya, boleh. Sampai besok!"
+      },
+      {
+       "kind": "say",
+       "text": "몇 시 artinya 'jam berapa'. 내일 봐요 artinya 'sampai besok'."
+      },
+      {
+       "kind": "choice",
+       "text": "Bagaimana menanyakan 'Jam berapa?'",
+       "options": [
+        "몇 시예요?",
+        "무슨 시예요?",
+        "어디 시예요?"
+       ],
+       "answer": 0,
+       "why": "몇 artinya berapa: 몇 시 artinya jam berapa."
+      },
+      {
+       "kind": "choice",
+       "text": "가다 → ayo",
+       "options": [
+        "갑시다",
+        "가읍시다",
+        "갈시다"
+       ],
+       "answer": 0,
+       "why": "Akar kata berakhir vokal, jadi ㅂ시다."
+      },
+      {
+       "kind": "build",
+       "translation": "Ayo ketemu jam 3.",
+       "words": [
+        "세",
+        "시에",
+        "만납시다."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Bagaimana kalau kita nonton film bersama?",
+       "words": [
+        "같이",
+        "영화를",
+        "볼까요?"
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요! Sekarang kamu bisa membuat rencana dalam bahasa Korea."
+      }
+     ]
+    },
+    {
+     "id": "u10r",
+     "title": "Ulasan: Unit 6 sampai 10",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Ayo ulang Unit 6 sampai 10."
+      },
+      {
+       "kind": "choice",
+       "text": "동생___ 선물을 줘요.",
+       "options": [
+        "한테",
+        "에서",
+        "부터"
+       ],
+       "answer": 0,
+       "why": "한테 artinya 'kepada' seseorang."
+      },
+      {
+       "kind": "choice",
+       "text": "저는 커피___ 마셔요. (hanya)",
+       "options": [
+        "만",
+        "도",
+        "까지"
+       ],
+       "answer": 0,
+       "why": "만 artinya hanya."
+      },
+      {
+       "kind": "choice",
+       "text": "고양이가 침대 아래___ 있어요.",
+       "options": [
+        "에",
+        "에서"
+       ],
+       "answer": 0,
+       "why": "Berada di suatu tempat: 에."
+      },
+      {
+       "kind": "choice",
+       "text": "도서관___ 공부해요.",
+       "options": [
+        "에",
+        "에서"
+       ],
+       "answer": 1,
+       "why": "Kegiatan di suatu tempat: 에서."
+      },
+      {
+       "kind": "choice",
+       "text": "보다 → lampau",
+       "options": [
+        "봤어요",
+        "보었어요",
+        "봐았어요"
+       ],
+       "answer": 0,
+       "why": "보 + 았어요 memendek jadi 봤어요."
+      },
+      {
+       "kind": "choice",
+       "text": "월요일___ 금요일까지",
+       "options": [
+        "부터",
+        "에",
+        "만"
+       ],
+       "answer": 0,
+       "why": "부터 ... 까지: dari ... sampai."
+      },
+      {
+       "kind": "choice",
+       "text": "Saya tidak bisa berenang: 수영을 ___",
+       "options": [
+        "못해요",
+        "안해요",
+        "잘해요"
+       ],
+       "answer": 0,
+       "why": "못 artinya tidak bisa."
+      },
+      {
+       "kind": "choice",
+       "text": "먹다 → bagaimana kalau...?",
+       "options": [
+        "먹을까요",
+        "먹ㄹ까요"
+       ],
+       "answer": 0,
+       "why": "Akar kata berakhir konsonan, jadi 을까요."
+      },
+      {
+       "kind": "build",
+       "translation": "Hari Sabtu saya bertemu teman.",
+       "words": [
+        "토요일에",
+        "친구를",
+        "만났어요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Bagaimana kalau kita makan lalu nonton film?",
+       "words": [
+        "밥을",
+        "먹고",
+        "영화를",
+        "볼까요?"
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "대단해요! Kamu sudah menyelesaikan sepuluh unit. Gochi sangat bangga."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
