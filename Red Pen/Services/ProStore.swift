@@ -19,16 +19,15 @@ final class ProStore {
     static let plusMonthly = "com.danielaguila.redpen.plus.monthly"
     static let plusYearly = "com.danielaguila.redpen.plus.yearly"
     static let plusLifetime = "com.danielaguila.redpen.plus.lifetime"
-    static let proMonthly = "com.danielaguila.redpen.pro.monthly"
-    static let proYearly = "com.danielaguila.redpen.pro.yearly"
-    
+    nonisolated static let proMonthly = "com.danielaguila.redpen.pro.monthly"
+    nonisolated static let proYearly = "com.danielaguila.redpen.pro.yearly"
     static let tangerinePacks: [String: Int] = [
         "com.danielaguila.redpen.tangerines.400": 400,
         "com.danielaguila.redpen.tangerines.2400": 2400,
         "com.danielaguila.redpen.tangerines.5500": 5500,
     ]
     
-    static let proIDs: Set<String> = [proMonthly, proYearly]
+    nonisolated static let proIDs: Set<String> = [proMonthly, proYearly]
     static let plusIDs: Set<String> = [plusMonthly, plusYearly, plusLifetime]
     static let allIDs = proIDs.union(plusIDs).union(tangerinePacks.keys)
     

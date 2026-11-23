@@ -197,16 +197,11 @@ struct HabitatView: View {
                 }
             }
 
+            if mood == .soaking { ripple(back: true, sx: sx, sy: sy) }
+
             gochi(sx: sx, sy: sy)
 
-            if mood == .soaking {
-                let f = gochiFrame(sx: sx, sy: sy)
-                Ellipse()
-                    .stroke(.white.opacity(0.6), lineWidth: 2)
-                    .frame(width: f.width * 0.7, height: 12 * sx)
-                    .position(x: f.midX, y: f.minY + f.height * 0.68)
-                    .allowsHitTesting(false)
-            }
+            if mood == .soaking { ripple(back: false, sx: sx, sy: sy) }
 
             if let item = shownItem(in: .float) {
                 let (size, center) = place(Slot.float.sceneFrame, sx: sx, sy: sy)
@@ -231,10 +226,20 @@ struct HabitatView: View {
     private func gochiFrame(sx: CGFloat, sy: CGFloat) -> CGRect {
         let r: CGRect = switch mood {
         case .soaking: CGRect(x: 118, y: 424, width: 154, height: 154)
-        case .waiting: CGRect(x: 214, y: 404, width: 136, height: 136)
-        case .sleeping: CGRect(x: 226, y: 376, width: 140, height: 140)
+        case .waiting: CGRect(x: 258, y: 352, width: 118, height: 118)
+        case .sleeping: CGRect(x: 254, y: 360, width: 120, height: 120)
         }
         return CGRect(x: r.minX * sx, y: r.minY * sy, width: r.width * sx, height: r.height * sx)
+    }
+    
+    private func ripple(back: Bool, sx: CGFloat, sy: CGFloat) -> some View {
+        let f = gochiFrame(sx: sx, sy: sy)
+        return Ellipse()
+            .trim(from: back ? 0.5 : 0, to: back ? 1 : 0.5)
+            .stroke(.white.opacity(0.6), style: StrokeStyle(lineWidth: 2, lineCap: .round))
+            .frame(width: f.width * 0.62, height: 12 * sx)
+            .position(x: f.midX, y: f.minY + f.height * 0.68)
+            .allowsHitTesting(false)
     }
 
     @ViewBuilder
@@ -244,7 +249,8 @@ struct HabitatView: View {
             xp: progress.xp,
             hop: gochiHops,
             mood: mood == .sleeping ? .sleepy : (mood == .soaking ? .happy : .awake),
-            hat: shownItem(in: .head)
+            hat: shownItem(in: .head),
+            align: mood == .soaking ? .waterline : .feet
         )
         .frame(width: f.width, height: f.height)
         .mask {
@@ -405,13 +411,14 @@ struct HabitatView: View {
     }
 }
 
-// MARK: Pieces
-
 struct DressedGochi: View {
+    enum Align { case center, feet, waterline }
+
     let xp: Int
     var hop: Int = 0
     var mood: GochiMood = .awake
     var hat: Item?
+    var align: Align = .center
 
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
@@ -429,6 +436,12 @@ struct DressedGochi: View {
             let bw = artW * b.width
             let bh = artH * b.height
 
+            let drop: CGFloat = switch align {
+            case .center: 0
+            case .feet: geo.size.height - (by + bh)
+            case .waterline: geo.size.height * 0.68 - (by + bh * 0.6)
+            }
+
             ZStack {
                 GochiView(xp: xp, mood: mood)
 
@@ -438,6 +451,7 @@ struct DressedGochi: View {
                         .position(x: bx + bw / 2, y: by + bh * 0.04)
                 }
             }
+            .offset(y: drop)
             .keyframeAnimator(initialValue: 0.0, trigger: reduceMotion ? 0 : hop) { view, jump in
                 view.offset(y: jump * geo.size.height / 160)
             } keyframes: { _ in

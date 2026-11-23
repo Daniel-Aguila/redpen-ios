@@ -78,12 +78,12 @@ struct PracticeView: View {
                 } else if index < session.count {
                     ProgressView(value: Double(index), total: Double(session.count))
                         .padding()
-                    Spacer()
                     ExerciseCardView(exercise: session[index], xp: progress.xp) { rating in
                         finish(rating)
+                    } onUpsell: {
+                        showProPaywall = true
                     }
                     .id(session[index].id)
-                    Spacer()
                 } else {
                     doneView
                 }

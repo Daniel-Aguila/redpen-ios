@@ -112,6 +112,7 @@ struct Red_PenApp: App {
         for shared in ShareInbox.takeAll() {
             let c = Correction(original: shared.original, corrected: shared.corrected)
             c.type = MistakeDetector.detect(original: shared.original, corrected: shared.corrected)
+            c.source = .share
             context.insert(c)
         }
         try? context.save()

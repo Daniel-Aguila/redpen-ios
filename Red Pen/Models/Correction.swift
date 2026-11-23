@@ -102,6 +102,8 @@ final class Correction {
     var folder: Folder?
     var sourceRaw: String = CorrectionSource.manual.rawValue
     var audienceRaw: String = Audience.unknown.rawValue
+    var explanationJSON: String = ""
+    var explanationKey: String = ""
     
     //scheduling
     var dueDate: Date = Date.now
@@ -132,4 +134,39 @@ final class Correction {
 
 extension Correction {
     var isLearned: Bool { intervalDays >= 7 }
+}
+
+extension Correction {
+    var aiInput: GochiAI.MistakeInput {
+        GochiAI.MistakeInput(
+            original: original,
+            corrected: corrected,
+            type: type.rawValue,
+            talkingTo: audience == .unknown ? nil : audience.rawValue,
+            note: note.isEmpty ? nil : note
+        )
+    }
+
+    private var currentExplanationKey: String {
+        [original, corrected, audienceRaw, note, GochiAI.languageCode].joined(separator: "|")
+    }
+
+    var savedExplanation: GochiAI.Explanation? {
+        get {
+            guard explanationKey == currentExplanationKey,
+                  let data = explanationJSON.data(using: .utf8) else { return nil }
+            return try? JSONDecoder().decode(GochiAI.Explanation.self, from: data)
+        }
+        set {
+            guard let newValue,
+                  let data = try? JSONEncoder().encode(newValue),
+                  let json = String(data: data, encoding: .utf8) else {
+                explanationJSON = ""
+                explanationKey = ""
+                return
+            }
+            explanationJSON = json
+            explanationKey = currentExplanationKey
+        }
+    }
 }
