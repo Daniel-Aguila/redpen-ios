@@ -1,0 +1,4398 @@
+{
+ "units": [
+  {
+   "id": 0,
+   "title": "韩文字母",
+   "subtitle": "六节短课学会读韩语",
+   "lessons": [
+    {
+     "id": "h1",
+     "title": "基本元音",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "안녕!我是 Gochi。韩语的文字叫韩文(Hangul),只要几节课你就能读了。"
+      },
+      {
+       "kind": "say",
+       "text": "字母会组合成一个个方块,每个方块就是一个音节。"
+      },
+      {
+       "kind": "say",
+       "text": "元音不能单独出现,所以要放在 ㅇ 旁边。这里的 ㅇ 不发音。"
+      },
+      {
+       "kind": "example",
+       "ko": "아",
+       "translation": "a,和拼音的 a 一样"
+      },
+      {
+       "kind": "example",
+       "ko": "어",
+       "translation": "eo,嘴巴张大的 o,像“哦”"
+      },
+      {
+       "kind": "example",
+       "ko": "오",
+       "translation": "o,嘴唇圆起来的 o"
+      },
+      {
+       "kind": "example",
+       "ko": "우",
+       "translation": "u,和拼音的 u 一样,像“乌”"
+      },
+      {
+       "kind": "example",
+       "ko": "으",
+       "translation": "eu,嘴唇向两边拉开发“乌”"
+      },
+      {
+       "kind": "example",
+       "ko": "이",
+       "translation": "i,和拼音的 i 一样,像“衣”"
+      },
+      {
+       "kind": "choice",
+       "text": "哪个读“a”?",
+       "options": [
+        "어",
+        "아",
+        "오",
+        "이"
+       ],
+       "answer": 1,
+       "why": "아 的短横朝右。"
+      },
+      {
+       "kind": "choice",
+       "text": "哪个读“u”?",
+       "options": [
+        "오",
+        "으",
+        "우",
+        "어"
+       ],
+       "answer": 2,
+       "why": "우 的短横朝下,오 的短横朝上。"
+      },
+      {
+       "kind": "example",
+       "ko": "아이",
+       "translation": "孩子"
+      },
+      {
+       "kind": "example",
+       "ko": "오이",
+       "translation": "黄瓜"
+      },
+      {
+       "kind": "choice",
+       "text": "오이 怎么读?",
+       "options": [
+        "ai",
+        "oi",
+        "ui",
+        "eoi"
+       ],
+       "answer": 1,
+       "why": "오 读“o”,이 读“i”。"
+      }
+     ]
+    },
+    {
+     "id": "h2",
+     "title": "基本辅音",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "现在学辅音。在方块里,辅音放在元音前面。"
+      },
+      {
+       "kind": "example",
+       "ko": "가",
+       "translation": "ga(ㄱ 介于 g 和 k 之间)"
+      },
+      {
+       "kind": "example",
+       "ko": "나",
+       "translation": "na"
+      },
+      {
+       "kind": "example",
+       "ko": "다",
+       "translation": "da(ㄷ 介于 d 和 t 之间)"
+      },
+      {
+       "kind": "example",
+       "ko": "라",
+       "translation": "ra(ㄹ 是轻轻的 r,接近 l)"
+      },
+      {
+       "kind": "example",
+       "ko": "마",
+       "translation": "ma"
+      },
+      {
+       "kind": "example",
+       "ko": "바",
+       "translation": "ba(ㅂ 介于 b 和 p 之间)"
+      },
+      {
+       "kind": "example",
+       "ko": "사",
+       "translation": "sa"
+      },
+      {
+       "kind": "example",
+       "ko": "자",
+       "translation": "ja"
+      },
+      {
+       "kind": "example",
+       "ko": "하",
+       "translation": "ha"
+      },
+      {
+       "kind": "say",
+       "text": "把它们拼在一起,你就能读真正的单词了。"
+      },
+      {
+       "kind": "example",
+       "ko": "나무",
+       "translation": "树"
+      },
+      {
+       "kind": "example",
+       "ko": "바다",
+       "translation": "大海"
+      },
+      {
+       "kind": "example",
+       "ko": "모자",
+       "translation": "帽子"
+      },
+      {
+       "kind": "example",
+       "ko": "하나",
+       "translation": "一"
+      },
+      {
+       "kind": "choice",
+       "text": "哪个词是“大海”?",
+       "options": [
+        "나무",
+        "하나",
+        "바다",
+        "모자"
+       ],
+       "answer": 2,
+       "why": "바 + 다 = 바다."
+      },
+      {
+       "kind": "choice",
+       "text": "가수(歌手)怎么读?",
+       "options": [
+        "gasu",
+        "nasu",
+        "gamu",
+        "dasu"
+       ],
+       "answer": 0,
+       "why": "ㄱ 是 g,ㅅ 是 s。"
+      },
+      {
+       "kind": "choice",
+       "text": "哪个字母发“m”的音?",
+       "options": [
+        "ㄴ",
+        "ㅁ",
+        "ㅂ",
+        "ㄹ"
+       ],
+       "answer": 1,
+       "why": "ㅁ 是个小方框,像闭上的嘴唇。"
+      }
+     ]
+    },
+    {
+     "id": "h3",
+     "title": "更多元音",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "给元音多加一短横,就会带上 y 的音。"
+      },
+      {
+       "kind": "example",
+       "ko": "야",
+       "translation": "ya"
+      },
+      {
+       "kind": "example",
+       "ko": "여",
+       "translation": "yeo"
+      },
+      {
+       "kind": "example",
+       "ko": "요",
+       "translation": "yo"
+      },
+      {
+       "kind": "example",
+       "ko": "유",
+       "translation": "yu"
+      },
+      {
+       "kind": "example",
+       "ko": "우유",
+       "translation": "牛奶"
+      },
+      {
+       "kind": "example",
+       "ko": "여자",
+       "translation": "女人"
+      },
+      {
+       "kind": "say",
+       "text": "现在 ㅐ 和 ㅔ 的发音几乎一样,接近拼音 ie 里的 e。"
+      },
+      {
+       "kind": "example",
+       "ko": "개",
+       "translation": "狗"
+      },
+      {
+       "kind": "example",
+       "ko": "네",
+       "translation": "是"
+      },
+      {
+       "kind": "say",
+       "text": "有些元音会组合在一起。ㅗ + ㅏ = ㅘ(wa),ㅜ + ㅓ = ㅝ(wo)。"
+      },
+      {
+       "kind": "example",
+       "ko": "사과",
+       "translation": "苹果"
+      },
+      {
+       "kind": "example",
+       "ko": "뭐",
+       "translation": "什么"
+      },
+      {
+       "kind": "choice",
+       "text": "哪个读“yo”?",
+       "options": [
+        "여",
+        "유",
+        "요",
+        "야"
+       ],
+       "answer": 2,
+       "why": "요 就是 오 多加一横。"
+      },
+      {
+       "kind": "choice",
+       "text": "네 是什么意思?",
+       "options": [
+        "不是",
+        "是",
+        "狗",
+        "什么"
+       ],
+       "answer": 1,
+       "why": "네 是“是”。개 是狗。"
+      },
+      {
+       "kind": "choice",
+       "text": "사과 怎么读?",
+       "options": [
+        "sagwa",
+        "sago",
+        "sagu",
+        "sageo"
+       ],
+       "answer": 0,
+       "why": "ㄱ + ㅘ 组成 과(gwa)。"
+      }
+     ]
+    },
+    {
+     "id": "h4",
+     "title": "强辅音",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "有些辅音要送气,就像拼音的 k、t、p。把手放在嘴前感受一下。"
+      },
+      {
+       "kind": "example",
+       "ko": "카",
+       "translation": "ka,送气"
+      },
+      {
+       "kind": "example",
+       "ko": "타",
+       "translation": "ta,送气"
+      },
+      {
+       "kind": "example",
+       "ko": "파",
+       "translation": "pa,送气"
+      },
+      {
+       "kind": "example",
+       "ko": "차",
+       "translation": "cha,送气"
+      },
+      {
+       "kind": "example",
+       "ko": "커피",
+       "translation": "咖啡"
+      },
+      {
+       "kind": "example",
+       "ko": "포도",
+       "translation": "葡萄"
+      },
+      {
+       "kind": "say",
+       "text": "双写字母是紧音:短促、用力、不送气,像更紧的 g、d、b。"
+      },
+      {
+       "kind": "example",
+       "ko": "까",
+       "translation": "kka"
+      },
+      {
+       "kind": "example",
+       "ko": "따",
+       "translation": "tta"
+      },
+      {
+       "kind": "example",
+       "ko": "빠",
+       "translation": "ppa"
+      },
+      {
+       "kind": "example",
+       "ko": "싸",
+       "translation": "ssa"
+      },
+      {
+       "kind": "example",
+       "ko": "짜",
+       "translation": "jja"
+      },
+      {
+       "kind": "example",
+       "ko": "아빠",
+       "translation": "爸爸"
+      },
+      {
+       "kind": "example",
+       "ko": "떡",
+       "translation": "年糕"
+      },
+      {
+       "kind": "choice",
+       "text": "哪个是送气音?",
+       "options": [
+        "가",
+        "까",
+        "카"
+       ],
+       "answer": 2,
+       "why": "ㅋ 多一横,要送气。ㄲ 是紧音,不送气。"
+      },
+      {
+       "kind": "choice",
+       "text": "아빠 是什么意思?",
+       "options": [
+        "妈妈",
+        "爸爸",
+        "咖啡",
+        "葡萄"
+       ],
+       "answer": 1,
+       "why": "아빠 是爸爸。妈妈是 엄마。"
+      },
+      {
+       "kind": "choice",
+       "text": "차(车、茶)怎么读?",
+       "options": [
+        "ja",
+        "cha",
+        "jja",
+        "sa"
+       ],
+       "answer": 1,
+       "why": "ㅊ 就是送气的 ㅈ:cha。"
+      }
+     ]
+    },
+    {
+     "id": "h5",
+     "title": "收音(받침)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "辅音也可以放在方块的下面,这叫 받침(收音)。"
+      },
+      {
+       "kind": "say",
+       "text": "收音只有 7 个音:k、n、t、l、m、p、ng。"
+      },
+      {
+       "kind": "example",
+       "ko": "밥",
+       "translation": "米饭、饭"
+      },
+      {
+       "kind": "example",
+       "ko": "물",
+       "translation": "水"
+      },
+      {
+       "kind": "example",
+       "ko": "산",
+       "translation": "山"
+      },
+      {
+       "kind": "example",
+       "ko": "강",
+       "translation": "河"
+      },
+      {
+       "kind": "example",
+       "ko": "집",
+       "translation": "房子"
+      },
+      {
+       "kind": "example",
+       "ko": "책",
+       "translation": "书"
+      },
+      {
+       "kind": "say",
+       "text": "在下面时,ㅅ、ㅈ、ㅊ 都读 t。ㅇ 在下面读 ng。"
+      },
+      {
+       "kind": "example",
+       "ko": "옷",
+       "translation": "衣服(读作 옫)"
+      },
+      {
+       "kind": "example",
+       "ko": "꽃",
+       "translation": "花(读作 꼳)"
+      },
+      {
+       "kind": "choice",
+       "text": "강 下面的 ㅇ 发什么音?",
+       "options": [
+        "不发音",
+        "ng",
+        "n",
+        "g"
+       ],
+       "answer": 1,
+       "why": "ㅇ 在上面不发音,在下面读 ng。"
+      },
+      {
+       "kind": "choice",
+       "text": "哪个词是“水”?",
+       "options": [
+        "물",
+        "밥",
+        "집",
+        "산"
+       ],
+       "answer": 0,
+       "why": "물 是水,밥 是米饭。"
+      },
+      {
+       "kind": "choice",
+       "text": "옷 怎么读?",
+       "options": [
+        "os",
+        "ot",
+        "oj",
+        "och"
+       ],
+       "answer": 1,
+       "why": "ㅅ 在下面读 t。"
+      }
+     ]
+    },
+    {
+     "id": "h6",
+     "title": "阅读练习",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "最后一招:收音后面遇到不发音的 ㅇ 时,会连到下一个音节。"
+      },
+      {
+       "kind": "example",
+       "ko": "한국어",
+       "translation": "韩语(读作 한구거)"
+      },
+      {
+       "kind": "example",
+       "ko": "음악",
+       "translation": "音乐(读作 으막)"
+      },
+      {
+       "kind": "say",
+       "text": "现在你能读真正的韩语了。试试这些。"
+      },
+      {
+       "kind": "example",
+       "ko": "안녕하세요",
+       "translation": "你好"
+      },
+      {
+       "kind": "example",
+       "ko": "감사합니다",
+       "translation": "谢谢"
+      },
+      {
+       "kind": "example",
+       "ko": "한국",
+       "translation": "韩国"
+      },
+      {
+       "kind": "example",
+       "ko": "서울",
+       "translation": "首尔"
+      },
+      {
+       "kind": "choice",
+       "text": "한국어 怎么读?",
+       "options": [
+        "han-guk-eo",
+        "han-gu-geo",
+        "hang-uk-eo"
+       ],
+       "answer": 1,
+       "why": "ㄱ 连到不发音的 ㅇ 上:한구거。"
+      },
+      {
+       "kind": "choice",
+       "text": "감사합니다 是什么意思?",
+       "options": [
+        "你好",
+        "对不起",
+        "谢谢",
+        "再见"
+       ],
+       "answer": 2,
+       "why": "감사합니다 是礼貌的“谢谢”。"
+      },
+      {
+       "kind": "choice",
+       "text": "哪个词是“首尔”?",
+       "options": [
+        "서울",
+        "한국",
+        "사람",
+        "선물"
+       ],
+       "answer": 0,
+       "why": "서 + 울 = 서울."
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요!你已经会读韩文了。接下来用韩语做自我介绍。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 1,
+   "title": "自我介绍",
+   "subtitle": "说说你是谁",
+   "lessons": [
+    {
+     "id": "u1l1",
+     "title": "单词:国家和职业",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "来学一些介绍自己的单词。点一下就能听发音。"
+      },
+      {
+       "kind": "example",
+       "ko": "한국",
+       "translation": "韩国"
+      },
+      {
+       "kind": "example",
+       "ko": "미국",
+       "translation": "美国"
+      },
+      {
+       "kind": "example",
+       "ko": "일본",
+       "translation": "日本"
+      },
+      {
+       "kind": "example",
+       "ko": "중국",
+       "translation": "中国"
+      },
+      {
+       "kind": "example",
+       "ko": "멕시코",
+       "translation": "墨西哥"
+      },
+      {
+       "kind": "say",
+       "text": "在国家后面加上 사람(人),就能说某人是哪国人。"
+      },
+      {
+       "kind": "example",
+       "ko": "한국 사람",
+       "translation": "韩国人"
+      },
+      {
+       "kind": "example",
+       "ko": "학생",
+       "translation": "学生"
+      },
+      {
+       "kind": "example",
+       "ko": "선생님",
+       "translation": "老师"
+      },
+      {
+       "kind": "example",
+       "ko": "회사원",
+       "translation": "上班族"
+      },
+      {
+       "kind": "example",
+       "ko": "의사",
+       "translation": "医生"
+      },
+      {
+       "kind": "choice",
+       "text": "“日本人”怎么说?",
+       "options": [
+        "일본 사람",
+        "중국 사람",
+        "일본 학생",
+        "미국 사람"
+       ],
+       "answer": 0,
+       "why": "일본(日本)+ 사람(人)。"
+      },
+      {
+       "kind": "choice",
+       "text": "회사원 是什么意思?",
+       "options": [
+        "老师",
+        "医生",
+        "上班族",
+        "学生"
+       ],
+       "answer": 2,
+       "why": "회사 是公司,所以 회사원 是公司职员。"
+      },
+      {
+       "kind": "choice",
+       "text": "선생님 是什么意思?",
+       "options": [
+        "老师",
+        "学生",
+        "医生",
+        "人"
+       ],
+       "answer": 0,
+       "why": "선생님 是老师,학생 是学生。"
+      }
+     ]
+    },
+    {
+     "id": "u1l2",
+     "title": "我是……(이에요/예요)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "要说“我是___”或“是___”,在名词后面加 이에요 或 예요。"
+      },
+      {
+       "kind": "say",
+       "text": "名词以辅音结尾,加 이에요。"
+      },
+      {
+       "kind": "example",
+       "ko": "학생이에요.",
+       "translation": "我是学生。"
+      },
+      {
+       "kind": "example",
+       "ko": "선생님이에요.",
+       "translation": "我是老师。"
+      },
+      {
+       "kind": "say",
+       "text": "以元音结尾,加 예요。"
+      },
+      {
+       "kind": "example",
+       "ko": "의사예요.",
+       "translation": "我是医生。"
+      },
+      {
+       "kind": "example",
+       "ko": "고치예요.",
+       "translation": "我是 Gochi。"
+      },
+      {
+       "kind": "say",
+       "text": "提问时,用同样的话,句尾语调上扬。"
+      },
+      {
+       "kind": "example",
+       "ko": "학생이에요?",
+       "translation": "你是学生吗?"
+      },
+      {
+       "kind": "choice",
+       "text": "회사원___",
+       "options": [
+        "이에요",
+        "예요"
+       ],
+       "answer": 0,
+       "why": "회사원 以辅音 ㄴ 结尾,所以用 이에요。"
+      },
+      {
+       "kind": "choice",
+       "text": "의사___",
+       "options": [
+        "이에요",
+        "예요"
+       ],
+       "answer": 1,
+       "why": "의사 以元音结尾,所以用 예요。"
+      },
+      {
+       "kind": "choice",
+       "text": "哪个是对的?",
+       "options": [
+        "한국 사람예요",
+        "한국 사람이에요",
+        "한국 사람이예요"
+       ],
+       "answer": 1,
+       "why": "사람 以 ㅁ 结尾,所以用 이에요。"
+      },
+      {
+       "kind": "build",
+       "translation": "我是老师。",
+       "words": [
+        "저는",
+        "선생님이에요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u1l3",
+     "title": "主题助词(은/는)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "은/는 表示你在谈论的话题,像“至于……”。"
+      },
+      {
+       "kind": "say",
+       "text": "辅音后用 은,元音后用 는。"
+      },
+      {
+       "kind": "example",
+       "ko": "저는 학생이에요.",
+       "translation": "我是学生。"
+      },
+      {
+       "kind": "example",
+       "ko": "이름은 고치예요.",
+       "translation": "我叫 Gochi。"
+      },
+      {
+       "kind": "example",
+       "ko": "민수 씨는 의사예요.",
+       "translation": "民秀是医生。"
+      },
+      {
+       "kind": "say",
+       "text": "씨 加在名字后面表示礼貌,像“先生/小姐”。不要用在自己的名字上。"
+      },
+      {
+       "kind": "choice",
+       "text": "저___ 회사원이에요.",
+       "options": [
+        "은",
+        "는"
+       ],
+       "answer": 1,
+       "why": "저 以元音结尾,所以用 는。"
+      },
+      {
+       "kind": "choice",
+       "text": "이름___ 하나예요.",
+       "options": [
+        "은",
+        "는"
+       ],
+       "answer": 0,
+       "why": "이름 以 ㅁ 结尾,所以用 은。"
+      },
+      {
+       "kind": "choice",
+       "text": "哪个是礼貌的说法?",
+       "options": [
+        "하나 씨는 학생이에요",
+        "저 씨는 학생이에요"
+       ],
+       "answer": 0,
+       "why": "씨 用于别人,不用于自己。"
+      },
+      {
+       "kind": "build",
+       "translation": "我是韩国人。",
+       "words": [
+        "저는",
+        "한국",
+        "사람이에요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "民秀是老师。",
+       "words": [
+        "민수",
+        "씨는",
+        "선생님이에요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u1l4",
+     "title": "综合练习:很高兴认识你",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "这是初次见面的对话。每句都听一听。"
+      },
+      {
+       "kind": "example",
+       "ko": "안녕하세요? 저는 하나예요.",
+       "translation": "你好,我是哈娜。"
+      },
+      {
+       "kind": "example",
+       "ko": "안녕하세요? 저는 민수예요.",
+       "translation": "你好,我是民秀。"
+      },
+      {
+       "kind": "example",
+       "ko": "만나서 반가워요.",
+       "translation": "很高兴认识你。"
+      },
+      {
+       "kind": "example",
+       "ko": "하나 씨는 학생이에요?",
+       "translation": "哈娜,你是学生吗?"
+      },
+      {
+       "kind": "example",
+       "ko": "네, 학생이에요. 민수 씨는요?",
+       "translation": "是的,我是学生。民秀你呢?"
+      },
+      {
+       "kind": "example",
+       "ko": "저는 회사원이에요.",
+       "translation": "我是上班族。"
+      },
+      {
+       "kind": "say",
+       "text": "在名字后加 요,比如 민수 씨는요?,意思是“你呢?”。"
+      },
+      {
+       "kind": "choice",
+       "text": "만나서 반가워요 是什么意思?",
+       "options": [
+        "再见",
+        "很高兴认识你",
+        "谢谢",
+        "回头见"
+       ],
+       "answer": 1,
+       "why": "第一次见到某人时说的话。"
+      },
+      {
+       "kind": "choice",
+       "text": "“哈娜你呢?”怎么说?",
+       "options": [
+        "하나 씨예요?",
+        "하나 씨는요?",
+        "하나는 씨요?"
+       ],
+       "answer": 1,
+       "why": "名字 + 씨는요? 意思是“你呢?”。"
+      },
+      {
+       "kind": "build",
+       "translation": "你好,我是 Gochi。",
+       "words": [
+        "안녕하세요?",
+        "저는",
+        "고치예요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "我是墨西哥人。",
+       "words": [
+        "저는",
+        "멕시코",
+        "사람이에요."
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요!你已经会用韩语自我介绍了。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "title": "家人",
+   "subtitle": "聊聊你的家人",
+   "lessons": [
+    {
+     "id": "u2l1",
+     "title": "单词:家人",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "来认识一家人吧。点一下就能听发音。"
+      },
+      {
+       "kind": "example",
+       "ko": "가족",
+       "translation": "家人"
+      },
+      {
+       "kind": "example",
+       "ko": "아버지",
+       "translation": "父亲"
+      },
+      {
+       "kind": "example",
+       "ko": "어머니",
+       "translation": "母亲"
+      },
+      {
+       "kind": "example",
+       "ko": "할아버지",
+       "translation": "爷爷"
+      },
+      {
+       "kind": "example",
+       "ko": "할머니",
+       "translation": "奶奶"
+      },
+      {
+       "kind": "example",
+       "ko": "동생",
+       "translation": "弟弟或妹妹"
+      },
+      {
+       "kind": "say",
+       "text": "哥哥、姐姐的叫法取决于说话人的性别。"
+      },
+      {
+       "kind": "example",
+       "ko": "형",
+       "translation": "哥哥(男性说)"
+      },
+      {
+       "kind": "example",
+       "ko": "오빠",
+       "translation": "哥哥(女性说)"
+      },
+      {
+       "kind": "example",
+       "ko": "누나",
+       "translation": "姐姐(男性说)"
+      },
+      {
+       "kind": "example",
+       "ko": "언니",
+       "translation": "姐姐(女性说)"
+      },
+      {
+       "kind": "example",
+       "ko": "요리사",
+       "translation": "厨师"
+      },
+      {
+       "kind": "example",
+       "ko": "간호사",
+       "translation": "护士"
+      },
+      {
+       "kind": "choice",
+       "text": "一位男性在说他的姐姐。用哪个词?",
+       "options": [
+        "언니",
+        "누나",
+        "오빠",
+        "형"
+       ],
+       "answer": 1,
+       "why": "男性说 누나,女性说 언니。"
+      },
+      {
+       "kind": "choice",
+       "text": "동생 是什么意思?",
+       "options": [
+        "弟弟或妹妹",
+        "哥哥",
+        "父亲",
+        "家人"
+       ],
+       "answer": 0,
+       "why": "동생 指弟弟或妹妹。"
+      },
+      {
+       "kind": "choice",
+       "text": "할머니 是什么意思?",
+       "options": [
+        "母亲",
+        "爷爷",
+        "奶奶",
+        "护士"
+       ],
+       "answer": 2,
+       "why": "할머니 是奶奶,할아버지 是爷爷。"
+      }
+     ]
+    },
+    {
+     "id": "u2l2",
+     "title": "主语助词(이/가)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "이/가 表示“谁”或“什么”做某事,或者新信息。"
+      },
+      {
+       "kind": "say",
+       "text": "辅音后用 이,元音后用 가。"
+      },
+      {
+       "kind": "example",
+       "ko": "동생이 학생이에요.",
+       "translation": "我弟弟是学生。"
+      },
+      {
+       "kind": "example",
+       "ko": "아버지가 요리사예요.",
+       "translation": "我爸爸是厨师。"
+      },
+      {
+       "kind": "say",
+       "text": "问“谁?”的时候,回答要用 이/가。"
+      },
+      {
+       "kind": "example",
+       "ko": "누가 의사예요?",
+       "translation": "谁是医生?"
+      },
+      {
+       "kind": "example",
+       "ko": "어머니가 의사예요.",
+       "translation": "我妈妈是医生。"
+      },
+      {
+       "kind": "choice",
+       "text": "형___ 회사원이에요.",
+       "options": [
+        "이",
+        "가"
+       ],
+       "answer": 0,
+       "why": "형 以 ㅇ 结尾,所以用 이。"
+      },
+      {
+       "kind": "choice",
+       "text": "누나___ 간호사예요.",
+       "options": [
+        "이",
+        "가"
+       ],
+       "answer": 1,
+       "why": "누나 以元音结尾,所以用 가。"
+      },
+      {
+       "kind": "choice",
+       "text": "누가 선생님이에요? 回答:",
+       "options": [
+        "할머니는 선생님이에요",
+        "할머니가 선생님이에요"
+       ],
+       "answer": 1,
+       "why": "回答“谁?”时用 이/가。"
+      },
+      {
+       "kind": "build",
+       "translation": "我爸爸是医生。",
+       "words": [
+        "아버지가",
+        "의사예요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u2l3",
+     "title": "不是(이/가 아니에요)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "要说“不是”,用 이/가 아니에요。"
+      },
+      {
+       "kind": "example",
+       "ko": "저는 학생이 아니에요.",
+       "translation": "我不是学生。"
+      },
+      {
+       "kind": "example",
+       "ko": "오빠는 의사가 아니에요.",
+       "translation": "我哥哥不是医生。"
+      },
+      {
+       "kind": "say",
+       "text": "规则一样:辅音后用 이,元音后用 가。"
+      },
+      {
+       "kind": "say",
+       "text": "回答“是”用 네,“不是”用 아니요。"
+      },
+      {
+       "kind": "example",
+       "ko": "요리사예요?",
+       "translation": "你是厨师吗?"
+      },
+      {
+       "kind": "example",
+       "ko": "아니요, 요리사가 아니에요. 간호사예요.",
+       "translation": "不,我不是厨师。我是护士。"
+      },
+      {
+       "kind": "choice",
+       "text": "선생님___ 아니에요.",
+       "options": [
+        "이",
+        "가"
+       ],
+       "answer": 0,
+       "why": "선생님 以 ㅁ 结尾,所以用 이。"
+      },
+      {
+       "kind": "choice",
+       "text": "哪个是对的?",
+       "options": [
+        "의사이 아니에요",
+        "의사가 아니에요",
+        "의사 아니예요"
+       ],
+       "answer": 1,
+       "why": "의사 以元音结尾,所以用 가 아니에요。"
+      },
+      {
+       "kind": "choice",
+       "text": "회사원이에요?(不是)",
+       "options": [
+        "네, 회사원이에요",
+        "아니요, 회사원이 아니에요"
+       ],
+       "answer": 1,
+       "why": "아니요 是“不”,后面接 이/가 아니에요。"
+      },
+      {
+       "kind": "build",
+       "translation": "我不是日本人。",
+       "words": [
+        "저는",
+        "일본",
+        "사람이",
+        "아니에요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u2l4",
+     "title": "综合练习:全家福",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "哈娜给民秀看全家福。听一听。"
+      },
+      {
+       "kind": "example",
+       "ko": "이 사람은 누구예요?",
+       "translation": "这个人是谁?"
+      },
+      {
+       "kind": "example",
+       "ko": "우리 언니예요.",
+       "translation": "是我姐姐。"
+      },
+      {
+       "kind": "example",
+       "ko": "언니는 학생이에요?",
+       "translation": "姐姐是学生吗?"
+      },
+      {
+       "kind": "example",
+       "ko": "아니요, 학생이 아니에요. 간호사예요.",
+       "translation": "不,她不是学生。她是护士。"
+      },
+      {
+       "kind": "example",
+       "ko": "이 사람은 동생이에요?",
+       "translation": "这个人是你弟弟吗?"
+      },
+      {
+       "kind": "example",
+       "ko": "네, 동생이에요. 동생은 고등학생이에요.",
+       "translation": "是的,是我弟弟。他是高中生。"
+      },
+      {
+       "kind": "say",
+       "text": "韩国人说到家人时用 우리(我们的),即使中文里会说“我的”。"
+      },
+      {
+       "kind": "choice",
+       "text": "“我妈妈”怎么说才自然?",
+       "options": [
+        "저 어머니",
+        "우리 어머니",
+        "나 어머니"
+       ],
+       "answer": 1,
+       "why": "说自己的家人时用 우리。"
+      },
+      {
+       "kind": "choice",
+       "text": "누구예요? 是什么意思?",
+       "options": [
+        "在哪里?",
+        "是谁?",
+        "是什么?"
+       ],
+       "answer": 1,
+       "why": "누구 是“谁”。"
+      },
+      {
+       "kind": "build",
+       "translation": "是我姐姐。",
+       "words": [
+        "우리",
+        "언니예요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "我弟弟不是学生。",
+       "words": [
+        "동생은",
+        "학생이",
+        "아니에요."
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요!你已经会介绍家人了。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "title": "日常生活",
+   "subtitle": "说说你喜欢什么、做什么",
+   "lessons": [
+    {
+     "id": "u3l1",
+     "title": "单词:日常生活",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "韩语动词在词典里都以 다 结尾。来学几个每天都会用到的动词。"
+      },
+      {
+       "kind": "example",
+       "ko": "먹다",
+       "translation": "吃"
+      },
+      {
+       "kind": "example",
+       "ko": "마시다",
+       "translation": "喝"
+      },
+      {
+       "kind": "example",
+       "ko": "보다",
+       "translation": "看"
+      },
+      {
+       "kind": "example",
+       "ko": "자다",
+       "translation": "睡觉"
+      },
+      {
+       "kind": "example",
+       "ko": "공부하다",
+       "translation": "学习"
+      },
+      {
+       "kind": "example",
+       "ko": "일하다",
+       "translation": "工作"
+      },
+      {
+       "kind": "example",
+       "ko": "좋아하다",
+       "translation": "喜欢"
+      },
+      {
+       "kind": "example",
+       "ko": "커피",
+       "translation": "咖啡"
+      },
+      {
+       "kind": "example",
+       "ko": "영화",
+       "translation": "电影"
+      },
+      {
+       "kind": "example",
+       "ko": "드라마",
+       "translation": "电视剧"
+      },
+      {
+       "kind": "example",
+       "ko": "빵",
+       "translation": "面包"
+      },
+      {
+       "kind": "choice",
+       "text": "마시다 是什么意思?",
+       "options": [
+        "吃",
+        "喝",
+        "睡觉",
+        "看"
+       ],
+       "answer": 1,
+       "why": "마시다 是喝,먹다 是吃。"
+      },
+      {
+       "kind": "choice",
+       "text": "哪个动词是“学习”?",
+       "options": [
+        "일하다",
+        "좋아하다",
+        "공부하다",
+        "보다"
+       ],
+       "answer": 2,
+       "why": "공부 是学习,하다 是做。"
+      },
+      {
+       "kind": "choice",
+       "text": "영화 是什么意思?",
+       "options": [
+        "电影",
+        "电视剧",
+        "面包",
+        "咖啡"
+       ],
+       "answer": 0,
+       "why": "영화 是电影。电视剧是 드라마。"
+      }
+     ]
+    },
+    {
+     "id": "u3l2",
+     "title": "正式体(-습니다)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "-습니다 是正式的敬语体。在新闻、工作场合和广播里都能听到。"
+      },
+      {
+       "kind": "say",
+       "text": "去掉 다。词干以辅音结尾就加 습니다。"
+      },
+      {
+       "kind": "example",
+       "ko": "먹습니다.",
+       "translation": "我吃。"
+      },
+      {
+       "kind": "example",
+       "ko": "읽습니다.",
+       "translation": "我读。"
+      },
+      {
+       "kind": "say",
+       "text": "以元音结尾,就在最后一个方块下面加 ㅂ니다。"
+      },
+      {
+       "kind": "example",
+       "ko": "갑니다.",
+       "translation": "我去。"
+      },
+      {
+       "kind": "example",
+       "ko": "마십니다.",
+       "translation": "我喝。"
+      },
+      {
+       "kind": "example",
+       "ko": "공부합니다.",
+       "translation": "我学习。"
+      },
+      {
+       "kind": "say",
+       "text": "疑问句用 습니까 或 ㅂ니까。在这种文体里,이에요 变成 입니다。"
+      },
+      {
+       "kind": "example",
+       "ko": "학생입니까?",
+       "translation": "你是学生吗?"
+      },
+      {
+       "kind": "choice",
+       "text": "먹다 →",
+       "options": [
+        "먹ㅂ니다",
+        "먹습니다",
+        "먹니다"
+       ],
+       "answer": 1,
+       "why": "먹 以辅音结尾,所以用 습니다。"
+      },
+      {
+       "kind": "choice",
+       "text": "보다 →",
+       "options": [
+        "보습니다",
+        "봅니다",
+        "봐습니다"
+       ],
+       "answer": 1,
+       "why": "보 以元音结尾,所以 ㅂ 放在下面:봅니다。"
+      },
+      {
+       "kind": "choice",
+       "text": "哪个是疑问句?",
+       "options": [
+        "일합니다",
+        "일합니까?",
+        "일했습니다"
+       ],
+       "answer": 1,
+       "why": "-ㅂ니까 构成正式的疑问句。"
+      },
+      {
+       "kind": "build",
+       "translation": "我是上班族。(正式)",
+       "words": [
+        "저는",
+        "회사원입니다."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u3l3",
+     "title": "宾语(을/를)和“也”(도)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "을/를 表示你吃、喝、看或喜欢的东西。"
+      },
+      {
+       "kind": "say",
+       "text": "辅音后用 을,元音后用 를。"
+      },
+      {
+       "kind": "example",
+       "ko": "빵을 먹습니다.",
+       "translation": "我吃面包。"
+      },
+      {
+       "kind": "example",
+       "ko": "커피를 마십니다.",
+       "translation": "我喝咖啡。"
+      },
+      {
+       "kind": "say",
+       "text": "도 是“也”。它代替 은/는、이/가 或 을/를。"
+      },
+      {
+       "kind": "example",
+       "ko": "저도 학생입니다.",
+       "translation": "我也是学生。"
+      },
+      {
+       "kind": "example",
+       "ko": "드라마도 좋아합니다.",
+       "translation": "我也喜欢电视剧。"
+      },
+      {
+       "kind": "choice",
+       "text": "영화___ 봅니다.",
+       "options": [
+        "을",
+        "를"
+       ],
+       "answer": 1,
+       "why": "영화 以元音结尾,所以用 를。"
+      },
+      {
+       "kind": "choice",
+       "text": "빵___ 먹습니다.",
+       "options": [
+        "을",
+        "를"
+       ],
+       "answer": 0,
+       "why": "빵 以辅音 ㅇ 结尾,所以用 을。"
+      },
+      {
+       "kind": "choice",
+       "text": "哪个是对的?",
+       "options": [
+        "커피를도 마십니다",
+        "커피도 마십니다"
+       ],
+       "answer": 1,
+       "why": "도 代替 을/를,不要两个一起用。"
+      },
+      {
+       "kind": "build",
+       "translation": "我也喜欢咖啡。",
+       "words": [
+        "저도",
+        "커피를",
+        "좋아합니다."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "我看电视剧。",
+       "words": [
+        "저는",
+        "드라마를",
+        "봅니다."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u3l4",
+     "title": "综合练习:你喜欢什么?",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "哈娜和民秀在聊各自喜欢的东西。听一听。"
+      },
+      {
+       "kind": "example",
+       "ko": "민수 씨는 무엇을 좋아합니까?",
+       "translation": "民秀,你喜欢什么?"
+      },
+      {
+       "kind": "example",
+       "ko": "저는 드라마를 좋아합니다.",
+       "translation": "我喜欢电视剧。"
+      },
+      {
+       "kind": "example",
+       "ko": "하나 씨는요?",
+       "translation": "哈娜你呢?"
+      },
+      {
+       "kind": "example",
+       "ko": "저도 드라마를 좋아합니다. 영화도 좋아합니다.",
+       "translation": "我也喜欢电视剧,也喜欢电影。"
+      },
+      {
+       "kind": "example",
+       "ko": "커피를 마십니까?",
+       "translation": "你喝咖啡吗?"
+      },
+      {
+       "kind": "example",
+       "ko": "아니요, 저는 차를 마십니다.",
+       "translation": "不,我喝茶。"
+      },
+      {
+       "kind": "say",
+       "text": "무엇 是“什么”。口语里常缩成 뭐。"
+      },
+      {
+       "kind": "choice",
+       "text": "무엇을 좋아합니까? 在问什么?",
+       "options": [
+        "你去哪里?",
+        "你喜欢什么?",
+        "你喜欢谁?"
+       ],
+       "answer": 1,
+       "why": "무엇 是“什么”,좋아합니까 是“喜欢吗”。"
+      },
+      {
+       "kind": "choice",
+       "text": "차___ 마십니다.",
+       "options": [
+        "을",
+        "를",
+        "도를"
+       ],
+       "answer": 1,
+       "why": "차 以元音结尾,所以用 를。"
+      },
+      {
+       "kind": "build",
+       "translation": "我学习韩语。",
+       "words": [
+        "저는",
+        "한국어를",
+        "공부합니다."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "我也喜欢电影。",
+       "words": [
+        "영화도",
+        "좋아합니다."
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요!你已经会说自己喜欢什么了。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "title": "学校",
+   "subtitle": "聊聊学校和身边的东西",
+   "lessons": [
+    {
+     "id": "u4l1",
+     "title": "单词:学校",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "来学学校相关的单词。点一下就能听发音。"
+      },
+      {
+       "kind": "example",
+       "ko": "학교",
+       "translation": "学校"
+      },
+      {
+       "kind": "example",
+       "ko": "교실",
+       "translation": "教室"
+      },
+      {
+       "kind": "example",
+       "ko": "도서관",
+       "translation": "图书馆"
+      },
+      {
+       "kind": "example",
+       "ko": "식당",
+       "translation": "食堂、餐厅"
+      },
+      {
+       "kind": "example",
+       "ko": "책",
+       "translation": "书"
+      },
+      {
+       "kind": "example",
+       "ko": "책상",
+       "translation": "书桌"
+      },
+      {
+       "kind": "example",
+       "ko": "의자",
+       "translation": "椅子"
+      },
+      {
+       "kind": "example",
+       "ko": "가방",
+       "translation": "包"
+      },
+      {
+       "kind": "example",
+       "ko": "친구",
+       "translation": "朋友"
+      },
+      {
+       "kind": "example",
+       "ko": "읽다",
+       "translation": "读"
+      },
+      {
+       "kind": "example",
+       "ko": "쓰다",
+       "translation": "写"
+      },
+      {
+       "kind": "example",
+       "ko": "배우다",
+       "translation": "学"
+      },
+      {
+       "kind": "example",
+       "ko": "크다",
+       "translation": "大"
+      },
+      {
+       "kind": "example",
+       "ko": "작다",
+       "translation": "小"
+      },
+      {
+       "kind": "choice",
+       "text": "도서관 是什么意思?",
+       "options": [
+        "教室",
+        "图书馆",
+        "食堂",
+        "学校"
+       ],
+       "answer": 1,
+       "why": "도서관 是图书馆,교실 是教室。"
+      },
+      {
+       "kind": "choice",
+       "text": "哪个词是“椅子”?",
+       "options": [
+        "책상",
+        "가방",
+        "의자",
+        "책"
+       ],
+       "answer": 2,
+       "why": "의자 是椅子,책상 是书桌。"
+      },
+      {
+       "kind": "choice",
+       "text": "배우다 是什么意思?",
+       "options": [
+        "学",
+        "读",
+        "写",
+        "睡觉"
+       ],
+       "answer": 0,
+       "why": "배우다 是学,읽다 是读。"
+      }
+     ]
+    },
+    {
+     "id": "u4l2",
+     "title": "和、跟(과/와、하고)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "连接两个名词用 과/와 或 하고,意思是“和”。"
+      },
+      {
+       "kind": "say",
+       "text": "辅音后用 과,元音后用 와。하고 前面接什么都行,更口语。"
+      },
+      {
+       "kind": "example",
+       "ko": "책과 가방",
+       "translation": "一本书和一个包"
+      },
+      {
+       "kind": "example",
+       "ko": "의자와 책상",
+       "translation": "椅子和书桌"
+      },
+      {
+       "kind": "example",
+       "ko": "커피하고 빵",
+       "translation": "咖啡和面包"
+      },
+      {
+       "kind": "say",
+       "text": "하고 和 과/와 也可以表示“跟……一起”。"
+      },
+      {
+       "kind": "example",
+       "ko": "친구하고 공부합니다.",
+       "translation": "我跟朋友一起学习。"
+      },
+      {
+       "kind": "choice",
+       "text": "책상___ 의자",
+       "options": [
+        "과",
+        "와"
+       ],
+       "answer": 0,
+       "why": "책상 以 ㅇ 结尾,所以用 과。"
+      },
+      {
+       "kind": "choice",
+       "text": "의자___ 책상",
+       "options": [
+        "과",
+        "와"
+       ],
+       "answer": 1,
+       "why": "의자 以元音结尾,所以用 와。"
+      },
+      {
+       "kind": "choice",
+       "text": "哪个可以接在任何名词后面?",
+       "options": [
+        "과",
+        "와",
+        "하고"
+       ],
+       "answer": 2,
+       "why": "하고 不变形,口语里很常用。"
+      },
+      {
+       "kind": "build",
+       "translation": "我跟朋友一起学习。",
+       "words": [
+        "친구하고",
+        "공부합니다."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u4l3",
+     "title": "所有格(의)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "의 就是“的”。放在所有者和东西之间。"
+      },
+      {
+       "kind": "example",
+       "ko": "민수 씨의 가방",
+       "translation": "民秀的包"
+      },
+      {
+       "kind": "example",
+       "ko": "학교의 도서관",
+       "translation": "学校的图书馆"
+      },
+      {
+       "kind": "say",
+       "text": "口语里 의 常读成 에。"
+      },
+      {
+       "kind": "say",
+       "text": "“我的”是 제,是 저의 的缩略形式。"
+      },
+      {
+       "kind": "example",
+       "ko": "제 책입니다.",
+       "translation": "这是我的书。"
+      },
+      {
+       "kind": "example",
+       "ko": "제 친구입니다.",
+       "translation": "这是我的朋友。"
+      },
+      {
+       "kind": "choice",
+       "text": "“哈娜的书”怎么说?",
+       "options": [
+        "하나 씨의 책",
+        "책의 하나 씨",
+        "하나 씨 의책"
+       ],
+       "answer": 0,
+       "why": "先说所有者,再加 의,最后说东西。"
+      },
+      {
+       "kind": "choice",
+       "text": "저의 的缩略形式是什么?",
+       "options": [
+        "저",
+        "제",
+        "내"
+       ],
+       "answer": 1,
+       "why": "저의 变成 제。제 가방 就是“我的包”。"
+      },
+      {
+       "kind": "choice",
+       "text": "哪个是对的?",
+       "options": [
+        "제 친구입니다",
+        "저 친구입니다의"
+       ],
+       "answer": 0,
+       "why": "제 친구 是“我的朋友”。"
+      },
+      {
+       "kind": "build",
+       "translation": "这是民秀的包。",
+       "words": [
+        "민수",
+        "씨의",
+        "가방입니다."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u4l4",
+     "title": "综合练习:在教室里",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "哈娜在教室里捡到一本书。听一听。"
+      },
+      {
+       "kind": "example",
+       "ko": "이것은 하나 씨의 책입니까?",
+       "translation": "这是哈娜的书吗?"
+      },
+      {
+       "kind": "example",
+       "ko": "아니요, 제 책이 아닙니다.",
+       "translation": "不,不是我的书。"
+      },
+      {
+       "kind": "example",
+       "ko": "민수 씨의 책입니다.",
+       "translation": "是民秀的书。"
+      },
+      {
+       "kind": "example",
+       "ko": "민수 씨는 무엇을 배웁니까?",
+       "translation": "民秀在学什么?"
+      },
+      {
+       "kind": "example",
+       "ko": "민수 씨는 친구하고 한국어를 배웁니다.",
+       "translation": "民秀跟朋友一起学韩语。"
+      },
+      {
+       "kind": "say",
+       "text": "아닙니다 是 아니에요 的正式说法。"
+      },
+      {
+       "kind": "say",
+       "text": "이것 是“这个”。以后会学 이、그、저。"
+      },
+      {
+       "kind": "choice",
+       "text": "제 책이 아닙니다 是什么意思?",
+       "options": [
+        "是我的书",
+        "不是我的书",
+        "是我的书吗?"
+       ],
+       "answer": 1,
+       "why": "아닙니다 是“不是”的正式说法。"
+      },
+      {
+       "kind": "choice",
+       "text": "가방___ 책",
+       "options": [
+        "과",
+        "와"
+       ],
+       "answer": 0,
+       "why": "가방 以 ㅇ 结尾,所以用 과。"
+      },
+      {
+       "kind": "build",
+       "translation": "这不是我的包。",
+       "words": [
+        "제",
+        "가방이",
+        "아닙니다."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "我跟朋友一起看书。",
+       "words": [
+        "친구하고",
+        "책을",
+        "읽습니다."
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요!你已经会聊学校了。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "title": "天气",
+   "subtitle": "聊聊天气和季节",
+   "lessons": [
+    {
+     "id": "u5l1",
+     "title": "单词:天气和季节",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "韩国人很爱聊天气。来学这些词吧。"
+      },
+      {
+       "kind": "example",
+       "ko": "날씨",
+       "translation": "天气"
+      },
+      {
+       "kind": "example",
+       "ko": "봄",
+       "translation": "春天"
+      },
+      {
+       "kind": "example",
+       "ko": "여름",
+       "translation": "夏天"
+      },
+      {
+       "kind": "example",
+       "ko": "가을",
+       "translation": "秋天"
+      },
+      {
+       "kind": "example",
+       "ko": "겨울",
+       "translation": "冬天"
+      },
+      {
+       "kind": "example",
+       "ko": "비",
+       "translation": "雨"
+      },
+      {
+       "kind": "example",
+       "ko": "눈",
+       "translation": "雪"
+      },
+      {
+       "kind": "example",
+       "ko": "덥다",
+       "translation": "热"
+      },
+      {
+       "kind": "example",
+       "ko": "춥다",
+       "translation": "冷"
+      },
+      {
+       "kind": "example",
+       "ko": "따뜻하다",
+       "translation": "暖和"
+      },
+      {
+       "kind": "example",
+       "ko": "시원하다",
+       "translation": "凉快"
+      },
+      {
+       "kind": "example",
+       "ko": "맑다",
+       "translation": "晴朗"
+      },
+      {
+       "kind": "choice",
+       "text": "겨울 是什么意思?",
+       "options": [
+        "夏天",
+        "秋天",
+        "冬天",
+        "春天"
+       ],
+       "answer": 2,
+       "why": "겨울 是冬天,여름 是夏天。"
+      },
+      {
+       "kind": "choice",
+       "text": "哪个词是“冷”?",
+       "options": [
+        "덥다",
+        "춥다",
+        "맑다",
+        "시원하다"
+       ],
+       "answer": 1,
+       "why": "춥다 是冷,덥다 是热。"
+      },
+      {
+       "kind": "choice",
+       "text": "这里的 눈 是什么意思?",
+       "options": [
+        "雨",
+        "雪",
+        "天气"
+       ],
+       "answer": 1,
+       "why": "눈 是雪,也有“眼睛”的意思。"
+      }
+     ]
+    },
+    {
+     "id": "u5l2",
+     "title": "日常敬语体(-아요/어요)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "-아요/어요 是日常用的敬语体,比 -습니다 更柔和。"
+      },
+      {
+       "kind": "say",
+       "text": "看词干最后一个元音。如果是 ㅏ 或 ㅗ,就加 아요。"
+      },
+      {
+       "kind": "example",
+       "ko": "좋아요.",
+       "translation": "很好。"
+      },
+      {
+       "kind": "example",
+       "ko": "맑아요.",
+       "translation": "天很晴。"
+      },
+      {
+       "kind": "say",
+       "text": "其他元音就加 어요。"
+      },
+      {
+       "kind": "example",
+       "ko": "먹어요.",
+       "translation": "我吃。"
+      },
+      {
+       "kind": "example",
+       "ko": "읽어요.",
+       "translation": "我读。"
+      },
+      {
+       "kind": "say",
+       "text": "带 하다 的动词变成 해요。"
+      },
+      {
+       "kind": "example",
+       "ko": "따뜻해요.",
+       "translation": "很暖和。"
+      },
+      {
+       "kind": "example",
+       "ko": "공부해요.",
+       "translation": "我学习。"
+      },
+      {
+       "kind": "say",
+       "text": "덥다 和 춥다 会变形:더워요、추워요。直接记住就好。"
+      },
+      {
+       "kind": "example",
+       "ko": "오늘 추워요.",
+       "translation": "今天很冷。"
+      },
+      {
+       "kind": "choice",
+       "text": "작다 →",
+       "options": [
+        "작어요",
+        "작아요",
+        "작해요"
+       ],
+       "answer": 1,
+       "why": "작 的元音是 ㅏ,所以用 아요。"
+      },
+      {
+       "kind": "choice",
+       "text": "시원하다 →",
+       "options": [
+        "시원아요",
+        "시원해요",
+        "시원어요"
+       ],
+       "answer": 1,
+       "why": "하다 变成 해요。"
+      },
+      {
+       "kind": "choice",
+       "text": "읽다 →",
+       "options": [
+        "읽아요",
+        "읽어요",
+        "읽해요"
+       ],
+       "answer": 1,
+       "why": "읽 的元音是 ㅣ,所以用 어요。"
+      },
+      {
+       "kind": "build",
+       "translation": "天气很好。",
+       "words": [
+        "날씨가",
+        "좋아요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u5l3",
+     "title": "否定(-지 않아요)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "要说“不”,去掉 다,加 지 않아요。"
+      },
+      {
+       "kind": "example",
+       "ko": "춥지 않아요.",
+       "translation": "不冷。"
+      },
+      {
+       "kind": "example",
+       "ko": "덥지 않아요.",
+       "translation": "不热。"
+      },
+      {
+       "kind": "example",
+       "ko": "좋지 않아요.",
+       "translation": "不好。"
+      },
+      {
+       "kind": "say",
+       "text": "动作也一样可以用。"
+      },
+      {
+       "kind": "example",
+       "ko": "커피를 마시지 않아요.",
+       "translation": "我不喝咖啡。"
+      },
+      {
+       "kind": "say",
+       "text": "这里不变形:춥다 变成 춥지 않아요,不是 추워지 않아요。"
+      },
+      {
+       "kind": "choice",
+       "text": "크다 → 不大",
+       "options": [
+        "크지 않아요",
+        "커지 않아요",
+        "크 않아요"
+       ],
+       "answer": 0,
+       "why": "词干 크 + 지 않아요。"
+      },
+      {
+       "kind": "choice",
+       "text": "哪个是对的?",
+       "options": [
+        "날씨가 좋지 않아요",
+        "날씨가 좋아지 않아요"
+       ],
+       "answer": 0,
+       "why": "词干 좋 + 지 않아요。"
+      },
+      {
+       "kind": "choice",
+       "text": "먹다 → 不吃",
+       "options": [
+        "먹지 않아요",
+        "먹어지 않아요",
+        "먹않아요"
+       ],
+       "answer": 0,
+       "why": "词干 먹 + 지 않아요。"
+      },
+      {
+       "kind": "build",
+       "translation": "今天不冷。",
+       "words": [
+        "오늘",
+        "춥지",
+        "않아요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u5l4",
+     "title": "综合练习:天气怎么样?",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "民秀给哈娜打电话。听一听。"
+      },
+      {
+       "kind": "example",
+       "ko": "오늘 날씨가 어때요?",
+       "translation": "今天天气怎么样?"
+      },
+      {
+       "kind": "example",
+       "ko": "날씨가 좋지 않아요. 비가 와요.",
+       "translation": "天气不好,在下雨。"
+      },
+      {
+       "kind": "example",
+       "ko": "추워요?",
+       "translation": "冷吗?"
+      },
+      {
+       "kind": "example",
+       "ko": "아니요, 춥지 않아요. 시원해요.",
+       "translation": "不冷,很凉快。"
+      },
+      {
+       "kind": "example",
+       "ko": "저는 봄을 좋아해요. 봄은 따뜻해요.",
+       "translation": "我喜欢春天。春天很暖和。"
+      },
+      {
+       "kind": "say",
+       "text": "어때요? 是“怎么样?”。天气、食物,什么都可以问。"
+      },
+      {
+       "kind": "say",
+       "text": "비가 와요 是“下雨了”,字面意思是“雨来了”。"
+      },
+      {
+       "kind": "choice",
+       "text": "“下雨了”怎么说?",
+       "options": [
+        "비가 와요",
+        "비를 와요",
+        "비가 해요"
+       ],
+       "answer": 0,
+       "why": "비가 와요:雨来了。"
+      },
+      {
+       "kind": "choice",
+       "text": "어때요? 是什么意思?",
+       "options": [
+        "是什么?",
+        "怎么样?",
+        "在哪里?"
+       ],
+       "answer": 1,
+       "why": "어때요? 是问某样东西怎么样。"
+      },
+      {
+       "kind": "build",
+       "translation": "我喜欢冬天。",
+       "words": [
+        "저는",
+        "겨울을",
+        "좋아해요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "夏天很热。",
+       "words": [
+        "여름은",
+        "더워요."
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요!你已经会聊天气了。"
+      }
+     ]
+    },
+    {
+     "id": "u5r",
+     "title": "复习:第 1 到 5 单元",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "一起复习第 1 到 5 单元吧。没有新语法,只有练习。"
+      },
+      {
+       "kind": "choice",
+       "text": "저___ 학생이에요.",
+       "options": [
+        "은",
+        "는"
+       ],
+       "answer": 1,
+       "why": "저 以元音结尾,所以用 는。"
+      },
+      {
+       "kind": "choice",
+       "text": "의사___ 아니에요.",
+       "options": [
+        "이",
+        "가"
+       ],
+       "answer": 1,
+       "why": "의사 以元音结尾,所以用 가 아니에요。"
+      },
+      {
+       "kind": "choice",
+       "text": "빵___ 먹습니다.",
+       "options": [
+        "을",
+        "를"
+       ],
+       "answer": 0,
+       "why": "빵 以辅音结尾,所以用 을。"
+      },
+      {
+       "kind": "choice",
+       "text": "친구___ 가방",
+       "options": [
+        "과",
+        "의"
+       ],
+       "answer": 1,
+       "why": "의 表示东西是谁的:朋友的包。"
+      },
+      {
+       "kind": "choice",
+       "text": "좋다 →",
+       "options": [
+        "좋아요",
+        "좋어요",
+        "좋해요"
+       ],
+       "answer": 0,
+       "why": "元音是 ㅗ,所以用 아요。"
+      },
+      {
+       "kind": "choice",
+       "text": "춥다 → 不冷",
+       "options": [
+        "추워지 않아요",
+        "춥지 않아요"
+       ],
+       "answer": 1,
+       "why": "词干 춥 + 지 않아요。"
+      },
+      {
+       "kind": "choice",
+       "text": "마시다 → 正式体",
+       "options": [
+        "마시습니다",
+        "마십니다"
+       ],
+       "answer": 1,
+       "why": "元音词干,所以用 ㅂ니다。"
+      },
+      {
+       "kind": "build",
+       "translation": "我姐姐是护士。",
+       "words": [
+        "우리",
+        "언니는",
+        "간호사예요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "我跟朋友一起喝咖啡。",
+       "words": [
+        "친구하고",
+        "커피를",
+        "마십니다."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "今天天气不好。",
+       "words": [
+        "오늘",
+        "날씨가",
+        "좋지",
+        "않아요."
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "대단해요!你完成了前五个单元。Gochi 为你骄傲。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "title": "朋友",
+   "subtitle": "送东西、寄东西、打电话",
+   "lessons": [
+    {
+     "id": "u6l1",
+     "title": "单词:朋友和礼物",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "来学关于朋友、礼物和消息的单词。"
+      },
+      {
+       "kind": "example",
+       "ko": "선물",
+       "translation": "礼物"
+      },
+      {
+       "kind": "example",
+       "ko": "편지",
+       "translation": "信"
+      },
+      {
+       "kind": "example",
+       "ko": "꽃",
+       "translation": "花"
+      },
+      {
+       "kind": "example",
+       "ko": "생일",
+       "translation": "生日"
+      },
+      {
+       "kind": "example",
+       "ko": "주다",
+       "translation": "给"
+      },
+      {
+       "kind": "example",
+       "ko": "보내다",
+       "translation": "寄、发送"
+      },
+      {
+       "kind": "example",
+       "ko": "전화하다",
+       "translation": "打电话"
+      },
+      {
+       "kind": "example",
+       "ko": "만나다",
+       "translation": "见面"
+      },
+      {
+       "kind": "example",
+       "ko": "고마워요",
+       "translation": "谢谢(亲切的说法)"
+      },
+      {
+       "kind": "example",
+       "ko": "미안해요",
+       "translation": "对不起"
+      },
+      {
+       "kind": "example",
+       "ko": "생일 축하해요!",
+       "translation": "生日快乐!"
+      },
+      {
+       "kind": "choice",
+       "text": "선물 是什么意思?",
+       "options": [
+        "信",
+        "礼物",
+        "花",
+        "生日"
+       ],
+       "answer": 1,
+       "why": "선물 是礼物,편지 是信。"
+      },
+      {
+       "kind": "choice",
+       "text": "哪个动词是“寄”?",
+       "options": [
+        "주다",
+        "보내다",
+        "만나다",
+        "전화하다"
+       ],
+       "answer": 1,
+       "why": "보내다 是寄,주다 是给。"
+      },
+      {
+       "kind": "choice",
+       "text": "“生日快乐!”怎么说?",
+       "options": [
+        "생일 고마워요!",
+        "생일 축하해요!",
+        "생일 미안해요!"
+       ],
+       "answer": 1,
+       "why": "축하해요 是“恭喜”。"
+      }
+     ]
+    },
+    {
+     "id": "u6l2",
+     "title": "给某人(에게/한테)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "에게 和 한테 表示“给”某人。한테 更口语。两个都可以直接接在名字后面。"
+      },
+      {
+       "kind": "example",
+       "ko": "친구에게 편지를 보내요.",
+       "translation": "我给朋友寄信。"
+      },
+      {
+       "kind": "example",
+       "ko": "동생한테 전화해요.",
+       "translation": "我给弟弟打电话。"
+      },
+      {
+       "kind": "say",
+       "text": "有些动词在 요 体里会缩略。주다 变成 줘요,보다 变成 봐요,마시다 变成 마셔요。"
+      },
+      {
+       "kind": "example",
+       "ko": "어머니한테 꽃을 줘요.",
+       "translation": "我送花给妈妈。"
+      },
+      {
+       "kind": "say",
+       "text": "地点用 에,不用 에게。에게 只用于人和动物。"
+      },
+      {
+       "kind": "choice",
+       "text": "친구___ 선물을 줘요.",
+       "options": [
+        "에게",
+        "에서",
+        "을"
+       ],
+       "answer": 0,
+       "why": "에게 表示“给”某人。"
+      },
+      {
+       "kind": "choice",
+       "text": "哪个更口语?",
+       "options": [
+        "에게",
+        "한테"
+       ],
+       "answer": 1,
+       "why": "한테 口语常用,에게 更偏书面。"
+      },
+      {
+       "kind": "choice",
+       "text": "주다 → 요 体",
+       "options": [
+        "只有 주어요",
+        "줘요",
+        "주요"
+       ],
+       "answer": 1,
+       "why": "주 + 어요 缩略成 줘요。"
+      },
+      {
+       "kind": "build",
+       "translation": "我给朋友打电话。",
+       "words": [
+        "친구한테",
+        "전화해요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "我送礼物给姐姐。",
+       "words": [
+        "언니에게",
+        "선물을",
+        "줘요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u6l3",
+     "title": "只(만)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "만 是“只”。直接放在名词后面。"
+      },
+      {
+       "kind": "example",
+       "ko": "커피만 마셔요.",
+       "translation": "我只喝咖啡。"
+      },
+      {
+       "kind": "example",
+       "ko": "동생만 와요.",
+       "translation": "只有我弟弟来。"
+      },
+      {
+       "kind": "say",
+       "text": "和 도 一样,만 也代替 을/를 和 이/가。"
+      },
+      {
+       "kind": "example",
+       "ko": "저는 드라마만 봐요.",
+       "translation": "我只看电视剧。"
+      },
+      {
+       "kind": "choice",
+       "text": "我只吃面包:빵___ 먹어요。",
+       "options": [
+        "만",
+        "도",
+        "을"
+       ],
+       "answer": 0,
+       "why": "만 是“只”,도 是“也”。"
+      },
+      {
+       "kind": "choice",
+       "text": "哪个是对的?",
+       "options": [
+        "물을만 마셔요",
+        "물만 마셔요"
+       ],
+       "answer": 1,
+       "why": "만 代替 을/를。"
+      },
+      {
+       "kind": "choice",
+       "text": "친구만 와요 是什么意思?",
+       "options": [
+        "朋友也来",
+        "只有朋友来",
+        "朋友不来"
+       ],
+       "answer": 1,
+       "why": "만 是“只”。"
+      },
+      {
+       "kind": "build",
+       "translation": "我只喝茶。",
+       "words": [
+        "저는",
+        "차만",
+        "마셔요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u6l4",
+     "title": "综合练习:生日",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "今天是哈娜的生日。听一听。"
+      },
+      {
+       "kind": "example",
+       "ko": "하나 씨, 생일 축하해요!",
+       "translation": "哈娜,生日快乐!"
+      },
+      {
+       "kind": "example",
+       "ko": "이거 선물이에요.",
+       "translation": "这是给你的礼物。"
+      },
+      {
+       "kind": "example",
+       "ko": "와, 고마워요! 꽃이에요?",
+       "translation": "哇,谢谢!是花吗?"
+      },
+      {
+       "kind": "example",
+       "ko": "네. 그리고 편지도 있어요.",
+       "translation": "是的。还有一封信。"
+      },
+      {
+       "kind": "choice",
+       "text": "고마워요 是什么意思?",
+       "options": [
+        "对不起",
+        "谢谢",
+        "你好"
+       ],
+       "answer": 1,
+       "why": "고마워요 是亲切的“谢谢”。"
+      },
+      {
+       "kind": "choice",
+       "text": "친구___ 꽃을 보내요.",
+       "options": [
+        "한테",
+        "에서",
+        "는"
+       ],
+       "answer": 0,
+       "why": "한테 表示“给”某人。"
+      },
+      {
+       "kind": "build",
+       "translation": "这是礼物。",
+       "words": [
+        "이거",
+        "선물이에요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "我给朋友寄信。",
+       "words": [
+        "친구에게",
+        "편지를",
+        "보내요."
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요!你已经会送礼物、发消息了。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "title": "东西在哪里",
+   "subtitle": "说出东西在哪里,以及在哪里做事",
+   "lessons": [
+    {
+     "id": "u7l1",
+     "title": "单词:房间和地点",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "来学说东西在哪里的单词。"
+      },
+      {
+       "kind": "example",
+       "ko": "방",
+       "translation": "房间"
+      },
+      {
+       "kind": "example",
+       "ko": "집",
+       "translation": "家"
+      },
+      {
+       "kind": "example",
+       "ko": "침대",
+       "translation": "床"
+      },
+      {
+       "kind": "example",
+       "ko": "고양이",
+       "translation": "猫"
+      },
+      {
+       "kind": "example",
+       "ko": "위",
+       "translation": "上面"
+      },
+      {
+       "kind": "example",
+       "ko": "아래",
+       "translation": "下面"
+      },
+      {
+       "kind": "example",
+       "ko": "앞",
+       "translation": "前面"
+      },
+      {
+       "kind": "example",
+       "ko": "뒤",
+       "translation": "后面"
+      },
+      {
+       "kind": "example",
+       "ko": "옆",
+       "translation": "旁边"
+      },
+      {
+       "kind": "example",
+       "ko": "안",
+       "translation": "里面"
+      },
+      {
+       "kind": "example",
+       "ko": "있다",
+       "translation": "有、在"
+      },
+      {
+       "kind": "example",
+       "ko": "없다",
+       "translation": "没有、不在"
+      },
+      {
+       "kind": "choice",
+       "text": "옆 是什么意思?",
+       "options": [
+        "后面",
+        "旁边",
+        "下面",
+        "里面"
+       ],
+       "answer": 1,
+       "why": "옆 是旁边,뒤 是后面。"
+      },
+      {
+       "kind": "choice",
+       "text": "있다 的反义词是什么?",
+       "options": [
+        "없다",
+        "아래",
+        "안"
+       ],
+       "answer": 0,
+       "why": "있다 是“有”,없다 是“没有”。"
+      },
+      {
+       "kind": "choice",
+       "text": "침대 是什么意思?",
+       "options": [
+        "房间",
+        "床",
+        "书桌",
+        "椅子"
+       ],
+       "answer": 1,
+       "why": "침대 是床。"
+      }
+     ]
+    },
+    {
+     "id": "u7l2",
+     "title": "东西在哪里(에 있어요)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "说东西在哪里,用:地点 + 에 + 있어요。"
+      },
+      {
+       "kind": "example",
+       "ko": "고양이가 방에 있어요.",
+       "translation": "猫在房间里。"
+      },
+      {
+       "kind": "say",
+       "text": "说位置时,先说东西,再说方位词,最后加 에。"
+      },
+      {
+       "kind": "example",
+       "ko": "책이 책상 위에 있어요.",
+       "translation": "书在书桌上。"
+      },
+      {
+       "kind": "example",
+       "ko": "가방이 의자 아래에 있어요.",
+       "translation": "包在椅子下面。"
+      },
+      {
+       "kind": "say",
+       "text": "问在哪里,用 어디에 있어요?"
+      },
+      {
+       "kind": "example",
+       "ko": "화장실이 어디에 있어요?",
+       "translation": "洗手间在哪里?"
+      },
+      {
+       "kind": "example",
+       "ko": "집에 고양이가 없어요.",
+       "translation": "家里没有猫。"
+      },
+      {
+       "kind": "choice",
+       "text": "책이 침대 위___ 있어요.",
+       "options": [
+        "에",
+        "에서",
+        "를"
+       ],
+       "answer": 0,
+       "why": "东西在哪里:에 있어요。"
+      },
+      {
+       "kind": "choice",
+       "text": "“在书桌旁边”怎么说?",
+       "options": [
+        "책상 옆에",
+        "옆 책상에",
+        "책상에 옆"
+       ],
+       "answer": 0,
+       "why": "先说东西,再加 옆,最后加 에。"
+      },
+      {
+       "kind": "choice",
+       "text": "哪个是“没有包”?",
+       "options": [
+        "가방이 있어요",
+        "가방이 없어요"
+       ],
+       "answer": 1,
+       "why": "없어요 是“没有”。"
+      },
+      {
+       "kind": "build",
+       "translation": "猫在床下面。",
+       "words": [
+        "고양이가",
+        "침대",
+        "아래에",
+        "있어요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u7l3",
+     "title": "在哪里做事(에서)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "에서 表示动作发生的地点,就像“在……(做)”。"
+      },
+      {
+       "kind": "example",
+       "ko": "도서관에서 공부해요.",
+       "translation": "我在图书馆学习。"
+      },
+      {
+       "kind": "example",
+       "ko": "식당에서 밥을 먹어요.",
+       "translation": "我在餐厅吃饭。"
+      },
+      {
+       "kind": "say",
+       "text": "比较一下:에 表示在某处,에서 表示在某处做某事。"
+      },
+      {
+       "kind": "example",
+       "ko": "집에 있어요.",
+       "translation": "我在家。"
+      },
+      {
+       "kind": "example",
+       "ko": "집에서 일해요.",
+       "translation": "我在家工作。"
+      },
+      {
+       "kind": "choice",
+       "text": "학교___ 한국어를 배워요.",
+       "options": [
+        "에",
+        "에서"
+       ],
+       "answer": 1,
+       "why": "배우다 是动作,所以用 에서。"
+      },
+      {
+       "kind": "choice",
+       "text": "저는 지금 집___ 있어요.",
+       "options": [
+        "에",
+        "에서"
+       ],
+       "answer": 0,
+       "why": "있다 是在某处,所以用 에。"
+      },
+      {
+       "kind": "choice",
+       "text": "방___ 드라마를 봐요.",
+       "options": [
+        "에",
+        "에서"
+       ],
+       "answer": 1,
+       "why": "看是动作,所以用 에서。"
+      },
+      {
+       "kind": "build",
+       "translation": "我在图书馆学习。",
+       "words": [
+        "도서관에서",
+        "공부해요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u7l4",
+     "title": "综合练习:你在哪里?",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "民秀给哈娜打电话。听一听。"
+      },
+      {
+       "kind": "example",
+       "ko": "하나 씨, 지금 어디에 있어요?",
+       "translation": "哈娜,你现在在哪里?"
+      },
+      {
+       "kind": "example",
+       "ko": "집에 있어요. 방에서 드라마를 봐요.",
+       "translation": "我在家。在房间里看电视剧。"
+      },
+      {
+       "kind": "example",
+       "ko": "제 가방이 하나 씨 집에 있어요?",
+       "translation": "我的包在你家吗?"
+      },
+      {
+       "kind": "example",
+       "ko": "네, 의자 옆에 있어요.",
+       "translation": "在,在椅子旁边。"
+      },
+      {
+       "kind": "example",
+       "ko": "고마워요! 내일 가요.",
+       "translation": "谢谢!我明天过去拿。"
+      },
+      {
+       "kind": "say",
+       "text": "지금 是“现在”,내일 是“明天”。"
+      },
+      {
+       "kind": "choice",
+       "text": "가방이 의자 옆___ 있어요.",
+       "options": [
+        "에",
+        "에서"
+       ],
+       "answer": 0,
+       "why": "在某处:에。"
+      },
+      {
+       "kind": "choice",
+       "text": "어디에 있어요? 是什么意思?",
+       "options": [
+        "是什么?",
+        "在哪里?",
+        "是谁?"
+       ],
+       "answer": 1,
+       "why": "어디 是“哪里”。"
+      },
+      {
+       "kind": "build",
+       "translation": "我现在在家。",
+       "words": [
+        "지금",
+        "집에",
+        "있어요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "我在家吃饭。",
+       "words": [
+        "집에서",
+        "밥을",
+        "먹어요."
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요!你已经会说东西在哪里了。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "title": "日期",
+   "subtitle": "聊聊日子和过去的事",
+   "lessons": [
+    {
+     "id": "u8l1",
+     "title": "单词:数字和星期",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "韩语有两套数字。这一套来自汉语,用于日期、钱和电话号码,发音和汉语很像。"
+      },
+      {
+       "kind": "example",
+       "ko": "일, 이, 삼",
+       "translation": "1, 2, 3"
+      },
+      {
+       "kind": "example",
+       "ko": "사, 오, 육",
+       "translation": "4, 5, 6"
+      },
+      {
+       "kind": "example",
+       "ko": "칠, 팔, 구, 십",
+       "translation": "7, 8, 9, 10"
+      },
+      {
+       "kind": "example",
+       "ko": "십오",
+       "translation": "15 (10 + 5)"
+      },
+      {
+       "kind": "example",
+       "ko": "이십",
+       "translation": "20 (2 × 10)"
+      },
+      {
+       "kind": "say",
+       "text": "月份是数字 + 월。注意:六月是 유월,十月是 시월。"
+      },
+      {
+       "kind": "example",
+       "ko": "삼월 십오일",
+       "translation": "3 月 15 日"
+      },
+      {
+       "kind": "example",
+       "ko": "월요일",
+       "translation": "星期一"
+      },
+      {
+       "kind": "example",
+       "ko": "금요일",
+       "translation": "星期五"
+      },
+      {
+       "kind": "example",
+       "ko": "토요일",
+       "translation": "星期六"
+      },
+      {
+       "kind": "example",
+       "ko": "일요일",
+       "translation": "星期天"
+      },
+      {
+       "kind": "example",
+       "ko": "어제, 오늘, 내일",
+       "translation": "昨天、今天、明天"
+      },
+      {
+       "kind": "example",
+       "ko": "주말",
+       "translation": "周末"
+      },
+      {
+       "kind": "choice",
+       "text": "25 怎么说?",
+       "options": [
+        "이오",
+        "이십오",
+        "오십이"
+       ],
+       "answer": 1,
+       "why": "이십 (20) + 오 (5)."
+      },
+      {
+       "kind": "choice",
+       "text": "六月怎么说?",
+       "options": [
+        "육월",
+        "유월",
+        "오월"
+       ],
+       "answer": 1,
+       "why": "六月是 유월,不是 육월。"
+      },
+      {
+       "kind": "choice",
+       "text": "토요일 是什么意思?",
+       "options": [
+        "星期五",
+        "星期六",
+        "星期天"
+       ],
+       "answer": 1,
+       "why": "토요일 是星期六,일요일 是星期天。"
+      }
+     ]
+    },
+    {
+     "id": "u8l2",
+     "title": "过去时(-았/었어요)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "过去时和 -아요/어요 的规则一样,换成 았어요 或 었어요 就行。"
+      },
+      {
+       "kind": "say",
+       "text": "最后一个元音是 ㅏ 或 ㅗ,用 았어요。"
+      },
+      {
+       "kind": "example",
+       "ko": "좋았어요.",
+       "translation": "很好(过去)。"
+      },
+      {
+       "kind": "example",
+       "ko": "만났어요.",
+       "translation": "我见了(某人)。"
+      },
+      {
+       "kind": "example",
+       "ko": "봤어요.",
+       "translation": "我看了。"
+      },
+      {
+       "kind": "say",
+       "text": "其他元音用 었어요。하다 变成 했어요。"
+      },
+      {
+       "kind": "example",
+       "ko": "먹었어요.",
+       "translation": "我吃了。"
+      },
+      {
+       "kind": "example",
+       "ko": "읽었어요.",
+       "translation": "我读。"
+      },
+      {
+       "kind": "example",
+       "ko": "공부했어요.",
+       "translation": "我学习了。"
+      },
+      {
+       "kind": "choice",
+       "text": "먹다 → 过去时",
+       "options": [
+        "먹았어요",
+        "먹었어요",
+        "먹했어요"
+       ],
+       "answer": 1,
+       "why": "먹 的元音是 ㅓ,所以用 었어요。"
+      },
+      {
+       "kind": "choice",
+       "text": "일하다 → 过去时",
+       "options": [
+        "일했어요",
+        "일았어요",
+        "일하었어요"
+       ],
+       "answer": 0,
+       "why": "하다 变成 했어요。"
+      },
+      {
+       "kind": "choice",
+       "text": "작다 → 过去时",
+       "options": [
+        "작었어요",
+        "작았어요"
+       ],
+       "answer": 1,
+       "why": "작 的元音是 ㅏ,所以用 았어요。"
+      },
+      {
+       "kind": "build",
+       "translation": "我昨天看了电影。",
+       "words": [
+        "어제",
+        "영화를",
+        "봤어요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u8l3",
+     "title": "时间助词(에)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "说某事发生的时间,在时间后面加 에。"
+      },
+      {
+       "kind": "example",
+       "ko": "토요일에 친구를 만났어요.",
+       "translation": "我星期六见了朋友。"
+      },
+      {
+       "kind": "example",
+       "ko": "삼월에 한국에 가요.",
+       "translation": "我三月去韩国。"
+      },
+      {
+       "kind": "example",
+       "ko": "주말에 뭐 했어요?",
+       "translation": "你周末做了什么?"
+      },
+      {
+       "kind": "say",
+       "text": "어제、오늘、내일 后面不加 에。"
+      },
+      {
+       "kind": "example",
+       "ko": "어제 공부했어요.",
+       "translation": "我昨天学习了。"
+      },
+      {
+       "kind": "choice",
+       "text": "금요일___ 영화를 봤어요.",
+       "options": [
+        "에",
+        "에서",
+        "를"
+       ],
+       "answer": 0,
+       "why": "时间 + 에。"
+      },
+      {
+       "kind": "choice",
+       "text": "哪个是对的?",
+       "options": [
+        "어제에 먹었어요",
+        "어제 먹었어요"
+       ],
+       "answer": 1,
+       "why": "어제 后面从不加 에。"
+      },
+      {
+       "kind": "choice",
+       "text": "일요일에 뭐 ___?",
+       "options": [
+        "했어요",
+        "해요었어요",
+        "했요"
+       ],
+       "answer": 0,
+       "why": "했어요 是 해요 的过去时。"
+      },
+      {
+       "kind": "build",
+       "translation": "我周末见了朋友。",
+       "words": [
+        "주말에",
+        "친구를",
+        "만났어요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u8l4",
+     "title": "综合练习:你的周末",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "星期一早上在学校。听一听。"
+      },
+      {
+       "kind": "example",
+       "ko": "주말에 뭐 했어요?",
+       "translation": "你周末做了什么?"
+      },
+      {
+       "kind": "example",
+       "ko": "토요일에 친구를 만났어요. 같이 영화를 봤어요.",
+       "translation": "我星期六见了朋友,我们一起看了电影。"
+      },
+      {
+       "kind": "example",
+       "ko": "영화가 어땠어요?",
+       "translation": "电影怎么样?"
+      },
+      {
+       "kind": "example",
+       "ko": "정말 좋았어요! 일요일에는 집에서 쉬었어요.",
+       "translation": "特别好看!星期天我在家休息了。"
+      },
+      {
+       "kind": "say",
+       "text": "어땠어요? 是 어때요? 的过去时。같이 是“一起”。"
+      },
+      {
+       "kind": "say",
+       "text": "쉬다 是休息,쉬었어요 是它的过去时。"
+      },
+      {
+       "kind": "choice",
+       "text": "어땠어요? 在问什么?",
+       "options": [
+        "怎么样?",
+        "怎么样(过去)?",
+        "在哪里(过去)?"
+       ],
+       "answer": 1,
+       "why": "어땠어요 是过去时。"
+      },
+      {
+       "kind": "choice",
+       "text": "일요일___ 집에서 쉬었어요.",
+       "options": [
+        "에",
+        "에서",
+        "을"
+       ],
+       "answer": 0,
+       "why": "时间 + 에。"
+      },
+      {
+       "kind": "build",
+       "translation": "我昨天在家休息了。",
+       "words": [
+        "어제",
+        "집에서",
+        "쉬었어요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "电影很好看。",
+       "words": [
+        "영화가",
+        "좋았어요."
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요!你已经会说过去的事了。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 9,
+   "title": "运动",
+   "subtitle": "说说你会做和不会做的事",
+   "lessons": [
+    {
+     "id": "u9l1",
+     "title": "单词:运动",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "来学运动和表示频率的词。"
+      },
+      {
+       "kind": "example",
+       "ko": "운동",
+       "translation": "运动"
+      },
+      {
+       "kind": "example",
+       "ko": "수영",
+       "translation": "游泳"
+      },
+      {
+       "kind": "example",
+       "ko": "축구",
+       "translation": "足球"
+      },
+      {
+       "kind": "example",
+       "ko": "야구",
+       "translation": "棒球"
+      },
+      {
+       "kind": "example",
+       "ko": "테니스",
+       "translation": "网球"
+      },
+      {
+       "kind": "example",
+       "ko": "요가",
+       "translation": "瑜伽"
+      },
+      {
+       "kind": "example",
+       "ko": "잘",
+       "translation": "好、擅长"
+      },
+      {
+       "kind": "example",
+       "ko": "매일",
+       "translation": "每天"
+      },
+      {
+       "kind": "example",
+       "ko": "자주",
+       "translation": "经常"
+      },
+      {
+       "kind": "example",
+       "ko": "가끔",
+       "translation": "偶尔"
+      },
+      {
+       "kind": "choice",
+       "text": "축구 是什么意思?",
+       "options": [
+        "棒球",
+        "足球",
+        "游泳"
+       ],
+       "answer": 1,
+       "why": "축구 是足球,야구 是棒球。"
+      },
+      {
+       "kind": "choice",
+       "text": "哪个词是“偶尔”?",
+       "options": [
+        "매일",
+        "자주",
+        "가끔"
+       ],
+       "answer": 2,
+       "why": "가끔 是偶尔,자주 是经常。"
+      },
+      {
+       "kind": "choice",
+       "text": "잘 是什么意思?",
+       "options": [
+        "好、擅长",
+        "每天",
+        "不"
+       ],
+       "answer": 0,
+       "why": "잘 是“好”:잘해요 就是“很擅长”。"
+      }
+     ]
+    },
+    {
+     "id": "u9l2",
+     "title": "从……到……(부터、까지)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "부터 是“从”,까지 是“到”。用于时间和日子。"
+      },
+      {
+       "kind": "example",
+       "ko": "월요일부터 금요일까지 일해요.",
+       "translation": "我从星期一工作到星期五。"
+      },
+      {
+       "kind": "example",
+       "ko": "오늘부터 운동해요.",
+       "translation": "我从今天开始运动。"
+      },
+      {
+       "kind": "example",
+       "ko": "일요일까지 쉬어요.",
+       "translation": "我休息到星期天。"
+      },
+      {
+       "kind": "choice",
+       "text": "월요일___ 수영해요。(从星期一开始)",
+       "options": [
+        "부터",
+        "까지",
+        "에서"
+       ],
+       "answer": 0,
+       "why": "부터 是“从”。"
+      },
+      {
+       "kind": "choice",
+       "text": "금요일___ 공부해요。(到星期五)",
+       "options": [
+        "부터",
+        "까지"
+       ],
+       "answer": 1,
+       "why": "까지 是“到”。"
+      },
+      {
+       "kind": "choice",
+       "text": "哪个是对的?",
+       "options": [
+        "월요일까지 금요일부터",
+        "월요일부터 금요일까지"
+       ],
+       "answer": 1,
+       "why": "先用 부터,再用 까지。"
+      },
+      {
+       "kind": "build",
+       "translation": "我从星期一游泳到星期五。",
+       "words": [
+        "월요일부터",
+        "금요일까지",
+        "수영해요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u9l3",
+     "title": "不会、不能(못、-지 못해요)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "못 是“不能、不会”。直接放在动词前面。"
+      },
+      {
+       "kind": "example",
+       "ko": "저는 수영을 못해요.",
+       "translation": "我不会游泳。"
+      },
+      {
+       "kind": "example",
+       "ko": "오늘은 못 가요.",
+       "translation": "我今天去不了。"
+      },
+      {
+       "kind": "say",
+       "text": "也可以在词干后加 지 못해요,意思一样,更正式一点。"
+      },
+      {
+       "kind": "example",
+       "ko": "축구를 하지 못해요.",
+       "translation": "我不会踢足球。"
+      },
+      {
+       "kind": "say",
+       "text": "比较一下:안(-지 않아요 的简短形式)是“不做”,못 是“做不了”。"
+      },
+      {
+       "kind": "example",
+       "ko": "수영을 잘해요.",
+       "translation": "我很会游泳。"
+      },
+      {
+       "kind": "choice",
+       "text": "我不能喝咖啡:커피를 ___ 마셔요。",
+       "options": [
+        "못",
+        "만",
+        "도"
+       ],
+       "answer": 0,
+       "why": "못 + 动词 是“不能”。"
+      },
+      {
+       "kind": "choice",
+       "text": "가다 → 不能(지 形式)",
+       "options": [
+        "가지 못해요",
+        "가 못해요",
+        "가지 못가요"
+       ],
+       "answer": 0,
+       "why": "词干 가 + 지 못해요。"
+      },
+      {
+       "kind": "choice",
+       "text": "哪个是“我不会游泳”?",
+       "options": [
+        "수영을 안 해요",
+        "수영을 못해요"
+       ],
+       "answer": 1,
+       "why": "못 是“不能”,안 是“不做”。"
+      },
+      {
+       "kind": "build",
+       "translation": "我不会打网球。",
+       "words": [
+        "저는",
+        "테니스를",
+        "못해요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u9l4",
+     "title": "综合练习:喜欢的运动",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "哈娜和民秀在聊运动。听一听。"
+      },
+      {
+       "kind": "example",
+       "ko": "무슨 운동을 좋아해요?",
+       "translation": "你喜欢什么运动?"
+      },
+      {
+       "kind": "example",
+       "ko": "축구를 좋아해요. 매일 해요.",
+       "translation": "我喜欢足球,每天都踢。"
+      },
+      {
+       "kind": "example",
+       "ko": "수영도 해요?",
+       "translation": "你也游泳吗?"
+      },
+      {
+       "kind": "example",
+       "ko": "아니요, 저는 수영을 못해요.",
+       "translation": "不,我不会游泳。"
+      },
+      {
+       "kind": "example",
+       "ko": "저는 수영을 잘해요. 월요일부터 금요일까지 수영장에 가요.",
+       "translation": "我很会游泳。我星期一到星期五都去游泳池。"
+      },
+      {
+       "kind": "say",
+       "text": "무슨 是“什么样的”。수영장 是游泳池。"
+      },
+      {
+       "kind": "choice",
+       "text": "잘해요 是什么意思?",
+       "options": [
+        "我不擅长",
+        "我很擅长",
+        "我不做"
+       ],
+       "answer": 1,
+       "why": "잘 + 해요 表示做得很好。"
+      },
+      {
+       "kind": "choice",
+       "text": "저는 야구를 ___ 해요。(不会)",
+       "options": [
+        "못",
+        "잘",
+        "만"
+       ],
+       "answer": 0,
+       "why": "못 是“不能、不会”。"
+      },
+      {
+       "kind": "build",
+       "translation": "我每天踢足球。",
+       "words": [
+        "저는",
+        "매일",
+        "축구를",
+        "해요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "我今天去不了。",
+       "words": [
+        "오늘은",
+        "못",
+        "가요."
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요!你已经会聊运动了。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 10,
+   "title": "做计划",
+   "subtitle": "约朋友一起做点什么",
+   "lessons": [
+    {
+     "id": "u10l1",
+     "title": "单词:数数和时间",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "这是韩语固有的数字,用来数东西和说几点。"
+      },
+      {
+       "kind": "example",
+       "ko": "하나, 둘, 셋",
+       "translation": "1, 2, 3"
+      },
+      {
+       "kind": "example",
+       "ko": "넷, 다섯, 여섯",
+       "translation": "4, 5, 6"
+      },
+      {
+       "kind": "example",
+       "ko": "일곱, 여덟, 아홉, 열",
+       "translation": "7, 8, 9, 10"
+      },
+      {
+       "kind": "say",
+       "text": "在 시(点)前面,有几个会缩短:한 시、두 시、세 시、네 시。"
+      },
+      {
+       "kind": "example",
+       "ko": "한 시",
+       "translation": "1 点"
+      },
+      {
+       "kind": "example",
+       "ko": "세 시",
+       "translation": "3 点"
+      },
+      {
+       "kind": "example",
+       "ko": "열두 시",
+       "translation": "12 点"
+      },
+      {
+       "kind": "say",
+       "text": "分钟用另一套数字:삼십 분 是 30 分钟。"
+      },
+      {
+       "kind": "example",
+       "ko": "두 시 삼십 분",
+       "translation": "2:30"
+      },
+      {
+       "kind": "example",
+       "ko": "점심",
+       "translation": "午饭"
+      },
+      {
+       "kind": "example",
+       "ko": "저녁",
+       "translation": "晚饭、晚上"
+      },
+      {
+       "kind": "example",
+       "ko": "같이",
+       "translation": "一起"
+      },
+      {
+       "kind": "choice",
+       "text": "4 点怎么说?",
+       "options": [
+        "사 시",
+        "네 시",
+        "넷 시"
+       ],
+       "answer": 1,
+       "why": "넷 在 시 前面变成 네。"
+      },
+      {
+       "kind": "choice",
+       "text": "다섯 是几?",
+       "options": [
+        "4",
+        "5",
+        "6"
+       ],
+       "answer": 1,
+       "why": "다섯 是 5。"
+      },
+      {
+       "kind": "choice",
+       "text": "7 点 30 分怎么说?",
+       "options": [
+        "일곱 시 삼십 분",
+        "칠 시 서른 분"
+       ],
+       "answer": 0,
+       "why": "点用固有数字,分钟用 일、이、삼 这套数字。"
+      }
+     ]
+    },
+    {
+     "id": "u10l2",
+     "title": "……吧?一起……吧!(-을까요、-읍시다)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "-을까요? 是“要不要……?”,用来提议。"
+      },
+      {
+       "kind": "say",
+       "text": "辅音后加 을까요,元音后加 ㄹ까요。"
+      },
+      {
+       "kind": "example",
+       "ko": "같이 먹을까요?",
+       "translation": "一起吃饭吧?"
+      },
+      {
+       "kind": "example",
+       "ko": "영화를 볼까요?",
+       "translation": "看电影吧?"
+      },
+      {
+       "kind": "say",
+       "text": "-읍시다 是“……吧”。元音后用 ㅂ시다。"
+      },
+      {
+       "kind": "example",
+       "ko": "갑시다!",
+       "translation": "走吧!"
+      },
+      {
+       "kind": "example",
+       "ko": "점심을 먹읍시다.",
+       "translation": "吃午饭吧。"
+      },
+      {
+       "kind": "say",
+       "text": "对长辈说 -읍시다 可能显得有点命令的味道。对长辈用 -을까요? 更好。"
+      },
+      {
+       "kind": "choice",
+       "text": "마시다 → ……吧?",
+       "options": [
+        "마실까요",
+        "마시을까요",
+        "마셔까요"
+       ],
+       "answer": 0,
+       "why": "元音词干,所以用 ㄹ까요:마실까요。"
+      },
+      {
+       "kind": "choice",
+       "text": "읽다 → ……吧?",
+       "options": [
+        "읽ㄹ까요",
+        "읽을까요"
+       ],
+       "answer": 1,
+       "why": "辅音词干,所以用 을까요。"
+      },
+      {
+       "kind": "choice",
+       "text": "만나다 → ……吧",
+       "options": [
+        "만납시다",
+        "만나읍시다"
+       ],
+       "answer": 0,
+       "why": "元音词干,所以用 ㅂ시다。"
+      },
+      {
+       "kind": "build",
+       "translation": "一起吃晚饭吧?",
+       "words": [
+        "같이",
+        "저녁을",
+        "먹을까요?"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u10l3",
+     "title": "然后(-고)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "-고 连接两个动作或描述,像“和”“然后”。加在词干后面。"
+      },
+      {
+       "kind": "example",
+       "ko": "밥을 먹고 영화를 봐요.",
+       "translation": "我吃饭,然后看电影。"
+      },
+      {
+       "kind": "example",
+       "ko": "날씨가 좋고 따뜻해요.",
+       "translation": "天气又好又暖和。"
+      },
+      {
+       "kind": "example",
+       "ko": "숙제를 하고 잤어요.",
+       "translation": "我做完作业就睡了。"
+      },
+      {
+       "kind": "say",
+       "text": "时态只加在最后一个动词上。"
+      },
+      {
+       "kind": "choice",
+       "text": "我吃了也喝了。哪个是对的?",
+       "options": [
+        "먹고 마셨어요",
+        "먹었어요고 마셨어요"
+       ],
+       "answer": 0,
+       "why": "过去时加在最后一个动词上:먹고 마셨어요。"
+      },
+      {
+       "kind": "choice",
+       "text": "공부하다 + 자다",
+       "options": [
+        "공부하고 자요",
+        "공부해고 자요"
+       ],
+       "answer": 0,
+       "why": "词干 공부하 + 고。"
+      },
+      {
+       "kind": "choice",
+       "text": "크고 좋아요 是什么意思?",
+       "options": [
+        "很大但不好",
+        "又大又好",
+        "不大"
+       ],
+       "answer": 1,
+       "why": "-고 是“和”。"
+      },
+      {
+       "kind": "build",
+       "translation": "我吃午饭,然后喝咖啡。",
+       "words": [
+        "점심을",
+        "먹고",
+        "커피를",
+        "마셔요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u10l4",
+     "title": "综合练习:做计划",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "民秀约哈娜吃午饭。听一听。"
+      },
+      {
+       "kind": "example",
+       "ko": "하나 씨, 내일 같이 점심을 먹을까요?",
+       "translation": "哈娜,明天一起吃午饭吧?"
+      },
+      {
+       "kind": "example",
+       "ko": "좋아요! 몇 시에 만날까요?",
+       "translation": "好啊!几点见?"
+      },
+      {
+       "kind": "example",
+       "ko": "열두 시에 만납시다.",
+       "translation": "12 点见吧。"
+      },
+      {
+       "kind": "example",
+       "ko": "점심을 먹고 커피도 마실까요?",
+       "translation": "吃完午饭再一起喝杯咖啡吧?"
+      },
+      {
+       "kind": "example",
+       "ko": "네, 좋아요. 내일 봐요!",
+       "translation": "好,没问题。明天见!"
+      },
+      {
+       "kind": "say",
+       "text": "몇 시 是“几点”。내일 봐요 是“明天见”。"
+      },
+      {
+       "kind": "choice",
+       "text": "“几点?”怎么问?",
+       "options": [
+        "몇 시예요?",
+        "무슨 시예요?",
+        "어디 시예요?"
+       ],
+       "answer": 0,
+       "why": "몇 是“几”:몇 시 就是几点。"
+      },
+      {
+       "kind": "choice",
+       "text": "가다 → ……吧",
+       "options": [
+        "갑시다",
+        "가읍시다",
+        "갈시다"
+       ],
+       "answer": 0,
+       "why": "元音词干,所以用 ㅂ시다。"
+      },
+      {
+       "kind": "build",
+       "translation": "3 点见吧。",
+       "words": [
+        "세",
+        "시에",
+        "만납시다."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "一起看电影吧?",
+       "words": [
+        "같이",
+        "영화를",
+        "볼까요?"
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요!你已经会用韩语约人了。"
+      }
+     ]
+    },
+    {
+     "id": "u10r",
+     "title": "复习:第 6 到 10 单元",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "一起复习第 6 到 10 单元吧。"
+      },
+      {
+       "kind": "choice",
+       "text": "동생___ 선물을 줘요.",
+       "options": [
+        "한테",
+        "에서",
+        "부터"
+       ],
+       "answer": 0,
+       "why": "한테 表示“给”某人。"
+      },
+      {
+       "kind": "choice",
+       "text": "저는 커피___ 마셔요。(只)",
+       "options": [
+        "만",
+        "도",
+        "까지"
+       ],
+       "answer": 0,
+       "why": "만 是“只”。"
+      },
+      {
+       "kind": "choice",
+       "text": "고양이가 침대 아래___ 있어요.",
+       "options": [
+        "에",
+        "에서"
+       ],
+       "answer": 0,
+       "why": "在某处:에。"
+      },
+      {
+       "kind": "choice",
+       "text": "도서관___ 공부해요.",
+       "options": [
+        "에",
+        "에서"
+       ],
+       "answer": 1,
+       "why": "在某处做动作:에서。"
+      },
+      {
+       "kind": "choice",
+       "text": "보다 → 过去时",
+       "options": [
+        "봤어요",
+        "보었어요",
+        "봐았어요"
+       ],
+       "answer": 0,
+       "why": "보 + 았어요 缩略成 봤어요。"
+      },
+      {
+       "kind": "choice",
+       "text": "월요일___ 금요일까지",
+       "options": [
+        "부터",
+        "에",
+        "만"
+       ],
+       "answer": 0,
+       "why": "부터 ... 까지:从……到……。"
+      },
+      {
+       "kind": "choice",
+       "text": "我不会游泳:수영을 ___",
+       "options": [
+        "못해요",
+        "안해요",
+        "잘해요"
+       ],
+       "answer": 0,
+       "why": "못 是“不能、不会”。"
+      },
+      {
+       "kind": "choice",
+       "text": "먹다 → ……吧?",
+       "options": [
+        "먹을까요",
+        "먹ㄹ까요"
+       ],
+       "answer": 0,
+       "why": "辅音词干,所以用 을까요。"
+      },
+      {
+       "kind": "build",
+       "translation": "我星期六见了朋友。",
+       "words": [
+        "토요일에",
+        "친구를",
+        "만났어요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "吃完饭一起看电影吧?",
+       "words": [
+        "밥을",
+        "먹고",
+        "영화를",
+        "볼까요?"
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "대단해요!你完成了十个单元。Gochi 特别骄傲。"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,4398 @@
+{
+ "units": [
+  {
+   "id": 0,
+   "title": "Hangul",
+   "subtitle": "Lies Koreanisch in sechs kurzen Lektionen",
+   "lessons": [
+    {
+     "id": "h1",
+     "title": "Grundvokale",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "안녕! Ich bin Gochi. Die koreanische Schrift heißt Hangul, und du kannst sie in wenigen Lektionen lesen lernen."
+      },
+      {
+       "kind": "say",
+       "text": "Buchstaben werden zu Blöcken zusammengesetzt. Jeder Block ist eine Silbe."
+      },
+      {
+       "kind": "say",
+       "text": "Ein Vokal kann nicht allein stehen, deshalb steht er neben ㅇ. Hier ist ㅇ stumm."
+      },
+      {
+       "kind": "example",
+       "ko": "아",
+       "translation": "a, wie das 'a' in Vater"
+      },
+      {
+       "kind": "example",
+       "ko": "어",
+       "translation": "eo, wie das offene 'o' in Sonne"
+      },
+      {
+       "kind": "example",
+       "ko": "오",
+       "translation": "o, wie das 'o' in so"
+      },
+      {
+       "kind": "example",
+       "ko": "우",
+       "translation": "u, wie das 'u' in gut"
+      },
+      {
+       "kind": "example",
+       "ko": "으",
+       "translation": "eu, sag 'u' mit breiten, flachen Lippen"
+      },
+      {
+       "kind": "example",
+       "ko": "이",
+       "translation": "i, wie das 'ie' in Liebe"
+      },
+      {
+       "kind": "choice",
+       "text": "Welcher klingt wie 'a'?",
+       "options": [
+        "어",
+        "아",
+        "오",
+        "이"
+       ],
+       "answer": 1,
+       "why": "아 hat den kurzen Strich nach rechts."
+      },
+      {
+       "kind": "choice",
+       "text": "Welcher klingt wie 'u'?",
+       "options": [
+        "오",
+        "으",
+        "우",
+        "어"
+       ],
+       "answer": 2,
+       "why": "Bei 우 zeigt der Strich nach unten. Bei 오 zeigt er nach oben."
+      },
+      {
+       "kind": "example",
+       "ko": "아이",
+       "translation": "Kind"
+      },
+      {
+       "kind": "example",
+       "ko": "오이",
+       "translation": "Gurke"
+      },
+      {
+       "kind": "choice",
+       "text": "Wie liest man 오이?",
+       "options": [
+        "ai",
+        "oi",
+        "ui",
+        "eoi"
+       ],
+       "answer": 1,
+       "why": "오 ist 'o' und 이 ist 'i'."
+      }
+     ]
+    },
+    {
+     "id": "h2",
+     "title": "Grundkonsonanten",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Jetzt die Konsonanten. Jeder steht im Block vor dem Vokal."
+      },
+      {
+       "kind": "example",
+       "ko": "가",
+       "translation": "ga (ㄱ liegt zwischen g und k)"
+      },
+      {
+       "kind": "example",
+       "ko": "나",
+       "translation": "na"
+      },
+      {
+       "kind": "example",
+       "ko": "다",
+       "translation": "da (ㄷ liegt zwischen d und t)"
+      },
+      {
+       "kind": "example",
+       "ko": "라",
+       "translation": "ra (ㄹ ist ein leichtes Zungen-r, fast wie l)"
+      },
+      {
+       "kind": "example",
+       "ko": "마",
+       "translation": "ma"
+      },
+      {
+       "kind": "example",
+       "ko": "바",
+       "translation": "ba (ㅂ liegt zwischen b und p)"
+      },
+      {
+       "kind": "example",
+       "ko": "사",
+       "translation": "sa"
+      },
+      {
+       "kind": "example",
+       "ko": "자",
+       "translation": "ja"
+      },
+      {
+       "kind": "example",
+       "ko": "하",
+       "translation": "ha"
+      },
+      {
+       "kind": "say",
+       "text": "Setz sie zusammen, und du kannst echte Wörter lesen."
+      },
+      {
+       "kind": "example",
+       "ko": "나무",
+       "translation": "Baum"
+      },
+      {
+       "kind": "example",
+       "ko": "바다",
+       "translation": "Meer"
+      },
+      {
+       "kind": "example",
+       "ko": "모자",
+       "translation": "Hut"
+      },
+      {
+       "kind": "example",
+       "ko": "하나",
+       "translation": "eins"
+      },
+      {
+       "kind": "choice",
+       "text": "Welches Wort bedeutet 'Meer'?",
+       "options": [
+        "나무",
+        "하나",
+        "바다",
+        "모자"
+       ],
+       "answer": 2,
+       "why": "바 + 다 = 바다."
+      },
+      {
+       "kind": "choice",
+       "text": "Wie liest man 가수 (Sänger)?",
+       "options": [
+        "gasu",
+        "nasu",
+        "gamu",
+        "dasu"
+       ],
+       "answer": 0,
+       "why": "ㄱ ist g, ㅅ ist s."
+      },
+      {
+       "kind": "choice",
+       "text": "Welcher Buchstabe macht den 'm'-Laut?",
+       "options": [
+        "ㄴ",
+        "ㅁ",
+        "ㅂ",
+        "ㄹ"
+       ],
+       "answer": 1,
+       "why": "ㅁ ist ein kleines Kästchen, wie geschlossene Lippen."
+      }
+     ]
+    },
+    {
+     "id": "h3",
+     "title": "Mehr Vokale",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Füg einem Vokal einen kurzen Strich hinzu, und er bekommt ein 'j' davor."
+      },
+      {
+       "kind": "example",
+       "ko": "야",
+       "translation": "ya"
+      },
+      {
+       "kind": "example",
+       "ko": "여",
+       "translation": "yeo"
+      },
+      {
+       "kind": "example",
+       "ko": "요",
+       "translation": "yo"
+      },
+      {
+       "kind": "example",
+       "ko": "유",
+       "translation": "yu"
+      },
+      {
+       "kind": "example",
+       "ko": "우유",
+       "translation": "Milch"
+      },
+      {
+       "kind": "example",
+       "ko": "여자",
+       "translation": "Frau"
+      },
+      {
+       "kind": "say",
+       "text": "ㅐ und ㅔ klingen heute fast gleich, wie das 'e' in Bett."
+      },
+      {
+       "kind": "example",
+       "ko": "개",
+       "translation": "Hund"
+      },
+      {
+       "kind": "example",
+       "ko": "네",
+       "translation": "ja"
+      },
+      {
+       "kind": "say",
+       "text": "Manche Vokale verbinden sich. ㅗ + ㅏ = ㅘ (wa), ㅜ + ㅓ = ㅝ (wo)."
+      },
+      {
+       "kind": "example",
+       "ko": "사과",
+       "translation": "Apfel"
+      },
+      {
+       "kind": "example",
+       "ko": "뭐",
+       "translation": "was"
+      },
+      {
+       "kind": "choice",
+       "text": "Welcher klingt wie 'jo'?",
+       "options": [
+        "여",
+        "유",
+        "요",
+        "야"
+       ],
+       "answer": 2,
+       "why": "요 ist 오 mit einem Strich mehr."
+      },
+      {
+       "kind": "choice",
+       "text": "Was bedeutet 네?",
+       "options": [
+        "nein",
+        "ja",
+        "Hund",
+        "was"
+       ],
+       "answer": 1,
+       "why": "네 bedeutet ja. 개 ist Hund."
+      },
+      {
+       "kind": "choice",
+       "text": "Wie liest man 사과?",
+       "options": [
+        "sagwa",
+        "sago",
+        "sagu",
+        "sageo"
+       ],
+       "answer": 0,
+       "why": "ㄱ + ㅘ ergibt 과 (gwa)."
+      }
+     ]
+    },
+    {
+     "id": "h4",
+     "title": "Starke Konsonanten",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Manche Konsonanten kommen mit einem Luftstoß, wie das deutsche k, t, p. Halte die Hand vor den Mund und spür es."
+      },
+      {
+       "kind": "example",
+       "ko": "카",
+       "translation": "ka, mit Hauch"
+      },
+      {
+       "kind": "example",
+       "ko": "타",
+       "translation": "ta, mit Hauch"
+      },
+      {
+       "kind": "example",
+       "ko": "파",
+       "translation": "pa, mit Hauch"
+      },
+      {
+       "kind": "example",
+       "ko": "차",
+       "translation": "cha, mit Hauch"
+      },
+      {
+       "kind": "example",
+       "ko": "커피",
+       "translation": "Kaffee"
+      },
+      {
+       "kind": "example",
+       "ko": "포도",
+       "translation": "Weintrauben"
+      },
+      {
+       "kind": "say",
+       "text": "Doppelbuchstaben sind gespannt: kurz, fest und ganz ohne Hauch."
+      },
+      {
+       "kind": "example",
+       "ko": "까",
+       "translation": "kka"
+      },
+      {
+       "kind": "example",
+       "ko": "따",
+       "translation": "tta"
+      },
+      {
+       "kind": "example",
+       "ko": "빠",
+       "translation": "ppa"
+      },
+      {
+       "kind": "example",
+       "ko": "싸",
+       "translation": "ssa"
+      },
+      {
+       "kind": "example",
+       "ko": "짜",
+       "translation": "jja"
+      },
+      {
+       "kind": "example",
+       "ko": "아빠",
+       "translation": "Papa"
+      },
+      {
+       "kind": "example",
+       "ko": "떡",
+       "translation": "Reiskuchen"
+      },
+      {
+       "kind": "choice",
+       "text": "Welcher hat einen Luftstoß?",
+       "options": [
+        "가",
+        "까",
+        "카"
+       ],
+       "answer": 2,
+       "why": "ㅋ hat einen Extrastrich und einen Luftstoß. ㄲ ist gespannt, ohne Hauch."
+      },
+      {
+       "kind": "choice",
+       "text": "Was bedeutet 아빠?",
+       "options": [
+        "Mama",
+        "Papa",
+        "Kaffee",
+        "Weintrauben"
+       ],
+       "answer": 1,
+       "why": "아빠 ist Papa. Mama ist 엄마."
+      },
+      {
+       "kind": "choice",
+       "text": "Wie liest man 차 (Auto, Tee)?",
+       "options": [
+        "ja",
+        "cha",
+        "jja",
+        "sa"
+       ],
+       "answer": 1,
+       "why": "ㅊ ist ㅈ mit einem Luftstoß: cha."
+      }
+     ]
+    },
+    {
+     "id": "h5",
+     "title": "Untere Buchstaben (받침)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Ein Konsonant kann auch unten im Block stehen. Das heißt 받침."
+      },
+      {
+       "kind": "say",
+       "text": "Untere Buchstaben haben nur 7 Laute: k, n, t, l, m, p, ng."
+      },
+      {
+       "kind": "example",
+       "ko": "밥",
+       "translation": "Reis, Mahlzeit"
+      },
+      {
+       "kind": "example",
+       "ko": "물",
+       "translation": "Wasser"
+      },
+      {
+       "kind": "example",
+       "ko": "산",
+       "translation": "Berg"
+      },
+      {
+       "kind": "example",
+       "ko": "강",
+       "translation": "Fluss"
+      },
+      {
+       "kind": "example",
+       "ko": "집",
+       "translation": "Haus"
+      },
+      {
+       "kind": "example",
+       "ko": "책",
+       "translation": "Buch"
+      },
+      {
+       "kind": "say",
+       "text": "Unten klingen ㅅ, ㅈ und ㅊ alle wie t. ㅇ unten klingt wie ng."
+      },
+      {
+       "kind": "example",
+       "ko": "옷",
+       "translation": "Kleidung (klingt wie 옫)"
+      },
+      {
+       "kind": "example",
+       "ko": "꽃",
+       "translation": "Blume (klingt wie 꼳)"
+      },
+      {
+       "kind": "choice",
+       "text": "Wie klingt ㅇ unten in 강?",
+       "options": [
+        "stumm",
+        "ng",
+        "n",
+        "g"
+       ],
+       "answer": 1,
+       "why": "ㅇ ist oben stumm, aber unten klingt es wie ng."
+      },
+      {
+       "kind": "choice",
+       "text": "Welches Wort bedeutet 'Wasser'?",
+       "options": [
+        "물",
+        "밥",
+        "집",
+        "산"
+       ],
+       "answer": 0,
+       "why": "물 ist Wasser. 밥 ist Reis."
+      },
+      {
+       "kind": "choice",
+       "text": "Wie klingt 옷?",
+       "options": [
+        "os",
+        "ot",
+        "oj",
+        "och"
+       ],
+       "answer": 1,
+       "why": "ㅅ unten klingt wie t."
+      }
+     ]
+    },
+    {
+     "id": "h6",
+     "title": "Leseübung",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Letzter Trick: Wenn ein unterer Buchstabe auf ein stummes ㅇ trifft, rutscht er in den nächsten Block."
+      },
+      {
+       "kind": "example",
+       "ko": "한국어",
+       "translation": "koreanische Sprache (klingt wie 한구거)"
+      },
+      {
+       "kind": "example",
+       "ko": "음악",
+       "translation": "Musik (klingt wie 으막)"
+      },
+      {
+       "kind": "say",
+       "text": "Jetzt kannst du echtes Koreanisch lesen. Probier diese."
+      },
+      {
+       "kind": "example",
+       "ko": "안녕하세요",
+       "translation": "hallo"
+      },
+      {
+       "kind": "example",
+       "ko": "감사합니다",
+       "translation": "danke"
+      },
+      {
+       "kind": "example",
+       "ko": "한국",
+       "translation": "Korea"
+      },
+      {
+       "kind": "example",
+       "ko": "서울",
+       "translation": "Seoul"
+      },
+      {
+       "kind": "choice",
+       "text": "Wie klingt 한국어?",
+       "options": [
+        "han-guk-eo",
+        "han-gu-geo",
+        "hang-uk-eo"
+       ],
+       "answer": 1,
+       "why": "ㄱ rutscht in das stumme ㅇ: 한구거."
+      },
+      {
+       "kind": "choice",
+       "text": "Was bedeutet 감사합니다?",
+       "options": [
+        "hallo",
+        "Entschuldigung",
+        "danke",
+        "tschüss"
+       ],
+       "answer": 2,
+       "why": "감사합니다 ist ein höfliches Danke."
+      },
+      {
+       "kind": "choice",
+       "text": "Welches Wort ist 'Seoul'?",
+       "options": [
+        "서울",
+        "한국",
+        "사람",
+        "선물"
+       ],
+       "answer": 0,
+       "why": "서 + 울 = 서울."
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요! Du kannst jetzt Hangul lesen. Als Nächstes stellst du dich auf Koreanisch vor."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 1,
+   "title": "Sich vorstellen",
+   "subtitle": "Sag, wer du bist",
+   "lessons": [
+    {
+     "id": "u1l1",
+     "title": "Wörter: Länder und Berufe",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Lernen wir Wörter, um über dich zu sprechen. Tippe auf jedes, um es zu hören."
+      },
+      {
+       "kind": "example",
+       "ko": "한국",
+       "translation": "Korea"
+      },
+      {
+       "kind": "example",
+       "ko": "미국",
+       "translation": "USA"
+      },
+      {
+       "kind": "example",
+       "ko": "일본",
+       "translation": "Japan"
+      },
+      {
+       "kind": "example",
+       "ko": "중국",
+       "translation": "China"
+      },
+      {
+       "kind": "example",
+       "ko": "멕시코",
+       "translation": "Mexiko"
+      },
+      {
+       "kind": "say",
+       "text": "Häng 사람 (Mensch) an ein Land, um zu sagen, woher jemand kommt."
+      },
+      {
+       "kind": "example",
+       "ko": "한국 사람",
+       "translation": "Koreaner (Person)"
+      },
+      {
+       "kind": "example",
+       "ko": "학생",
+       "translation": "Student"
+      },
+      {
+       "kind": "example",
+       "ko": "선생님",
+       "translation": "Lehrer"
+      },
+      {
+       "kind": "example",
+       "ko": "회사원",
+       "translation": "Büroangestellter"
+      },
+      {
+       "kind": "example",
+       "ko": "의사",
+       "translation": "Arzt"
+      },
+      {
+       "kind": "choice",
+       "text": "Wie sagt man 'Japaner' (Person)?",
+       "options": [
+        "일본 사람",
+        "중국 사람",
+        "일본 학생",
+        "미국 사람"
+       ],
+       "answer": 0,
+       "why": "일본 (Japan) + 사람 (Mensch)."
+      },
+      {
+       "kind": "choice",
+       "text": "Was bedeutet 회사원?",
+       "options": [
+        "Lehrer",
+        "Arzt",
+        "Büroangestellter",
+        "Student"
+       ],
+       "answer": 2,
+       "why": "회사 heißt Firma, also ist 회사원 ein Firmenangestellter."
+      },
+      {
+       "kind": "choice",
+       "text": "Was bedeutet 선생님?",
+       "options": [
+        "Lehrer",
+        "Student",
+        "Arzt",
+        "Mensch"
+       ],
+       "answer": 0,
+       "why": "선생님 ist Lehrer. 학생 ist Student."
+      }
+     ]
+    },
+    {
+     "id": "u1l2",
+     "title": "Ich bin... (이에요/예요)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Um 'ich bin ___' oder 'es ist ___' zu sagen, häng 이에요 oder 예요 an das Nomen."
+      },
+      {
+       "kind": "say",
+       "text": "Endet das Nomen auf einen Konsonanten, häng 이에요 an."
+      },
+      {
+       "kind": "example",
+       "ko": "학생이에요.",
+       "translation": "Ich bin Student."
+      },
+      {
+       "kind": "example",
+       "ko": "선생님이에요.",
+       "translation": "Ich bin Lehrer."
+      },
+      {
+       "kind": "say",
+       "text": "Endet es auf einen Vokal, häng 예요 an."
+      },
+      {
+       "kind": "example",
+       "ko": "의사예요.",
+       "translation": "Ich bin Arzt."
+      },
+      {
+       "kind": "example",
+       "ko": "고치예요.",
+       "translation": "Ich bin Gochi."
+      },
+      {
+       "kind": "say",
+       "text": "Für eine Frage nimmst du dieselben Wörter und hebst am Ende die Stimme."
+      },
+      {
+       "kind": "example",
+       "ko": "학생이에요?",
+       "translation": "Bist du Student?"
+      },
+      {
+       "kind": "choice",
+       "text": "회사원___",
+       "options": [
+        "이에요",
+        "예요"
+       ],
+       "answer": 0,
+       "why": "회사원 endet auf ㄴ, einen Konsonanten, also 이에요."
+      },
+      {
+       "kind": "choice",
+       "text": "의사___",
+       "options": [
+        "이에요",
+        "예요"
+       ],
+       "answer": 1,
+       "why": "의사 endet auf einen Vokal, also 예요."
+      },
+      {
+       "kind": "choice",
+       "text": "Was ist richtig?",
+       "options": [
+        "한국 사람예요",
+        "한국 사람이에요",
+        "한국 사람이예요"
+       ],
+       "answer": 1,
+       "why": "사람 endet auf ㅁ, also 이에요."
+      },
+      {
+       "kind": "build",
+       "translation": "Ich bin Lehrer.",
+       "words": [
+        "저는",
+        "선생님이에요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u1l3",
+     "title": "Themenmarker (은/는)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "은/는 markiert, worüber du sprichst, wie 'was ... angeht'."
+      },
+      {
+       "kind": "say",
+       "text": "Nach einem Konsonanten 은. Nach einem Vokal 는."
+      },
+      {
+       "kind": "example",
+       "ko": "저는 학생이에요.",
+       "translation": "Ich bin Student."
+      },
+      {
+       "kind": "example",
+       "ko": "이름은 고치예요.",
+       "translation": "Ich heiße Gochi."
+      },
+      {
+       "kind": "example",
+       "ko": "민수 씨는 의사예요.",
+       "translation": "Minsu ist Arzt."
+      },
+      {
+       "kind": "say",
+       "text": "씨 steht höflich nach einem Namen. Benutz es nie mit deinem eigenen Namen."
+      },
+      {
+       "kind": "choice",
+       "text": "저___ 회사원이에요.",
+       "options": [
+        "은",
+        "는"
+       ],
+       "answer": 1,
+       "why": "저 endet auf einen Vokal, also 는."
+      },
+      {
+       "kind": "choice",
+       "text": "이름___ 하나예요.",
+       "options": [
+        "은",
+        "는"
+       ],
+       "answer": 0,
+       "why": "이름 endet auf ㅁ, also 은."
+      },
+      {
+       "kind": "choice",
+       "text": "Was ist höflich?",
+       "options": [
+        "하나 씨는 학생이에요",
+        "저 씨는 학생이에요"
+       ],
+       "answer": 0,
+       "why": "Benutz 씨 für andere, nicht für dich selbst."
+      },
+      {
+       "kind": "build",
+       "translation": "Ich bin Koreaner.",
+       "words": [
+        "저는",
+        "한국",
+        "사람이에요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Minsu ist Lehrer.",
+       "words": [
+        "민수",
+        "씨는",
+        "선생님이에요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u1l4",
+     "title": "Alles zusammen: Freut mich",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "So klingt ein erstes Treffen. Hör dir jeden Satz an."
+      },
+      {
+       "kind": "example",
+       "ko": "안녕하세요? 저는 하나예요.",
+       "translation": "Hallo, ich bin Hana."
+      },
+      {
+       "kind": "example",
+       "ko": "안녕하세요? 저는 민수예요.",
+       "translation": "Hallo, ich bin Minsu."
+      },
+      {
+       "kind": "example",
+       "ko": "만나서 반가워요.",
+       "translation": "Freut mich."
+      },
+      {
+       "kind": "example",
+       "ko": "하나 씨는 학생이에요?",
+       "translation": "Hana, bist du Studentin?"
+      },
+      {
+       "kind": "example",
+       "ko": "네, 학생이에요. 민수 씨는요?",
+       "translation": "Ja, ich bin Studentin. Und du, Minsu?"
+      },
+      {
+       "kind": "example",
+       "ko": "저는 회사원이에요.",
+       "translation": "Ich bin Büroangestellter."
+      },
+      {
+       "kind": "say",
+       "text": "요 an einen Namen gehängt, wie bei 민수 씨는요?, bedeutet 'und du?'."
+      },
+      {
+       "kind": "choice",
+       "text": "Was bedeutet 만나서 반가워요?",
+       "options": [
+        "Tschüss",
+        "Freut mich",
+        "Danke",
+        "Bis dann"
+       ],
+       "answer": 1,
+       "why": "Das sagst du, wenn du jemanden zum ersten Mal triffst."
+      },
+      {
+       "kind": "choice",
+       "text": "Wie sagt man 'Und du, Hana?'",
+       "options": [
+        "하나 씨예요?",
+        "하나 씨는요?",
+        "하나는 씨요?"
+       ],
+       "answer": 1,
+       "why": "Name + 씨는요? bedeutet 'und du?'."
+      },
+      {
+       "kind": "build",
+       "translation": "Hallo, ich bin Gochi.",
+       "words": [
+        "안녕하세요?",
+        "저는",
+        "고치예요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Ich bin Mexikaner.",
+       "words": [
+        "저는",
+        "멕시코",
+        "사람이에요."
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요! Jetzt kannst du dich auf Koreanisch vorstellen."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "title": "Familie",
+   "subtitle": "Sprich über deine Familie",
+   "lessons": [
+    {
+     "id": "u2l1",
+     "title": "Wörter: Familie",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Lernen wir die Familie kennen. Tippe auf jedes Wort, um es zu hören."
+      },
+      {
+       "kind": "example",
+       "ko": "가족",
+       "translation": "Familie"
+      },
+      {
+       "kind": "example",
+       "ko": "아버지",
+       "translation": "Vater"
+      },
+      {
+       "kind": "example",
+       "ko": "어머니",
+       "translation": "Mutter"
+      },
+      {
+       "kind": "example",
+       "ko": "할아버지",
+       "translation": "Großvater"
+      },
+      {
+       "kind": "example",
+       "ko": "할머니",
+       "translation": "Großmutter"
+      },
+      {
+       "kind": "example",
+       "ko": "동생",
+       "translation": "jüngeres Geschwister"
+      },
+      {
+       "kind": "say",
+       "text": "Bei älteren Geschwistern kommt es darauf an, wer spricht."
+      },
+      {
+       "kind": "example",
+       "ko": "형",
+       "translation": "älterer Bruder (sagt ein Mann)"
+      },
+      {
+       "kind": "example",
+       "ko": "오빠",
+       "translation": "älterer Bruder (sagt eine Frau)"
+      },
+      {
+       "kind": "example",
+       "ko": "누나",
+       "translation": "ältere Schwester (sagt ein Mann)"
+      },
+      {
+       "kind": "example",
+       "ko": "언니",
+       "translation": "ältere Schwester (sagt eine Frau)"
+      },
+      {
+       "kind": "example",
+       "ko": "요리사",
+       "translation": "Koch"
+      },
+      {
+       "kind": "example",
+       "ko": "간호사",
+       "translation": "Krankenpfleger"
+      },
+      {
+       "kind": "choice",
+       "text": "Ein Mann spricht über seine ältere Schwester. Welches Wort?",
+       "options": [
+        "언니",
+        "누나",
+        "오빠",
+        "형"
+       ],
+       "answer": 1,
+       "why": "Männer sagen 누나. Frauen sagen 언니."
+      },
+      {
+       "kind": "choice",
+       "text": "Was bedeutet 동생?",
+       "options": [
+        "jüngeres Geschwister",
+        "älterer Bruder",
+        "Vater",
+        "Familie"
+       ],
+       "answer": 0,
+       "why": "동생 ist jeder jüngere Bruder oder jede jüngere Schwester."
+      },
+      {
+       "kind": "choice",
+       "text": "Was bedeutet 할머니?",
+       "options": [
+        "Mutter",
+        "Großvater",
+        "Großmutter",
+        "Krankenpfleger"
+       ],
+       "answer": 2,
+       "why": "할머니 ist Großmutter. 할아버지 ist Großvater."
+      }
+     ]
+    },
+    {
+     "id": "u2l2",
+     "title": "Subjektmarker (이/가)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "이/가 markiert, wer oder was etwas tut, oder neue Information."
+      },
+      {
+       "kind": "say",
+       "text": "Nach einem Konsonanten 이. Nach einem Vokal 가."
+      },
+      {
+       "kind": "example",
+       "ko": "동생이 학생이에요.",
+       "translation": "Mein jüngeres Geschwister ist Student."
+      },
+      {
+       "kind": "example",
+       "ko": "아버지가 요리사예요.",
+       "translation": "Mein Vater ist Koch."
+      },
+      {
+       "kind": "say",
+       "text": "Wenn du 'wer?' fragst, benutzt die Antwort 이/가."
+      },
+      {
+       "kind": "example",
+       "ko": "누가 의사예요?",
+       "translation": "Wer ist Arzt?"
+      },
+      {
+       "kind": "example",
+       "ko": "어머니가 의사예요.",
+       "translation": "Meine Mutter ist (die) Ärztin."
+      },
+      {
+       "kind": "choice",
+       "text": "형___ 회사원이에요.",
+       "options": [
+        "이",
+        "가"
+       ],
+       "answer": 0,
+       "why": "형 endet auf ㅇ, also 이."
+      },
+      {
+       "kind": "choice",
+       "text": "누나___ 간호사예요.",
+       "options": [
+        "이",
+        "가"
+       ],
+       "answer": 1,
+       "why": "누나 endet auf einen Vokal, also 가."
+      },
+      {
+       "kind": "choice",
+       "text": "누가 선생님이에요? Antwort:",
+       "options": [
+        "할머니는 선생님이에요",
+        "할머니가 선생님이에요"
+       ],
+       "answer": 1,
+       "why": "Auf 'wer?' antwortest du mit 이/가."
+      },
+      {
+       "kind": "build",
+       "translation": "Mein Vater ist Arzt.",
+       "words": [
+        "아버지가",
+        "의사예요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u2l3",
+     "title": "Ist nicht (이/가 아니에요)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Um 'ist nicht' zu sagen, benutz 이/가 아니에요."
+      },
+      {
+       "kind": "example",
+       "ko": "저는 학생이 아니에요.",
+       "translation": "Ich bin kein Student."
+      },
+      {
+       "kind": "example",
+       "ko": "오빠는 의사가 아니에요.",
+       "translation": "Mein älterer Bruder ist kein Arzt."
+      },
+      {
+       "kind": "say",
+       "text": "Gleiche Regel: 이 nach einem Konsonanten, 가 nach einem Vokal."
+      },
+      {
+       "kind": "say",
+       "text": "Antworte mit 네 für ja und mit 아니요 für nein."
+      },
+      {
+       "kind": "example",
+       "ko": "요리사예요?",
+       "translation": "Bist du Koch?"
+      },
+      {
+       "kind": "example",
+       "ko": "아니요, 요리사가 아니에요. 간호사예요.",
+       "translation": "Nein, ich bin kein Koch. Ich bin Krankenpfleger."
+      },
+      {
+       "kind": "choice",
+       "text": "선생님___ 아니에요.",
+       "options": [
+        "이",
+        "가"
+       ],
+       "answer": 0,
+       "why": "선생님 endet auf ㅁ, also 이."
+      },
+      {
+       "kind": "choice",
+       "text": "Was ist richtig?",
+       "options": [
+        "의사이 아니에요",
+        "의사가 아니에요",
+        "의사 아니예요"
+       ],
+       "answer": 1,
+       "why": "의사 endet auf einen Vokal, also 가 아니에요."
+      },
+      {
+       "kind": "choice",
+       "text": "회사원이에요? (Nein)",
+       "options": [
+        "네, 회사원이에요",
+        "아니요, 회사원이 아니에요"
+       ],
+       "answer": 1,
+       "why": "아니요 heißt nein, dann 이/가 아니에요."
+      },
+      {
+       "kind": "build",
+       "translation": "Ich bin kein Japaner.",
+       "words": [
+        "저는",
+        "일본",
+        "사람이",
+        "아니에요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u2l4",
+     "title": "Alles zusammen: ein Familienfoto",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Hana zeigt Minsu ein Familienfoto. Hör zu."
+      },
+      {
+       "kind": "example",
+       "ko": "이 사람은 누구예요?",
+       "translation": "Wer ist das?"
+      },
+      {
+       "kind": "example",
+       "ko": "우리 언니예요.",
+       "translation": "Das ist meine ältere Schwester."
+      },
+      {
+       "kind": "example",
+       "ko": "언니는 학생이에요?",
+       "translation": "Ist sie Studentin?"
+      },
+      {
+       "kind": "example",
+       "ko": "아니요, 학생이 아니에요. 간호사예요.",
+       "translation": "Nein, sie ist keine Studentin. Sie ist Krankenschwester."
+      },
+      {
+       "kind": "example",
+       "ko": "이 사람은 동생이에요?",
+       "translation": "Ist das dein jüngeres Geschwister?"
+      },
+      {
+       "kind": "example",
+       "ko": "네, 동생이에요. 동생은 고등학생이에요.",
+       "translation": "Ja, das ist mein jüngeres Geschwister. Es geht aufs Gymnasium."
+      },
+      {
+       "kind": "say",
+       "text": "Koreaner sagen 우리 (unser) für die Familie, auch wo wir 'mein' sagen würden."
+      },
+      {
+       "kind": "choice",
+       "text": "Wie sagt man natürlich 'meine Mama'?",
+       "options": [
+        "저 어머니",
+        "우리 어머니",
+        "나 어머니"
+       ],
+       "answer": 1,
+       "why": "Benutz 우리 für deine eigene Familie."
+      },
+      {
+       "kind": "choice",
+       "text": "Was bedeutet 누구예요?",
+       "options": [
+        "Wo ist es?",
+        "Wer ist das?",
+        "Was ist das?"
+       ],
+       "answer": 1,
+       "why": "누구 bedeutet wer."
+      },
+      {
+       "kind": "build",
+       "translation": "Das ist meine ältere Schwester.",
+       "words": [
+        "우리",
+        "언니예요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Mein jüngeres Geschwister ist kein Student.",
+       "words": [
+        "동생은",
+        "학생이",
+        "아니에요."
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요! Du kannst jetzt deine Familie vorstellen."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "title": "Alltag",
+   "subtitle": "Sag, was du magst und machst",
+   "lessons": [
+    {
+     "id": "u3l1",
+     "title": "Wörter: Alltag",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Im Wörterbuch enden koreanische Verben auf 다. Lernen wir einige, die du jeden Tag brauchst."
+      },
+      {
+       "kind": "example",
+       "ko": "먹다",
+       "translation": "essen"
+      },
+      {
+       "kind": "example",
+       "ko": "마시다",
+       "translation": "trinken"
+      },
+      {
+       "kind": "example",
+       "ko": "보다",
+       "translation": "sehen, schauen"
+      },
+      {
+       "kind": "example",
+       "ko": "자다",
+       "translation": "schlafen"
+      },
+      {
+       "kind": "example",
+       "ko": "공부하다",
+       "translation": "lernen, studieren"
+      },
+      {
+       "kind": "example",
+       "ko": "일하다",
+       "translation": "arbeiten"
+      },
+      {
+       "kind": "example",
+       "ko": "좋아하다",
+       "translation": "mögen"
+      },
+      {
+       "kind": "example",
+       "ko": "커피",
+       "translation": "Kaffee"
+      },
+      {
+       "kind": "example",
+       "ko": "영화",
+       "translation": "Film"
+      },
+      {
+       "kind": "example",
+       "ko": "드라마",
+       "translation": "TV-Serie"
+      },
+      {
+       "kind": "example",
+       "ko": "빵",
+       "translation": "Brot"
+      },
+      {
+       "kind": "choice",
+       "text": "Was bedeutet 마시다?",
+       "options": [
+        "essen",
+        "trinken",
+        "schlafen",
+        "schauen"
+       ],
+       "answer": 1,
+       "why": "마시다 ist trinken. 먹다 ist essen."
+      },
+      {
+       "kind": "choice",
+       "text": "Welches Verb bedeutet 'lernen'?",
+       "options": [
+        "일하다",
+        "좋아하다",
+        "공부하다",
+        "보다"
+       ],
+       "answer": 2,
+       "why": "공부 heißt Lernen, und 하다 heißt machen."
+      },
+      {
+       "kind": "choice",
+       "text": "Was bedeutet 영화?",
+       "options": [
+        "Film",
+        "Serie",
+        "Brot",
+        "Kaffee"
+       ],
+       "answer": 0,
+       "why": "영화 ist ein Film. Eine TV-Serie ist 드라마."
+      }
+     ]
+    },
+    {
+     "id": "u3l2",
+     "title": "Formeller Stil (-습니다)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "-습니다 ist der formelle Höflichkeitsstil. Du hörst ihn in den Nachrichten, bei der Arbeit und in Durchsagen."
+      },
+      {
+       "kind": "say",
+       "text": "Nimm 다 weg. Endet der Stamm auf einen Konsonanten, häng 습니다 an."
+      },
+      {
+       "kind": "example",
+       "ko": "먹습니다.",
+       "translation": "Ich esse."
+      },
+      {
+       "kind": "example",
+       "ko": "읽습니다.",
+       "translation": "Ich lese."
+      },
+      {
+       "kind": "say",
+       "text": "Endet er auf einen Vokal, kommt ㅂ니다 an den letzten Block."
+      },
+      {
+       "kind": "example",
+       "ko": "갑니다.",
+       "translation": "Ich gehe."
+      },
+      {
+       "kind": "example",
+       "ko": "마십니다.",
+       "translation": "Ich trinke."
+      },
+      {
+       "kind": "example",
+       "ko": "공부합니다.",
+       "translation": "Ich lerne."
+      },
+      {
+       "kind": "say",
+       "text": "Für Fragen benutzt du 습니까 oder ㅂ니까. 이에요 wird in diesem Stil zu 입니다."
+      },
+      {
+       "kind": "example",
+       "ko": "학생입니까?",
+       "translation": "Bist du Student?"
+      },
+      {
+       "kind": "choice",
+       "text": "먹다 →",
+       "options": [
+        "먹ㅂ니다",
+        "먹습니다",
+        "먹니다"
+       ],
+       "answer": 1,
+       "why": "먹 endet auf einen Konsonanten, also 습니다."
+      },
+      {
+       "kind": "choice",
+       "text": "보다 →",
+       "options": [
+        "보습니다",
+        "봅니다",
+        "봐습니다"
+       ],
+       "answer": 1,
+       "why": "보 endet auf einen Vokal, also kommt ㅂ darunter: 봅니다."
+      },
+      {
+       "kind": "choice",
+       "text": "Was ist eine Frage?",
+       "options": [
+        "일합니다",
+        "일합니까?",
+        "일했습니다"
+       ],
+       "answer": 1,
+       "why": "-ㅂ니까 macht eine formelle Frage."
+      },
+      {
+       "kind": "build",
+       "translation": "Ich bin Büroangestellter. (formell)",
+       "words": [
+        "저는",
+        "회사원입니다."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u3l3",
+     "title": "Objekt (을/를) und auch (도)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "을/를 markiert, was du isst, trinkst, schaust oder magst."
+      },
+      {
+       "kind": "say",
+       "text": "Nach einem Konsonanten 을. Nach einem Vokal 를."
+      },
+      {
+       "kind": "example",
+       "ko": "빵을 먹습니다.",
+       "translation": "Ich esse Brot."
+      },
+      {
+       "kind": "example",
+       "ko": "커피를 마십니다.",
+       "translation": "Ich trinke Kaffee."
+      },
+      {
+       "kind": "say",
+       "text": "도 bedeutet 'auch'. Es ersetzt 은/는, 이/가 oder 을/를."
+      },
+      {
+       "kind": "example",
+       "ko": "저도 학생입니다.",
+       "translation": "Ich bin auch Student."
+      },
+      {
+       "kind": "example",
+       "ko": "드라마도 좋아합니다.",
+       "translation": "Ich mag auch Serien."
+      },
+      {
+       "kind": "choice",
+       "text": "영화___ 봅니다.",
+       "options": [
+        "을",
+        "를"
+       ],
+       "answer": 1,
+       "why": "영화 endet auf einen Vokal, also 를."
+      },
+      {
+       "kind": "choice",
+       "text": "빵___ 먹습니다.",
+       "options": [
+        "을",
+        "를"
+       ],
+       "answer": 0,
+       "why": "빵 endet auf ㅇ, einen Konsonanten, also 을."
+      },
+      {
+       "kind": "choice",
+       "text": "Was ist richtig?",
+       "options": [
+        "커피를도 마십니다",
+        "커피도 마십니다"
+       ],
+       "answer": 1,
+       "why": "도 ersetzt 을/를. Benutz nicht beides."
+      },
+      {
+       "kind": "build",
+       "translation": "Ich mag auch Kaffee.",
+       "words": [
+        "저도",
+        "커피를",
+        "좋아합니다."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Ich schaue Serien.",
+       "words": [
+        "저는",
+        "드라마를",
+        "봅니다."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u3l4",
+     "title": "Alles zusammen: Was magst du?",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Hana und Minsu reden darüber, was sie mögen. Hör zu."
+      },
+      {
+       "kind": "example",
+       "ko": "민수 씨는 무엇을 좋아합니까?",
+       "translation": "Minsu, was magst du?"
+      },
+      {
+       "kind": "example",
+       "ko": "저는 드라마를 좋아합니다.",
+       "translation": "Ich mag Serien."
+      },
+      {
+       "kind": "example",
+       "ko": "하나 씨는요?",
+       "translation": "Und du, Hana?"
+      },
+      {
+       "kind": "example",
+       "ko": "저도 드라마를 좋아합니다. 영화도 좋아합니다.",
+       "translation": "Ich mag auch Serien. Filme mag ich auch."
+      },
+      {
+       "kind": "example",
+       "ko": "커피를 마십니까?",
+       "translation": "Trinkst du Kaffee?"
+      },
+      {
+       "kind": "example",
+       "ko": "아니요, 저는 차를 마십니다.",
+       "translation": "Nein, ich trinke Tee."
+      },
+      {
+       "kind": "say",
+       "text": "무엇 bedeutet 'was'. Beim Sprechen wird es oft zu 뭐."
+      },
+      {
+       "kind": "choice",
+       "text": "Was fragt 무엇을 좋아합니까?",
+       "options": [
+        "Wohin gehst du?",
+        "Was magst du?",
+        "Wen magst du?"
+       ],
+       "answer": 1,
+       "why": "무엇 ist was, 좋아합니까 ist 'magst du?'."
+      },
+      {
+       "kind": "choice",
+       "text": "차___ 마십니다.",
+       "options": [
+        "을",
+        "를",
+        "도를"
+       ],
+       "answer": 1,
+       "why": "차 endet auf einen Vokal, also 를."
+      },
+      {
+       "kind": "build",
+       "translation": "Ich lerne Koreanisch.",
+       "words": [
+        "저는",
+        "한국어를",
+        "공부합니다."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Ich mag auch Filme.",
+       "words": [
+        "영화도",
+        "좋아합니다."
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요! Du kannst jetzt sagen, was du magst."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "title": "Schule",
+   "subtitle": "Sprich über Schule und Dinge",
+   "lessons": [
+    {
+     "id": "u4l1",
+     "title": "Wörter: Schule",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Lernen wir Wörter für die Schule. Tippe auf jedes, um es zu hören."
+      },
+      {
+       "kind": "example",
+       "ko": "학교",
+       "translation": "Schule"
+      },
+      {
+       "kind": "example",
+       "ko": "교실",
+       "translation": "Klassenzimmer"
+      },
+      {
+       "kind": "example",
+       "ko": "도서관",
+       "translation": "Bibliothek"
+      },
+      {
+       "kind": "example",
+       "ko": "식당",
+       "translation": "Mensa, Restaurant"
+      },
+      {
+       "kind": "example",
+       "ko": "책",
+       "translation": "Buch"
+      },
+      {
+       "kind": "example",
+       "ko": "책상",
+       "translation": "Schreibtisch"
+      },
+      {
+       "kind": "example",
+       "ko": "의자",
+       "translation": "Stuhl"
+      },
+      {
+       "kind": "example",
+       "ko": "가방",
+       "translation": "Tasche"
+      },
+      {
+       "kind": "example",
+       "ko": "친구",
+       "translation": "Freund"
+      },
+      {
+       "kind": "example",
+       "ko": "읽다",
+       "translation": "lesen"
+      },
+      {
+       "kind": "example",
+       "ko": "쓰다",
+       "translation": "schreiben"
+      },
+      {
+       "kind": "example",
+       "ko": "배우다",
+       "translation": "lernen"
+      },
+      {
+       "kind": "example",
+       "ko": "크다",
+       "translation": "groß sein"
+      },
+      {
+       "kind": "example",
+       "ko": "작다",
+       "translation": "klein sein"
+      },
+      {
+       "kind": "choice",
+       "text": "Was bedeutet 도서관?",
+       "options": [
+        "Klassenzimmer",
+        "Bibliothek",
+        "Mensa",
+        "Schule"
+       ],
+       "answer": 1,
+       "why": "도서관 ist eine Bibliothek. 교실 ist ein Klassenzimmer."
+      },
+      {
+       "kind": "choice",
+       "text": "Welches Wort bedeutet 'Stuhl'?",
+       "options": [
+        "책상",
+        "가방",
+        "의자",
+        "책"
+       ],
+       "answer": 2,
+       "why": "의자 ist ein Stuhl. 책상 ist ein Schreibtisch."
+      },
+      {
+       "kind": "choice",
+       "text": "Was bedeutet 배우다?",
+       "options": [
+        "lernen",
+        "lesen",
+        "schreiben",
+        "schlafen"
+       ],
+       "answer": 0,
+       "why": "배우다 ist lernen. 읽다 ist lesen."
+      }
+     ]
+    },
+    {
+     "id": "u4l2",
+     "title": "Und, mit (과/와, 하고)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Um zwei Nomen zu verbinden, benutz 과/와 oder 하고. Sie bedeuten 'und'."
+      },
+      {
+       "kind": "say",
+       "text": "과 nach einem Konsonanten, 와 nach einem Vokal. 하고 passt überall und klingt lockerer."
+      },
+      {
+       "kind": "example",
+       "ko": "책과 가방",
+       "translation": "ein Buch und eine Tasche"
+      },
+      {
+       "kind": "example",
+       "ko": "의자와 책상",
+       "translation": "ein Stuhl und ein Schreibtisch"
+      },
+      {
+       "kind": "example",
+       "ko": "커피하고 빵",
+       "translation": "Kaffee und Brot"
+      },
+      {
+       "kind": "say",
+       "text": "하고 und 과/와 können auch 'mit' bedeuten."
+      },
+      {
+       "kind": "example",
+       "ko": "친구하고 공부합니다.",
+       "translation": "Ich lerne mit einem Freund."
+      },
+      {
+       "kind": "choice",
+       "text": "책상___ 의자",
+       "options": [
+        "과",
+        "와"
+       ],
+       "answer": 0,
+       "why": "책상 endet auf ㅇ, also 과."
+      },
+      {
+       "kind": "choice",
+       "text": "의자___ 책상",
+       "options": [
+        "과",
+        "와"
+       ],
+       "answer": 1,
+       "why": "의자 endet auf einen Vokal, also 와."
+      },
+      {
+       "kind": "choice",
+       "text": "Was passt nach jedem Nomen?",
+       "options": [
+        "과",
+        "와",
+        "하고"
+       ],
+       "answer": 2,
+       "why": "하고 ändert sich nicht. Man hört es oft beim Sprechen."
+      },
+      {
+       "kind": "build",
+       "translation": "Ich lerne mit einem Freund.",
+       "words": [
+        "친구하고",
+        "공부합니다."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u4l3",
+     "title": "Besitz (의)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "의 entspricht dem deutschen Genitiv-s. Es steht zwischen Besitzer und Sache."
+      },
+      {
+       "kind": "example",
+       "ko": "민수 씨의 가방",
+       "translation": "Minsus Tasche"
+      },
+      {
+       "kind": "example",
+       "ko": "학교의 도서관",
+       "translation": "die Bibliothek der Schule"
+      },
+      {
+       "kind": "say",
+       "text": "Beim Sprechen klingt 의 oft wie 에."
+      },
+      {
+       "kind": "say",
+       "text": "'Mein' ist 제. Das ist die Kurzform von 저의."
+      },
+      {
+       "kind": "example",
+       "ko": "제 책입니다.",
+       "translation": "Das ist mein Buch."
+      },
+      {
+       "kind": "example",
+       "ko": "제 친구입니다.",
+       "translation": "Das ist mein Freund."
+      },
+      {
+       "kind": "choice",
+       "text": "Wie sagt man 'Hanas Buch'?",
+       "options": [
+        "하나 씨의 책",
+        "책의 하나 씨",
+        "하나 씨 의책"
+       ],
+       "answer": 0,
+       "why": "Erst der Besitzer, dann 의, dann die Sache."
+      },
+      {
+       "kind": "choice",
+       "text": "Was ist die Kurzform von 저의?",
+       "options": [
+        "저",
+        "제",
+        "내"
+       ],
+       "answer": 1,
+       "why": "저의 wird zu 제. 제 가방 heißt meine Tasche."
+      },
+      {
+       "kind": "choice",
+       "text": "Was ist richtig?",
+       "options": [
+        "제 친구입니다",
+        "저 친구입니다의"
+       ],
+       "answer": 0,
+       "why": "제 친구 heißt mein Freund."
+      },
+      {
+       "kind": "build",
+       "translation": "Das ist Minsus Tasche.",
+       "words": [
+        "민수",
+        "씨의",
+        "가방입니다."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u4l4",
+     "title": "Alles zusammen: im Klassenzimmer",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Hana findet ein Buch im Klassenzimmer. Hör zu."
+      },
+      {
+       "kind": "example",
+       "ko": "이것은 하나 씨의 책입니까?",
+       "translation": "Hana, ist das dein Buch?"
+      },
+      {
+       "kind": "example",
+       "ko": "아니요, 제 책이 아닙니다.",
+       "translation": "Nein, das ist nicht mein Buch."
+      },
+      {
+       "kind": "example",
+       "ko": "민수 씨의 책입니다.",
+       "translation": "Das ist Minsus Buch."
+      },
+      {
+       "kind": "example",
+       "ko": "민수 씨는 무엇을 배웁니까?",
+       "translation": "Was lernt Minsu?"
+      },
+      {
+       "kind": "example",
+       "ko": "민수 씨는 친구하고 한국어를 배웁니다.",
+       "translation": "Minsu lernt mit einem Freund Koreanisch."
+      },
+      {
+       "kind": "say",
+       "text": "아닙니다 ist die formelle Form von 아니에요."
+      },
+      {
+       "kind": "say",
+       "text": "이것 bedeutet 'dies hier'. 이, 그 und 저 lernst du später."
+      },
+      {
+       "kind": "choice",
+       "text": "Was bedeutet 제 책이 아닙니다?",
+       "options": [
+        "Das ist mein Buch",
+        "Das ist nicht mein Buch",
+        "Ist das mein Buch?"
+       ],
+       "answer": 1,
+       "why": "아닙니다 bedeutet 'ist nicht', im formellen Stil."
+      },
+      {
+       "kind": "choice",
+       "text": "가방___ 책",
+       "options": [
+        "과",
+        "와"
+       ],
+       "answer": 0,
+       "why": "가방 endet auf ㅇ, also 과."
+      },
+      {
+       "kind": "build",
+       "translation": "Das ist nicht meine Tasche.",
+       "words": [
+        "제",
+        "가방이",
+        "아닙니다."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Ich lese mit einem Freund ein Buch.",
+       "words": [
+        "친구하고",
+        "책을",
+        "읽습니다."
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요! Du kannst jetzt über die Schule sprechen."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "title": "Wetter",
+   "subtitle": "Sprich über Wetter und Jahreszeiten",
+   "lessons": [
+    {
+     "id": "u5l1",
+     "title": "Wörter: Wetter und Jahreszeiten",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Koreaner reden viel übers Wetter. Lernen wir die Wörter."
+      },
+      {
+       "kind": "example",
+       "ko": "날씨",
+       "translation": "Wetter"
+      },
+      {
+       "kind": "example",
+       "ko": "봄",
+       "translation": "Frühling"
+      },
+      {
+       "kind": "example",
+       "ko": "여름",
+       "translation": "Sommer"
+      },
+      {
+       "kind": "example",
+       "ko": "가을",
+       "translation": "Herbst"
+      },
+      {
+       "kind": "example",
+       "ko": "겨울",
+       "translation": "Winter"
+      },
+      {
+       "kind": "example",
+       "ko": "비",
+       "translation": "Regen"
+      },
+      {
+       "kind": "example",
+       "ko": "눈",
+       "translation": "Schnee"
+      },
+      {
+       "kind": "example",
+       "ko": "덥다",
+       "translation": "heiß sein"
+      },
+      {
+       "kind": "example",
+       "ko": "춥다",
+       "translation": "kalt sein"
+      },
+      {
+       "kind": "example",
+       "ko": "따뜻하다",
+       "translation": "warm sein"
+      },
+      {
+       "kind": "example",
+       "ko": "시원하다",
+       "translation": "kühl, erfrischend sein"
+      },
+      {
+       "kind": "example",
+       "ko": "맑다",
+       "translation": "klar, sonnig sein"
+      },
+      {
+       "kind": "choice",
+       "text": "Was bedeutet 겨울?",
+       "options": [
+        "Sommer",
+        "Herbst",
+        "Winter",
+        "Frühling"
+       ],
+       "answer": 2,
+       "why": "겨울 ist Winter. 여름 ist Sommer."
+      },
+      {
+       "kind": "choice",
+       "text": "Welches Wort bedeutet 'kalt sein'?",
+       "options": [
+        "덥다",
+        "춥다",
+        "맑다",
+        "시원하다"
+       ],
+       "answer": 1,
+       "why": "춥다 ist kalt. 덥다 ist heiß."
+      },
+      {
+       "kind": "choice",
+       "text": "Was bedeutet 눈 hier?",
+       "options": [
+        "Regen",
+        "Schnee",
+        "Wetter"
+       ],
+       "answer": 1,
+       "why": "눈 ist Schnee. Es heißt auch Auge."
+      }
+     ]
+    },
+    {
+     "id": "u5l2",
+     "title": "Alltagshöflich (-아요/어요)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "-아요/어요 ist der höfliche Stil für jeden Tag. Er ist weicher als -습니다."
+      },
+      {
+       "kind": "say",
+       "text": "Schau auf den letzten Vokal des Stamms. Ist es ㅏ oder ㅗ, häng 아요 an."
+      },
+      {
+       "kind": "example",
+       "ko": "좋아요.",
+       "translation": "Es ist gut."
+      },
+      {
+       "kind": "example",
+       "ko": "맑아요.",
+       "translation": "Es ist klar."
+      },
+      {
+       "kind": "say",
+       "text": "Bei jedem anderen Vokal häng 어요 an."
+      },
+      {
+       "kind": "example",
+       "ko": "먹어요.",
+       "translation": "Ich esse."
+      },
+      {
+       "kind": "example",
+       "ko": "읽어요.",
+       "translation": "Ich lese."
+      },
+      {
+       "kind": "say",
+       "text": "Verben mit 하다 werden zu 해요."
+      },
+      {
+       "kind": "example",
+       "ko": "따뜻해요.",
+       "translation": "Es ist warm."
+      },
+      {
+       "kind": "example",
+       "ko": "공부해요.",
+       "translation": "Ich lerne."
+      },
+      {
+       "kind": "say",
+       "text": "덥다 und 춥다 ändern ihre Form: 더워요, 추워요. Lern sie einfach so."
+      },
+      {
+       "kind": "example",
+       "ko": "오늘 추워요.",
+       "translation": "Heute ist es kalt."
+      },
+      {
+       "kind": "choice",
+       "text": "작다 →",
+       "options": [
+        "작어요",
+        "작아요",
+        "작해요"
+       ],
+       "answer": 1,
+       "why": "Der Vokal in 작 ist ㅏ, also 아요."
+      },
+      {
+       "kind": "choice",
+       "text": "시원하다 →",
+       "options": [
+        "시원아요",
+        "시원해요",
+        "시원어요"
+       ],
+       "answer": 1,
+       "why": "하다 wird zu 해요."
+      },
+      {
+       "kind": "choice",
+       "text": "읽다 →",
+       "options": [
+        "읽아요",
+        "읽어요",
+        "읽해요"
+       ],
+       "answer": 1,
+       "why": "Der Vokal in 읽 ist ㅣ, also 어요."
+      },
+      {
+       "kind": "build",
+       "translation": "Das Wetter ist gut.",
+       "words": [
+        "날씨가",
+        "좋아요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u5l3",
+     "title": "Nicht (-지 않아요)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Um 'nicht' zu sagen, nimm 다 weg und häng 지 않아요 an."
+      },
+      {
+       "kind": "example",
+       "ko": "춥지 않아요.",
+       "translation": "Es ist nicht kalt."
+      },
+      {
+       "kind": "example",
+       "ko": "덥지 않아요.",
+       "translation": "Es ist nicht heiß."
+      },
+      {
+       "kind": "example",
+       "ko": "좋지 않아요.",
+       "translation": "Es ist nicht gut."
+      },
+      {
+       "kind": "say",
+       "text": "Das klappt auch mit Handlungen."
+      },
+      {
+       "kind": "example",
+       "ko": "커피를 마시지 않아요.",
+       "translation": "Ich trinke keinen Kaffee."
+      },
+      {
+       "kind": "say",
+       "text": "Hier ändert sich die Form nicht: 춥다 wird zu 춥지 않아요, nicht 추워지 않아요."
+      },
+      {
+       "kind": "choice",
+       "text": "크다 → nicht groß",
+       "options": [
+        "크지 않아요",
+        "커지 않아요",
+        "크 않아요"
+       ],
+       "answer": 0,
+       "why": "Stamm 크 + 지 않아요."
+      },
+      {
+       "kind": "choice",
+       "text": "Was ist richtig?",
+       "options": [
+        "날씨가 좋지 않아요",
+        "날씨가 좋아지 않아요"
+       ],
+       "answer": 0,
+       "why": "Stamm 좋 + 지 않아요."
+      },
+      {
+       "kind": "choice",
+       "text": "먹다 → ich esse nicht",
+       "options": [
+        "먹지 않아요",
+        "먹어지 않아요",
+        "먹않아요"
+       ],
+       "answer": 0,
+       "why": "Stamm 먹 + 지 않아요."
+      },
+      {
+       "kind": "build",
+       "translation": "Heute ist es nicht kalt.",
+       "words": [
+        "오늘",
+        "춥지",
+        "않아요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u5l4",
+     "title": "Alles zusammen: Wie ist das Wetter?",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Minsu ruft Hana an. Hör zu."
+      },
+      {
+       "kind": "example",
+       "ko": "오늘 날씨가 어때요?",
+       "translation": "Wie ist das Wetter heute?"
+      },
+      {
+       "kind": "example",
+       "ko": "날씨가 좋지 않아요. 비가 와요.",
+       "translation": "Das Wetter ist nicht gut. Es regnet."
+      },
+      {
+       "kind": "example",
+       "ko": "추워요?",
+       "translation": "Ist es kalt?"
+      },
+      {
+       "kind": "example",
+       "ko": "아니요, 춥지 않아요. 시원해요.",
+       "translation": "Nein, es ist nicht kalt. Es ist kühl."
+      },
+      {
+       "kind": "example",
+       "ko": "저는 봄을 좋아해요. 봄은 따뜻해요.",
+       "translation": "Ich mag den Frühling. Im Frühling ist es warm."
+      },
+      {
+       "kind": "say",
+       "text": "어때요? bedeutet 'wie ist es?'. Benutz es für Wetter, Essen, alles."
+      },
+      {
+       "kind": "say",
+       "text": "비가 와요 bedeutet 'es regnet', wörtlich 'Regen kommt'."
+      },
+      {
+       "kind": "choice",
+       "text": "Wie sagt man 'Es regnet'?",
+       "options": [
+        "비가 와요",
+        "비를 와요",
+        "비가 해요"
+       ],
+       "answer": 0,
+       "why": "비가 와요: Regen kommt."
+      },
+      {
+       "kind": "choice",
+       "text": "Was bedeutet 어때요?",
+       "options": [
+        "Was ist das?",
+        "Wie ist es?",
+        "Wo ist es?"
+       ],
+       "answer": 1,
+       "why": "어때요? fragt, wie etwas ist."
+      },
+      {
+       "kind": "build",
+       "translation": "Ich mag den Winter.",
+       "words": [
+        "저는",
+        "겨울을",
+        "좋아해요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Im Sommer ist es heiß.",
+       "words": [
+        "여름은",
+        "더워요."
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요! Du kannst jetzt übers Wetter reden."
+      }
+     ]
+    },
+    {
+     "id": "u5r",
+     "title": "Wiederholung: Einheiten 1 bis 5",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Wiederholen wir alles aus den Einheiten 1 bis 5. Keine neue Grammatik, nur Übung."
+      },
+      {
+       "kind": "choice",
+       "text": "저___ 학생이에요.",
+       "options": [
+        "은",
+        "는"
+       ],
+       "answer": 1,
+       "why": "저 endet auf einen Vokal, also 는."
+      },
+      {
+       "kind": "choice",
+       "text": "의사___ 아니에요.",
+       "options": [
+        "이",
+        "가"
+       ],
+       "answer": 1,
+       "why": "의사 endet auf einen Vokal, also 가 아니에요."
+      },
+      {
+       "kind": "choice",
+       "text": "빵___ 먹습니다.",
+       "options": [
+        "을",
+        "를"
+       ],
+       "answer": 0,
+       "why": "빵 endet auf einen Konsonanten, also 을."
+      },
+      {
+       "kind": "choice",
+       "text": "친구___ 가방",
+       "options": [
+        "과",
+        "의"
+       ],
+       "answer": 1,
+       "why": "의 zeigt, wem es gehört: die Tasche eines Freundes."
+      },
+      {
+       "kind": "choice",
+       "text": "좋다 →",
+       "options": [
+        "좋아요",
+        "좋어요",
+        "좋해요"
+       ],
+       "answer": 0,
+       "why": "Der Vokal ist ㅗ, also 아요."
+      },
+      {
+       "kind": "choice",
+       "text": "춥다 → nicht kalt",
+       "options": [
+        "추워지 않아요",
+        "춥지 않아요"
+       ],
+       "answer": 1,
+       "why": "Stamm 춥 + 지 않아요."
+      },
+      {
+       "kind": "choice",
+       "text": "마시다 → formell",
+       "options": [
+        "마시습니다",
+        "마십니다"
+       ],
+       "answer": 1,
+       "why": "Vokalstamm, also ㅂ니다."
+      },
+      {
+       "kind": "build",
+       "translation": "Meine ältere Schwester ist Krankenschwester.",
+       "words": [
+        "우리",
+        "언니는",
+        "간호사예요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Ich trinke mit einem Freund Kaffee.",
+       "words": [
+        "친구하고",
+        "커피를",
+        "마십니다."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Heute ist das Wetter nicht gut.",
+       "words": [
+        "오늘",
+        "날씨가",
+        "좋지",
+        "않아요."
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "대단해요! Du hast die ersten fünf Einheiten geschafft. Gochi ist stolz auf dich."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "title": "Freunde",
+   "subtitle": "Geben, schicken und anrufen",
+   "lessons": [
+    {
+     "id": "u6l1",
+     "title": "Wörter: Freunde und Geschenke",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Lernen wir Wörter für Freunde, Geschenke und Nachrichten."
+      },
+      {
+       "kind": "example",
+       "ko": "선물",
+       "translation": "Geschenk"
+      },
+      {
+       "kind": "example",
+       "ko": "편지",
+       "translation": "Brief"
+      },
+      {
+       "kind": "example",
+       "ko": "꽃",
+       "translation": "Blume"
+      },
+      {
+       "kind": "example",
+       "ko": "생일",
+       "translation": "Geburtstag"
+      },
+      {
+       "kind": "example",
+       "ko": "주다",
+       "translation": "geben"
+      },
+      {
+       "kind": "example",
+       "ko": "보내다",
+       "translation": "schicken"
+      },
+      {
+       "kind": "example",
+       "ko": "전화하다",
+       "translation": "anrufen"
+      },
+      {
+       "kind": "example",
+       "ko": "만나다",
+       "translation": "treffen"
+      },
+      {
+       "kind": "example",
+       "ko": "고마워요",
+       "translation": "danke (locker)"
+      },
+      {
+       "kind": "example",
+       "ko": "미안해요",
+       "translation": "Entschuldigung"
+      },
+      {
+       "kind": "example",
+       "ko": "생일 축하해요!",
+       "translation": "Alles Gute zum Geburtstag!"
+      },
+      {
+       "kind": "choice",
+       "text": "Was bedeutet 선물?",
+       "options": [
+        "Brief",
+        "Geschenk",
+        "Blume",
+        "Geburtstag"
+       ],
+       "answer": 1,
+       "why": "선물 ist ein Geschenk. 편지 ist ein Brief."
+      },
+      {
+       "kind": "choice",
+       "text": "Welches Verb bedeutet 'schicken'?",
+       "options": [
+        "주다",
+        "보내다",
+        "만나다",
+        "전화하다"
+       ],
+       "answer": 1,
+       "why": "보내다 ist schicken. 주다 ist geben."
+      },
+      {
+       "kind": "choice",
+       "text": "Wie sagt man 'Alles Gute zum Geburtstag!'?",
+       "options": [
+        "생일 고마워요!",
+        "생일 축하해요!",
+        "생일 미안해요!"
+       ],
+       "answer": 1,
+       "why": "축하해요 bedeutet Glückwunsch."
+      }
+     ]
+    },
+    {
+     "id": "u6l2",
+     "title": "An jemanden (에게/한테)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "에게 und 한테 bedeuten 'an' oder 'zu' einer Person. 한테 ist lockerer. Beide passen nach jedem Namen."
+      },
+      {
+       "kind": "example",
+       "ko": "친구에게 편지를 보내요.",
+       "translation": "Ich schicke einem Freund einen Brief."
+      },
+      {
+       "kind": "example",
+       "ko": "동생한테 전화해요.",
+       "translation": "Ich rufe mein jüngeres Geschwister an."
+      },
+      {
+       "kind": "say",
+       "text": "Manche Verben werden im 요-Stil kürzer. 주다 wird zu 줘요, 보다 zu 봐요, 마시다 zu 마셔요."
+      },
+      {
+       "kind": "example",
+       "ko": "어머니한테 꽃을 줘요.",
+       "translation": "Ich schenke meiner Mutter Blumen."
+      },
+      {
+       "kind": "say",
+       "text": "Für Orte benutzt du 에, nicht 에게. 에게 ist nur für Menschen und Tiere."
+      },
+      {
+       "kind": "choice",
+       "text": "친구___ 선물을 줘요.",
+       "options": [
+        "에게",
+        "에서",
+        "을"
+       ],
+       "answer": 0,
+       "why": "에게 bedeutet 'an' eine Person."
+      },
+      {
+       "kind": "choice",
+       "text": "Was ist locker?",
+       "options": [
+        "에게",
+        "한테"
+       ],
+       "answer": 1,
+       "why": "한테 ist beim Sprechen üblich. 에게 ist eher schriftlich."
+      },
+      {
+       "kind": "choice",
+       "text": "주다 → 요-Stil",
+       "options": [
+        "nur 주어요",
+        "줘요",
+        "주요"
+       ],
+       "answer": 1,
+       "why": "주 + 어요 wird zu 줘요."
+      },
+      {
+       "kind": "build",
+       "translation": "Ich rufe meinen Freund an.",
+       "words": [
+        "친구한테",
+        "전화해요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Ich schenke meiner älteren Schwester etwas.",
+       "words": [
+        "언니에게",
+        "선물을",
+        "줘요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u6l3",
+     "title": "Nur (만)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "만 bedeutet 'nur'. Setz es direkt hinter das Nomen."
+      },
+      {
+       "kind": "example",
+       "ko": "커피만 마셔요.",
+       "translation": "Ich trinke nur Kaffee."
+      },
+      {
+       "kind": "example",
+       "ko": "동생만 와요.",
+       "translation": "Nur mein jüngeres Geschwister kommt."
+      },
+      {
+       "kind": "say",
+       "text": "Wie 도 ersetzt 만 auch 을/를 und 이/가."
+      },
+      {
+       "kind": "example",
+       "ko": "저는 드라마만 봐요.",
+       "translation": "Ich schaue nur Serien."
+      },
+      {
+       "kind": "choice",
+       "text": "Ich esse nur Brot: 빵___ 먹어요.",
+       "options": [
+        "만",
+        "도",
+        "을"
+       ],
+       "answer": 0,
+       "why": "만 bedeutet nur. 도 bedeutet auch."
+      },
+      {
+       "kind": "choice",
+       "text": "Was ist richtig?",
+       "options": [
+        "물을만 마셔요",
+        "물만 마셔요"
+       ],
+       "answer": 1,
+       "why": "만 ersetzt 을/를."
+      },
+      {
+       "kind": "choice",
+       "text": "Was bedeutet 친구만 와요?",
+       "options": [
+        "Ein Freund kommt auch",
+        "Nur ein Freund kommt",
+        "Ein Freund kommt nicht"
+       ],
+       "answer": 1,
+       "why": "만 bedeutet nur."
+      },
+      {
+       "kind": "build",
+       "translation": "Ich trinke nur Tee.",
+       "words": [
+        "저는",
+        "차만",
+        "마셔요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u6l4",
+     "title": "Alles zusammen: ein Geburtstag",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Hana hat Geburtstag. Hör zu."
+      },
+      {
+       "kind": "example",
+       "ko": "하나 씨, 생일 축하해요!",
+       "translation": "Alles Gute zum Geburtstag, Hana!"
+      },
+      {
+       "kind": "example",
+       "ko": "이거 선물이에요.",
+       "translation": "Das ist ein Geschenk für dich."
+      },
+      {
+       "kind": "example",
+       "ko": "와, 고마워요! 꽃이에요?",
+       "translation": "Oh, danke! Sind das Blumen?"
+      },
+      {
+       "kind": "example",
+       "ko": "네. 그리고 편지도 있어요.",
+       "translation": "Ja. Und es gibt auch einen Brief."
+      },
+      {
+       "kind": "choice",
+       "text": "Was bedeutet 고마워요?",
+       "options": [
+        "Entschuldigung",
+        "Danke",
+        "Hallo"
+       ],
+       "answer": 1,
+       "why": "고마워요 ist ein lockeres Danke."
+      },
+      {
+       "kind": "choice",
+       "text": "친구___ 꽃을 보내요.",
+       "options": [
+        "한테",
+        "에서",
+        "는"
+       ],
+       "answer": 0,
+       "why": "한테 bedeutet 'an' eine Person."
+      },
+      {
+       "kind": "build",
+       "translation": "Das ist ein Geschenk.",
+       "words": [
+        "이거",
+        "선물이에요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Ich schicke meinem Freund einen Brief.",
+       "words": [
+        "친구에게",
+        "편지를",
+        "보내요."
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요! Du kannst jetzt Geschenke machen und Nachrichten schicken."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "title": "Wo die Dinge sind",
+   "subtitle": "Sag, wo Dinge sind und wo du etwas machst",
+   "lessons": [
+    {
+     "id": "u7l1",
+     "title": "Wörter: Räume und Orte",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Lernen wir Wörter, um zu sagen, wo Dinge sind."
+      },
+      {
+       "kind": "example",
+       "ko": "방",
+       "translation": "Zimmer"
+      },
+      {
+       "kind": "example",
+       "ko": "집",
+       "translation": "Haus, Zuhause"
+      },
+      {
+       "kind": "example",
+       "ko": "침대",
+       "translation": "Bett"
+      },
+      {
+       "kind": "example",
+       "ko": "고양이",
+       "translation": "Katze"
+      },
+      {
+       "kind": "example",
+       "ko": "위",
+       "translation": "oben, auf"
+      },
+      {
+       "kind": "example",
+       "ko": "아래",
+       "translation": "unter"
+      },
+      {
+       "kind": "example",
+       "ko": "앞",
+       "translation": "vorne, vor"
+      },
+      {
+       "kind": "example",
+       "ko": "뒤",
+       "translation": "hinten, hinter"
+      },
+      {
+       "kind": "example",
+       "ko": "옆",
+       "translation": "neben"
+      },
+      {
+       "kind": "example",
+       "ko": "안",
+       "translation": "drinnen, in"
+      },
+      {
+       "kind": "example",
+       "ko": "있다",
+       "translation": "da sein, haben"
+      },
+      {
+       "kind": "example",
+       "ko": "없다",
+       "translation": "nicht da sein, nicht haben"
+      },
+      {
+       "kind": "choice",
+       "text": "Was bedeutet 옆?",
+       "options": [
+        "hinter",
+        "neben",
+        "unter",
+        "drinnen, in"
+       ],
+       "answer": 1,
+       "why": "옆 bedeutet neben. 뒤 bedeutet hinter."
+      },
+      {
+       "kind": "choice",
+       "text": "Was ist das Gegenteil von 있다?",
+       "options": [
+        "없다",
+        "아래",
+        "안"
+       ],
+       "answer": 0,
+       "why": "있다 ist 'es gibt', 없다 ist 'es gibt nicht'."
+      },
+      {
+       "kind": "choice",
+       "text": "Was bedeutet 침대?",
+       "options": [
+        "Zimmer",
+        "Bett",
+        "Schreibtisch",
+        "Stuhl"
+       ],
+       "answer": 1,
+       "why": "침대 ist ein Bett."
+      }
+     ]
+    },
+    {
+     "id": "u7l2",
+     "title": "Wo etwas ist (에 있어요)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Um zu sagen, wo etwas ist, benutz Ort + 에 + 있어요."
+      },
+      {
+       "kind": "example",
+       "ko": "고양이가 방에 있어요.",
+       "translation": "Die Katze ist im Zimmer."
+      },
+      {
+       "kind": "say",
+       "text": "Bei Positionen kommt erst die Sache, dann das Positionswort, dann 에."
+      },
+      {
+       "kind": "example",
+       "ko": "책이 책상 위에 있어요.",
+       "translation": "Das Buch liegt auf dem Schreibtisch."
+      },
+      {
+       "kind": "example",
+       "ko": "가방이 의자 아래에 있어요.",
+       "translation": "Die Tasche ist unter dem Stuhl."
+      },
+      {
+       "kind": "say",
+       "text": "Um nach dem Wo zu fragen, benutz 어디에 있어요?"
+      },
+      {
+       "kind": "example",
+       "ko": "화장실이 어디에 있어요?",
+       "translation": "Wo ist die Toilette?"
+      },
+      {
+       "kind": "example",
+       "ko": "집에 고양이가 없어요.",
+       "translation": "Zu Hause gibt es keine Katze."
+      },
+      {
+       "kind": "choice",
+       "text": "책이 침대 위___ 있어요.",
+       "options": [
+        "에",
+        "에서",
+        "를"
+       ],
+       "answer": 0,
+       "why": "Wo etwas ist: 에 있어요."
+      },
+      {
+       "kind": "choice",
+       "text": "Wie sagt man 'neben dem Schreibtisch'?",
+       "options": [
+        "책상 옆에",
+        "옆 책상에",
+        "책상에 옆"
+       ],
+       "answer": 0,
+       "why": "Erst die Sache, dann 옆, dann 에."
+      },
+      {
+       "kind": "choice",
+       "text": "Was bedeutet 'es gibt keine Tasche'?",
+       "options": [
+        "가방이 있어요",
+        "가방이 없어요"
+       ],
+       "answer": 1,
+       "why": "없어요 bedeutet es gibt nicht."
+      },
+      {
+       "kind": "build",
+       "translation": "Die Katze ist unter dem Bett.",
+       "words": [
+        "고양이가",
+        "침대",
+        "아래에",
+        "있어요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u7l3",
+     "title": "Wo du etwas machst (에서)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "에서 markiert den Ort, an dem eine Handlung passiert."
+      },
+      {
+       "kind": "example",
+       "ko": "도서관에서 공부해요.",
+       "translation": "Ich lerne in der Bibliothek."
+      },
+      {
+       "kind": "example",
+       "ko": "식당에서 밥을 먹어요.",
+       "translation": "Ich esse im Restaurant."
+      },
+      {
+       "kind": "say",
+       "text": "Vergleich: 에 ist für irgendwo sein. 에서 ist für dort etwas tun."
+      },
+      {
+       "kind": "example",
+       "ko": "집에 있어요.",
+       "translation": "Ich bin zu Hause."
+      },
+      {
+       "kind": "example",
+       "ko": "집에서 일해요.",
+       "translation": "Ich arbeite von zu Hause."
+      },
+      {
+       "kind": "choice",
+       "text": "학교___ 한국어를 배워요.",
+       "options": [
+        "에",
+        "에서"
+       ],
+       "answer": 1,
+       "why": "배우다 ist eine Handlung, also 에서."
+      },
+      {
+       "kind": "choice",
+       "text": "저는 지금 집___ 있어요.",
+       "options": [
+        "에",
+        "에서"
+       ],
+       "answer": 0,
+       "why": "있다 ist irgendwo sein, also 에."
+      },
+      {
+       "kind": "choice",
+       "text": "방___ 드라마를 봐요.",
+       "options": [
+        "에",
+        "에서"
+       ],
+       "answer": 1,
+       "why": "Schauen ist eine Handlung, also 에서."
+      },
+      {
+       "kind": "build",
+       "translation": "Ich lerne in der Bibliothek.",
+       "words": [
+        "도서관에서",
+        "공부해요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u7l4",
+     "title": "Alles zusammen: Wo bist du?",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Minsu ruft Hana an. Hör zu."
+      },
+      {
+       "kind": "example",
+       "ko": "하나 씨, 지금 어디에 있어요?",
+       "translation": "Hana, wo bist du gerade?"
+      },
+      {
+       "kind": "example",
+       "ko": "집에 있어요. 방에서 드라마를 봐요.",
+       "translation": "Ich bin zu Hause. Ich schaue in meinem Zimmer eine Serie."
+      },
+      {
+       "kind": "example",
+       "ko": "제 가방이 하나 씨 집에 있어요?",
+       "translation": "Ist meine Tasche bei dir?"
+      },
+      {
+       "kind": "example",
+       "ko": "네, 의자 옆에 있어요.",
+       "translation": "Ja, sie ist neben dem Stuhl."
+      },
+      {
+       "kind": "example",
+       "ko": "고마워요! 내일 가요.",
+       "translation": "Danke! Ich komme morgen vorbei."
+      },
+      {
+       "kind": "say",
+       "text": "지금 bedeutet jetzt. 내일 bedeutet morgen."
+      },
+      {
+       "kind": "choice",
+       "text": "가방이 의자 옆___ 있어요.",
+       "options": [
+        "에",
+        "에서"
+       ],
+       "answer": 0,
+       "why": "Irgendwo sein: 에."
+      },
+      {
+       "kind": "choice",
+       "text": "Was bedeutet 어디에 있어요?",
+       "options": [
+        "Was ist das?",
+        "Wo ist es?",
+        "Wer ist das?"
+       ],
+       "answer": 1,
+       "why": "어디 bedeutet wo."
+      },
+      {
+       "kind": "build",
+       "translation": "Ich bin jetzt zu Hause.",
+       "words": [
+        "지금",
+        "집에",
+        "있어요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Ich esse zu Hause.",
+       "words": [
+        "집에서",
+        "밥을",
+        "먹어요."
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요! Du kannst jetzt sagen, wo Dinge sind."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "title": "Daten",
+   "subtitle": "Sprich über Tage und die Vergangenheit",
+   "lessons": [
+    {
+     "id": "u8l1",
+     "title": "Wörter: Zahlen und Tage",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Koreanisch hat zwei Zahlensysteme. Dieses kommt aus dem Chinesischen und wird für Daten, Geld und Telefonnummern benutzt."
+      },
+      {
+       "kind": "example",
+       "ko": "일, 이, 삼",
+       "translation": "1, 2, 3"
+      },
+      {
+       "kind": "example",
+       "ko": "사, 오, 육",
+       "translation": "4, 5, 6"
+      },
+      {
+       "kind": "example",
+       "ko": "칠, 팔, 구, 십",
+       "translation": "7, 8, 9, 10"
+      },
+      {
+       "kind": "example",
+       "ko": "십오",
+       "translation": "15 (10 + 5)"
+      },
+      {
+       "kind": "example",
+       "ko": "이십",
+       "translation": "20 (2 × 10)"
+      },
+      {
+       "kind": "say",
+       "text": "Monate sind Zahl + 월. Achtung: Juni ist 유월 und Oktober ist 시월."
+      },
+      {
+       "kind": "example",
+       "ko": "삼월 십오일",
+       "translation": "15. März"
+      },
+      {
+       "kind": "example",
+       "ko": "월요일",
+       "translation": "Montag"
+      },
+      {
+       "kind": "example",
+       "ko": "금요일",
+       "translation": "Freitag"
+      },
+      {
+       "kind": "example",
+       "ko": "토요일",
+       "translation": "Samstag"
+      },
+      {
+       "kind": "example",
+       "ko": "일요일",
+       "translation": "Sonntag"
+      },
+      {
+       "kind": "example",
+       "ko": "어제, 오늘, 내일",
+       "translation": "gestern, heute, morgen"
+      },
+      {
+       "kind": "example",
+       "ko": "주말",
+       "translation": "Wochenende"
+      },
+      {
+       "kind": "choice",
+       "text": "Wie sagt man 25?",
+       "options": [
+        "이오",
+        "이십오",
+        "오십이"
+       ],
+       "answer": 1,
+       "why": "이십 (20) + 오 (5)."
+      },
+      {
+       "kind": "choice",
+       "text": "Wie heißt Juni?",
+       "options": [
+        "육월",
+        "유월",
+        "오월"
+       ],
+       "answer": 1,
+       "why": "Juni ist 유월, nicht 육월."
+      },
+      {
+       "kind": "choice",
+       "text": "Was bedeutet 토요일?",
+       "options": [
+        "Freitag",
+        "Samstag",
+        "Sonntag"
+       ],
+       "answer": 1,
+       "why": "토요일 ist Samstag. 일요일 ist Sonntag."
+      }
+     ]
+    },
+    {
+     "id": "u8l2",
+     "title": "Vergangenheit (-았/었어요)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Die Vergangenheit funktioniert wie -아요/어요. Nimm einfach 았어요 oder 었어요."
+      },
+      {
+       "kind": "say",
+       "text": "Ist der letzte Vokal ㅏ oder ㅗ, nimm 았어요."
+      },
+      {
+       "kind": "example",
+       "ko": "좋았어요.",
+       "translation": "Es war gut."
+      },
+      {
+       "kind": "example",
+       "ko": "만났어요.",
+       "translation": "Ich habe (jemanden) getroffen."
+      },
+      {
+       "kind": "example",
+       "ko": "봤어요.",
+       "translation": "Ich habe gesehen, geschaut."
+      },
+      {
+       "kind": "say",
+       "text": "Bei anderen Vokalen nimm 었어요. 하다 wird zu 했어요."
+      },
+      {
+       "kind": "example",
+       "ko": "먹었어요.",
+       "translation": "Ich habe gegessen."
+      },
+      {
+       "kind": "example",
+       "ko": "읽었어요.",
+       "translation": "Ich lese."
+      },
+      {
+       "kind": "example",
+       "ko": "공부했어요.",
+       "translation": "Ich habe gelernt."
+      },
+      {
+       "kind": "choice",
+       "text": "먹다 → Vergangenheit",
+       "options": [
+        "먹았어요",
+        "먹었어요",
+        "먹했어요"
+       ],
+       "answer": 1,
+       "why": "Der Vokal in 먹 ist ㅓ, also 었어요."
+      },
+      {
+       "kind": "choice",
+       "text": "일하다 → Vergangenheit",
+       "options": [
+        "일했어요",
+        "일았어요",
+        "일하었어요"
+       ],
+       "answer": 0,
+       "why": "하다 wird zu 했어요."
+      },
+      {
+       "kind": "choice",
+       "text": "작다 → Vergangenheit",
+       "options": [
+        "작었어요",
+        "작았어요"
+       ],
+       "answer": 1,
+       "why": "Der Vokal in 작 ist ㅏ, also 았어요."
+      },
+      {
+       "kind": "build",
+       "translation": "Gestern habe ich einen Film geschaut.",
+       "words": [
+        "어제",
+        "영화를",
+        "봤어요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u8l3",
+     "title": "Zu einer Zeit (에)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Um zu sagen, wann etwas passiert, häng 에 an die Zeit."
+      },
+      {
+       "kind": "example",
+       "ko": "토요일에 친구를 만났어요.",
+       "translation": "Am Samstag habe ich einen Freund getroffen."
+      },
+      {
+       "kind": "example",
+       "ko": "삼월에 한국에 가요.",
+       "translation": "Im März fahre ich nach Korea."
+      },
+      {
+       "kind": "example",
+       "ko": "주말에 뭐 했어요?",
+       "translation": "Was hast du am Wochenende gemacht?"
+      },
+      {
+       "kind": "say",
+       "text": "어제, 오늘 und 내일 bekommen kein 에."
+      },
+      {
+       "kind": "example",
+       "ko": "어제 공부했어요.",
+       "translation": "Gestern habe ich gelernt."
+      },
+      {
+       "kind": "choice",
+       "text": "금요일___ 영화를 봤어요.",
+       "options": [
+        "에",
+        "에서",
+        "를"
+       ],
+       "answer": 0,
+       "why": "Zeit + 에."
+      },
+      {
+       "kind": "choice",
+       "text": "Was ist richtig?",
+       "options": [
+        "어제에 먹었어요",
+        "어제 먹었어요"
+       ],
+       "answer": 1,
+       "why": "어제 bekommt nie 에."
+      },
+      {
+       "kind": "choice",
+       "text": "일요일에 뭐 ___?",
+       "options": [
+        "했어요",
+        "해요었어요",
+        "했요"
+       ],
+       "answer": 0,
+       "why": "했어요 ist die Vergangenheit von 해요."
+      },
+      {
+       "kind": "build",
+       "translation": "Am Wochenende habe ich einen Freund getroffen.",
+       "words": [
+        "주말에",
+        "친구를",
+        "만났어요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u8l4",
+     "title": "Alles zusammen: dein Wochenende",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Montagmorgen in der Schule. Hör zu."
+      },
+      {
+       "kind": "example",
+       "ko": "주말에 뭐 했어요?",
+       "translation": "Was hast du am Wochenende gemacht?"
+      },
+      {
+       "kind": "example",
+       "ko": "토요일에 친구를 만났어요. 같이 영화를 봤어요.",
+       "translation": "Am Samstag habe ich einen Freund getroffen. Wir haben zusammen einen Film geschaut."
+      },
+      {
+       "kind": "example",
+       "ko": "영화가 어땠어요?",
+       "translation": "Wie war der Film?"
+      },
+      {
+       "kind": "example",
+       "ko": "정말 좋았어요! 일요일에는 집에서 쉬었어요.",
+       "translation": "Echt gut! Am Sonntag habe ich mich zu Hause ausgeruht."
+      },
+      {
+       "kind": "say",
+       "text": "어땠어요? ist die Vergangenheit von 어때요?. 같이 bedeutet zusammen."
+      },
+      {
+       "kind": "say",
+       "text": "쉬다 bedeutet sich ausruhen. 쉬었어요 ist die Vergangenheit."
+      },
+      {
+       "kind": "choice",
+       "text": "Was fragt 어땠어요?",
+       "options": [
+        "Wie ist es?",
+        "Wie war es?",
+        "Wo war es?"
+       ],
+       "answer": 1,
+       "why": "어땠어요 ist Vergangenheit."
+      },
+      {
+       "kind": "choice",
+       "text": "일요일___ 집에서 쉬었어요.",
+       "options": [
+        "에",
+        "에서",
+        "을"
+       ],
+       "answer": 0,
+       "why": "Zeit + 에."
+      },
+      {
+       "kind": "build",
+       "translation": "Gestern habe ich mich zu Hause ausgeruht.",
+       "words": [
+        "어제",
+        "집에서",
+        "쉬었어요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Der Film war gut.",
+       "words": [
+        "영화가",
+        "좋았어요."
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요! Du kannst jetzt über die Vergangenheit sprechen."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 9,
+   "title": "Sport",
+   "subtitle": "Sag, was du kannst und was nicht",
+   "lessons": [
+    {
+     "id": "u9l1",
+     "title": "Wörter: Sport",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Lernen wir Sportarten und Wörter für wie oft."
+      },
+      {
+       "kind": "example",
+       "ko": "운동",
+       "translation": "Sport, Bewegung"
+      },
+      {
+       "kind": "example",
+       "ko": "수영",
+       "translation": "Schwimmen"
+      },
+      {
+       "kind": "example",
+       "ko": "축구",
+       "translation": "Fußball"
+      },
+      {
+       "kind": "example",
+       "ko": "야구",
+       "translation": "Baseball"
+      },
+      {
+       "kind": "example",
+       "ko": "테니스",
+       "translation": "Tennis"
+      },
+      {
+       "kind": "example",
+       "ko": "요가",
+       "translation": "Yoga"
+      },
+      {
+       "kind": "example",
+       "ko": "잘",
+       "translation": "gut"
+      },
+      {
+       "kind": "example",
+       "ko": "매일",
+       "translation": "jeden Tag"
+      },
+      {
+       "kind": "example",
+       "ko": "자주",
+       "translation": "oft"
+      },
+      {
+       "kind": "example",
+       "ko": "가끔",
+       "translation": "manchmal"
+      },
+      {
+       "kind": "choice",
+       "text": "Was bedeutet 축구?",
+       "options": [
+        "Baseball",
+        "Fußball",
+        "Schwimmen"
+       ],
+       "answer": 1,
+       "why": "축구 ist Fußball. 야구 ist Baseball."
+      },
+      {
+       "kind": "choice",
+       "text": "Welches Wort bedeutet 'manchmal'?",
+       "options": [
+        "매일",
+        "자주",
+        "가끔"
+       ],
+       "answer": 2,
+       "why": "가끔 ist manchmal. 자주 ist oft."
+      },
+      {
+       "kind": "choice",
+       "text": "Was bedeutet 잘?",
+       "options": [
+        "gut",
+        "jeden Tag",
+        "nicht"
+       ],
+       "answer": 0,
+       "why": "잘 bedeutet gut: 잘해요, ich kann das gut."
+      }
+     ]
+    },
+    {
+     "id": "u9l2",
+     "title": "Von... bis... (부터, 까지)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "부터 bedeutet 'ab' oder 'von' und 까지 bedeutet 'bis'. Benutz sie mit Zeiten und Tagen."
+      },
+      {
+       "kind": "example",
+       "ko": "월요일부터 금요일까지 일해요.",
+       "translation": "Ich arbeite von Montag bis Freitag."
+      },
+      {
+       "kind": "example",
+       "ko": "오늘부터 운동해요.",
+       "translation": "Ab heute mache ich Sport."
+      },
+      {
+       "kind": "example",
+       "ko": "일요일까지 쉬어요.",
+       "translation": "Ich ruhe mich bis Sonntag aus."
+      },
+      {
+       "kind": "choice",
+       "text": "월요일___ 수영해요. (ab Montag)",
+       "options": [
+        "부터",
+        "까지",
+        "에서"
+       ],
+       "answer": 0,
+       "why": "부터 bedeutet ab oder von."
+      },
+      {
+       "kind": "choice",
+       "text": "금요일___ 공부해요. (bis Freitag)",
+       "options": [
+        "부터",
+        "까지"
+       ],
+       "answer": 1,
+       "why": "까지 bedeutet bis."
+      },
+      {
+       "kind": "choice",
+       "text": "Was ist richtig?",
+       "options": [
+        "월요일까지 금요일부터",
+        "월요일부터 금요일까지"
+       ],
+       "answer": 1,
+       "why": "Erst 부터, dann 까지."
+      },
+      {
+       "kind": "build",
+       "translation": "Ich schwimme von Montag bis Freitag.",
+       "words": [
+        "월요일부터",
+        "금요일까지",
+        "수영해요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u9l3",
+     "title": "Nicht können (못, -지 못해요)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "못 bedeutet 'nicht können'. Setz es direkt vor das Verb."
+      },
+      {
+       "kind": "example",
+       "ko": "저는 수영을 못해요.",
+       "translation": "Ich kann nicht schwimmen."
+      },
+      {
+       "kind": "example",
+       "ko": "오늘은 못 가요.",
+       "translation": "Ich kann heute nicht kommen."
+      },
+      {
+       "kind": "say",
+       "text": "Du kannst auch 지 못해요 an den Stamm hängen. Es bedeutet dasselbe, etwas formeller."
+      },
+      {
+       "kind": "example",
+       "ko": "축구를 하지 못해요.",
+       "translation": "Ich kann nicht Fußball spielen."
+      },
+      {
+       "kind": "say",
+       "text": "Vergleich: 안 (kurz für -지 않아요) heißt, du machst es nicht. 못 heißt, du kannst es nicht."
+      },
+      {
+       "kind": "example",
+       "ko": "수영을 잘해요.",
+       "translation": "Ich kann gut schwimmen."
+      },
+      {
+       "kind": "choice",
+       "text": "Ich kann keinen Kaffee trinken: 커피를 ___ 마셔요.",
+       "options": [
+        "못",
+        "만",
+        "도"
+       ],
+       "answer": 0,
+       "why": "못 + Verb bedeutet nicht können."
+      },
+      {
+       "kind": "choice",
+       "text": "가다 → nicht können (지-Form)",
+       "options": [
+        "가지 못해요",
+        "가 못해요",
+        "가지 못가요"
+       ],
+       "answer": 0,
+       "why": "Stamm 가 + 지 못해요."
+      },
+      {
+       "kind": "choice",
+       "text": "Was bedeutet 'Ich kann nicht schwimmen'?",
+       "options": [
+        "수영을 안 해요",
+        "수영을 못해요"
+       ],
+       "answer": 1,
+       "why": "못 bedeutet nicht können. 안 bedeutet nicht tun."
+      },
+      {
+       "kind": "build",
+       "translation": "Ich kann nicht Tennis spielen.",
+       "words": [
+        "저는",
+        "테니스를",
+        "못해요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u9l4",
+     "title": "Alles zusammen: Lieblingssport",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Hana und Minsu reden über Sport. Hör zu."
+      },
+      {
+       "kind": "example",
+       "ko": "무슨 운동을 좋아해요?",
+       "translation": "Welchen Sport magst du?"
+      },
+      {
+       "kind": "example",
+       "ko": "축구를 좋아해요. 매일 해요.",
+       "translation": "Ich mag Fußball. Ich spiele jeden Tag."
+      },
+      {
+       "kind": "example",
+       "ko": "수영도 해요?",
+       "translation": "Schwimmst du auch?"
+      },
+      {
+       "kind": "example",
+       "ko": "아니요, 저는 수영을 못해요.",
+       "translation": "Nein, ich kann nicht schwimmen."
+      },
+      {
+       "kind": "example",
+       "ko": "저는 수영을 잘해요. 월요일부터 금요일까지 수영장에 가요.",
+       "translation": "Ich kann gut schwimmen. Ich gehe von Montag bis Freitag ins Schwimmbad."
+      },
+      {
+       "kind": "say",
+       "text": "무슨 bedeutet 'was für ein'. 수영장 ist ein Schwimmbad."
+      },
+      {
+       "kind": "choice",
+       "text": "Was bedeutet 잘해요?",
+       "options": [
+        "Ich kann es schlecht",
+        "Ich kann es gut",
+        "Ich mache es nicht"
+       ],
+       "answer": 1,
+       "why": "잘 + 해요 heißt, du kannst es gut."
+      },
+      {
+       "kind": "choice",
+       "text": "저는 야구를 ___ 해요. (nicht können)",
+       "options": [
+        "못",
+        "잘",
+        "만"
+       ],
+       "answer": 0,
+       "why": "못 bedeutet nicht können."
+      },
+      {
+       "kind": "build",
+       "translation": "Ich spiele jeden Tag Fußball.",
+       "words": [
+        "저는",
+        "매일",
+        "축구를",
+        "해요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Ich kann heute nicht kommen.",
+       "words": [
+        "오늘은",
+        "못",
+        "가요."
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요! Du kannst jetzt über Sport sprechen."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 10,
+   "title": "Pläne machen",
+   "subtitle": "Schlag Freunden etwas vor",
+   "lessons": [
+    {
+     "id": "u10l1",
+     "title": "Wörter: Zählen und Uhrzeit",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Das ist das ursprünglich koreanische Zahlensystem. Benutz es zum Zählen und für Stunden."
+      },
+      {
+       "kind": "example",
+       "ko": "하나, 둘, 셋",
+       "translation": "1, 2, 3"
+      },
+      {
+       "kind": "example",
+       "ko": "넷, 다섯, 여섯",
+       "translation": "4, 5, 6"
+      },
+      {
+       "kind": "example",
+       "ko": "일곱, 여덟, 아홉, 열",
+       "translation": "7, 8, 9, 10"
+      },
+      {
+       "kind": "say",
+       "text": "Vor 시 (Uhr) werden manche kürzer: 한 시, 두 시, 세 시, 네 시."
+      },
+      {
+       "kind": "example",
+       "ko": "한 시",
+       "translation": "1 Uhr"
+      },
+      {
+       "kind": "example",
+       "ko": "세 시",
+       "translation": "3 Uhr"
+      },
+      {
+       "kind": "example",
+       "ko": "열두 시",
+       "translation": "12 Uhr"
+      },
+      {
+       "kind": "say",
+       "text": "Minuten benutzen das andere System: 삼십 분 sind 30 Minuten."
+      },
+      {
+       "kind": "example",
+       "ko": "두 시 삼십 분",
+       "translation": "2:30"
+      },
+      {
+       "kind": "example",
+       "ko": "점심",
+       "translation": "Mittagessen"
+      },
+      {
+       "kind": "example",
+       "ko": "저녁",
+       "translation": "Abendessen, Abend"
+      },
+      {
+       "kind": "example",
+       "ko": "같이",
+       "translation": "zusammen"
+      },
+      {
+       "kind": "choice",
+       "text": "Wie sagt man 4 Uhr?",
+       "options": [
+        "사 시",
+        "네 시",
+        "넷 시"
+       ],
+       "answer": 1,
+       "why": "넷 wird vor 시 zu 네."
+      },
+      {
+       "kind": "choice",
+       "text": "Was ist 다섯?",
+       "options": [
+        "4",
+        "5",
+        "6"
+       ],
+       "answer": 1,
+       "why": "다섯 ist 5."
+      },
+      {
+       "kind": "choice",
+       "text": "Wie sagt man 7:30?",
+       "options": [
+        "일곱 시 삼십 분",
+        "칠 시 서른 분"
+       ],
+       "answer": 0,
+       "why": "Stunden mit koreanischen Zahlen, Minuten mit 일, 이, 삼."
+      }
+     ]
+    },
+    {
+     "id": "u10l2",
+     "title": "Sollen wir? Lass uns! (-을까요, -읍시다)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "-을까요? bedeutet 'sollen wir?'. Damit schlägst du etwas vor."
+      },
+      {
+       "kind": "say",
+       "text": "Nach einem Konsonanten 을까요. Nach einem Vokal ㄹ까요."
+      },
+      {
+       "kind": "example",
+       "ko": "같이 먹을까요?",
+       "translation": "Sollen wir zusammen essen?"
+      },
+      {
+       "kind": "example",
+       "ko": "영화를 볼까요?",
+       "translation": "Sollen wir einen Film schauen?"
+      },
+      {
+       "kind": "say",
+       "text": "-읍시다 bedeutet 'lass uns'. Nach einem Vokal ist es ㅂ시다."
+      },
+      {
+       "kind": "example",
+       "ko": "갑시다!",
+       "translation": "Lass uns gehen!"
+      },
+      {
+       "kind": "example",
+       "ko": "점심을 먹읍시다.",
+       "translation": "Lass uns zu Mittag essen."
+      },
+      {
+       "kind": "say",
+       "text": "-읍시다 kann bei Älteren herrisch klingen. Benutz bei ihnen lieber -을까요?."
+      },
+      {
+       "kind": "choice",
+       "text": "마시다 → sollen wir?",
+       "options": [
+        "마실까요",
+        "마시을까요",
+        "마셔까요"
+       ],
+       "answer": 0,
+       "why": "Vokalstamm, also ㄹ까요: 마실까요."
+      },
+      {
+       "kind": "choice",
+       "text": "읽다 → sollen wir?",
+       "options": [
+        "읽ㄹ까요",
+        "읽을까요"
+       ],
+       "answer": 1,
+       "why": "Konsonantenstamm, also 을까요."
+      },
+      {
+       "kind": "choice",
+       "text": "만나다 → lass uns",
+       "options": [
+        "만납시다",
+        "만나읍시다"
+       ],
+       "answer": 0,
+       "why": "Vokalstamm, also ㅂ시다."
+      },
+      {
+       "kind": "build",
+       "translation": "Sollen wir zusammen zu Abend essen?",
+       "words": [
+        "같이",
+        "저녁을",
+        "먹을까요?"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u10l3",
+     "title": "Und dann (-고)",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "-고 verbindet zwei Handlungen oder Beschreibungen, wie 'und'. Häng es an den Stamm."
+      },
+      {
+       "kind": "example",
+       "ko": "밥을 먹고 영화를 봐요.",
+       "translation": "Ich esse und (dann) schaue ich einen Film."
+      },
+      {
+       "kind": "example",
+       "ko": "날씨가 좋고 따뜻해요.",
+       "translation": "Das Wetter ist schön und warm."
+      },
+      {
+       "kind": "example",
+       "ko": "숙제를 하고 잤어요.",
+       "translation": "Ich habe Hausaufgaben gemacht und geschlafen."
+      },
+      {
+       "kind": "say",
+       "text": "Die Zeitform steht nur am letzten Verb."
+      },
+      {
+       "kind": "choice",
+       "text": "Ich habe gegessen und getrunken. Was ist richtig?",
+       "options": [
+        "먹고 마셨어요",
+        "먹었어요고 마셨어요"
+       ],
+       "answer": 0,
+       "why": "Die Vergangenheit steht am letzten Verb: 먹고 마셨어요."
+      },
+      {
+       "kind": "choice",
+       "text": "공부하다 + 자다",
+       "options": [
+        "공부하고 자요",
+        "공부해고 자요"
+       ],
+       "answer": 0,
+       "why": "Stamm 공부하 + 고."
+      },
+      {
+       "kind": "choice",
+       "text": "Was bedeutet 크고 좋아요?",
+       "options": [
+        "Es ist groß, aber schlecht",
+        "Es ist groß und gut",
+        "Es ist nicht groß"
+       ],
+       "answer": 1,
+       "why": "-고 bedeutet und."
+      },
+      {
+       "kind": "build",
+       "translation": "Ich esse zu Mittag und trinke einen Kaffee.",
+       "words": [
+        "점심을",
+        "먹고",
+        "커피를",
+        "마셔요."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u10l4",
+     "title": "Alles zusammen: Pläne machen",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Minsu lädt Hana zum Mittagessen ein. Hör zu."
+      },
+      {
+       "kind": "example",
+       "ko": "하나 씨, 내일 같이 점심을 먹을까요?",
+       "translation": "Hana, sollen wir morgen zusammen zu Mittag essen?"
+      },
+      {
+       "kind": "example",
+       "ko": "좋아요! 몇 시에 만날까요?",
+       "translation": "Gern! Um wie viel Uhr treffen wir uns?"
+      },
+      {
+       "kind": "example",
+       "ko": "열두 시에 만납시다.",
+       "translation": "Treffen wir uns um 12."
+      },
+      {
+       "kind": "example",
+       "ko": "점심을 먹고 커피도 마실까요?",
+       "translation": "Sollen wir zu Mittag essen und danach noch Kaffee trinken?"
+      },
+      {
+       "kind": "example",
+       "ko": "네, 좋아요. 내일 봐요!",
+       "translation": "Ja, gern. Bis morgen!"
+      },
+      {
+       "kind": "say",
+       "text": "몇 시 bedeutet 'wie viel Uhr'. 내일 봐요 bedeutet 'bis morgen'."
+      },
+      {
+       "kind": "choice",
+       "text": "Wie fragt man 'Wie viel Uhr?'",
+       "options": [
+        "몇 시예요?",
+        "무슨 시예요?",
+        "어디 시예요?"
+       ],
+       "answer": 0,
+       "why": "몇 bedeutet wie viele: 몇 시 ist wie viel Uhr."
+      },
+      {
+       "kind": "choice",
+       "text": "가다 → lass uns",
+       "options": [
+        "갑시다",
+        "가읍시다",
+        "갈시다"
+       ],
+       "answer": 0,
+       "why": "Vokalstamm, also ㅂ시다."
+      },
+      {
+       "kind": "build",
+       "translation": "Treffen wir uns um 3 Uhr.",
+       "words": [
+        "세",
+        "시에",
+        "만납시다."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Sollen wir zusammen einen Film schauen?",
+       "words": [
+        "같이",
+        "영화를",
+        "볼까요?"
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "잘했어요! Du kannst jetzt auf Koreanisch Pläne machen."
+      }
+     ]
+    },
+    {
+     "id": "u10r",
+     "title": "Wiederholung: Einheiten 6 bis 10",
+     "steps": [
+      {
+       "kind": "say",
+       "text": "Wiederholen wir die Einheiten 6 bis 10."
+      },
+      {
+       "kind": "choice",
+       "text": "동생___ 선물을 줘요.",
+       "options": [
+        "한테",
+        "에서",
+        "부터"
+       ],
+       "answer": 0,
+       "why": "한테 bedeutet 'an' eine Person."
+      },
+      {
+       "kind": "choice",
+       "text": "저는 커피___ 마셔요. (nur)",
+       "options": [
+        "만",
+        "도",
+        "까지"
+       ],
+       "answer": 0,
+       "why": "만 bedeutet nur."
+      },
+      {
+       "kind": "choice",
+       "text": "고양이가 침대 아래___ 있어요.",
+       "options": [
+        "에",
+        "에서"
+       ],
+       "answer": 0,
+       "why": "Irgendwo sein: 에."
+      },
+      {
+       "kind": "choice",
+       "text": "도서관___ 공부해요.",
+       "options": [
+        "에",
+        "에서"
+       ],
+       "answer": 1,
+       "why": "Eine Handlung an einem Ort: 에서."
+      },
+      {
+       "kind": "choice",
+       "text": "보다 → Vergangenheit",
+       "options": [
+        "봤어요",
+        "보었어요",
+        "봐았어요"
+       ],
+       "answer": 0,
+       "why": "보 + 았어요 wird zu 봤어요."
+      },
+      {
+       "kind": "choice",
+       "text": "월요일___ 금요일까지",
+       "options": [
+        "부터",
+        "에",
+        "만"
+       ],
+       "answer": 0,
+       "why": "부터 ... 까지: von ... bis."
+      },
+      {
+       "kind": "choice",
+       "text": "Ich kann nicht schwimmen: 수영을 ___",
+       "options": [
+        "못해요",
+        "안해요",
+        "잘해요"
+       ],
+       "answer": 0,
+       "why": "못 bedeutet nicht können."
+      },
+      {
+       "kind": "choice",
+       "text": "먹다 → sollen wir?",
+       "options": [
+        "먹을까요",
+        "먹ㄹ까요"
+       ],
+       "answer": 0,
+       "why": "Konsonantenstamm, also 을까요."
+      },
+      {
+       "kind": "build",
+       "translation": "Am Samstag habe ich einen Freund getroffen.",
+       "words": [
+        "토요일에",
+        "친구를",
+        "만났어요."
+       ]
+      },
+      {
+       "kind": "build",
+       "translation": "Sollen wir essen und dann einen Film schauen?",
+       "words": [
+        "밥을",
+        "먹고",
+        "영화를",
+        "볼까요?"
+       ]
+      },
+      {
+       "kind": "say",
+       "text": "대단해요! Du hast zehn Einheiten geschafft. Gochi ist mächtig stolz."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

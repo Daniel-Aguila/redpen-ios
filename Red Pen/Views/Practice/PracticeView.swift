@@ -187,6 +187,13 @@ struct PracticeView: View {
                 PageTitle(marked: "연습", subtitle: "Practice your mistakes")
                     .padding(.leading, 20)
 
+                NavigationLink {
+                    CourseView()
+                } label: {
+                    LessonsEntryCard()
+                }
+                .buttonStyle(.plain)
+
                 VStack(spacing: 16) {
                     if !folders.isEmpty {
                         FolderChipsBar(
