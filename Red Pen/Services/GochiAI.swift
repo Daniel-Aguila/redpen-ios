@@ -121,7 +121,7 @@ enum GochiAI {
         var request = URLRequest(url: endpoint)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.timeoutInterval = 30
+        request.timeoutInterval = task == "explain" ? 30 : 60
         request.httpBody = try JSONEncoder().encode(Body(transaction: jws, task: task, input: input, lang: languageCode))
 
         let (data, response) = try await URLSession.shared.data(for: request)

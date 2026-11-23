@@ -125,18 +125,34 @@ struct ExplainButtonCard: View {
     let action: () -> Void
 
     var body: some View {
+        ProFeatureCard(title: isPro && hasSaved ? "See Gochi's explanation" : "Explain my sentence",
+                       subtitle: isPro ? "Gochi explains this exact sentence" : "Personal help with Pro",
+                       symbol: "sparkles",
+                       isPro: isPro,
+                       action: action)
+    }
+}
+
+struct ProFeatureCard: View {
+    let title: LocalizedStringKey
+    let subtitle: LocalizedStringKey
+    let symbol: String
+    let isPro: Bool
+    let action: () -> Void
+
+    var body: some View {
         Button(action: action) {
             HStack(spacing: 12) {
-                Image(systemName: "sparkles")
+                Image(systemName: symbol)
                     .font(.headline)
                     .foregroundStyle(.white)
                     .frame(width: 42, height: 42)
                     .background(Color.gochiRed.gradient, in: .rect(cornerRadius: 13))
                 VStack(alignment: .leading, spacing: 2) {
-                    Text(isPro && hasSaved ? "See Gochi's explanation" : "Explain my sentence")
+                    Text(title)
                         .font(.subheadline.weight(.semibold))
                         .foregroundStyle(.primary)
-                    Text(isPro ? "Gochi explains this exact sentence" : "Personal help with Pro")
+                    Text(subtitle)
                         .font(.caption)
                         .foregroundStyle(.secondary)
                 }

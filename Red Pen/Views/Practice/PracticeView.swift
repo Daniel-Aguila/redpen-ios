@@ -18,7 +18,8 @@ struct PracticeView: View {
     @Environment(Wallet.self) private var wallet
     @AppStorage("reviewAskedVersion") private var reviewAskedVersion = ""
     @AppStorage("hideGochi") private var hideGochi = false
-
+    
+    @State private var showGochiPractice = false
     @State private var scope: PracticeScope = .all
     @State private var session: [Exercise] = []
     @State private var index = 0
@@ -43,6 +44,10 @@ struct PracticeView: View {
             case .type(let t): c.type == t
             }
         }
+    }
+    
+    private var aiMistakes: [GochiAI.MistakeInput] {
+        Scheduler.order(corrections, all: corrections, smart: true).prefix(10).map(\.aiInput)
     }
 
     private var due: [Correction] {
@@ -140,6 +145,9 @@ struct PracticeView: View {
             .sheet(isPresented: $showProPaywall) {
                 PaywallView(startOn: .pro)
             }
+            .fullScreenCover(isPresented: $showGochiPractice) {
+                GochiPracticeView(mistakes: aiMistakes)
+            }
             .onChange(of: folders) {
                 if case .folder(let f) = scope, !folders.contains(f) {
                     scope = .all
@@ -234,6 +242,15 @@ struct PracticeView: View {
                 }
                 .frame(maxWidth: .infinity)
                 .card()
+
+                if !corrections.isEmpty {
+                    ProFeatureCard(title: "Gochi's practice",
+                                   subtitle: store.tier >= .pro ? "Exercises and a story from your mistakes" : "Personal practice with Pro",
+                                   symbol: "wand.and.stars",
+                                   isPro: store.tier >= .pro) {
+                        if store.tier >= .pro { showGochiPractice = true } else { showProPaywall = true }
+                    }
+                }
             }
             .padding()
         }
