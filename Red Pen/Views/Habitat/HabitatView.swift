@@ -83,6 +83,7 @@ struct HabitatView: View {
     @Environment(ProStore.self) private var store
     @AppStorage("selectedTab") private var selectedTab = "home"
     @AppStorage("dailyGoal") private var dailyGoal = 10
+    @AppStorage("shopSeenBalance") private var shopSeenBalance = 0
     @Query private var corrections: [Correction]
 
     @State private var editing = false
@@ -92,6 +93,17 @@ struct HabitatView: View {
     @State private var gochiHops = 0
 
     private static let design = CGSize(width: 390, height: 844)
+
+    private var showShopDot: Bool {
+        let balance = Int(wallet.balance)
+        guard balance > shopSeenBalance else { return false }
+        return Catalog.items.contains { item in
+            if case .price(let price) = item.unlock {
+                return !wallet.owns(item.id) && price <= balance
+            }
+            return false
+        }
+    }
 
     private var mood: HabitatMood {
         if progress.practicedToday { return .soaking }
@@ -155,6 +167,9 @@ struct HabitatView: View {
         }
         .sheet(isPresented: $showShop) {
             ShopView()
+        }
+        .onChange(of: showShop) { _, isOpen in
+            if isOpen { shopSeenBalance = Int(wallet.balance) }
         }
     }
     
@@ -320,7 +335,28 @@ struct HabitatView: View {
                 }
             }
             .buttonStyle(PressableStyle())
+            .overlay(alignment: .topTrailing) {
+                if showShopDot {
+                    Circle()
+                        .fill(Color.gochiRed)
+                        .frame(width: 10, height: 10)
+                        .overlay { Circle().stroke(.white, lineWidth: 2) }
+                        .offset(x: 2, y: -2)
+                        .transition(.scale.combined(with: .opacity))
+                }
+            }
             .accessibilityLabel("Shop, \(wallet.balance) tangerines")
+
+            Button { showShop = true } label: {
+                chip {
+                    Image(systemName: "storefront.fill")
+                        .foregroundStyle(Color.gochiRed)
+                    Text("Shop")
+                        .font(.subheadline.weight(.semibold))
+                }
+            }
+            .buttonStyle(PressableStyle())
+            .accessibilityLabel("Shop")
 
             Button {
                 withAnimation(.snappy) {
