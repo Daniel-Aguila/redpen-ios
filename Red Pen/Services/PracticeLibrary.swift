@@ -13,7 +13,8 @@ struct SavedPractice: Codable, Identifiable {
     var id = UUID()
     var date = Date()
     let mistakeKeys: [String]
-    let practice: GochiAI.Practice
+    var practice: GochiAI.Practice
+    var lang: String?
 }
 
 extension GochiAI.MistakeInput {
@@ -34,10 +35,18 @@ final class PracticeLibrary {
     }
 
     func add(_ practice: GochiAI.Practice, keys: [String]) {
-        items.insert(SavedPractice(mistakeKeys: keys, practice: practice), at: 0)
+        items.insert(SavedPractice(mistakeKeys: keys, practice: practice, lang: GochiAI.languageCode), at: 0)
         if items.count > maxItems {
             items.removeLast(items.count - maxItems)
         }
+        save()
+    }
+
+    func retranslate(_ item: SavedPractice) async throws {
+        let fresh = try await GochiAI.translate(item.practice)
+        guard let i = items.firstIndex(where: { $0.id == item.id }) else { return }
+        items[i].practice = fresh
+        items[i].lang = GochiAI.languageCode
         save()
     }
 

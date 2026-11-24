@@ -63,18 +63,28 @@ struct Red_PenApp: App {
                 set: { if !$0 { hasSeenOnboarding = true } }
             )) {
                 OnboardingView()
+                    .environment(progress)
+                    .environment(store)
+                    .environment(wallet)
+                    .modelContainer(container)
             }
             .sheet(isPresented: Binding(
                 get: { hasSeenOnboarding && whatsNewSeen != WhatsNewView.version },
                 set: { if !$0 { whatsNewSeen = WhatsNewView.version } }
             )) {
                 WhatsNewView()
+                    .environment(progress)
+                    .environment(store)
+                    .environment(wallet)
             }
             .fullScreenCover(item: Binding(
                 get: { hideGochi ? nil : progress.pendingEvolution },
                 set: { progress.pendingEvolution = $0 }
             )) { form in
                 EvolutionView(form: form)
+                    .environment(progress)
+                    .environment(store)
+                    .environment(wallet)
             }
             .onChange(of: progress.pendingEvolution) { _, form in
                 if hideGochi, form != nil { progress.pendingEvolution = nil }
