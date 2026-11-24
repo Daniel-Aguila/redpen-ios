@@ -141,15 +141,29 @@ struct PracticeHistoryView: View {
 struct SavedPracticeDetail: View {
     let item: SavedPractice
     @State private var redo = false
+    @State private var translating = false
+    @State private var translateError: String?
+
+    private var current: SavedPractice {
+        PracticeLibrary.shared.items.first { $0.id == item.id } ?? item
+    }
+
+    private var needsTranslation: Bool {
+        current.lang != GochiAI.languageCode
+    }
 
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-                StoryHeader(title: item.practice.story.title,
-                            subtitle: String(localized: "\(item.date.formatted(date: .abbreviated, time: .omitted)) · \(item.practice.exercises.count) exercises"),
-                            color: StoryPalette.color(for: item))
+                StoryHeader(title: current.practice.story.title,
+                            subtitle: String(localized: "\(current.date.formatted(date: .abbreviated, time: .omitted)) · \(current.practice.exercises.count) exercises"),
+                            color: StoryPalette.color(for: current))
 
-                StoryContent(story: item.practice.story, color: StoryPalette.color(for: item))
+                if needsTranslation {
+                    translateButton
+                }
+
+                StoryContent(story: current.practice.story, color: StoryPalette.color(for: current))
 
                 Button {
                     redo = true
@@ -166,7 +180,45 @@ struct SavedPracticeDetail: View {
         .background(NotebookPaper())
         .navigationBarTitleDisplayMode(.inline)
         .fullScreenCover(isPresented: $redo) {
-            GochiPracticeView(mistakes: [], saved: item)
+            GochiPracticeView(mistakes: [], saved: current)
+        }
+    }
+
+    private var translateButton: some View {
+        VStack(spacing: 6) {
+            Button {
+                Task { await translate() }
+            } label: {
+                Group {
+                    if translating {
+                        ProgressView()
+                    } else {
+                        Label("Translate into my language", systemImage: "character.bubble")
+                    }
+                }
+                .frame(maxWidth: .infinity)
+            }
+            .buttonStyle(.bordered)
+            .controlSize(.large)
+            .tint(Color.gochiRed)
+            .disabled(translating)
+
+            if let translateError {
+                Text(translateError)
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            }
+        }
+    }
+
+    private func translate() async {
+        translating = true
+        translateError = nil
+        defer { translating = false }
+        do {
+            try await PracticeLibrary.shared.retranslate(current)
+        } catch {
+            translateError = error.localizedDescription
         }
     }
 }

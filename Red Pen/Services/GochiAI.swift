@@ -114,6 +114,11 @@ enum GochiAI {
     private struct Envelope<Result: Decodable>: Decodable {
         let result: Result
     }
+    
+    
+    static func translate(_ practice: Practice) async throws -> Practice {
+        try await send("translate", input: practice)
+    }
 
     private static func send<Input: Encodable, Result: Decodable>(_ task: String, input: Input) async throws -> Result {
         guard let jws = await proTransaction() else { throw AIError.notPro }
@@ -152,7 +157,7 @@ enum GochiAI {
     }
 
     static var languageCode: String {
-        let lang = Locale.preferredLanguages.first ?? "en"
+        let lang = Bundle.main.preferredLocalizations.first ?? "en"
         if lang.hasPrefix("zh-Hant") || lang.hasPrefix("zh-TW") || lang.hasPrefix("zh-HK") { return "zh-Hant" }
         if lang.hasPrefix("zh") { return "zh-Hans" }
         return String(lang.prefix(2))

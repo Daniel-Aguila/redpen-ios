@@ -8,6 +8,7 @@ struct OnboardingView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(ProgressStore.self) private var progress
     @Environment(ProStore.self) private var store
+    @Environment(Wallet.self) private var wallet
     @AppStorage("whatsNewSeen") private var whatsNewSeen = ""
     @AppStorage("selectedTab") private var selectedTab = "practice"
     @AppStorage("reminderOn") private var reminderOn = false
@@ -25,11 +26,11 @@ struct OnboardingView: View {
 
     var body: some View {
         TabView(selection: $page) {
-            welcomePage.tag(0)
-            levelPage.tag(1)
-            howPage.tag(2)
-            goalPage.tag(3)
-            startPage.tag(4)
+            stores(welcomePage).tag(0)
+            stores(levelPage).tag(1)
+            stores(howPage).tag(2)
+            stores(goalPage).tag(3)
+            stores(startPage).tag(4)
         }
         .tabViewStyle(.page)
         .indexViewStyle(.page(backgroundDisplayMode: .always))
@@ -62,13 +63,13 @@ struct OnboardingView: View {
             }
         }
         .sheet(isPresented: $showPlacement, onDismiss: openPaywall) {
-            PlacementView { passed in markUnitsDone(passed) }
+            stores(PlacementView { passed in markUnitsDone(passed) })
         }
         .sheet(isPresented: $showPaywall, onDismiss: {
             PaywallPolicy.recordClosed(tier: store.tier)
             dismiss()
         }) {
-            PaywallView(startOn: .plus)
+            stores(PaywallView(startOn: .plus))
         }
     }
 
@@ -289,6 +290,14 @@ struct OnboardingView: View {
         .padding()
         .softCard()
     }
+    
+    private func stores<V: View>(_ view: V) -> some View {
+        view
+            .environment(progress)
+            .environment(store)
+            .environment(wallet)
+            .environment(\.modelContext, modelContext)
+    }
 
     private var exampleCard: some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -353,4 +362,5 @@ struct OnboardingView: View {
         .modelContainer(for: Correction.self, inMemory: true)
         .environment(ProgressStore())
         .environment(ProStore())
+        .environment(Wallet())
 }
